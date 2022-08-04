@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 <!--주석-->
 <style>
-
 #container {
 	width: 1000px;
 	height: 1050px;
