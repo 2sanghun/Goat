@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- gdgd -->
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
@@ -34,8 +35,8 @@ header {
 	background-color: white;
 	background-size : 100% 100%;
 }
-table{
-	margin:auto;
+td{
+	padding:10px;
 }
 td:nth-child(1){
 	color:red;
@@ -44,7 +45,7 @@ td:nth-child(2){
 	width:150px;
 }
 td:nth-child(3){
-	width:600px;
+	width:500px;
 	text-align:left;
 }
 .input {
