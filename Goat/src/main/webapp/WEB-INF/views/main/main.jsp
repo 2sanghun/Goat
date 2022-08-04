@@ -54,6 +54,7 @@ a {
 			<a href="">검색</a>
 		</div>
 		<div id="mid"></div>
+		<%@ include file="../header/footer.jsp" %>
 	</div>
 </body>
 </html>

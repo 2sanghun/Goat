@@ -34,9 +34,19 @@ header {
 	background-color: white;
 	background-size : 100% 100%;
 }
-
-
-
+table{
+	margin:auto;
+}
+td:nth-child(1){
+	color:red;
+}
+td:nth-child(2){
+	width:150px;
+}
+td:nth-child(3){
+	width:600px;
+	text-align:left;
+}
 .input {
 	width: 300px;
 	height: 25px;
@@ -47,7 +57,15 @@ header {
 	padding: 10px 40px 10px 40px;
 	color: white;
 }
-
+.short{
+	width: 50px;
+}
+.button {
+	background-color: #6799FF;
+	padding: 10px 40px 10px 40px;
+	color:white;
+	border:none;
+}
 </style>
 </head>
 <body>
@@ -55,8 +73,8 @@ header {
 		<header>
 			<h1>Goat</h1>
 			<nav>
-				<a href="write"><input type="button" value="글쓰기"></a> 
-				<a href="main"><input type="button" value="로그아웃"></a>
+				<a href="../main/write"><input type="button" value="글쓰기"></a> 
+				<a href="../main/main"><input type="button" value="로그아웃"></a>
 				<a href="../header/login"><input type="button" value="로그인"></a>
 				<a href="../header/signup"><input type="button" value="회원가입"></a>
 			</nav>
@@ -95,9 +113,9 @@ header {
 					<td>*</td>
 					<td>전화번호</td>
 					<td>
-						<input type="text">
-						<input type="text">
-						<input type="text">
+						<input type="text" class="short"> -
+						<input type="text" class="short"> -
+						<input type="text" class="short">
 					</td>
 				</tr>
 				<tr>
@@ -123,13 +141,16 @@ header {
 					<td>*</td>
 					<td>생년월일</td>
 					<td>
-						<input type="text">년
-						<input type="text">월
-						<input type="text">일
+						<input type="text" class="short">년
+						<input type="text" class="short">월
+						<input type="text" class="short">일
 					</td>
 				</tr>
 			</table>
+			<input type="submit" value="가입하기" class="button">
+			<input type="button" value="취소" class="button">
 		</div>
+		<%@ include file="../header/footer.jsp" %>
 	</div>
 </body>
 </html>
