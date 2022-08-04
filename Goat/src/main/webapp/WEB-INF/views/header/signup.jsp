@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- gdgd -->
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
@@ -35,11 +34,19 @@ header {
 	background-color: white;
 	background-size : 100% 100%;
 }
+table{
+	border-collapse:collapse;
+	width:100%;
+}
+tr{
+	border-bottom:1px solid black;
+}
 td{
 	padding:10px;
 }
 td:nth-child(1){
 	color:red;
+	width:10px;
 }
 td:nth-child(2){
 	width:150px;
