@@ -14,4 +14,14 @@ public class MainController {
 	public void write() {
 		
 	}
+	
+	@RequestMapping(value = "/header/login", method = RequestMethod.GET)
+	public void login() {
+		
+	}
+	
+	@RequestMapping(value = "/header/signup", method = RequestMethod.GET)
+	public void signup() {
+		
+	}
 }
