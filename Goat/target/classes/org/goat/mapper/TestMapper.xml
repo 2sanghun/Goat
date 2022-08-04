@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- namespace로 TestMapper와 연결 -->
+<mapper namespace="org.goat.mapper.TestMapper"> 
+	<!-- select에만 resultType이 있다 -->
+	<select id="getTime" resultType="String">
+		select SYSDATE();
+	</select>
+</mapper>
