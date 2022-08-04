@@ -28,8 +28,8 @@ header {
 	<header>
 		<h1>Goat</h1>
 		<nav>
-			<a href="write"><input type="button" value="글쓰기"></a> <a
-				href="main"><input type="button" value="로그아웃"></a> <a
+			<a href="../main/write"><input type="button" value="글쓰기"></a> <a
+				href="../main/main"><input type="button" value="로그아웃"></a> <a
 				href="../header/login"><input type="button" value="로그인"></a>
 			<a href="../header/signup"><input type="button" value="회원가입"></a>
 		</nav>

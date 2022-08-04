@@ -48,15 +48,7 @@ header {
 </head>
 <body>
 	<div id="container">
-	<header>
-			<h1>Goat</h1>
-			<nav>
-				<a href="../main/write"><input type="button" value="글쓰기"></a> 
-				<a href="../main/main"><input type="button" value="로그아웃"></a>
-				<a href="../header/login"><input type="button" value="로그인"></a>
-				<a href="../header/signup"><input type="button" value="회원가입"></a>
-			</nav>
-		</header>
+	<%@ include file="../header/header.jsp" %>
 		<h1>로그인</h1>
 		<form action="BoardLogin.jsp">
 			<input type="text" name="id" class="input" id="idchk" placeholder="ID"><br>
