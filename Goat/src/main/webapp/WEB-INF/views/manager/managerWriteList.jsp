@@ -38,6 +38,8 @@ table {
 	width: 100%;
 	margin: auto;
 	padding: 10px;
+	border-collapse: collapse;
+	
 }
 
 h4 {

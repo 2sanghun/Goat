@@ -30,16 +30,25 @@ header a{
 	text-decoration:none;
 	color:white;
 }
+
+.btn {
+	color: teal;
+	padding: 8px 10px;
+	border: 0.5px solid black;
+	background-color: #EAEAEA;
+	border-radius: 4px;
+}
+
 </style>
 </head>
 <body>
 	<header>
 		<h1><a href="../main/main">Goat</a></h1>
 		<nav>
-			<a href="../main/write"><input type="button" value="글쓰기"></a> 
-			<a href="../main/main"><input type="button" value="로그아웃"></a> 
-			<a href="../header/login"><input type="button" value="로그인"></a>
-			<a href="../header/signup"><input type="button" value="회원가입"></a>
+			<a href="../main/write"><input type="button" value="글쓰기" class="btn"></a> 
+			<a href="../main/main"><input type="button" value="로그아웃" class="btn"></a> 
+			<a href="../header/login"><input type="button" value="로그인" class="btn"></a>
+			<a href="../header/signup"><input type="button" value="회원가입" class="btn"></a>
 		</nav>
 	</header>
 </body>
