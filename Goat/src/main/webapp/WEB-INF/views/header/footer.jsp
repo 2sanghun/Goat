@@ -17,7 +17,7 @@
 	margin:auto;
 }
 </style>
-</head> 
+</head>
 <body>
 	<div id="footer">
 		<h1>footer입니다.</h1>

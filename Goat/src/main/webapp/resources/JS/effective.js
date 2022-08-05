@@ -11,7 +11,7 @@ window.onload = function() {
 			idmsg.innerHTML = "5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.";
 			idmsg.style.color = "red";
 		}
-	}
+	} 
 	
 	// 패스워드
 	var pwchk = document.querySelector("#pwchk");

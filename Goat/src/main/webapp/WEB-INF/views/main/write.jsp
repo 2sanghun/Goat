@@ -79,7 +79,7 @@ td:nth-child(2){
 				<td>내용</td>
 				<td><textarea></textarea></td>
 			</tr>
-		</table>
+		</table> 
 		<div id="button">
 			<input type="submit" value="작성" class="button">
 			<input type="button" value="취소" class="button">
