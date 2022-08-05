@@ -48,8 +48,7 @@ a {
 	position:relative;
 	top:100px;
 	visibility:hidden;
-	background-color: lightgray;
-	color:white;
+	background-color: rgba(255,255,255,0.5);
 }
 
 #mid table{
