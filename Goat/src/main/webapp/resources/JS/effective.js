@@ -15,7 +15,7 @@ window.onload = function() {
 	
 	// 패스워드
 	var pwchk = document.querySelector("#pwchk");
-	pwchk.onblur = function() {
+	pwchk.onblur = function() { 
 		// (?=.*[문자]) 정규식 패턴은 해당 문자가 필수로 포함되어야 하는 경우에 사용하는 정규식이다.
 		var pwreg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
 		var pwValue = pwchk.value;
