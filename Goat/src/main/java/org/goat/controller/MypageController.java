@@ -17,4 +17,8 @@ public class MypageController {
 	public void mypage() {
 		
 	}
+	@RequestMapping(value = "/mypage/Withdrawal", method = RequestMethod.GET)
+	public void Withdrawal() {
+		
+	}
 }
