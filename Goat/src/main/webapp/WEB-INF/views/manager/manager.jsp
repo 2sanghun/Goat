@@ -9,12 +9,11 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 }
 
 .container {
-	width: 100%;
-	height: 1000px;
+	width: 1000px;
+	margin: auto;
 }
 
 .header {
@@ -24,11 +23,12 @@
 }
 
 .title {
+	margin-top: 100px;
 	width: auto;
-	background-color: teal;
+	background-color: white;
 	line-height: 100px;
-	text-align: center;
-	color: white;
+	text-align: left;
+	color: teal;
 }
 
 .body {
@@ -37,8 +37,8 @@
 	background-color: white;
 }
 
-table {
-	width: 90%;
+.writetable {
+	width: 100%;
 	margin: auto;
 	padding: 10px;
 	border-collapse: collapse;
@@ -55,17 +55,24 @@ td {
 	margin-top: 5px;
 	border-bottom: 1px solid #EAEAEA;
 	padding: 20px 0px 20px 0px;
-
 }
 
 .memlist {
 	color: gray;
+	font-weight: bold;
 }
 
 .footer {
-	width: 100px;
+	width: 1000px;
 	margin: auto;
 	text-align: center;
+}
+
+.btntable {
+	width: 90%;
+	margin: auto;
+	padding: 10px;
+	border-collapse: collapse;
 }
 
 .backbtn {
@@ -73,39 +80,59 @@ td {
 	padding: 10px 15px;
 	margin: 50px 20px 10px 0px;
 	border: 0.5px solid black;
-	background-color: gray;
+	background-color: teal;
+	border-radius: 4px;
+}
+
+.modifybtn {
+	background-color: white;
+	border: 0.5px solid gray;
+	padding: 5px 5px;
+	border-radius: 4px;
+	color: gray;
 }
 </style>
 </head>
 <body>
 
 	<div class="container">
+		<%@ include file="../header/header.jsp"%>
+
 		<div class="header">
 			<h1 class="title">회원 관리 페이지</h1>
 		</div>
 		<div class="body">
-			<table>
-			<tr>
-			<td class="allmem">전체 사용자:</td>
-			</tr>
+			<table class="writetable">
+				<tr>
+					<td class="allmem">전체 사용자: 1  명</td>
+				</tr>
 				<tr class="memlist">
 					<td>회원번호</td>
 					<td>아이디</td>
 					<td>닉네임</td>
 					<td>가입일</td>
 					<td>글/댓글</td>
+					<td>관리</td>
 				</tr>
 				<tr>
 					<td>10</td>
 					<td>aaaa1234</td>
 					<td>홍길동</td>
 					<td>2022-08-04</td>
-					<td>5/1</td>
+					<td><a href="">5/1</a></td>
+					<td><a href=""><input type="button" value="상세"
+							class="modifybtn"></a></td>
 				</tr>
 			</table>
 		</div>
 		<div class="footer">
-			<a href=""><input class="backbtn" type="button" value="취소"></a>
+			<table class="btntable">
+				<tr>
+					<td><a href=""><input class="backbtn" type="button"
+							value="이전"></a> <a href=""><input class="backbtn"
+							type="button" value="다음"></a></td>
+				</tr>
+			</table>
 		</div>
 	</div>
 

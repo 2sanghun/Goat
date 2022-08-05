@@ -9,7 +9,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 }
 
 .container {
@@ -18,18 +17,18 @@
 }
 
 .header {
-	width: 1000px;
+	width: 100%;
 	height: 100px;
 	margin: auto;
 }
 
 .title {
+	margin-top: 100px;
 	width: auto;
-	background-color: teal;
+	background-color: white;
 	line-height: 100px;
-	text-align: center;
-	color: white;
-	text-align: center
+	text-align: left;
+	color: teal;
 }
 
 .body {
@@ -42,25 +41,19 @@ table {
 	border-collapse: collapse;
 }
 
-table, td {
-	margin-top: 20px;
-	padding: 10px;
-	margin: auto;
-}
-
-.tdleft, .tdright {
-	width: auto;
-	padding: 10px;
+td {
+	margin-top: 5px;
 	border-bottom: 1px solid #EAEAEA;
-}
-.tdleft{
-	text-align: right;
-
-}
-
-.tdright{
+	padding: 20px 0px 20px 0px;
 	text-align: left;
+}
 
+.tdleft {
+	width: 100px;
+}
+
+.short {
+	width: 50px;
 }
 
 .footer {
@@ -69,19 +62,25 @@ table, td {
 	text-align: center;
 }
 
-.cancle, .modify, .ban {
+.cancle, .ban {
 	color: white;
 	padding: 10px 15px;
 	margin: 10px 20px 10px 0px;
 	border: 0.5px solid black;
+	border-radius: 4px;
+}
+
+.postnum {
+	color: white;
+	padding: 10px 15px;
+	border: 0.5px solid teal; 
+	border-radius : 24px;
+	background-color: teal;
+	border-radius: 24px;
 }
 
 .cancle {
 	background-color: gray;
-}
-
-.modify {
-	background-color: teal;
 }
 
 .ban {
@@ -91,6 +90,7 @@ table, td {
 </head>
 <body>
 	<div class="container">
+		<%@ include file="../header/header.jsp"%>
 		<div class="header">
 			<h1 class="title">회원 상세 페이지</h1>
 		</div>
@@ -109,7 +109,7 @@ table, td {
 
 					<tr>
 						<td class="tdleft">아이디:</td>
-						<td class="tdright"><input type="text" name="id"></td>
+						<td class="tdright"><input type="text" name="id" readonly></td>
 					</tr>
 
 					<tr>
@@ -120,9 +120,9 @@ table, td {
 					<tr>
 						<td class="tdleft">생년월일:</td>
 						<td class="tdright"><input type="text" name="birth_year"
-							width="50">년<input type="text" name="birth_month"
-							width="50">월<input type="text" name="birth_day"
-							width="50">일</td>
+							class="short" readonly>년 <input type="text"
+							name="birth_month" class="short" readonly>월 <input
+							type="text" name="birth_day" class="short" readonly>일</td>
 					</tr>
 
 					<tr>
@@ -133,27 +133,39 @@ table, td {
 					<tr>
 						<td class="tdleft">이메일:</td>
 						<td class="tdright"><input type="text" name="email">@
-							<select></select></td>
+							<select>
+								<option>gmail.com</option>
+								<option>naver.com</option>
+								<option>daum.com</option>
+						</select></td>
 					</tr>
 
 					<tr>
 						<td class="tdleft">휴대폰번호:</td>
-						<td class="tdright"><input type="text" name="phone">- 
-					        	           <input type="text" name="phone">-
-							               <input type="text" name="phone"></td>
+						<td class="tdright"><select>
+								<option>010</option>
+								<option>011</option>
+								<option>016</option>
+								<option>017</option>
+						</select> - <input type="text" name="phone" class="short"> - <input
+							type="text" name="phone" class="short"></td>
 					</tr>
 
 					<tr>
 						<td class="tdleft">주소:</td>
-						<td class="tdline"><input type="text" name="addr"></td>
+						<td class="tdright"><input type="text" name="addr"> <input
+							class="postnum" type="button" value="우편번호"><br> <input
+							type="text" name="addr" placeholder="지번주소"><br> <input
+							type="text" name="addr" placeholder="상세주소"><br> <input
+							type="text" name="addr" placeholder="도로명주소"><br> <input
+							type="text" name="addr" placeholder="상세주소"></td>
 					</tr>
 
 				</table>
 			</div>
 			<div class="footer">
-				<input class="cancle" type="submit" value="취소" formaction="">
-				<input class="modify" type="submit" value="수정" formaction="">
-				<input class="ban" type="submit" value="강퇴" formaction="">
+				<input class="cancle" type="submit" value="닫기" formaction="">
+				<input class="ban" type="submit" value="탈퇴" formaction="">
 			</div>
 		</form>
 	</div>

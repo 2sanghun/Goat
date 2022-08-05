@@ -10,7 +10,7 @@ header {
 	height: 75px;
 	width:1000px;
 	margin:auto;
-	padding: 1rem;
+	padding: 10px;
 	color: white;
 	background: teal;
 	font-weight: bold;
