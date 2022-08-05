@@ -49,6 +49,11 @@ a {
 	top:100px;
 	visibility:hidden;
 	background-color: rgba(255,255,255,0.5);
+	width:900px;
+	border-radius:10px;
+	margin:auto;
+	padding:30px 0px 30px 0px;
+	
 }
 
 #mid table{
@@ -56,6 +61,7 @@ a {
 	margin:auto;
 	border-collapse:collapse;
 	background-color:transparent;
+	
 	
 }
 #mid tr:nth-child(3n-2) td{
