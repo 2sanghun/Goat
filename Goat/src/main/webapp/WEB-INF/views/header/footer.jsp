@@ -8,7 +8,13 @@
 <style>
 #footer{
 	position : absolute;
-	bottom: 0px;	
+	bottom: 0;
+	left:0;
+	background-color:teal;
+	width:1000px;
+	height:75px;
+	padding: 10px;
+	margin:auto;
 }
 </style>
 </head>

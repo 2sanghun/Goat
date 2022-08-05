@@ -18,19 +18,27 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	position: fixed;
+	z-index:1;
 	top: 0;
 	left: 0;
 	right: 0;
+}
+input{
+	background-color : lightteal;
+}
+header a{
+	text-decoration:none;
+	color:white;
 }
 </style>
 </head>
 <body>
 	<header>
-		<h1>Goat</h1>
+		<h1><a href="../main/main">Goat</a></h1>
 		<nav>
-			<a href="../main/write"><input type="button" value="글쓰기"></a> <a
-				href="../main/main"><input type="button" value="로그아웃"></a> <a
-				href="../header/login"><input type="button" value="로그인"></a>
+			<a href="../main/write"><input type="button" value="글쓰기"></a> 
+			<a href="../main/main"><input type="button" value="로그아웃"></a> 
+			<a href="../header/login"><input type="button" value="로그인"></a>
 			<a href="../header/signup"><input type="button" value="회원가입"></a>
 		</nav>
 	</header>

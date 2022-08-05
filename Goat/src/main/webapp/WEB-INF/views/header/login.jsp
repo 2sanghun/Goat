@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="../../../resources/JS/effective.js"></script>
 <style>
 header {
 	height: 75px;
@@ -30,9 +31,6 @@ header {
 	position: relative;
 	text-align:center;
 	top: 90px;
-	background-image: url("../../../resources/image/travel1.jpg");
-	background-color: white;
-	background-size : 100% 100%;
 }
 
 .input {
@@ -40,9 +38,10 @@ header {
 	height: 25px;
 }
 .button {
-	background-color: #6799FF;
+	background-color: teal;
 	padding: 10px 40px 10px 40px;
 	color:white;
+	border:none;
 }
 </style>
 </head>
@@ -50,13 +49,13 @@ header {
 	<div id="container">
 	<%@ include file="../header/header.jsp" %>
 		<h1>로그인</h1>
-		<form action="BoardLogin.jsp">
+		<form action="">
 			<input type="text" name="id" class="input" id="idchk" placeholder="ID"><br>
 			<span id="idmsg"></span><br>
-			<input type="password" name="pw" class="input" id="pschk" placeholder="PASSWORD"><br> 
-			<span id="psmsg"></span><br>
+			<input type="password" name="pw" class="input" id="pwchk" placeholder="PASSWORD"><br> 
+			<span id="pwmsg"></span><br>
 			<input type="submit" value="로그인" class="button"> 
-			<a href="BoardMem.jsp"><input type="button" value="회원가입" class="button"></a>
+			<a href="../header/signup"><input type="button" value="회원가입" class="button"></a>
 		</form>
 		<%@ include file="../header/footer.jsp" %>
 	</div>
