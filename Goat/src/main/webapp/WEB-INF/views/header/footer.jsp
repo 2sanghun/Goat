@@ -10,8 +10,8 @@
 	position : absolute;
 	bottom: 0;
 	left:0;
-	background-color:teal;
-	width:1000px;
+	background-color: white;
+	width:100%;
 	height:75px;
 	padding: 10px;
 	margin:auto;

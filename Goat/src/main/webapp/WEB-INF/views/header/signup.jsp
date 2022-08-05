@@ -87,6 +87,7 @@ td:nth-child(3){
 			<h1>회원가입</h1>
 		</div>
 		<div id="main">
+		<span style="color:red;">*</span>은 필수 입력입니다.
 			<table>
 				<tr>
 					<td>*</td>

@@ -6,15 +6,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+
 #container {
-	width: 1000px;
+	width: 100%;
 	height: 1050px;
 	margin: auto;
 	padding : 10px;
 	position: relative;
 	top: 80px;
-	background-image: url("../../../resources/image/travel1.jpg");
+	left:-20px;
+	
+}
+#background{
+	width:100%;
+	height:100%;
+	margin:auto;
+	padding:10px;
+	position:relative;
+	top:-20px;
+	background-image: url("../../../resources/image/travel2.jpg");
 	background-color: white;
+	background-repeat: no-repeat;
 	background-size : 100% 100%;
 }
 a {
@@ -30,22 +42,22 @@ a {
 	height: 40px;
 	border-radius: 10px;
 }
-#canav li{
-	display: inline;
-	font-weight : bold;
-	font-size : 40px;
-	padding : 0px 10px 0px 10px;
-}
+
 #mid{
 	text-align:center;
 	position:relative;
 	top:100px;
 	visibility:hidden;
+	background-color: lightgray;
+	color:white;
 }
+
 #mid table{
 	width:700px;
 	margin:auto;
 	border-collapse:collapse;
+	background-color:transparent;
+	
 }
 #mid tr:nth-child(3n-2) td{
 	font-weight:bold;
@@ -78,24 +90,26 @@ a {
 		var mid = document.getElementById('mid')
 		mid.style.visibility = "visible";
 	}
+	window.onload = function imageCh(){
+		var random=Math.floor(Math.random()*14)+1;
+		function ran(a){
+			return "url('../../../resources/image/travel"+a+".jpg')"
+		}
+		document.getElementById("background").style.backgroundImage=ran(random);
+	}
 </script>
 </head>
 <body>
+	 
 	<div id="container">
 		<%@ include file="../header/header.jsp" %>
+			<div id="background">
 		<div id="top">
-			<div id="category">
-				<ul id="canav">
-					<li><a href="">관광</a></li>
-					<li><a href="">숙소</a></li>
-					<li><a href="">음식</a></li>
-					<li><a href="">교통</a></li>
-					<li><a href="">투어</a></li>
-				</ul>
-			</div>
+		<br><br><br><br><br><br><br>
 			<input type="text" placeholder="검색" id="serch" name="serch">
-			<input type="button" value="검색" onclick="onSerch()">
+			<input type="button" value="검색" onclick="onSerch()" class="btn">
 		</div>
+		
 		<!-- 검색 시 나타나며 검색한 내용이 포함된 제목과 내용이 포함된 게시글을 표시 -->
 		<div id="mid">
 			<table>
@@ -196,6 +210,8 @@ a {
 				</tr>
 			</table>
 		</div>
+		</div>
+		
 		<%@ include file="../header/footer.jsp" %>
 	</div>
 </body>
