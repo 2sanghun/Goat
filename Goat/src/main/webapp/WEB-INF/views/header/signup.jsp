@@ -144,7 +144,7 @@ td:nth-child(3){
 						</select>
 					</td>
 				</tr>
-				<tr>
+				<tr> 
 					<td>*</td>
 					<td>이름</td>
 					<td><input type="text"></td>

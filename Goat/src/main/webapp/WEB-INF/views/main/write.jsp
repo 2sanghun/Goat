@@ -73,7 +73,7 @@ td:nth-child(2){
 			</tr>
 			<tr>
 				<td>제목</td>
-				<td><input type="text"></td>
+				<td><input type="text"></td> 
 			</tr>
 			<tr>
 				<td>내용</td>

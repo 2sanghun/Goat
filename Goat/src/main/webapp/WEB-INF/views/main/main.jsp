@@ -17,7 +17,7 @@
 	background-color: white;
 	background-size : 100% 100%;
 }
-a {
+a { 
 	decoration: none;
 	text-decoration : none;
 	color: black;

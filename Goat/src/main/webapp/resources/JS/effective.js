@@ -12,6 +12,7 @@ window.onload = function() {
 			idmsg.style.color = "red";
 		}
 	}
+	
 	// 패스워드
 	var pwchk = document.querySelector("#pwchk");
 	pwchk.onblur = function() {
