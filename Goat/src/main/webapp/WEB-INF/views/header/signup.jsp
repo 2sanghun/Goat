@@ -5,89 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../../../resources/CSS/signup.css" type="text/css">
 <script type="text/javascript" src="../../../resources/JS/effective.js"></script>
-<style>
-header {
-	height: 75px;
-	width:1000px;
-	margin:auto;
-	padding: 1rem;
-	color: white;
-	background: teal;
-	font-weight: bold;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-}
-#container {
-	width: 1000px;
-	height: 1050px;
-	margin: auto;
-	padding : 10px;
-	text-align:center;
-	position: relative;
-	top: 90px;
-}
-#top h1{
-}
-table{
-	border-collapse:collapse;
-	width:100%;
-}
-tr{
-	border:1px solid black;
-	
-}
-td{
-	padding:10px;
-}
-td:nth-child(1){
-	color:red;
-	width:1px;
-	text-align:right;
-}
-td:nth-child(2){
-	width:70px;
-	border-right:1px solid black;
-}
-td:nth-child(3){
-	width:500px;
-	text-align:left;
-}
-.input {
-	width: 300px;
-	height: 25px;
-}
-
-.button {
-	background-color: #6799FF;
-	padding: 10px 40px 10px 40px;
-	margin:20px;
-	color: white;
-}
-.short{
-	width: 50px;
-}
-.button {
-	background-color: teal;
-	padding: 10px 40px 10px 40px;
-	color:white;
-	border:none;
-}
-</style>
 </head>
 <body>
 	<div id="container">
 		<%@ include file="../header/header.jsp" %>
+		<h1>회원가입</h1>
 		<div id="top">
-			<h1>회원가입</h1>
+			<span style="color:red;">*</span>은 필수 입력입니다.
 		</div>
 		<div id="main">
-		<span style="color:red;">*</span>은 필수 입력입니다.
 			<table>
 				<tr>
 					<td>*</td>

@@ -5,107 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-
-#container {
-	width: 100%;
-	height: 1050px;
-	margin: auto;
-	padding : 10px;
-	position: relative;
-	top: 80px;
-	left:-20px;
-	
-}
-#background{
-	width:100%;
-	height:100%;
-	margin:auto;
-	padding:10px;
-	position:relative;
-	top:-20px;
-	background-image: url("../../../resources/image/travel2.jpg");
-	background-color: white;
-	background-repeat: no-repeat;
-	background-size : 100% 100%;
-}
-a {
-	decoration: none;
-	text-decoration : none;
-	color: black;
-}
-#top{
-	text-align:center;
-}
-#serch {
-	width: 700px;
-	height: 40px;
-	border-radius: 10px;
-}
-
-#mid{
-	text-align:center;
-	position:relative;
-	top:100px;
-	visibility:hidden;
-	background-color: rgba(255,255,255,0.5);
-	width:900px;
-	border-radius:10px;
-	margin:auto;
-	padding:30px 0px 30px 0px;
-	
-}
-
-#mid table{
-	width:700px;
-	margin:auto;
-	border-collapse:collapse;
-	background-color:transparent;
-	
-	
-}
-#mid tr:nth-child(3n-2) td{
-	font-weight:bold;
-	font-size:30px;
-}
-#mid tr:nth-child(3n-1) td{
-	border:1px solid black;
-}
-#mid td:nth-child(1){
-	width:100px;
-}
-#mid td:nth-child(2){
-	width:300px;
-}
-#mid td:nth-child(3){
-	width:100px;
-}
-#mid td:nth-child(4){
-	width:100px;
-}
-#mid td:nth-child(5){
-	width:50px;
-}
-#mid td:nth-child(6){
-	width:50px;
-}
-</style>
-<script>
-	function onSerch(){
-		var mid = document.getElementById('mid')
-		mid.style.visibility = "visible";
-	}
-	window.onload = function imageCh(){
-		var random=Math.floor(Math.random()*14)+1;
-		function ran(a){
-			return "url('../../../resources/image/travel"+a+".jpg')"
-		}
-		document.getElementById("background").style.backgroundImage=ran(random);
-	}
-</script>
+<link rel="stylesheet" href="../../../resources/CSS/main.css" type="text/css">
+<script type="text/javascript" src="../../../resources/JS/main.js"></script>
 </head>
 <body>
-	 
 	<div id="container">
 		<%@ include file="../header/header.jsp" %>
 			<div id="background">
@@ -216,7 +119,6 @@ a {
 			</table>
 		</div>
 		</div>
-		
 		<%@ include file="../header/footer.jsp" %>
 	</div>
 </body>
