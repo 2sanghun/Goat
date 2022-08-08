@@ -13,11 +13,11 @@
 		<h1><a href="../main/main"><img src="../../../resources/image/logo.jpg"></a></h1>
 		<div id="category">
 				<ul id="canav">
-					<li><a href="">관광</a></li>
-					<li><a href="">숙소</a></li>
-					<li><a href="">음식</a></li>
-					<li><a href="">교통</a></li>
-					<li><a href="">투어</a></li>
+					<li><a href="../list/sitelist">관광</a></li>
+					<li><a href="../list/houselist">숙소</a></li>
+					<li><a href="../list/foodlist">음식</a></li>
+					<li><a href="../list/translist">교통</a></li>
+					<li><a href="../list/tourlist">투어</a></li>
 				</ul>
 			</div>
 		<nav>
