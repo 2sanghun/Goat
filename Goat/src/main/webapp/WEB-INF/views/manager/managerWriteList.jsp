@@ -34,6 +34,38 @@
 					<td><a href=""><input type="button" value="상세"
 							class="modifybtn"></a></td>
 				</tr>
+					<tr class="writelist">
+					<td>2</td>
+					<td>ABC</td>
+					<td>영어입니다</td>
+					<td>2022-08-06</td>
+					<td><a href=""><input type="button" value="상세"
+							class="modifybtn"></a></td>
+				</tr>
+					<tr class="writelist">
+					<td>3</td>
+					<td>123</td>
+					<td>숫자입니다</td>
+					<td>2022-08-07</td>
+					<td><a href=""><input type="button" value="상세"
+							class="modifybtn"></a></td>
+				</tr>
+					<tr class="writelist">
+					<td>4</td>
+					<td>오늘날짜</td>
+					<td>2022년 8월 8일 입니다.</td>
+					<td>2022-08-08</td>
+					<td><a href=""><input type="button" value="상세"
+							class="modifybtn"></a></td>
+				</tr>
+					<tr class="writelist">
+					<td>5</td>
+					<td>ㄱㄴㅇㅁ</td>
+					<td>ㅇㅇㄴㅁㅇㄴㅁㅇ</td>
+					<td>2022-08-08</td>
+					<td><a href=""><input type="button" value="상세"
+							class="modifybtn"></a></td>
+				</tr>
 			</table>
 		</div>
 		<br> <br> <br> <br> <br> <br> <br>
