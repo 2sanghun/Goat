@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+#container {
+	width: 1000px;
+	height: 1050px;
+	margin: auto;
+	padding : 10px;
+	position: relative;
+	text-align:center;
+	top: 90px;
+}
+
+.input {
+	width:300px;
+	height: 25px;
+}
+.button {
+	background-color: teal;
+	padding: 10px 40px 10px 40px;
+	color:white;
+	border:none;
+}

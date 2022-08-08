@@ -5,88 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-* {
-	margin: 0;
-	padding: 0;
-}
-
-.container {
-	width: 1000px;
-	margin: auto;
-}
-
-.header {
-	width: 100%;
-	height: 100px;
-	margin: auto;
-}
-
-.title {
-	margin-top: 100px;
-	width: auto;
-	background-color: white;
-	line-height: 100px;
-	text-align: left;
-	color: teal;
-}
-
-.body {
-	width: 1000px;
-}
-
-table {
-	width: 100%;
-	margin: auto;
-	border-collapse: collapse;
-}
-
-td {
-	margin-top: 5px;
-	border-bottom: 1px solid #EAEAEA;
-	padding: 20px 0px 20px 0px;
-	text-align: left;
-}
-
-.tdleft {
-	width: 100px;
-}
-
-.short {
-	width: 50px;
-}
-
-.footer {
-	width: 100%;
-	margin: auto;
-	text-align: center;
-}
-
-.cancle, .ban {
-	color: white;
-	padding: 10px 15px;
-	margin: 10px 20px 10px 0px;
-	border: 0.5px solid black;
-	border-radius: 4px;
-}
-
-.postnum {
-	color: white;
-	padding: 10px 15px;
-	border: 0.5px solid teal; 
-	border-radius : 24px;
-	background-color: teal;
-	border-radius: 24px;
-}
-
-.cancle {
-	background-color: gray;
-}
-
-.ban {
-	background-color: red;
-}
-</style>
+<link rel="stylesheet" href="../../../resources/CSS/memDetailCSS.css">
 </head>
 <body>
 	<div class="container">
@@ -98,27 +17,27 @@ td {
 			<div class="body">
 				<table>
 					<tr>
-						<td class="tdleft">이름:</td>
+						<td class="tdleft">이름</td>
 						<td class="tdright"><input type="text" name="name"></td>
 					</tr>
 
 					<tr>
-						<td class="tdleft">닉네임:</td>
+						<td class="tdleft">닉네임</td>
 						<td class="tdright"><input type="text" name="nick"></td>
 					</tr>
 
 					<tr>
-						<td class="tdleft">아이디:</td>
+						<td class="tdleft">아이디</td>
 						<td class="tdright"><input type="text" name="id" readonly></td>
 					</tr>
 
 					<tr>
-						<td class="tdleft">비밀번호:</td>
+						<td class="tdleft">비밀번호</td>
 						<td class="tdright"><input type="password" readonly></td>
 					</tr>
 
 					<tr>
-						<td class="tdleft">생년월일:</td>
+						<td class="tdleft">생년월일</td>
 						<td class="tdright"><input type="text" name="birth_year"
 							class="short" readonly>년 <input type="text"
 							name="birth_month" class="short" readonly>월 <input
@@ -126,12 +45,12 @@ td {
 					</tr>
 
 					<tr>
-						<td class="tdleft">가입일자:</td>
+						<td class="tdleft">가입일자</td>
 						<td class="tdright"><input type="text" readonly></td>
 					</tr>
 
 					<tr>
-						<td class="tdleft">이메일:</td>
+						<td class="tdleft">이메일</td>
 						<td class="tdright"><input type="text" name="email">@
 							<select>
 								<option>gmail.com</option>
@@ -141,7 +60,7 @@ td {
 					</tr>
 
 					<tr>
-						<td class="tdleft">휴대폰번호:</td>
+						<td class="tdleft">휴대폰번호</td>
 						<td class="tdright"><select>
 								<option>010</option>
 								<option>011</option>
@@ -152,7 +71,7 @@ td {
 					</tr>
 
 					<tr>
-						<td class="tdleft">주소:</td>
+						<td class="tdleft">주소</td>
 						<td class="tdright"><input type="text" name="addr"> <input
 							class="postnum" type="button" value="우편번호"><br> <input
 							type="text" name="addr" placeholder="지번주소"><br> <input
@@ -164,7 +83,7 @@ td {
 				</table>
 			</div>
 			<div class="footer">
-				<input class="cancle" type="submit" value="닫기" formaction="">
+				<input class="cancle" type="submit" value="닫기" formaction="manager">
 				<input class="ban" type="submit" value="탈퇴" formaction="">
 			</div>
 		</form>

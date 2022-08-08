@@ -5,45 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../../../resources/CSS/login.css" type="text/css">
 <script type="text/javascript" src="../../../resources/JS/effective.js"></script>
-<style>
-header {
-	height: 75px;
-	width:1000px;
-	margin:auto;
-	padding: 1rem;
-	color: white;
-	background: teal;
-	font-weight: bold;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-}
-#container {
-	width: 1000px;
-	height: 1050px;
-	margin: auto;
-	padding : 10px;
-	position: relative;
-	text-align:center;
-	top: 90px;
-}
-
-.input {
-	width:300px;
-	height: 25px;
-}
-.button {
-	background-color: teal;
-	padding: 10px 40px 10px 40px;
-	color:white;
-	border:none;
-}
-</style>
 </head>
 <body>
 	<div id="container">
