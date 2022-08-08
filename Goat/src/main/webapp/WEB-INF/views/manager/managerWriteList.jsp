@@ -60,7 +60,7 @@
 		</div>
 	</div>
 	<div class="footer">
-		<a href=""><input class="back" type="button" value="취소"></a>
+		<a href="manager"><input class="back" type="button" value="취소"></a>
 	</div>
 	</div>
 </body>

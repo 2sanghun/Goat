@@ -33,8 +33,8 @@
 					<td>abcd1234</td>
 					<td>홍길동</td>
 					<td>2022-08-05</td>
-					<td><a href="">5/1</a></td>
-					<td><a href=""><input type="button" value="상세"
+					<td><a href="managerWriteList">5/1</a></td>
+					<td><a href="memDetail"><input type="button" value="상세"
 							class="modifybtn"></a></td>
 				</tr>
 			</table>
