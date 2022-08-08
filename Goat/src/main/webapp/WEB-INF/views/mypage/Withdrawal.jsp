@@ -42,75 +42,44 @@ li a:hover{
         background-color:teal;
         color:white;
 }
+#footer{
+    text-align:center;
+    margin-top: 20px;
+}
+h1{
+         text-align:center;
+         text-shadow:2px 2px 2px gray;
+}
+table{
+      margin:auto;
+}
+
 #container{
    widht: 50px;
    position: relative;
    top:100px;
 }
 
-td:nth-child(1){
-    width:50px;
-    padding-right : 100px;
-    padding-top : 30px;
-   
-   
-}
-
-td:nth-child(2){
-
-     width:100px;
-    text-align:justify;
-    padding-right : 100px;
-    padding-top : 30px;
-}
-
-td:nth-child(3){
-
-     width:100px;
-    text-align:justify;
-    padding-right : 100px;
-    padding-top : 30px;
-}
-
-#footer{
-    text-align:center;
-    margin-top: 20px;
-}
-
-table{
-border-collapse:collapse;
- width:100%;
-}
-
-tr{
-border-bottom: 1px solid black 
-}
-
-h1{
-         text-align:center;
-         text-shadow:2px 2px 2px gray;
-}
 </style>
 </head>
 <body>
 <ul>
     <li><a href = "mypage">내정보</a></li>
-    <li><a>내글</a></li>
+    <li><a href = "memModify">내글</a></li>
     <li><a href = "favorite">회원탈퇴</a></li>
 </ul>
  <div id = "container">
   <hr size = "1" color = "black">
   <h1>MEMBER INFO</h1>
   <hr size = "1" color = "black"><br><br>
-     <span>*</span> 내 게시글 관리
-     <table>
-     <tr>
-     <td>번호</td>
-     <td>제목</td>
-     <td>작성일</td>
-     </tr>
-  
-     </table>
+  <table>
+  <tr>
+  <td>회원정보가 수정되었습니다.</td>
+  </tr>
+  </table>
+   <div id = "footer">
+<a href = "../main/main"><input type = "button" value = "메인으로"></a>
 </div>
+  </div>
 </body>
 </html>

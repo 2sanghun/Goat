@@ -5,97 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-#container {
-	width: 1000px;
-	height: 1050px;
-	margin: auto;
-	padding : 10px;
-	position: relative;
-	top: 80px;
-	background-image: url("../../../resources/image/travel1.jpg");
-	background-color: white;
-	background-size : 100% 100%;
-}
-a {
-	decoration: none;
-	text-decoration : none;
-	color: black;
-}
-#top{
-	text-align:center;
-}
-#serch {
-	width: 700px;
-	height: 40px;
-	border-radius: 10px;
-}
-#canav li{
-	display: inline;
-	font-weight : bold;
-	font-size : 40px;
-	padding : 0px 10px 0px 10px;
-}
-#mid{
-	text-align:center;
-	position:relative;
-	top:100px;
-	visibility:hidden;
-}
-#mid table{
-	width:700px;
-	margin:auto;
-	border-collapse:collapse;
-}
-#mid tr:nth-child(3n-2) td{
-	font-weight:bold;
-	font-size:30px;
-}
-#mid tr:nth-child(3n-1) td{
-	border:1px solid black;
-}
-#mid td:nth-child(1){
-	width:100px;
-}
-#mid td:nth-child(2){
-	width:300px;
-}
-#mid td:nth-child(3){
-	width:100px;
-}
-#mid td:nth-child(4){
-	width:100px;
-}
-#mid td:nth-child(5){
-	width:50px;
-}
-#mid td:nth-child(6){
-	width:50px;
-}
-</style>
-<script>
-	function onSerch(){
-		var mid = document.getElementById('mid')
-		mid.style.visibility = "visible";
-	}
-</script>
+<link rel="stylesheet" href="../../../resources/CSS/main.css" type="text/css">
+<script type="text/javascript" src="../../../resources/JS/main.js"></script>
 </head>
 <body>
 	<div id="container">
 		<%@ include file="../header/header.jsp" %>
+			<div id="background">
 		<div id="top">
-			<div id="category">
-				<ul id="canav">
-					<li><a href="">관광</a></li>
-					<li><a href="">숙소</a></li>
-					<li><a href="">음식</a></li>
-					<li><a href="">교통</a></li>
-					<li><a href="">투어</a></li>
-				</ul>
-			</div>
+		<br><br><br><br><br><br><br>
 			<input type="text" placeholder="검색" id="serch" name="serch">
-			<input type="button" value="검색" onclick="onSerch()">
+			<input type="button" value="검색" onclick="onSerch()" class="btn">
 		</div>
+		
 		<!-- 검색 시 나타나며 검색한 내용이 포함된 제목과 내용이 포함된 게시글을 표시 -->
 		<div id="mid">
 			<table>
@@ -195,6 +117,7 @@ a {
 					<td>좋아요</td>
 				</tr>
 			</table>
+		</div>
 		</div>
 		<%@ include file="../header/footer.jsp" %>
 	</div>
