@@ -5,18 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-#footer{
-	position : absolute;
-	bottom: 0;
-	left:0;
-	background-color: white;
-	width:100%;
-	height:75px;
-	padding: 10px;
-	margin:auto;
-}
-</style>
+<link rel="stylesheet" href="../../../resources/CSS/footer.css" type="text/css">
 </head>
 <body>
 	<div id="footer">

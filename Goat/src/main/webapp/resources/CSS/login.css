@@ -1,20 +1,5 @@
 @charset "UTF-8";
-header {
-	height: 75px;
-	width:1000px;
-	margin:auto;
-	padding: 1rem;
-	color: white;
-	background: teal;
-	font-weight: bold;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-}
+
 #container {
 	width: 1000px;
 	height: 1050px;

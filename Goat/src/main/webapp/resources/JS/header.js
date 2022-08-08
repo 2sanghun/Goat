@@ -1,7 +1,7 @@
 window.addEventListener('load', function(){
 const windowWidth = window.innerWidth;
 	var cate =document.getElementById("category");
-	if(windowWidth<=800){
+	if(windowWidth<=810){
 		cate.style.visibility='hidden'; 
 	}else{
 		cate.style.visibility='visible';
@@ -9,7 +9,7 @@ const windowWidth = window.innerWidth;
 	function hidden(){
 		const windowWidth = window.innerWidth;
 		var cate =document.getElementById("category");
-		if(windowWidth<=800){
+		if(windowWidth<=810){
 			cate.style.visibility='hidden';
 		}else{
 			cate.style.visibility='visible';
