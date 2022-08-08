@@ -25,6 +25,8 @@
 			<a href="../main/main"><input type="button" value="로그아웃" class="btn"></a> 
 			<a href="../header/login"><input type="button" value="로그인" class="btn"></a>
 			<a href="../header/signup"><input type="button" value="회원가입" class="btn"></a>
+			<a href="../mypage/mypage"><input type="button" value="마이페이지" class="btn"></a>
+			<a href="../manager/manager"><input type="button" value="관리자" class="btn"></a>
 		</nav>
 	</header>
 </body>
