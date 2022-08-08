@@ -33,9 +33,11 @@ td:nth-child(2){
 }
 
 .long{
-     width: 300px
+     width: 300px;
 }
-
+.short{
+      width: 100px;
+}
 table{
 border-collapse:collapse;
  width:100%;
@@ -48,7 +50,7 @@ border-bottom: 1px solid black
 ul{
     height: 20px;
     padding: 1rem;
-    background-color:teal;
+    background-color:green;
     list-style-type:none;
     margin:;
     padding:;
@@ -70,7 +72,7 @@ li{float:left;}
 li a {
 		
         display :block;
-        background-color:teal;
+        background-color:green;
         color:#000000;
         padding:8px;
         text-decoration:none;
@@ -124,7 +126,7 @@ h1{
       <td><span ></span></td>
       <td>E-mail</td>  
      <td> <input type="text" name="email1"> @
-          <input type="text" name="email2" >
+          <input type="text" name="email2" class = "short" >
 <select  name="select_email" onChange="selectEmail(this)">
      <option value="" selected>선택하세요</option>
 	 <option value="1">직접입력</option>
