@@ -11,7 +11,7 @@
 	<%@ include file="../header/header.jsp" %>
 	<div id="content">
 		<div id="middle">
-			<h1 id="categorylist">음식</h1>
+			<p id="categorylist">음식</p>
 			<hr>
 			<table>
 				<tr>

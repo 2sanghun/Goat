@@ -13,9 +13,11 @@
 }
 
 #categorylist {
+	font-size : 50px;
+	font-weight : 900;
 	margin: 0;
 	text-align: center;
-	background: teal;
+	background: rgb(61, 183, 204);
 }
 
 hr {
