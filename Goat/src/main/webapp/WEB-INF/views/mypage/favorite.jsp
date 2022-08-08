@@ -9,10 +9,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-ul{
+#mypagenav{
     height: 20px;
     padding: 1rem;
-    background-color:teal;
+    background-color:green;
     list-style-type:none;
     margin:;
     padding:;
@@ -24,17 +24,12 @@ ul{
     padding-bottom:10px;
     margin-top: 20px;
     word-spacing: 10px;
-  
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 li{float:left;}
-li a {
+#mypagenav li a {
 		
         display :block;
-        background-color:teal;
+        background-color:green;
         color:#000000;
         padding:8px;
         text-decoration:none;
@@ -64,12 +59,14 @@ table{
 </style>
 </head>
 <body>
-<ul>
+ <div id = "container">
+  <%@ include file="../header/header.jsp"%>
+<ul id="mypagenav">
     <li><a href = "mypage">내정보</a></li>
     <li><a href = "memModify">내글</a></li>
     <li><a>회원탈퇴</a></li>
 </ul>
- <div id = "container">
+ <%@ include file="../header/header.jsp" %>
   <hr size = "1" color = "black">
   <h1>MEMBER INFO</h1>
   <hr size = "1" color = "black"><br><br>
