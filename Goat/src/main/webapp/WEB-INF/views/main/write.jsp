@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="../../../resources/CSS/write.css" type="text/css">
 </head>
 <body>
-<div id="container">
+<div id="container"> 
 	<%@ include file="../header/header.jsp" %>
 	<div id="top">
 		<h1>글 쓰기</h1>
