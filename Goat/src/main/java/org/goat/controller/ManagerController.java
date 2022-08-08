@@ -14,8 +14,8 @@ public class ManagerController {
 	public void memDetail() {
 		
 	}
-	@RequestMapping(value = "/manager/memList", method = RequestMethod.GET)
-	public void memList() {
+	@RequestMapping(value = "/manager/managerWriteList", method = RequestMethod.GET)
+	public void managerWriteList() {
 		
 	}
 	

@@ -9,4 +9,24 @@ public class ListController {
 	public void list() {
 		
 	}
+	@RequestMapping(value = "/list/foodlist", method = RequestMethod.GET)
+	public void foodlist() {
+		
+	}
+	@RequestMapping(value = "/list/houselist", method = RequestMethod.GET)
+	public void houselist() {
+		
+	}
+	@RequestMapping(value = "/list/sitelist", method = RequestMethod.GET)
+	public void sitelist() {
+		
+	}
+	@RequestMapping(value = "/list/tourlist", method = RequestMethod.GET)
+	public void tourlist() {
+		
+	}
+	@RequestMapping(value = "/list/translist", method = RequestMethod.GET)
+	public void translist() {
+		
+	}
 }

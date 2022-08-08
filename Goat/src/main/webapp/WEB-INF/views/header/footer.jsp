@@ -5,12 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-#footer{
-	position : absolute;
-	bottom: 0px;	
-}
-</style>
+<link rel="stylesheet" href="../../../resources/CSS/footer.css" type="text/css">
 </head>
 <body>
 	<div id="footer">

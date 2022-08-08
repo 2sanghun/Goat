@@ -5,62 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-header {
-	height: 75px;
-	width:1000px;
-	margin:auto;
-	padding: 1rem;
-	color: white;
-	background: teal;
-	font-weight: bold;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-}
-#container {
-	width: 1000px;
-	height: 1050px;
-	margin: auto;
-	padding : 10px;
-	position: relative;
-	text-align:center;
-	top: 90px;
-	background-image: url("../../../resources/image/travel1.jpg");
-	background-color: white;
-	background-size : 100% 100%;
-}
-table{
-	width:700px;
-	margin:auto;
-}
-td:nth-child(1){
-	text-align: center;
-}
-td:nth-child(2){
-	width:600px;
-}
-#mid td input{
-	width:600px;
-}
-#mid textarea{
-	height: 500px;
-	width:600px;
-}
-#select{
-	text-align:right;
-}
-#mid{
-	text-align:center;
-}
-</style>
+<link rel="stylesheet" href="../../../resources/CSS/write.css" type="text/css">
 </head>
 <body>
-<div id="container">
+<div id="container"> 
 	<%@ include file="../header/header.jsp" %>
 	<div id="top">
 		<h1>글 쓰기</h1>
@@ -83,18 +31,21 @@ td:nth-child(2){
 			</tr>
 			<tr>
 				<td>제목</td>
-				<td><input type="text"></td>
+				<td><input type="text"></td> 
 			</tr>
 			<tr>
 				<td>내용</td>
 				<td><textarea></textarea></td>
 			</tr>
-		</table>
-		<input type="submit" value="작성">
-		<input type="button" value="취소">
+		</table> 
+		<div id="button">
+			<input type="submit" value="작성" class="button">
+			<input type="button" value="취소" class="button">
+		</div>
 	</div>
 	<div id="bottom">
 	</div>
+	<%@ include file="../header/footer.jsp" %>
 </div>
 </body>
 </html>

@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+#content {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 10px;
+	position: relative;
+	top: 90px;
+}
+
+#middle {
+	margin: 20px auto 0;
+}
+
+#categorylist {
+	margin: 0;
+	text-align: center;
+	background: teal;
+}
+
+hr {
+	margin: 0;
+	background: black;
+	height: 10px;
+}
+
+table {
+	width: 1000px;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+span {
+	font-weight: 1000;
+}
+
+td {
+	border-bottom: 1px solid black;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.bno {
+	width: 8%;
+	text-align: center;
+}
+
+.title {
+	width: 50%;
+}
+
+.nick {
+	width: 8%;
+}
+
+.regdate {
+	width: 18%;
+	text-align: center;
+}
+
+.cnt {
+	width: 8%;
+	text-align: center;
+}
+
+.good {
+	width: 8%;
+	text-align: center;
+}
