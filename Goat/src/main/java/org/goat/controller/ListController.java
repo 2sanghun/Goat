@@ -28,6 +28,5 @@ public class ListController {
 	@RequestMapping(value = "/list/translist", method = RequestMethod.GET)
 	public void translist() {
 		
-	}
-	
+	}	
 }
