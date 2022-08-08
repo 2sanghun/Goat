@@ -90,10 +90,9 @@
 				</tr>
 			</table>
 		</div>
-	</div>
 	<div class="footer">
 		<a href="manager"><input class="back" type="button" value="취소"></a>
-	</div>
+		
 	</div>
 </body>
 </html>

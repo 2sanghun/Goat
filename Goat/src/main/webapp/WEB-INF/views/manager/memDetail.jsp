@@ -84,8 +84,9 @@
 			</div>
 			<div class="footer">
 				<input class="cancle" type="submit" value="닫기" formaction="manager">
-				<input class="ban" type="submit" value="탈퇴" formaction="">
+				<input class="ban" type="submit" value="탈퇴" formaction="">				
 			</div>
+			
 		</form>
 	</div>
 </body>
