@@ -9,7 +9,7 @@
 	<!-- DBCP(DB Connection pool) -->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/exam?serverTimezone=Asia/Seoul"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/goat?serverTimezone=Asia/Seoul"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="1234"></property>
 	</bean>	
@@ -22,4 +22,6 @@
 	</bean>
 	<!-- MyBatis가 있는 패키지를 가르켜준다. -->
 	<mybatis-spring:scan base-package="org.goat.mapper"/>
+	
+	
 </beans>
