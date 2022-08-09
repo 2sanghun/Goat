@@ -68,7 +68,7 @@
 				</tr>
 			</table>
 		</div>
-		<br> <br> <br> <br> <br> <br> <br>
+		<br> <br>
 		<br> <br>
 		<div class="body">
 			<table class="writetable">
