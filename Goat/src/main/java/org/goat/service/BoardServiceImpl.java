@@ -10,7 +10,6 @@ public class BoardServiceImpl implements BoardService {
 	BoardMapper bm;
 	// 글쓰기 설계도를 보고 구현하기
 	public void boardwrite(BoardVO board) {
-		System.out.println("service="+board);
 		bm.boardwrite(board);
 	}
 }

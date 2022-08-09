@@ -2,7 +2,9 @@ package org.goat.controller;
 import javax.servlet.http.HttpSession;
 
 import org.goat.model.BoardVO;
+import org.goat.model.MemberVO;
 import org.goat.service.BoardService;
+import org.goat.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,9 @@ public class MainController {
 	
 	@Autowired
 	BoardService bs;
+	
+	@Autowired
+	MemberService ms;
 	
 	@RequestMapping(value = "/main/main", method = RequestMethod.GET)
 	 public void main() {
@@ -26,7 +31,6 @@ public class MainController {
 	// 글쓰기에서 카테고리, 제목, 내용을 DB로 보내기 위한 back작업을 위한...
 	@RequestMapping(value = "/main/write", method = RequestMethod.POST)
 	public void writePost(BoardVO board) {
-		System.out.println(board);
 		bs.boardwrite(board);
 	}
 	
@@ -38,5 +42,11 @@ public class MainController {
 	@RequestMapping(value = "/header/signup", method = RequestMethod.GET)
 	public void signup() {
 		
+	}
+	
+	@RequestMapping(value = "/header/signup", method = RequestMethod.POST)
+	public void signuppost(MemberVO member) {
+		System.out.println(member);
+		ms.signup(member);
 	}
 }
