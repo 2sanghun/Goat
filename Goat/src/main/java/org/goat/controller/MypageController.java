@@ -13,7 +13,7 @@ public class MypageController {
 	public void memModify() {
 		
 	}
-	@RequestMapping(value = "/mypage/mypage", method = RequestMethod.GET)
+	@RequestMapping(value = "/mypage/mypage", method = RequestMethod.POST)
 	public void mypage() {
 		
 	}

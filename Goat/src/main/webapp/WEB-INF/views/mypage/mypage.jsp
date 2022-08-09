@@ -97,6 +97,7 @@ h1 {
 <body>
 	<div id="container">
 	<%@ include file="../header/header.jsp"%>
+	<form action="/mypage/mypage" method="post">
 	<ul id="mypagenav">
 		<li><a>내정보</a></li>
 		<li><a href="memModify">내글</a></li>
@@ -162,9 +163,10 @@ h1 {
 		</table>
 
 		<div id="footer">
-			<a href="Withdrawal"><input type="button" value="수정"></a> <a
-				href="../main/main"><input type="button" value="취소"></a>
+			<a href="Withdrawal"><input type="button" value="수정"></a> 
+			<a href="../main/main"><input type="button" value="취소"></a>
 		</div>
+		</form>
 	</div>
 </body>
 </html>
