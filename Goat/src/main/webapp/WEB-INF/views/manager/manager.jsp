@@ -25,8 +25,8 @@
 								<p class="allmem">전체 회원수: * 명</p>
 							</div>
 							<div class="rightdiv">
-								<span><input type="text" placeholder="검색어 입력"
-									class="search"></span> <span><button class="searchbtn">검색</button></span>
+								<span><input type="text" placeholder="검색어 입력" class="search"></span> 
+								<span><button class="searchbtn">검색</button></span>
 							</div>
 						</td>
 					</tr>
