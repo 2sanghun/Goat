@@ -8,7 +8,9 @@
 <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
 <script type="text/javascript"
 	src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../resources/JS/effective.js?version=1.2"></script>
 <script type="text/javascript" src="../../../resources/JS/Sing Up.js"></script>
+
 <style>
 #container {
 	widht: 50px;
@@ -120,12 +122,14 @@ h1 {
 			<tr>
 				<td><span>*</span></td>
 				<td>비밀번호</td>
-				<td><input type="password"></td>
+				<td><input type="password" id = "pwchk">
+				<span id = "pwmsg"></span></td>
 			</tr>
 			<tr>
 				<td><span>*</span></td>
 				<td>비밀번호확인</td>
-				<td><input type="password"></td>
+				<td><input type="password" id= "rechk">
+				<span id = "remsg"></span></td>
 			</tr>
 			<tr>
 				<td><span></span></td>

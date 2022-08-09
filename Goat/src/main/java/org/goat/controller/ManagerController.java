@@ -9,11 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ManagerController {
 	
-	@Autowired
-	
 	
 	@RequestMapping(value = "/manager/manager", method = RequestMethod.GET)
-	public void manager(MemberVO member) {
+	public void manager() {
 	}
 	@RequestMapping(value = "/manager/memDetail", method = RequestMethod.GET)
 	public void memDetail() {
