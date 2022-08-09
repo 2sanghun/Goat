@@ -10,6 +10,7 @@
 <body>
 <div id="container"> 
 	<%@ include file="../header/header.jsp" %>
+<form action="/main/write" method="post">
 	<div id="top">
 		<h1>글 쓰기</h1>
 	</div>
@@ -19,23 +20,23 @@
 				<td>카테고리</td>
 				<td>
 				<div id="select">
-					<select>
-						<option>관광</option>
-						<option>숙소</option>
-						<option>음식</option>
-						<option>교통</option>
-						<option>투어</option>
+					<select name="category">
+						<option value="관광">관광</option>
+						<option value="숙소">숙소</option>
+						<option value="음식">음식</option>
+						<option value="교통">교통</option>
+						<option value="투어">투어</option>
 					</select>
 				</div>
 				</td>
 			</tr>
 			<tr>
 				<td>제목</td>
-				<td><input type="text"></td> 
+				<td><input type="text" name="title"></td> 
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><textarea></textarea></td>
+				<td><textarea name="content"></textarea></td>
 			</tr>
 		</table> 
 		<div id="button">
@@ -45,6 +46,7 @@
 	</div>
 	<div id="bottom">
 	</div>
+</form>	
 	<%@ include file="../header/footer.jsp" %>
 </div>
 </body>

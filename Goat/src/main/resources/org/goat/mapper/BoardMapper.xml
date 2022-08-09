@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace로 TestMapper와 연결 -->
+<mapper namespace="org.goat.mapper.BoardMapper">
+	<insert id="boardwrite">
+		insert into board(title, content, category)
+		values(#{title},#{content},#{category})
+	</insert>
+</mapper>
