@@ -3,7 +3,6 @@
 #content {
 	width: 1000px;
 	margin: 0 auto;
-	padding: 10px;
 	position: relative;
 	top: 90px;
 }
@@ -13,8 +12,8 @@
 }
 
 #categorylist {
-	font-size : 50px;
-	font-weight : 900;
+	font-size: 50px;
+	font-weight: 900;
 	margin: 0;
 	text-align: center;
 	background: rgb(61, 183, 204);
@@ -36,7 +35,12 @@ span {
 	font-weight: 1000;
 }
 
+#tr1 {
+	background: #DCDCDC;
+}
+
 td {
+	height: 30px;
 	border-bottom: 1px solid black;
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -69,4 +73,29 @@ td {
 .good {
 	width: 8%;
 	text-align: center;
+}
+
+#search {
+	height: 100px;
+	background: #DCDCDC;
+	text-align: center;
+}
+
+#searchform {
+	position: relative;
+	top: 35px;
+}
+
+.search {
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#searchbtn {
+	color: white;
+	background-color: teal;
+	border-radius: 4px;
+	margin-left: -5px;
 }
