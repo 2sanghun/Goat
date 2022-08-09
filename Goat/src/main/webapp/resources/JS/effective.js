@@ -1,4 +1,4 @@
-window.onload = function() {
+window.addEventListener('load' = function() {
 	// 아이디
 	var idchk = document.querySelector("#idchk");
 	idchk.onblur = function() {
@@ -94,4 +94,4 @@ window.onload = function() {
 			bdmsg.style.color = "red";
 		}
 	}
-}
+});
