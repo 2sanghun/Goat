@@ -26,7 +26,6 @@ public class MainController {
 	// 글쓰기에서 카테고리, 제목, 내용을 DB로 보내기 위한 back작업을 위한...
 	@RequestMapping(value = "/main/write", method = RequestMethod.POST)
 	public void writePost(BoardVO board) {
-		System.out.println(board);
 		bs.boardwrite(board);
 	}
 	
