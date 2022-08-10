@@ -19,6 +19,8 @@ public class BoardVO {
 
 	private String category;
 	
+	private String search;
+		
 	public String getCategory() {
 		return category;
 	}
@@ -94,6 +96,14 @@ public class BoardVO {
 	public String toString() {
 		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", nick=" + nick + ", regdate="
 				+ regdate + ", cnt=" + cnt + ", id=" + id + ", good=" + good + ", category=" + category + "]";
+	}
+
+	public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
 	}
 
 }
