@@ -38,7 +38,7 @@ public class MainController {
 	@RequestMapping(value = "/main/write", method = RequestMethod.POST)
 	public String writePost(BoardVO board) {
 		bs.boardwrite(board);
-		return "/main/main";
+		return "redirect:/list/list";
 	}
 	
 	@RequestMapping(value = "/header/login", method = RequestMethod.GET)
@@ -72,8 +72,9 @@ public class MainController {
 
 	// 글 수정
 //	@RequestMapping(value = "/detail/modify", method = RequestMethod.GET)
-//	public String modify(BoardVO board) {
+//	public String modify(BoardVO board, RedirectAttribute rttr) {
 //		bs.modify(board);
-//		// detail.jsp에 
-//		return "/detail/detail";
+//		rttr.addAttribute("bno", board.getBno());
+//		// detail.jsp에서 수정된 결과를 확인하기 위한 화면이동
+//		return "redirect:/detail/detail";
 //	}
