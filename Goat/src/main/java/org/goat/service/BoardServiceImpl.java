@@ -14,19 +14,24 @@ public class BoardServiceImpl implements BoardService {
 	public void boardwrite(BoardVO board) {
 		bm.boardwrite(board);
 	}
+
+//	public ArrayList<BoardVO> list(){
+//		return bm.list();
+//	}
+
 	
-	public ArrayList<BoardVO> list(){
-		return bm.list();
-	}
-	
-	public ArrayList<BoardVO> search(String search){
-		return bm.search(search);
-	}
 //	public BoardVO detail(BoardVO board){
 //		return bm.detail(board);
 //	}
-	
-//	pbulic void modify(BoardVO board) {
+
+//	public void modify(BoardVO board) {
 //		bm.modify(board);
 //	}
+	
+//	public void remove(BoardVO board) {
+//		bm.delete(board);
+//	}
+	public ArrayList<BoardVO> search(String search){
+		return bm.search(search);
+	}
 }

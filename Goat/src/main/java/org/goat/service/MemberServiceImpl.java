@@ -1,39 +1,19 @@
 package org.goat.service;
 
-import java.util.ArrayList;
-
-import org.goat.mapper.ManagerMapper;
+import org.goat.mapper.MemberMapper;
 import org.goat.model.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 @Service
-public class MemberServiceImpl implements MemberService {
-	
+public class MemberServiceImpl implements MemberService{
 	@Autowired
-	ManagerMapper mm;
-	
-	public ArrayList<MemberVO> memberlist() {
-		// ManagerMapper의 memberlist 메서드를 호출
-		// 메서드의 매개변수를 통해 MemberVO 값을
-		// ManagerMapper의 memberlsit 메서드로 전달
-		return mm.memberlist();
+	MemberMapper mm;
+
+	public void signup(MemberVO member) {
+		mm.signup(member);
 	}
 	
-	// MemberService에서 설계되어진 detail 추상메서드를 구현
-	public MemberVO memdetail(MemberVO member) {
-		return mm.memdetail(member);
+	public MemberVO login(MemberVO member) {
+		return mm.login(member);
 	}
-	
-	/* 글 수정 
-	public void modify(BoardVO board) {
-		mm.modify(board);
-		
-	}
-	*/
-	
-	// 멤버 삭제
-	public void remove(MemberVO remove) {
-	mm.remove(remove);
-}
 }
