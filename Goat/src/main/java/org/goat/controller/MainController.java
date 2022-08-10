@@ -49,7 +49,7 @@ public class MainController {
 		System.out.println(nick);
 		bs.boardwrite(board);
 		System.out.println(board);
-		return "/main/main";
+		return "/list/list";
 	}
 
 	@RequestMapping(value = "/header/login", method = RequestMethod.GET)
@@ -76,8 +76,6 @@ public class MainController {
 		session.invalidate();
 		return "/header/login";
 	}
-
-
 	
 	@RequestMapping(value = "/header/signup", method = RequestMethod.GET)
 	public void signup() {}
