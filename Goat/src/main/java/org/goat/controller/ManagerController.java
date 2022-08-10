@@ -40,7 +40,7 @@ public class ManagerController {
 	public String remove(MemberVO remove) {
 		ms.remove(remove);
 		// manager/manager.jsp 에서 삭제된 결과를 확인하기 위한 화면이동
-		return "redirect:/manager/manager";
+		return "/manager/manager";
 	}
 	
 

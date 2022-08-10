@@ -1,5 +1,7 @@
 package org.goat.service;
 
+import java.util.ArrayList;
+
 import org.goat.model.BoardVO;
 
 public interface BoardService {
@@ -10,4 +12,9 @@ public interface BoardService {
 	// 글 수정 설계
 	// 글 삭제 설계
 
+	public ArrayList<BoardVO> list();
+	
+	public ArrayList<BoardVO> search(String search);
+	// public BoardVO detail(BoardVO board);
+	// pbulic void modify(BoardVO board);
 }

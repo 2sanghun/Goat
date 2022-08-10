@@ -15,7 +15,7 @@ public interface MemberService {
 		
 		// 글 수정 설계
 		// public void modify(BoardVO board);
-		 
+		
 		// 글 삭제 설계
 		public void remove(MemberVO remove);
 
