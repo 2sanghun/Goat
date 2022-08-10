@@ -10,4 +10,21 @@
 		insert into board(title, content, category)
 		values(#{title},#{content},#{category})
 	</insert>
+	<select id="list" resultType="org.goat.model.BoardVO">
+		select * from board;
+	</select>
+	<select id="search" resultType="org.goat.model.BoardVO">
+		select * from board where title like CONCAT('%',#{search},'%') or content like CONCAT('%',#{search},'%');
+	</select>
+	<!-- 
+	<select id="detail" resultType="org.goat.model.BoardVO">
+		select * from board where bno=#{bno};
+	</select>
+	<update id="modify">
+		update board
+		set title=#{title},
+			content=#{content}
+		where bno=#{bno}
+	</update>
+	 -->
 </mapper>
