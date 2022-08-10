@@ -1,9 +1,19 @@
 package org.goat.service;
 
+import java.util.ArrayList;
+
 import org.goat.model.MemberVO;
 
 public interface MypageService {
 	
-	public void boardwrite(MemberVO member);
+	public void mypagemypage(MemberVO member);
 
+	public ArrayList<MemberVO> my();
+	
+	public MemberVO detail(MemberVO member);
+	
+	public void modify(MemberVO member);
+	
+	public void remove(MemberVO member);
+	
 }
