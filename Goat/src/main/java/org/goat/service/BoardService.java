@@ -13,7 +13,7 @@ public interface BoardService {
 	// 글 삭제 설계
 
 	public ArrayList<BoardVO> list();
-	
+
 	public ArrayList<BoardVO> search(String search);
 	// public BoardVO detail(BoardVO board);
 	// pbulic void modify(BoardVO board);
