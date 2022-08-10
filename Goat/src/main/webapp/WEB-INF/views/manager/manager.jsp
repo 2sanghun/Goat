@@ -47,7 +47,8 @@
 						<td>${boardlist.id}</td>
 						<td>${boardlist.nick}</td>
 						<td>${boardlist.memdate}</td>
-						<td><a href="managerWriteList">5/1</a></td>
+						<td><a href="/manager/managerWriteList?id=${boardlist.id}"><input type="button" value="글" class="modifybtn"></a>
+						<a href="/manager/managerRepleList?id=${boardlist.id}"><input type="button" value="댓글" class="modifybtn"></a></td>
 						<td><a href="/manager/memDetail?id=${boardlist.id}"><input type="button" value="상세"
 								class="modifybtn"></a></td>
 					</tr>

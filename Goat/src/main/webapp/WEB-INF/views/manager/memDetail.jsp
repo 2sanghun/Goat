@@ -68,7 +68,7 @@
 			</div>
 			<div class="footer">
 				<input class="cancle" type="submit" value="닫기" formaction="manager" >
-				<input class="ban" type="submit" value="탈퇴" formaction="/manager/remove?id=${boardlist.id}">
+				<a href="/manager/remove?id=${detail.id}"><input class="ban" type="button" value="탈퇴"></a>
 			</div>
 		</form>
 	</div>

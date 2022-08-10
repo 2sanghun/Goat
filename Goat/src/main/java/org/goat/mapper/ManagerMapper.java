@@ -2,7 +2,9 @@ package org.goat.mapper;
 
 import java.util.ArrayList;
 
+import org.goat.model.BoardVO;
 import org.goat.model.MemberVO;
+import org.goat.model.RepleVO;
 
 public interface ManagerMapper {
 	// 멤버리스트에 해당되는 DB 작업 설계
@@ -16,5 +18,9 @@ public interface ManagerMapper {
 	 */
 	
 	public void remove(MemberVO remove);
+	
+	public ArrayList<BoardVO> WriteList();
+	
+	public ArrayList<RepleVO> RepleList();
 	
 }
