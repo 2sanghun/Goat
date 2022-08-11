@@ -23,7 +23,9 @@
 				<tr>
 					<td>*</td>
 					<td>아이디</td>
-					<td><input type="text" id="idchk" name="id"><input type="button" value="중복확인" onclick="idCheck()"><span id="idmsg"></span></td>
+					<td><input type="text" id="idchk" name="id"> 
+					<input type="button" value="중복확인" onclick="idCheck()">
+					<span id="idmsg"></span></td>
 				</tr>
 				<tr>
 					<td>*</td>
