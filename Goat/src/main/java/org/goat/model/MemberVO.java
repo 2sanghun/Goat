@@ -19,6 +19,7 @@ public class MemberVO {
 	
 	private String birth;
 
+
 	public String getId() {
 		return id;
 	}
@@ -96,5 +97,5 @@ public class MemberVO {
 		return "MemberModel [id=" + id + ", password=" + password + ", nick=" + nick + ", addr=" + addr + ", phone="
 				+ phone + ", email=" + email + ", name=" + name + ", memdate=" + memdate + ", birth=" + birth + "]";
 	}
-	
+
 }

@@ -1,4 +1,4 @@
-window.onload = function() {
+window.addEventListener('load' = function() {
 	// 아이디
 	var idchk = document.querySelector("#idchk");
 	idchk.onblur = function() {
@@ -43,24 +43,12 @@ window.onload = function() {
 	}
 	
 	// 전화번호
-	var numchk1 =  document.querySelector("#numchk1");
-	var numchk2 =  document.querySelector("#numchk2");
+	var numchk =  document.querySelector("#numchk");
 	var nummsg = document.querySelector("#nummsg");
-	var numreg = /^(?=.*[0-9]).{3,4}$/;
-	numchk1.onblur = function(){
-		var numValue1 = numchk1.value;
-		var numValue2 = numchk2.value;
-		if(numreg.test(numValue1) && numreg.test(numValue2)){
-			nummsg.innerHTML = "";
-		} else {
-			nummsg.innerHTML = "양식에 맞게 입력해주세요";
-			nummsg.style.color = "red";
-		}
-	}
-	numchk2.onblur = function(){
-		var numValue1 = numchk1.value;
-		var numValue2 = numchk2.value;
-		if(numreg.test(numValue1) && numreg.test(numValue2)){
+	var numreg = /^(?=.*[0-9]).{8,12}$/;
+	numchk.onblur = function(){
+		var numValue = numchk.value;
+		if(numreg.test(numValue)){
 			nummsg.innerHTML = "";
 		} else {
 			nummsg.innerHTML = "양식에 맞게 입력해주세요";
@@ -68,22 +56,24 @@ window.onload = function() {
 		}
 	}
 	
+	
 	// 생년월일
-	var bdchk1 =  document.querySelector("#bdchk1");
-	var bdchk2 =  document.querySelector("#bdchk2");
-	var bdreg1 = /^(?=.*[0-9]).{4,4}$/;
-	var bdreg2 = /^(?=.*[0-9]).{1,2}$/;
+	var bdchk =  document.querySelector("#bdchk");
 	var bdmsg = document.querySelector("#bdmsg");
-	bdchk1.onblur = function(){
-		var bdValue1 = bdchk1.value;
-		var bdValue2 = bdchk2.value;
-		if(bdreg1.test(bdValue1) && bdreg2.test(bdValue2)){
+	var bdreg = /^(?=.*[0-9]).{8,8}$/;
+	bdchk.onblur = function(){
+		var bdValue = bdchk.value;
+		if(bdreg.test(bdValue)){
 			bdmsg.innerHTML = "";
 		} else {
 			bdmsg.innerHTML = "양식에 맞게 입력해주세요";
 			bdmsg.style.color = "red";
 		}
 	}
+<<<<<<< HEAD
+	
+}
+=======
 	bdchk2.onblur = function(){
 		var bdValue1 = bdchk1.value;
 		var bdValue2 = bdchk2.value;
@@ -94,4 +84,5 @@ window.onload = function() {
 			bdmsg.style.color = "red";
 		}
 	}
-}
+});
+>>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git
