@@ -10,15 +10,24 @@
 	</select>
 
 	<select id="memdetail" resultType="org.goat.model.MemberVO">
-		select * from member where id=#{id} ;
+		select * from member where
+		id=#{id} ;
 	</select>
 
-	<!-- <update id="modify"> update board set tutle='', content='' where bno=14; 
+	<!-- <update id="modify"> update board set tutle='', content='' where bno=#{id}; 
 		</update> -->
 
 	<delete id="remove">
 		delete from member where id=#{id};
 	</delete>
+
+	<select id="WriteList" resultType="org.goat.model.BoardVO">
+		select * from board;
+	</select>
+	
+	<select id="RepleList" resultType="org.goat.model.RepleVO">
+		select * from reple;
+	</select>
 
 </mapper>
 

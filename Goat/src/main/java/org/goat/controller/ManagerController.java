@@ -1,7 +1,7 @@
 package org.goat.controller;
 
 import org.goat.model.MemberVO;
-import org.goat.service.MemberService;
+import org.goat.service.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ManagerController {
 
 	@Autowired
-	MemberService ms;
+	ManagerService ms;
 
 	@RequestMapping(value = "/manager/manager", method = RequestMethod.GET)
 	public void manager(Model model) {
@@ -40,8 +40,21 @@ public class ManagerController {
 	public String remove(MemberVO remove) {
 		ms.remove(remove);
 		// manager/manager.jsp 에서 삭제된 결과를 확인하기 위한 화면이동
-		return "/manager/manager";
+		return "redirect:/manager/manager";
 	}
 	
+	@RequestMapping(value = "/manager/managerWriteList", method = RequestMethod.GET)
+	public void managerWriteList(Model model) {
+		model.addAttribute("WList", ms.WriteList());
+		
+	}
+	
+	@RequestMapping(value = "/manager/managerRepleList", method = RequestMethod.GET)
+	public void managerRepleList(Model model) {
+		model.addAttribute("RList", ms.RepleList());
+		
+	}
+
+
 
 }
