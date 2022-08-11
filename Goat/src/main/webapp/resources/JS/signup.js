@@ -1,3 +1,22 @@
+function idCheck(){
+	 $("#signup").attr("type", "button");
+	var id = $("#idchk").val();
+	alert(id);
+	$.ajax({
+		type : 'post',
+		url : "/header/idcheck",
+		data : {"id" : id},
+		success : function(data){
+			if(data==1){
+				alert("중복된 아이디 입니다.");
+			}else{
+				alert("사용가능한 아이디 입니다.");
+				 $("#signup").attr("type", "submit");
+			}
+		}
+	});
+}
+
 function jsSubmit() {
 
 	var idchk = document.querySelector("#idchk");
@@ -34,4 +53,5 @@ function jsSubmit() {
 		return false;
 
 	}
-}
+};
+

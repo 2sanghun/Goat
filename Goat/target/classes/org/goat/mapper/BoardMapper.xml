@@ -25,6 +25,8 @@
 		delete from board where bno=#{bno};
 	 -->
 	 <select id="search" resultType="org.goat.model.BoardVO">
-		select * from board where title like CONCAT('%',#{search},'%') or content like CONCAT('%',#{search},'%');
+		select * from board 
+		where title like CONCAT('%',#{search},'%') or content like CONCAT('%',#{search},'%')
+		order by bno desc;
 	</select>
  </mapper> 
