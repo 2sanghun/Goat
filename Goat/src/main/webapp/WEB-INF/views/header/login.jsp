@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name ="google-signin-client_id" content="1060483348379-lhrt8j3q10mi8irutv532l8497oggsur.apps.googleusercontent.com">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../../resources/CSS/login.css" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/login.css?version=1.1" type="text/css">
 <script type="text/javascript" src="../../../resources/JS/effective.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -15,10 +15,10 @@
 	<div id="container">
 		<%@ include file="../header/header.jsp"%>
 		<h1>로그인</h1>
-		<form action="">
+		<form action="/header/login" method="post">
 			<input type="text" name="id" class="input" id="idchk" placeholder="ID"><br> 
 			<span id="idmsg"></span><br>
-			<input type="password" name="pw" class="input" id="pwchk" placeholder="PASSWORD"><br> 
+			<input type="password" name="password" class="input" id="pwchk" placeholder="PASSWORD"><br> 
 			<span id="pwmsg"></span><br>
 			<input type="submit" value="로그인" class="button"> 
 			<a href="../header/signup">
@@ -46,7 +46,6 @@
  		
  		<!-- API관련 JS연결 -->
 		<script type="text/javascript" src="../../../resources/JS/login.js"></script>
-		
 		<%@ include file="../header/footer.jsp"%>
 	</div>
 </body>

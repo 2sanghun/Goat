@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <!-- namespace로 TestMapper와 연결 -->
 <mapper namespace="org.goat.mapper.BoardMapper">
 	<insert id="boardwrite">
-		insert into board(title, content, category)
-		values(#{title},#{content},#{category})
+		insert into board(title, content, category, id, nick)
+		values(#{title},#{content},#{category},#{id}, #{nick})
 	</insert>
-</mapper>
+	<!--
+	<select id="list" resultType="org.goat.model.BoardVO">
+		select * from board;
+	</select>
+	<select id="detail" resultType="org.goat.model.BoardVO">
+		select * from board where bno=#{bno};
+	</select>
+	<update id="modify">
+		update board
+		set title=#{title},
+			content=#{content}
+		where bno=#{bno}
+	</update>
+	<delete id="remove">
+		delete from board where bno=#{bno};
+	 -->
+	 <select id="search" resultType="org.goat.model.BoardVO">
+		select * from board where title like CONCAT('%',#{search},'%') or content like CONCAT('%',#{search},'%');
+	</select>
+ </mapper> 

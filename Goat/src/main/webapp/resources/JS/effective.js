@@ -1,4 +1,4 @@
-window.addEventListener('load' = function() {
+window.addEventListener('load', function() {
 	// 아이디
 	var idchk = document.querySelector("#idchk");
 	idchk.onblur = function() {
@@ -70,19 +70,4 @@ window.addEventListener('load' = function() {
 			bdmsg.style.color = "red";
 		}
 	}
-<<<<<<< HEAD
-	
-}
-=======
-	bdchk2.onblur = function(){
-		var bdValue1 = bdchk1.value;
-		var bdValue2 = bdchk2.value;
-		if(bdreg1.test(bdValue1) && bdreg2.test(bdValue2)){
-			bdmsg.innerHTML = "";
-		} else {
-			bdmsg.innerHTML = "양식에 맞게 입력해주세요";
-			bdmsg.style.color = "red";
-		}
-	}
 });
->>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git

@@ -8,8 +8,12 @@ import org.springframework.stereotype.Service;
 public class MemberServiceImpl implements MemberService{
 	@Autowired
 	MemberMapper mm;
-	
+
 	public void signup(MemberVO member) {
 		mm.signup(member);
+	}
+	
+	public MemberVO login(MemberVO member) {
+		return mm.login(member);
 	}
 }

@@ -9,4 +9,7 @@
 		insert into member(id, password, nick, addr, phone, email, name, birth)
 		values(#{id},#{password},#{nick}, #{addr}, #{phone}, #{email}, #{name},#{birth})
 	</insert>
+	<select id="login" resultType="org.goat.model.MemberVO">
+		select * from member where id=#{id} and password=#{password};
+	</select>
 </mapper>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,8 +96,10 @@ h1 {
 </style>
 </head>
 <body>
+${my}
 	<div id="container">
 	<%@ include file="../header/header.jsp"%>
+	<form action="/mypage/mypage" method="post">
 	<ul id="mypagenav">
 		<li><a>내정보</a></li>
 		<li><a href="memModify">내글</a></li>
@@ -108,27 +111,37 @@ h1 {
 		<hr size="1" color="black">
 		<br> <span>*</span> 표시는 필수 입력 표시입니다.
 		<hr size="1" color="black">
+		<c:forEach items="${my}" var="memberlist">
+		<tr>
+		      <td>${memberlist.id}</td>
+		      <td>${memberlist.name}</td>
+		      <td>${memberlist.password}</td>
+		      <td>${memberlist.email}</td>
+		      <td>${memberlist.addr}</td>
+		</tr>
+		</c:forEach>	
 		<table>
 			<tr class="line">
 				<td><span>*</span></td>
 				<td>ID</td>
-				<td><input type="text" readonly></td>
+				<td><input type="text" readonly name= "ID" value = "${detail.id}">		
+				</td>
 			</tr>
 			<tr>
 				<td><span>*</span></td>
 				<td>이름</td>
-				<td><input type="text"></td>
+				<td><input type="text" name="name"></td>
 			</tr>
 			<tr>
 				<td><span>*</span></td>
 				<td>비밀번호</td>
-				<td><input type="password" id = "pwchk">
+				<td><input type="password" id = "pwchk" name="password">
 				<span id = "pwmsg"></span></td>
 			</tr>
 			<tr>
 				<td><span>*</span></td>
 				<td>비밀번호확인</td>
-				<td><input type="password" id= "rechk">
+				<td><input type="password" id= "rechk" name="password">
 				<span id = "remsg"></span></td>
 			</tr>
 			<tr>
@@ -157,14 +170,15 @@ h1 {
 			<tr>
 				<td><span>*</span></td>
 				<td>주소</td>
-				<td><input type="text" class="long"></td>
+				<td><input type="text" class="long" name="addr"></td>
 			</tr>
 		</table>
 
 		<div id="footer">
-			<a href="Withdrawal"><input type="button" value="수정"></a> <a
-				href="../main/main"><input type="button" value="취소"></a>
+			<input type="submit" value="수정" formaction ="member/modify">
+			<a href="../main/main"><input type="button" value="취소"></a>
 		</div>
+		</form>
 	</div>
 </body>
 </html>
