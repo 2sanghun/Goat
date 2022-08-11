@@ -65,8 +65,10 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/header/login", method = RequestMethod.POST)
-	public String login(MemberVO member, HttpSession session) {
+	public String login(MemberVO member, HttpSession session,HttpServletResponse response) throws IOException {
 		MemberVO a = ms.login(member);
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
 		if(a!=null) {
 			String id = a.getId();
 			String nick = a.getNick();
@@ -74,8 +76,12 @@ public class MainController {
 			session.setAttribute("id",id);
 			session.setAttribute("nick", nick);
 		}else {
+			out.println("<script>alert('아이디, 비밀번호를 확인해 주세요'); </script>");
+			out.flush();
 			return "/header/login";
 		}
+		out.println("<script>alert('로그인 되셨습니다.'); </script>");
+		out.flush();
 		return "/main/main";
 	}
 	
