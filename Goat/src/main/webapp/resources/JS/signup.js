@@ -30,7 +30,7 @@ function jsSubmit() {
 
 	var idreg = /^[a-z][0-9a-z-_]{4,19}$/g;
 	var pwreg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
-	var numreg = /^(?=.*[0-9]).{8,12}$/;
+	var numreg = /^(?=.*[0-9]).{8,11}$/;
 	var bdreg = /^(?=.*[0-9]).{8,8}$/;
 	var blank = /[\s]/g;
 	var idValue = idchk.value;
