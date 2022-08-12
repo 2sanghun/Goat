@@ -5,7 +5,9 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- namespace로 TestMapper와 연결 -->
+
 <mapper namespace="org.goat.mapper.MypageMapper">
+
 	<update id="modify">
 	 update member set name = 
 	 #{name}, password= #{password}, email=#{email}, addr=#{addr}
@@ -14,8 +16,12 @@
 	
 	<delete id = "remove">
 	delete from member
-	where password=#{id}
+	where password=#{password} and id=#{id};
 	</delete>
+	<select id = "removechk" resultType="int">
+		select count(*) from member 
+		where password=#{password} and id=#{id};
+	</select>
 	
 	<select id="my" resultType="org.goat.model.MemberVO"  >
 	select * from member;
@@ -24,5 +30,4 @@
 	<select id="detail" resultType="org.goat.model.MemberVO"  >
 	select * from member where id=#{id};
 	</select>
-	
 </mapper>

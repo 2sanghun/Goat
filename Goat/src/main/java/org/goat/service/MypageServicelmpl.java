@@ -3,12 +3,16 @@ package org.goat.service;
 
 import java.util.ArrayList;
 
+
 import org.goat.mapper.MypageMapper;
 import org.goat.model.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 @Service
 public class MypageServicelmpl implements MypageService {
+
+
 	@Autowired
 	MypageMapper mm; 
 	
@@ -28,5 +32,9 @@ public class MypageServicelmpl implements MypageService {
 	
 	public void remove(MemberVO member) {
 		mm.remove(member);
+	}
+
+	public int removechk(MemberVO member){
+		return mm.removechk(member);
 	}
 }

@@ -16,4 +16,5 @@ public interface MypageService {
 	
 	public void remove(MemberVO member);
 	
+	public int removechk(MemberVO member);
 }

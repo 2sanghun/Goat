@@ -39,11 +39,11 @@
 </tr>
 
 <tr>
-<td><!--아니 근데 해당 글 쓴 사람한테만 수정과 삭제 버튼 보이게 하는거 어떻게 해-->
-<!-- <c:if test="${sessionScope.id == detail.writer}"> --> 
+<td>
+
 <input type="submit" value="수정하기"  formaction="/detail/modify" id="modify">
 <input type="submit" value="삭제"  onclick="confirm('정말 삭제하시겠습니까?')" formaction="/detail/remove" id="remove">
-<!-- </c:if> --></td>
+</td>
 </tr>
 </table>
 </form>	

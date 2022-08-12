@@ -27,7 +27,7 @@
 					<td class="write2">제목</td>
 					<td class="write3">내용</td>
 					<td class="write2">작성일자</td>
-					<td class="write1">삭제</td>
+					<td class="write1">관리</td>
 				</tr>
 				<c:forEach items="${WList}" var="WriteList">
 					<tr class="writelist">
