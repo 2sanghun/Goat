@@ -21,12 +21,18 @@
 		delete from member where id=#{id};
 	</delete>
 
+	<delete id="bremove">
+		delete from board where bno=#{bno};
+	</delete>
+
 	<select id="WriteList" resultType="org.goat.model.BoardVO">
-		select * from board;
+		select * from board where
+		id=#{id};
 	</select>
-	
+
 	<select id="RepleList" resultType="org.goat.model.RepleVO">
-		select * from reple;
+		select * from reple where
+		id=#{id};
 	</select>
 
 </mapper>
