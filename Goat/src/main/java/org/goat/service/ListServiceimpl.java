@@ -12,7 +12,7 @@ public class ListServiceimpl implements ListService{
 	@Autowired
 	ListMapper lm;
 	
-	// ListService에서 설계되어 진 list 추상메서드를 구현
+	// ListService에서 설계되어 진 list 추상메서드를  구현
 	public ArrayList<BoardVO> list(){
 		return lm.list();
 	}

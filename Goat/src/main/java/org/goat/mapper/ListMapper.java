@@ -1,5 +1,5 @@
 package org.goat.mapper;
-
+ 
 import java.util.ArrayList;
 
 import org.goat.model.BoardVO;
