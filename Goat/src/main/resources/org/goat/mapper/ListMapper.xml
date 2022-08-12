@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="org.goat.mapper.ListMapper">
+  	<select id="list" resultType="org.goat.model.BoardVO">
+  		select * from board;
+  	</select>
+  	<select id="sitelist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='관광';
+  	</select>
+  	<select id="houselist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='숙소';
+  	</select>
+   	<select id="foodlist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='음식';
+  	</select>
+   	<select id="translist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='교통';
+  	</select>
+   	<select id="tourlist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='투어';
+  	</select>
+  	  	 
+  </mapper>
