@@ -65,7 +65,7 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/header/login", method = RequestMethod.POST)
-	public String login(MemberVO member, HttpSession session) {
+	public String login(MemberVO member, HttpSession session) {	
 		MemberVO a = ms.login(member);
 		if(a!=null) {
 			String id = a.getId();
