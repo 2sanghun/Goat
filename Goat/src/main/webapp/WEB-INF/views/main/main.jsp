@@ -12,7 +12,7 @@
 <body>
 	<div id="container">
 		<%@ include file="../header/header.jsp" %>
-			<div id="background">
+		<div id="background">
 		<div id="top">
 		<br><br><br><br><br><br><br>
 		<form action="/main/main" method="post">
@@ -28,26 +28,26 @@
 					<td colspan="6">${searchlist.category}</td>
 				</tr>
 				<tr>
+					<td></td>
 					<td>제목</td>
-					<td>내용</td>
 					<td>작성일</td>
 					<td>작성자</td>
 					<td>조회수</td>
 					<td>좋아요</td>
 				</tr>
 				<tr>
+					<td>${searchlist.bno}</td>
 					<td><a href="/detail/detail?bno=${searchlist.bno}">${searchlist.title}</a></td>
-					<td>${searchlist.content}</td>
 					<td>${searchlist.regdate}</td>
 					<td>${searchlist.nick}</td>
 					<td>${searchlist.cnt}</td>
 					<td>${searchlist.good}</td>
 				</tr>
-				</c:forEach>
-			</table><br><br>
-			<%@ include file="../header/footer.jsp" %>
-			</div>
+			</c:forEach>
+			</table>
 		</div>
+		</div>
+	<%@ include file="../header/footer.jsp" %>
 	</div>
 </body>
 </html>

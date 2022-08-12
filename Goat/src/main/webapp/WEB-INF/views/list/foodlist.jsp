@@ -29,7 +29,7 @@
 				<c:forEach items="${foodlist}" var="foodlist">
 				<tr>
 					<td class="bno">${foodlist.bno}</td>
-					<td class="title"><a href="detail/detail?bno=${foodlist.bno}">${foodlist.title}</a></td>
+					<td class="title"><a href="../detail/detail?bno=${foodlist.bno}">${foodlist.title}</a></td>
 					<td class="nick">${foodlist.nick}</td>
 					<td class="regdate">${foodlist.regdate}</td>
 					<td class="cnt">${foodlist.cnt}</td>

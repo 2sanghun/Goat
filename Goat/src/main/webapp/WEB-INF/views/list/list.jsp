@@ -29,7 +29,7 @@
 			<c:forEach items="${list }" var="boardlist">
 				<tr>
 					<td class="bno">${boardlist.bno}</td>
-					<td class="title"><a href="/detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
+					<td class="title"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 					<td class="nick">${boardlist.nick}</td>
 					<td class="regdate">${boardlist.regdate}</td>
 					<td class="cnt">${boardlist.cnt}</td>

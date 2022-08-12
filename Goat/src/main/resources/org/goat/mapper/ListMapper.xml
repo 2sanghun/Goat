@@ -6,23 +6,22 @@
   
   <mapper namespace="org.goat.mapper.ListMapper">
   	<select id="list" resultType="org.goat.model.BoardVO">
-  		select * from board;
+  		select * from board order by id='manager' desc, bno desc;
   	</select>
   	<select id="sitelist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='관광';
+  		select * from board where category='관광' order by id='manager' desc, bno desc;
   	</select>
   	<select id="houselist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='숙소';
+  		select * from board where category='숙소' order by id='manager' desc, bno desc;
   	</select>
    	<select id="foodlist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='음식';
+  		select * from board where category='음식' order by id='manager' desc, bno desc;
   	</select>
    	<select id="translist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='교통';
+  		select * from board where category='교통' order by id='manager' desc, bno desc;
   	</select>
    	<select id="tourlist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='투어';
+  		select * from board where category='투어' order by id='manager' desc, bno desc;
   	</select>
- 
 
   </mapper>

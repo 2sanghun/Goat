@@ -48,7 +48,6 @@ a {
 
 #mid table{
 	width:800px;
-	table-layout:fixed;
 	margin:auto;
 	border-collapse:collapse;
 	background-color:transparent;
@@ -69,23 +68,24 @@ a {
 	border-bottom: 1px solid #EAEAEA;
 }
 #mid td:nth-child(1){
-	width:200px;
+	width:5%;
+	border-right: 1px solid #8C8C8C;
 }
 #mid td:nth-child(2){
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
-	width:300px;
+	width:50%;
 }
 #mid td:nth-child(3){
-	width:100px;
+	width:15%;
 }
 #mid td:nth-child(4){
-	width:100px;
+	width:10%;
 }
 #mid td:nth-child(5){
-	width:50px;
+	width:10%;
 }
 #mid td:nth-child(6){
-	width:50px;
+	width:10%;
 }
