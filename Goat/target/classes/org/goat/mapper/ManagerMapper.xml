@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.goat.mapper.ManagerMapper">
+	<select id="memberlist" resultType="org.goat.model.MemberVO">
+		select * from member;
+	</select>
+
+	<select id="memdetail" resultType="org.goat.model.MemberVO">
+		select * from member where
+		id=#{id} ;
+	</select>
+
+	<!-- <update id="modify"> update board set tutle='', content='' where bno=#{id}; 
+		</update> -->
+
+	<delete id="remove">
+		delete from member where id=#{id};
+	</delete>
+
+	<delete id="bremove">
+		delete from board where bno=#{bno};
+	</delete>
+
+	<select id="WriteList" resultType="org.goat.model.BoardVO">
+		select * from board where
+		id=#{id};
+	</select>
+
+	<select id="RepleList" resultType="org.goat.model.RepleVO">
+		select * from reple where
+		id=#{id};
+	</select>
+
+</mapper>
+

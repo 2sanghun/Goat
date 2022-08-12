@@ -29,7 +29,7 @@ a {
 #top{
 	text-align:center;
 }
-#serch {
+#search {
 	width: 700px;
 	height: 40px;
 	border-radius: 10px;
@@ -39,7 +39,6 @@ a {
 	text-align:center;
 	position:relative;
 	top:100px;
-	visibility:hidden;
 	background-color: rgba(255,255,255,0.5);
 	width:900px;
 	border-radius:10px;
@@ -61,6 +60,9 @@ a {
 	font-size:30px;
 }
 #mid tr:nth-child(3n-1) td{
+	border:1px solid black;
+}
+#mid tr:nth-child(3n) td{
 	border:1px solid black;
 }
 #mid td:nth-child(1){

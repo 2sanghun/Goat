@@ -21,12 +21,20 @@
 				</ul>
 			</div>
 		<nav>
-			<a href="../main/write"><input type="button" value="글쓰기" class="btn"></a> 
-			<a href="../main/main"><input type="button" value="로그아웃" class="btn"></a> 
+		<% 
+		String id = (String) session.getAttribute("id");
+		if(id==null){%>
 			<a href="../header/login"><input type="button" value="로그인" class="btn"></a>
 			<a href="../header/signup"><input type="button" value="회원가입" class="btn"></a>
-			<a href="../mypage/mypage"><input type="button" value="마이페이지" class="btn"></a>
-			<a href="../manager/manager"><input type="button" value="관리자" class="btn"></a>
+		<% }else{%>
+			<a href="../main/write"><input type="button" value="글쓰기" class="btn"></a> 
+			<a href="../header/logout"><input type="button" value="로그아웃" class="btn"></a> 
+			<%if(id.equals("manager")){ %>  <!-- 아이디가 manager(관리자)일 경우 마이페이지 대신 관리자 버튼 -->
+				<a href="../manager/manager"><input type="button" value="관리자" class="btn"></a>
+			<%}else{%>
+				<a href="../mypage/mypage"><input type="button" value="마이페이지" class="btn"></a>
+			<%}
+		}%>
 		</nav>
 	</header>
 </body>

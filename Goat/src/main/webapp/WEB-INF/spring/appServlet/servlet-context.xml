@@ -22,7 +22,6 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="org.goat.controller" />
-	<context:component-scan base-package="org.goat.service" />
 	
 	
 </beans:beans>
