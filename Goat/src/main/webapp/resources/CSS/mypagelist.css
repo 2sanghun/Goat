@@ -1,0 +1,93 @@
+@charset "UTF-8";
+#content {
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	top: 40px;
+}
+
+#middle {
+	margin: 20px auto 0;
+}
+
+#categorylist {
+	font-size: 50px;
+	font-weight: 900;
+	margin: 0;
+	text-align: center;
+	background: rgb(61, 183, 204);
+}
+
+
+table {
+	
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+span {
+	font-weight: 1000;
+}
+
+#tr1 {
+	background: #DCDCDC;
+}
+
+td {
+	height: 20px;
+	border-bottom: 1px solid black;
+
+}
+
+.bno {
+	width: 8%;
+	text-align: center;
+}
+
+.title {
+	width: 50%;
+}
+
+.nick {
+	width: 8%;
+}
+
+.regdate {
+	width: 18%;
+	text-align: center;
+}
+
+.cnt {
+	width: 8%;
+	text-align: center;
+}
+
+.good {
+	width: 8%;
+	text-align: center;
+}
+
+#search {
+	height: 100px;
+	background: #DCDCDC;
+	text-align: center;
+}
+
+#searchform {
+	position: relative;
+	top: 35px;
+}
+
+.search {
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#searchbtn {
+	color: white;
+	background-color: teal;
+	border-radius: 4px;
+	margin-left: -5px;
+}

@@ -17,6 +17,18 @@ public class BoardVO {
 	
 	private int good;
 
+	private String category;
+	
+	private String search;
+		
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 	public int getBno() {
 		return bno;
 	}
@@ -82,8 +94,16 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "BoardModel [bno=" + bno + ", title=" + title + ", content=" + content + ", nick=" + nick + ", regdate="
-				+ regdate + ", cnt=" + cnt + ", id=" + id + ", good=" + good + "]";
+		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", nick=" + nick + ", regdate="
+				+ regdate + ", cnt=" + cnt + ", id=" + id + ", good=" + good + ", category=" + category + "]";
+	}
+
+	public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
 	}
 
 }

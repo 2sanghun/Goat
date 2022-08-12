@@ -18,6 +18,9 @@ public class MemberVO {
 	private String memdate;
 	
 	private String birth;
+	
+	private int cnt;
+
 
 	public String getId() {
 		return id;
@@ -90,11 +93,20 @@ public class MemberVO {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
+	
+	public int getCnt() {
+		return cnt;
+	}
+
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
 
 	@Override
 	public String toString() {
-		return "MemberModel [id=" + id + ", password=" + password + ", nick=" + nick + ", addr=" + addr + ", phone="
-				+ phone + ", email=" + email + ", name=" + name + ", memdate=" + memdate + ", birth=" + birth + "]";
+		return "MemberVO [id=" + id + ", password=" + password + ", nick=" + nick + ", addr=" + addr + ", phone="
+				+ phone + ", email=" + email + ", name=" + name + ", memdate=" + memdate + ", birth=" + birth + ", cnt="
+				+ cnt + "]";
 	}
-	
+
 }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.goat.mapper.ManagerMapper">
+	<!-- 멤버 목록 리스트 설계 -->
+	<select id="memberlist" resultType="org.goat.model.MemberVO">
+		select * from member where id
+		not like 'manager';
+	</select>
+
+	<!-- 멤버 리스트에서 전체 회원수 조회 -->
+	<select id="totalmem" resultType="integer">
+		select count(*)-1 as cnt from
+		member ;
+	</select>
+
+	<!-- 멤버 리스트에서 id 검색 -->
+	<select id="memsearch" resultType="org.goat.model.MemberVO">
+		select * from member where id like CONCAT('%',#{id},'%')
+	</select>
+
+	<!-- 멤버 상세 페이지 설계 -->
+	<select id="memdetail" resultType="org.goat.model.MemberVO">
+		select * from member where
+		id=#{id} ;
+	</select>
+
+	<!-- 멤버 삭제 설계 -->
+	<delete id="remove">
+		delete from member where id=#{id};
+	</delete>
+
+	<!-- 작성 글 리스트 -->
+	<select id="WriteList" resultType="org.goat.model.BoardVO">
+		select * from board where
+		id=#{id};
+	</select>
+
+	<!-- 글 삭제 -->
+	<delete id="bremove">
+		delete from board where bno=#{bno};
+	</delete>
+
+	<!-- 댓글 리스트 -->
+	<select id="RepleList" resultType="org.goat.model.RepleVO">
+		select * from reple where
+		id=#{id};
+	</select>
+
+	<!-- 댓글 삭제 -->
+
+
+	<!-- <update id="modify"> update board set tutle='', content='' where bno=#{id}; 
+		</update> -->
+
+</mapper>
+
