@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 <link rel="stylesheet" href="../../../resources/CSS/signup.css" type="text/css">
 <script type="text/javascript" src="../../../resources/JS/signup.js?version=1.1"></script>
 <script type="text/javascript" src="../../../resources/JS/effective.js?version=1.1"></script>
@@ -22,7 +23,9 @@
 				<tr>
 					<td>*</td>
 					<td>아이디</td>
-					<td><input type="text" id="idchk" name="id"> <input type="button" value="중복확인" id="iddu"><span id="idmsg"></span></td>
+					<td><input type="text" id="idchk" name="id"> 
+					<input type="button" value="중복확인" onclick="idCheck()">
+					<span id="idmsg"></span></td>
 				</tr>
 				<tr>
 					<td>*</td>
@@ -79,7 +82,7 @@
 					</td>
 				</tr>
 			</table>
-			<input type="submit" value="가입하기" class="button">
+			<input type="submit" value="가입하기" id="signup" class="button">
 			<a href="../header/login"><input type="button" value="취소" class="button"></a>
 		</div>
 		</form>

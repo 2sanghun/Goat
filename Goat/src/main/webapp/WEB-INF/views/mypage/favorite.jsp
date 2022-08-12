@@ -66,7 +66,6 @@ table{
     <li><a href = "memModify">내글</a></li>
     <li><a>회원탈퇴</a></li>
 </ul>
- <%@ include file="../header/header.jsp" %>
   <hr size = "1" color = "black">
   <h1>MEMBER INFO</h1>
   <hr size = "1" color = "black"><br><br>
