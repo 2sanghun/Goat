@@ -28,7 +28,7 @@
 				<c:forEach items="${houselist}" var="houselist">
 				<tr>
 					<td class="bno">${houselist.bno}</td>
-					<td class="title"><a href="detail/deatail?bno=${houselist.bno}">${houselist.title}</a></td>
+					<td class="title"><a href="detail/detail?bno=${houselist.bno}">${houselist.title}</a></td>
 					<td class="nick">${houselist.nick}</td>
 					<td class="regdate">${houselist.regdate}</td>
 					<td class="cnt">${houselist.cnt}</td>

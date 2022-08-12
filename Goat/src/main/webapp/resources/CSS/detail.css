@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+#content {
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	top: 90px;
+}
+
+table {
+	width: 1000px;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+.tr1 {
+	background: #DCDCDC;
+}
+
+td {
+	height: 30px;
+	border-bottom: 1px solid black;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.bno {
+	width: 8%;
+	text-align: center;
+}
+
+.title {
+	width: 50%;
+}
+
+.nick {
+	width: 8%;
+}
+
+
+
+
+
+
+
+
+
+span {
+	font-weight: 1000;
+}
+
+#modify {
+	color: white;
+	background-color: teal;
+	border-radius: 4px;
+	margin-left: -5px;
+}
+
+#remove {
+	color: white;
+	background-color: teal;
+	border-radius: 4px;
+	margin-left: -5px;
+}

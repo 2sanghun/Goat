@@ -27,7 +27,7 @@
 				<c:forEach items="${tourlist}" var="tourlist">
 				<tr>
 					<td class="bno">${tourlist.bno}</td>
-					<td class="title"><a href="detail/deatail?bno=${tourlist.bno}">${tourlist.title}</a></td>
+					<td class="title"><a href="detail/detail?bno=${tourlist.bno}">${tourlist.title}</a></td>
 					<td class="nick">${tourlist.nick}</td>
 					<td class="regdate">${tourlist.regdate}</td>
 					<td class="cnt">${tourlist.cnt}</td>

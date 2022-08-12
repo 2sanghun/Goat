@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,14 +35,14 @@
 						<td>${WriteList.title}</td>
 						<td>${WriteList.content}</td>
 						<td>${WriteList.regdate}</td>
-						<td><a href=""><input type="button" value="상세"
-								class="modifybtn"></a></td>
+						<td><a href="/manager/writeremove?bno=${WriteList.bno}"><input
+								type="button" value="삭제" class="modifybtn"></a></td>
 					</tr>
 				</c:forEach>
 			</table>
-			
+
 		</div>
-		
+
 		<div class="footer">
 			<a href="manager"><input class="back" type="button" value="취소"></a>
 
