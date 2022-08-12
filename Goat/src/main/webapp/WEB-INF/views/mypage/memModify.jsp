@@ -138,7 +138,7 @@ h1{
 				<c:forEach items="${myboard}" var="myboard">
 				<tr>
 					<td class="bno">${myboard.bno}</td>
-					<td class="title"><a href="detail/detail?bno=${myboard.bno}">${myboard.title}</a></td>
+					<td class="title"><a href="../detail/detail?bno=${myboard.bno}">${myboard.title}</a></td>
 					<td class="nick">${myboard.category}</td>
 					<td class="regdate">${myboard.regdate}</td>
 					<td class="cnt">${myboard.cnt}</td>

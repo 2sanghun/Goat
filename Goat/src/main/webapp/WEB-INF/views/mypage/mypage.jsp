@@ -139,25 +139,7 @@ h1 {
 			<tr>
 				<td><span></span></td>
 				<td>E-mail</td>
-				<td><input type="text" name="email1"> @ <input
-					type="text" name="email2" class="short"> <select
-					name="select_email" onChange="selectEmail(this)">
-						<option value="" selected>선택하세요</option>
-						<option value="1">직접입력</option>
-						<option value="naver.com">naver.com</option>
-						<option value="hanmail.net">hanmail.net</option>
-						<option value="hotmail.com">hotmail.com</option>
-						<option value="nate.com">nate.com</option>
-						<option value="yahoo.co.kr">yahoo.co.kr</option>
-						<option value="empas.com">empas.com</option>
-						<option value="dreamwiz.com">dreamwiz.com</option>
-						<option value="freechal.com">freechal.com</option>
-						<option value="lycos.co.kr">lycos.co.kr</option>
-						<option value="korea.com">korea.com</option>
-						<option value="gmail.com">gmail.com</option>
-						<option value="hanmir.com">hanmir.com</option>
-						<option value="paran.com">paran.com</option>
-				</select></td>
+				<td><input type="text" name="email" value="${member.email}"></td>
 			</tr>
 			<tr>
 				<td><span>*</span></td>
