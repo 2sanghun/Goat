@@ -2,6 +2,7 @@ package org.goat.mapper;
 
 import java.util.ArrayList;
 
+import org.goat.model.BoardVO;
 import org.goat.model.MemberVO;
 
 public interface MypageMapper {
@@ -18,7 +19,7 @@ public interface MypageMapper {
 	
 	public int removechk(MemberVO member);
 	
-	
+	public ArrayList<BoardVO> myboard(MemberVO member);
 }
 
 	

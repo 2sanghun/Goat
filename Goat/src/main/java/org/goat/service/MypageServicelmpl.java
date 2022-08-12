@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 
 import org.goat.mapper.MypageMapper;
+import org.goat.model.BoardVO;
 import org.goat.model.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,4 +38,8 @@ public class MypageServicelmpl implements MypageService {
 	public int removechk(MemberVO member){
 		return mm.removechk(member);
 	}
+	public ArrayList<BoardVO> myboard(MemberVO member) {
+		return mm.myboard(member);
+	}
+
 }

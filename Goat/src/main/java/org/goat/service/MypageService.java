@@ -2,6 +2,7 @@ package org.goat.service;
 
 import java.util.ArrayList;
 
+import org.goat.model.BoardVO;
 import org.goat.model.MemberVO;
 
 public interface MypageService {
@@ -17,4 +18,6 @@ public interface MypageService {
 	public void remove(MemberVO member);
 	
 	public int removechk(MemberVO member);
+	
+	public ArrayList<BoardVO> myboard(MemberVO member);
 }

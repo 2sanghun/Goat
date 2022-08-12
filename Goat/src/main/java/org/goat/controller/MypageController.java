@@ -29,8 +29,14 @@ public class MypageController {
 		
 	}
 	@RequestMapping(value = "/mypage/memModify", method = RequestMethod.GET)
-	public void memModify() {
-		
+	public void memModify(MemberVO member, HttpServletRequest request,Model model) {
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		member.setId(id);
+		System.out.println(id);
+		System.out.println(member);
+		model.addAttribute("myboard",mm.myboard(member));
+		System.out.println(model);
 	}
 	//로그인 해서 마이페이지에 정보 보이게 하는것
 	@RequestMapping(value = "/mypage/mypage", method = RequestMethod.GET)
