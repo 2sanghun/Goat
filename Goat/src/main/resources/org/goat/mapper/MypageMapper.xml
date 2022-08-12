@@ -24,10 +24,15 @@
 	</select>
 	
 	<select id="my" resultType="org.goat.model.MemberVO"  >
-	select * from member;
+	select *  from member;
 	</select>
 	
+	<!--  replace(email,',','') 이메일에 콤마를 없앤다 -->
 	<select id="detail" resultType="org.goat.model.MemberVO"  >
-	select * from member where id=#{id};
+	select id,name,password,replace(email,',','') as email,addr from member where id=#{id};
+	</select>
+	
+	<select id="myboard" resultType="org.goat.model.BoardVO">
+		select * from board where id=#{id};
 	</select>
 </mapper>

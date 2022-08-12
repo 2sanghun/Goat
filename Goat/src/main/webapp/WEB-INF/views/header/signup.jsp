@@ -23,35 +23,35 @@
 				<tr>
 					<td>*</td>
 					<td>아이디</td>
-					<td><input type="text" id="idchk" name="id"> 
+					<td><input type="text" id="idchk" name="id" maxlength='20'> 
 					<input type="button" value="중복확인" onclick="idCheck()">
 					<span id="idmsg"></span></td>
 				</tr>
 				<tr>
 					<td>*</td>
 					<td>비밀번호</td>
-					<td><input type="password" id="pwchk" name="password"><span id="pwmsg"></span></td>
+					<td><input type="password" id="pwchk" name="password" maxlength='20'><span id="pwmsg"></span></td>
 				</tr>
 				<tr>
 					<td>*</td>
 					<td>비밀번호 재확인</td>
-					<td><input type="password" id="rechk"><span id="remsg"></span></td>
+					<td><input type="password" id="rechk" maxlength='20'><span id="remsg" ></span></td>
 				</tr>
 				<tr>
 					<td>*</td>
 					<td>닉네임</td>
-					<td><input type="text" id="nickname" name="nick"></td>
+					<td><input type="text" id="nickname" name="nick" maxlength='10'></td>
 				</tr>
 				<tr>
 					<td>*</td>
 					<td>주소</td>
-					<td><input type="text" id="addr" name="addr"></td>
+					<td><input type="text" id="addr" name="addr" maxlength='30'></td>
 				</tr>
 				<tr>
 					<td>*</td>
 					<td>전화번호</td>
 					<td>
-						<input type="text" name="phone" id="numchk" maxlength='12'>
+						<input type="text" name="phone" id="numchk" maxlength='11'>
 						<span id="nummsg"></span>
 					</td>
 				</tr>
@@ -71,7 +71,7 @@
 				<tr>
 					<td>*</td>
 					<td>이름</td>
-					<td><input type="text" id="name" name="name"></td>
+					<td><input type="text" id="name" name="name" maxlength='10'></td>
 				</tr>
 				<tr>
 					<td>*</td>
