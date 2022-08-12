@@ -29,7 +29,7 @@
 				<c:forEach items="${sitelist}" var="sitelist">
 				<tr>
 					<td class="bno">${sitelist.bno}</td>
-					<td class="title"><a href="detail/detail?bno=${sitelist.bno}">${sitelist.title}</a></td>
+					<td class="title"><a href="../detail/detail?bno=${sitelist.bno}">${sitelist.title}</a></td>
 					<td class="nick">${sitelist.nick}</td>
 					<td class="regdate">${sitelist.regdate}</td>
 					<td class="cnt">${sitelist.cnt}</td>
