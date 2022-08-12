@@ -24,7 +24,7 @@
 					<tr>
 						<td class="bodytitle" colspan="6">
 							<div class="leftdiv">
-								<p class="allmem">전체 회원수: * 명</p>
+								<p class="allmem">전체 회원수: 명</p>
 							</div>
 							<div class="rightdiv">
 								<span><input type="text" placeholder="검색어 입력"
@@ -56,11 +56,6 @@
 
 				</tbody>
 			</table>
-			<nav aria-label="Page navigation example">
-				<ul class="pagination pagination-seperated">
-
-				</ul>
-			</nav>
 		</div>
 		<div class="footer">
 			<table class="btntable">

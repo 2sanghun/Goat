@@ -1,5 +1,6 @@
 package org.goat.controller;
 
+import org.goat.model.BoardVO;
 import org.goat.model.MemberVO;
 import org.goat.service.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,38 +24,45 @@ public class ManagerController {
 	// public String memDetail(varchar id) {
 	// bs.detail(id);
 	public String memDetail(MemberVO member, Model model) {
-		//System.out.println(member);
+		// System.out.println(member);
 		model.addAttribute("detail", ms.memdetail(member));
 		return "/manager/memDetail";
 	}
-	/* 글 수정 설계
-	@RequestMapping(value = "/manager/modify", method = RequestMethod.POST)
-	public void modify(BoardVO boadrd) {
-	    bs.modify(board)
-	    boarddetail.jsp에서 수정된 결과를 확인하기 위한 화면이동
-	    
-	}
-    */
-	
+
+	/*
+	 * 글 수정 설계
+	 * 
+	 * @RequestMapping(value = "/manager/modify", method = RequestMethod.POST)
+	 * public void modify(BoardVO boadrd) { bs.modify(board) boarddetail.jsp에서 수정된
+	 * 결과를 확인하기 위한 화면이동
+	 * 
+	 * }
+	 */
+
 	@RequestMapping(value = "/manager/remove", method = RequestMethod.GET)
 	public String remove(MemberVO remove) {
 		ms.remove(remove);
 		// manager/manager.jsp 에서 삭제된 결과를 확인하기 위한 화면이동
 		return "redirect:/manager/manager";
 	}
-	
-	@RequestMapping(value = "/manager/managerWriteList", method = RequestMethod.GET)
-	public void managerWriteList(Model model) {
-		model.addAttribute("WList", ms.WriteList());
-		
+
+	@RequestMapping(value = "/manager/writeremove", method = RequestMethod.GET)
+	public String bremove(BoardVO bremove) {
+		ms.bremove(bremove);
+		// manager/manager.jsp 에서 삭제된 결과를 확인하기 위한 화면이동
+		return "redirect:/manager/manager";
 	}
-	
+
+	@RequestMapping(value = "/manager/managerWriteList", method = RequestMethod.GET)
+	public void managerWriteList(BoardVO write, Model model) {
+		model.addAttribute("WList", ms.WriteList(write));
+
+	}
+
 	@RequestMapping(value = "/manager/managerRepleList", method = RequestMethod.GET)
 	public void managerRepleList(Model model) {
 		model.addAttribute("RList", ms.RepleList());
-		
+
 	}
-
-
 
 }
