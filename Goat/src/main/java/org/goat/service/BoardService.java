@@ -9,5 +9,4 @@ public interface BoardService {
 	// 글 상세 페이지 설계
 	// 글 수정 설계
 	// 글 삭제 설계
-
 }
