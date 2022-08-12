@@ -24,5 +24,6 @@
   		select * from board where category='투어';
   	</select>
 
+
   	  	 
   </mapper>

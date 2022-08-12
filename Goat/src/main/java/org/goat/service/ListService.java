@@ -19,4 +19,5 @@ public interface ListService {
 	public ArrayList<BoardVO> tourlist();
 	
 	
+	
 }
