@@ -1,6 +1,5 @@
 package org.goat.controller;
 
-import org.goat.model.BoardVO;
 import org.goat.service.ListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

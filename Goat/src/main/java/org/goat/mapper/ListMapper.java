@@ -17,6 +17,5 @@ public interface ListMapper {
 	public ArrayList<BoardVO> translist();
 	// 투어 게시글 목록 리스트에 해당되는 DB작업 설계
 	public ArrayList<BoardVO> tourlist();
-
 	
 }

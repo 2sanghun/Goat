@@ -37,5 +37,4 @@ public class ListServiceimpl implements ListService{
 		return lm.tourlist();
 	}
 	
-	
 }
