@@ -29,7 +29,7 @@
 				<c:forEach items="${translist}" var="translist">
 				<tr>
 					<td class="bno">${translist.bno}</td>
-					<td class="title"><a href="detail/detail?bno=${translist.bno}">${translist.title}</a></td>
+					<td class="title"><a href="../detail/detail?bno=${translist.bno}">${translist.title}</a></td>
 					<td class="nick">${translist.nick}</td>
 					<td class="regdate">${translist.regdate}</td>
 					<td class="cnt">${translist.cnt}</td>
