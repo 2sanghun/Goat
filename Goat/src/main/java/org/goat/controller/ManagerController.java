@@ -26,7 +26,12 @@ public class ManagerController {
 	}
 
 	// 멤버 리스트에서 아이디 검색
-
+	@RequestMapping(value = "/manager/memsearch", method = RequestMethod.GET)
+    public String search(MemberVO member, Model model, Model total) {
+		model.addAttribute("search", ms.memsearch(member));
+		total.addAttribute("total", ms.totalmem());
+		return "manager/manager";
+	}
 
 	// 멤버 상세 페이지 설계
 	@RequestMapping(value = "/manager/memDetail", method = RequestMethod.GET)

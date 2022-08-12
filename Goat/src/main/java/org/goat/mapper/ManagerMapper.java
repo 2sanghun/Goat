@@ -14,7 +14,7 @@ public interface ManagerMapper {
 	public int totalmem();
 	
 	// 멤버 리스트에서 아이디 검색
-	public MemberVO memsearch(MemberVO search);
+	public MemberVO memsearch(MemberVO member);
 	
 	// 멤버리스트에서 상세버튼 클릭한 후 상세내용 조회하는 DB 작업 설계
 	public MemberVO memdetail(MemberVO member);

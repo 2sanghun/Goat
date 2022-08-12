@@ -15,6 +15,9 @@ public interface ManagerService {
 	// 멤버 리스트에서 전체 회원수 조회
 	public int totalmem();
 	
+	// 멤버 리스트에서 아이디 검색
+	public MemberVO memsearch(MemberVO member);
+	
 	// 멤버 상세 페이지 설계
 	public MemberVO memdetail(MemberVO member);
 

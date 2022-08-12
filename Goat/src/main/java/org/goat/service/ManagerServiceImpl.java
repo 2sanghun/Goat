@@ -25,6 +25,11 @@ public class ManagerServiceImpl implements ManagerService {
 	public int totalmem(){
 		return mm.totalmem();	
 	}
+	
+	// 멤버 리스트에서 아이디 검색
+	public MemberVO memsearch(MemberVO member) {
+		return mm.memsearch(member);
+	}
 
 
     // 멤버 상세 페이지 설계

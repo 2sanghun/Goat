@@ -19,17 +19,20 @@
 			<h1 class="title">회원 관리 페이지</h1>
 		</div>
 		<div class="body">
+		
 			<table class="membertable">
 				<thead>
 					<tr>
 						<td class="bodytitle" colspan="6">
 							<div class="leftdiv">
-								<p class="allmem">전체 회원수: ${total}명</p>
+								<p class="allmem"><a href="/manager/manager">전체 회원수: ${total}명</a></p>
 							</div>
+							<form action="/manager/memsearch">
 							<div class="rightdiv">
-								<span><input type="text" placeholder="검색어 입력"
-									class="search"></span> <span><button onclick="/manager/memsearch" class="searchbtn">검색</button></span>
+								<span><input name="id" type="text" placeholder="검색어 입력"
+									class="search"></span> <span><button type="submit" class="searchbtn">검색</button></span>
 							</div>
+							</form>
 						</td>
 					</tr>
 					<tr class="memlistnav">
@@ -53,9 +56,20 @@
 								class="modifybtn"></a></td>
 					</tr>
 				</c:forEach>
+				<tr class="memberlist">
+						<td>${search.name}</td>
+						<td>${search.id}</td>
+						<td>${search.nick}</td>
+						<td>${search.memdate}</td>
+						<td><a href="/manager/managerWriteList?id=${search.id}"><input type="button" value="글" class="modifybtn"></a>
+						<a href="/manager/managerRepleList?id=${search.id}"><input type="button" value="댓글" class="modifybtn"></a></td>
+						<td><a href="/manager/memDetail?id=${search.id}"><input type="button" value="상세"
+								class="modifybtn"></a></td>
+					</tr>
 
 				</tbody>
 			</table>
+			
 		</div>
 		<div class="footer">
 			<table class="btntable">
