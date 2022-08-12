@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../../resources/CSS/managerCSS.css">
+<link rel="stylesheet" href="../../../resources/CSS/managerCSS.css?version=1.2">
 <script type="text/javascript" src="../../../resources/JS/pagination.js"></script>
 </head>
 <body>

@@ -12,17 +12,18 @@
 
 .header {
 	width: 1000px;
-	height: 100px;
+	height: 80px;
 	margin: auto;
 }
 
 .title {
 	margin-top: 120px;
 	width: auto;
-	line-height: 100px;
+	line-height: 80px;
 	text-align: center;
 	color: white;
-	background-color: teal;
+	background-color: teal;	
+	border-radius: 40px;
 }
 
 .body {
