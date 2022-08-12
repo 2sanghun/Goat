@@ -14,10 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
@@ -33,6 +31,9 @@ public class MainController {
 	
 	@RequestMapping(value = "/main/main", method = RequestMethod.POST)
 	public String search(String search,Model model) {
+		if(search=="") {
+			return "/main/main";
+		}
 		model.addAttribute("search",bs.search(search));
 		return "/main/main";
 	}
@@ -65,8 +66,14 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/header/login", method = RequestMethod.POST)
+<<<<<<< HEAD
 	public String login(MemberVO member, HttpSession session) {	
+=======
+	public String login(MemberVO member, HttpSession session,HttpServletResponse response) throws IOException {
+>>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git
 		MemberVO a = ms.login(member);
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
 		if(a!=null) {
 			String id = a.getId();
 			String nick = a.getNick();
@@ -74,8 +81,12 @@ public class MainController {
 			session.setAttribute("id",id);
 			session.setAttribute("nick", nick);
 		}else {
+			out.println("<script>alert('아이디, 비밀번호를 확인해 주세요'); </script>");
+			out.flush();
 			return "/header/login";
 		}
+		out.println("<script>alert('로그인 되셨습니다.'); </script>");
+		out.flush();
 		return "/main/main";
 	}
 	
