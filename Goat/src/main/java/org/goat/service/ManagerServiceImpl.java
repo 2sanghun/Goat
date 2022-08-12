@@ -21,39 +21,41 @@ public class ManagerServiceImpl implements ManagerService {
 		// ManagerMapper의 memberlsit 메서드로 전달
 		return mm.memberlist();
 	}
+	// 멤버 리스트에서 전체 회원수 조회
+	public int totalmem(){
+		return mm.totalmem();	
+	}
 
-	// MemberService에서 설계되어진 detail 추상메서드를 구현
+
+    // 멤버 상세 페이지 설계
 	public MemberVO memdetail(MemberVO member) {
 
 		return mm.memdetail(member);
 	}
-
-	/*
-	 * 글 수정 public void modify(BoardVO board) { mm.modify(board);
-	 * 
-	 * }
-	 */
 
 	// 멤버 삭제
 	public void remove(MemberVO remove) {
 		mm.remove(remove);
 	}
 
-	// 멤버 삭제
-	public void bremove(BoardVO bremove) {
-		mm.bremove(bremove);
-	}
-
-	// 글 삭제
-
 	// 작성 글 리스트
 	public ArrayList<BoardVO> WriteList(BoardVO write) {
 		return mm.WriteList(write);
 	}
 
-	// 댓글 글 리스트
-	public ArrayList<RepleVO> RepleList() {
-		return mm.RepleList();
+	// 글 삭제
+	public void bremove(BoardVO bremove) {
+		mm.bremove(bremove);
 	}
+
+	// 댓글 리스트
+	public ArrayList<RepleVO> RepleList(RepleVO write) {
+		return mm.RepleList(write);
+	}
+	// 댓글 삭제
+
+	/*
+	 * 글 수정 public void modify(BoardVO board) { mm.modify(board); }
+	 */
 
 }
