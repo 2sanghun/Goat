@@ -66,11 +66,7 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/header/login", method = RequestMethod.POST)
-<<<<<<< HEAD
-	public String login(MemberVO member, HttpSession session) {	
-=======
 	public String login(MemberVO member, HttpSession session,HttpServletResponse response) throws IOException {
->>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git
 		MemberVO a = ms.login(member);
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
