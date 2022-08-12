@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -21,8 +22,18 @@ public class DetailController {
 		model.addAttribute("detail", ds.detail(board));
 		return "detail/detail";
 	}
-	@RequestMapping(value = "/detail/modify", method = RequestMethod.GET)
-	public void modify() {
+	@RequestMapping(value = "/detail/modify", method = RequestMethod.POST)
+	public String modify(BoardVO board, RedirectAttributes rttr) {
+		ds.modify(board);
 		
+		rttr.addAttribute("bno", board.getBno());
+		
+		return "redirect:detail/detail";
+	}
+	
+	@RequestMapping(value = "/detail/remove", method = RequestMethod.POST)
+	public String remove(BoardVO board) {
+		ds.remove(board);
+		return "redirect:list/list";
 	}
 }

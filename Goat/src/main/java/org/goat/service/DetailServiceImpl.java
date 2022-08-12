@@ -15,4 +15,11 @@ public class DetailServiceImpl implements DetailService {
 	public BoardVO detail(BoardVO board) {
 		return dm.detail(board);	
 	}
+    public void modify(BoardVO board) {
+    	dm.modify(board);
+    }
+	
+    public void remove(BoardVO board) {
+    	dm.remove(board);
+    }
 }
