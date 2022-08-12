@@ -24,16 +24,8 @@
 		<div id="mid">
 			<table>
 			<c:forEach items="${search}" var="searchlist">
-				<colgroup>
-  					<col style="width:100px"/>
-  					<col style="width:300px;"/>
-  					<col style="width:100px"/>
-  					<col style="width:100px"/>
-  					<col style="width:50px"/>
-  					<col style="width:50px"/>
-  				</colgroup>
 				<tr>
-					<td colspan="5">${searchlist.category}</td>
+					<td colspan="6">${searchlist.category}</td>
 				</tr>
 				<tr>
 					<td>제목</td>
@@ -52,10 +44,10 @@
 					<td>${searchlist.good}</td>
 				</tr>
 				</c:forEach>
-			</table>
+			</table><br><br>
+			<%@ include file="../header/footer.jsp" %>
 			</div>
 		</div>
-		<%@ include file="../header/footer.jsp" %>
 	</div>
 </body>
 </html>

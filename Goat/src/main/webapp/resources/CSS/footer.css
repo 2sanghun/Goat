@@ -1,8 +1,5 @@
 @charset "UTF-8";
 #footer{
-	position:absolute;
-	bottom : 0px;
-	left : 0px;
 	background-color: white;
 	width:99.5%;
 	height:75px;
