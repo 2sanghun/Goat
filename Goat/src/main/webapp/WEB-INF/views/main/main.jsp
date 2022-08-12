@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../../resources/CSS/main.css?version=1.2" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/main.css?version=1.1" type="text/css">
 <script type="text/javascript" src="../../../resources/JS/main.js?version=1.2"></script>
 </head>
 <body>
@@ -23,6 +24,14 @@
 		<div id="mid">
 			<table>
 			<c:forEach items="${search}" var="searchlist">
+				<colgroup>
+  					<col style="width:100px"/>
+  					<col style="width:300px;"/>
+  					<col style="width:100px"/>
+  					<col style="width:100px"/>
+  					<col style="width:50px"/>
+  					<col style="width:50px"/>
+  				</colgroup>
 				<tr>
 					<td colspan="5">${searchlist.category}</td>
 				</tr>
@@ -44,7 +53,7 @@
 				</tr>
 				</c:forEach>
 			</table>
-		</div>
+			</div>
 		</div>
 		<%@ include file="../header/footer.jsp" %>
 	</div>

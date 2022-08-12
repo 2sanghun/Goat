@@ -56,5 +56,5 @@ public class ListController {
 		return "list/translist";
 	}
 	
-	
+
 }

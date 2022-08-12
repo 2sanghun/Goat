@@ -36,5 +36,5 @@ public class ListServiceimpl implements ListService{
 	public ArrayList<BoardVO> tourlist(){
 		return lm.tourlist();
 	}
-	
+
 }
