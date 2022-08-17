@@ -13,6 +13,8 @@ public class DetailServiceImpl implements DetailService {
 	DetailMapper dm;
 	
 	public BoardVO detail(BoardVO board) {
+		dm.cntup(board);
+		
 		return dm.detail(board);	
 	}
     public void modify(BoardVO board) {
