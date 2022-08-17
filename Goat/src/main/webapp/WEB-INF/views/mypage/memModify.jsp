@@ -106,6 +106,9 @@ h1{
          text-align:center;
          text-shadow:2px 2px 2px gray;
 }
+h3{
+         text-align:center;
+}
 </style>
 </head>
 <body>
@@ -145,9 +148,14 @@ h1{
 					<td class="good">${myboard.good}</td>
 				</tr>
 				</c:forEach>
-				<!--  for문 끝 -->
+				<!--  for문 끝 -->			
 			</table>
 		</div>
+		<h3>
+		<a href="/mypage/memModify?pageNum=1&amount=10">1</a>
+		<a href="/mypage/memModify?pageNum=2&amount=10">2</a>
+		<a href="/mypage/memModify?pageNum=3&amount=10">3</a>
+		</h3>
 		<div id="search">
 			<form id="searchform">
 				<select class="search" name="period">
@@ -170,8 +178,6 @@ h1{
 			</form>
 		</div>
 	</div>
-
 </div>
-<%@ include file="../header/footer.jsp" %>
 </body>
 </html>
