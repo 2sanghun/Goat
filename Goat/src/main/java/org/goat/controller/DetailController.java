@@ -28,7 +28,7 @@ public class DetailController {
 		
 		rttr.addAttribute("bno", board.getBno());
 		
-		return "redirect:/detail/detail";
+		return "redirect:/list/list";
 	}
 	
 	@RequestMapping(value = "/detail/remove", method = RequestMethod.POST)
