@@ -28,12 +28,12 @@ public class DetailController {
 		
 		rttr.addAttribute("bno", board.getBno());
 		
-		return "redirect:detail/detail";
+		return "redirect:/list/list";
 	}
 	
 	@RequestMapping(value = "/detail/remove", method = RequestMethod.POST)
 	public String remove(BoardVO board) {
 		ds.remove(board);
-		return "redirect:list/list";
+		return "redirect:/list/list";
 	}
 }

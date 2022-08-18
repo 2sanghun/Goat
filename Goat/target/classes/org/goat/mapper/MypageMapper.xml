@@ -24,15 +24,30 @@
 	</select>
 	
 	<select id="my" resultType="org.goat.model.MemberVO"  >
-	select *  from member;
+	select * from member;
+	
 	</select>
 	
 	<!--  replace(email,',','') 이메일에 콤마를 없앤다 -->
 	<select id="detail" resultType="org.goat.model.MemberVO"  >
 	select id,name,password,replace(email,',','') as email,addr from member where id=#{id};
 	</select>
-	
+
 	<select id="myboard" resultType="org.goat.model.BoardVO">
-		select * from board where id=#{id};
+	select * from board where id=#{id};
+		
+	<!--	select * 
+	from(
+      select @rownum:=@rownum+1 rownum, b.*
+      from board b,(select @rownum:=0) as tmp
+      order by bno desc
+      ) as boardlist 
+      <![CDATA[
+     where rownum > (#{pageNum}-1)*{amount} and rownum <= #{pageNum}*#{amount}
+     ]]> -->
+	</select>
+	
+	<select id = "total" resultType="int">
+	    select count(*) from board
 	</select>
 </mapper>

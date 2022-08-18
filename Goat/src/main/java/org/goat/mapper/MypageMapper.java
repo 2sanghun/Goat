@@ -12,7 +12,8 @@ public interface MypageMapper {
 	public ArrayList<MemberVO> my();
 	//목록리스트에서 제목을 클릭한 후 상세내용을 조회하는 DB작업 설계
 	public MemberVO detail(MemberVO member);
-	//상세 내용에 해당되는 내용을 수정하는 DB작업
+	//목록리스트에서 제목을 클릭한 후 상세내영을 조회할 때 조회수도 같이 update하는 DB작업 설계
+	
 	public void modify(MemberVO member);
 	
 	public void remove(MemberVO member);
@@ -20,6 +21,10 @@ public interface MypageMapper {
 	public int removechk(MemberVO member);
 	
 	public ArrayList<BoardVO> myboard(MemberVO member);
+	
+	public int total();
+	
+	
 }
 
 	
