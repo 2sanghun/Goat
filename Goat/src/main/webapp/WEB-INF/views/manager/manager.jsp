@@ -8,8 +8,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerCSS.css?version=1.2">
-<script type="text/javascript" src="../../../resources/JS/pagination.js"></script>
+	href="../../../resources/CSS/managerCSS.css?version=1.4">
+<script type="text/javascript" src="../../../resources/JS/managerjs.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -29,15 +30,15 @@
 					</p>
 				</div>
 
-				<form action="/manager/manager">
+				<form action="/manager/manager" id="searchForm">
 					<div class="rightdiv">
 						<select name="type" class="selectbox">
 							<option value="N">회원이름</option>
 							<option value="I">아이디</option>
 							<option value="NN">닉네임</option>
-						</select> <span><input name="keyword" type="text"
-							placeholder="검색어 입력" class="search"></span> <span><input
-							type="submit" value="검색" class="searchbtn"></span>
+						</select>
+						<span><input name="keyword" type="text"placeholder="검색어 입력" class="search"></span> 
+						<span><input type="submit" value="검색" class="searchbtn"></span>
 					</div>
 				</form>
 			</div>
@@ -55,6 +56,7 @@
 						<td class="write1">관리</td>
 					</tr>
 				</thead>
+				
 				<c:forEach items="${list}" var="boardlist">
 					<tr class="memberlist">
 						<td>${boardlist.name}</td>
