@@ -1,64 +1,63 @@
 package org.goat.model;
 
 public class pageVO {
-	
-	//시작번호
+
+	// 시작번호
 	private int startPage;
-	//끝번호
+	// 끝번호
 	private int endPage;
-	//이전버튼
+	// 이전버튼
 	private boolean prev;
-	//다음버튼
+	// 다음버튼
 	private boolean next;
-	//CriteriaVO 포함
+	// CriteriaVO 포함
 	private CriteriaVO cri;
-	//board 테이블의 전체건수를 저장
+	// board 테이블의 전체건수를 저장
 	private int total;
-	
-	public pageVO(CriteriaVO cri,int total ) {
+
+	public pageVO(CriteriaVO cri, int total) {
 		this.cri = cri;
 		this.total = total;
-		
-	
-		//끝번호 식: 현재 페이지/10(올림) * 10
-		this.endPage=(int)(Math.ceil(cri.getPageNum()/10.0))*10;
-		
-		//시작번호, 끝번호, 이전버튼, 다음버튼 계산
-		//시작번호 식: 끝번호 -9
-		this.startPage = this.endPage -9;
 
-		//제일 마지막 페이지 번호는 전체건수를 고려해야한다
-		//제일 마지막 끝번호 식: 전체건수(올림)/페이지당 게시물 갯수
-		//                             123*1.0=123.0 / 10
-		//                                     12.3(올림) =>13
-		int realEnd = (int)(Math.ceil((total*1.0)/cri.getAmount()));
-		
+		// 끝번호 식: 현재 페이지/10(올림) * 10
+		this.endPage = (int) (Math.ceil(cri.getPageNum() / 10.0)) * 10;
+
+		// 시작번호, 끝번호, 이전버튼, 다음버튼 계산
+		// 시작번호 식: 끝번호 -9
+		this.startPage = this.endPage - 9;
+
+		// 제일 마지막 페이지 번호는 전체건수를 고려해야한다
+		// 제일 마지막 끝번호 식: 전체건수(올림)/페이지당 게시물 갯수
+		// 123*1.0=123.0 / 10
+		// 12.3(올림) =>13
+		int realEnd = (int) (Math.ceil((total * 1.0) / cri.getAmount()));
+
 		// 13(realEnd) < 20(endpage) 면
-        //realEnd가 적용되게 함.
-		if(realEnd < this.endPage) {
-			this.endPage=realEnd;
+		// realEnd가 적용되게 함.
+		if (realEnd < this.endPage) {
+			this.endPage = realEnd;
 		}
-		//startpage가 1 보다 크면 이전버튼 활성화
+		// startpage가 1 보다 크면 이전버튼 활성화
 		this.prev = this.startPage > 1;
-		
+
 		// endpage가 realpageEnd 보다 작으면
 		this.next = this.endPage < realEnd;
 	}
 
-	public int getStartpage() {
+	public int getStartPage() {
 		return startPage;
 	}
 
-	public void setStartpage(int startpage) {
-		this.startPage = startpage;
+	public void setStartPage(int startPage) {
+		this.startPage = startPage;
 	}
 
-	public int getEndpage() {
+	public int getEndPage() {
 		return endPage;
 	}
 
-	public void setEndpage(int endpage) {
-		this.endPage = endpage;
+	public void setEndPage(int endPage) {
+		this.endPage = endPage;
 	}
 
 	public boolean isPrev() {
@@ -98,7 +97,5 @@ public class pageVO {
 		return "pageVO [startPage=" + startPage + ", endPage=" + endPage + ", prev=" + prev + ", next=" + next
 				+ ", cri=" + cri + ", total=" + total + "]";
 	}
-      
-	
-	
+
 }

@@ -34,7 +34,6 @@ public class CriteriaVO {
 		this.amount = amount;
 	}
 
-
 	public String getId() {
 		return id;
 	}
