@@ -3,9 +3,9 @@ package org.goat.model;
 public class pageVO {
 	
 	//시작번호
-	private int startpage;
+	private int startPage;
 	//끝번호
-	private int endpage;
+	private int endPage;
 	//이전버튼
 	private boolean prev;
 	//다음버튼
@@ -19,12 +19,14 @@ public class pageVO {
 		this.cri = cri;
 		this.total = total;
 		
+	
+		//끝번호 식: 현재 페이지/10(올림) * 10
+		this.endPage=(int)(Math.ceil(cri.getPageNum()/10.0))*10;
+		
 		//시작번호, 끝번호, 이전버튼, 다음버튼 계산
 		//시작번호 식: 끝번호 -9
-		
-		this.startpage = this.endpage -9;
-		//끝번호 식: 현재 페이지/10(올림) * 10
-		this.endpage=(int)(Math.ceil(cri.getPageNum()/10.0))*10;
+		this.startPage = this.endPage -9;
+
 		//제일 마지막 페이지 번호는 전체건수를 고려해야한다
 		//제일 마지막 끝번호 식: 전체건수(올림)/페이지당 게시물 갯수
 		//                             123*1.0=123.0 / 10
@@ -33,30 +35,30 @@ public class pageVO {
 		
 		// 13(realEnd) < 20(endpage) 면
         //realEnd가 적용되게 함.
-		if(realEnd < this.endpage) {
-			this.endpage=realEnd;
+		if(realEnd < this.endPage) {
+			this.endPage=realEnd;
 		}
 		//startpage가 1 보다 크면 이전버튼 활성화
-		this.prev = this.startpage > 1;
+		this.prev = this.startPage > 1;
 		
 		// endpage가 realpageEnd 보다 작으면
-		this.next = this.endpage < realEnd;
+		this.next = this.endPage < realEnd;
 	}
 
 	public int getStartpage() {
-		return startpage;
+		return startPage;
 	}
 
 	public void setStartpage(int startpage) {
-		this.startpage = startpage;
+		this.startPage = startpage;
 	}
 
 	public int getEndpage() {
-		return endpage;
+		return endPage;
 	}
 
 	public void setEndpage(int endpage) {
-		this.endpage = endpage;
+		this.endPage = endpage;
 	}
 
 	public boolean isPrev() {
@@ -93,7 +95,7 @@ public class pageVO {
 
 	@Override
 	public String toString() {
-		return "pageVO [startpage=" + startpage + ", endpage=" + endpage + ", prev=" + prev + ", next=" + next
+		return "pageVO [startPage=" + startPage + ", endPage=" + endPage + ", prev=" + prev + ", next=" + next
 				+ ", cri=" + cri + ", total=" + total + "]";
 	}
       

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.goat.mapper.ManagerMapper;
 import org.goat.model.BoardVO;
+import org.goat.model.CriteriaVO;
 import org.goat.model.MemberVO;
 import org.goat.model.RepleVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,22 +16,21 @@ public class ManagerServiceImpl implements ManagerService {
 	@Autowired
 	ManagerMapper mm;
 
-	public ArrayList<MemberVO> memberlist() {
-		// ManagerMapper의 memberlist 메서드를 호출
-		// 메서드의 매개변수를 통해 MemberVO 값을
-		// ManagerMapper의 memberlsit 메서드로 전달
-		return mm.memberlist();
+	// BoardService에서 설계되어진 list추상메서드를 구현
+	public ArrayList<MemberVO> list(CriteriaVO cri) {
+		return mm.list(cri);
 	}
+	
 	// 멤버 리스트에서 전체 회원수 조회
 	public int totalmem(){
 		return mm.totalmem();	
 	}
 	
-	// 멤버 리스트에서 아이디 검색
+/*	// 멤버 리스트에서 아이디 검색
 	public MemberVO memsearch(MemberVO member) {
 		return mm.memsearch(member);
 	}
-
+*/
 
     // 멤버 상세 페이지 설계
 	public MemberVO memdetail(MemberVO member) {

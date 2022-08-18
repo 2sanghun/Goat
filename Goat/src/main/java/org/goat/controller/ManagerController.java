@@ -1,8 +1,10 @@
 package org.goat.controller;
 
 import org.goat.model.BoardVO;
+import org.goat.model.CriteriaVO;
 import org.goat.model.MemberVO;
 import org.goat.model.RepleVO;
+import org.goat.model.pageVO;
 import org.goat.service.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,22 +19,31 @@ public class ManagerController {
 	ManagerService ms;
 
     // 멤버  목록 리스트 설계
-	@RequestMapping(value = "/manager/manager", method = RequestMethod.GET)
-	public void manager(Model model, Model total) {
-		model.addAttribute("list", ms.memberlist());
-	   
-		// 멤버 리스트에서 전체 회원수 조회	
-		total.addAttribute("total", ms.totalmem());
-	}
+	@RequestMapping(value = "manager/manager", method = RequestMethod.GET)
+	// 게시판 목록 리스트
+	public String list (Model model, CriteriaVO cri, Model totalmem) {
+		// manager.jsp 실행 할 때 select 된 결과를 가져와라
+		model.addAttribute("list", ms.list(cri));
+		totalmem.addAttribute("total", ms.totalmem());
 
+		// list.jsp 실행 할 때 pageVO에 저장되어 있는 데이터를 가져와라.
+		//							 생성자 호출(매개변수가 없는 생성자)
+		// board테이블(게시판테이블)에 전체 건수(select해서)를 아래에 190대신에 대입
+		int total=ms.totalmem();
+		// model.addAttribute("paging", new pageVO(cri, 190));
+		model.addAttribute("paging", new pageVO(cri, total));
+		return "manager/manager";
+	}
+/*
 	// 멤버 리스트에서 아이디 검색
 	@RequestMapping(value = "/manager/memsearch", method = RequestMethod.GET)
     public String search(MemberVO member, Model model, Model total) {
 		model.addAttribute("search", ms.memsearch(member));
 		total.addAttribute("total", ms.totalmem());
+
 		return "manager/manager";
 	}
-
+*/
 	// 멤버 상세 페이지 설계
 	@RequestMapping(value = "/manager/memDetail", method = RequestMethod.GET)
 	public String memDetail(MemberVO member, Model model) {
