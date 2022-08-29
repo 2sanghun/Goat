@@ -23,4 +23,6 @@ public interface BoardMapper {
 
 	// 검색한 board 가져오기
 	public ArrayList<BoardVO> search(CriteriaVO cri);
+	
+	public int total(CriteriaVO cri);
 }

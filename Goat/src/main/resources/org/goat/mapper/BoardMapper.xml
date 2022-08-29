@@ -36,4 +36,9 @@
 			where rownum>(#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
 	</select>
+	
+	<select id="total" resultType="int">
+		select count(*) from board
+		where title like CONCAT('%',#{keyword},'%') or content like CONCAT('%',#{keyword},'%')
+	</select>
  </mapper> 

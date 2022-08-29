@@ -23,4 +23,7 @@ public interface BoardService {
 	
 	// 글 검색
 	public ArrayList<BoardVO> search(CriteriaVO cri);
+	
+	// board테이블 전체 건수 설계
+	public int total(CriteriaVO cri);
 }
