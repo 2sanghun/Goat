@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.goat.model.CriteriaVO;
 import org.goat.model.MemberVO;
+import org.goat.model.pageVO;
 import org.goat.service.MypageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,17 +29,20 @@ public class MypageController {
 	public void favorite() {
 		
 	}
-	
-	//내가 쓴글 불러오기
 	@RequestMapping(value = "/mypage/memModify", method = RequestMethod.GET)
-	public void memModify(MemberVO member, HttpServletRequest request,Model model,CriteriaVO cri) {     
+	public void memModify() { 
+	}
+	//내가 쓴글 불러오기
+	@RequestMapping(value = "/memModify", method = RequestMethod.GET)
+	public String memModify(MemberVO member, HttpServletRequest request,Model model,CriteriaVO cri) {     
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
-		member.setId(id);
-		System.out.println(id);
-		System.out.println(member);
-		model.addAttribute("myboard",mm.myboard(member));
-		System.out.println(model);
+		cri.setId(id);
+		model.addAttribute("myboard",mm.myboard(cri));
+		int total=mm.total(cri);
+		System.out.println("total="+total);
+		model.addAttribute("paging",new pageVO(cri,total));
+		return "/mypage/memModify";
 	}
 	
 	
@@ -60,14 +64,6 @@ public class MypageController {
 		rttr.addAttribute("id",member.getId());
 		return "mypage/Withdrawal";
 	}
-	
-	//@RequestMapping(value = "/mypage/my", method = RequestMethod.GET)    //CriteriaVO cri 이거 추가한거 보기
-	//public String my(Model model,CriteriaVO cri ) {
-		//model.addAttribute("my",mm.my(cri));                                //다시보기
-		//return "mypage/mypage";
-	//}
-	
-	
 	
 	//회원탈퇴
 	@RequestMapping(value = "/mypage/favorite", method = RequestMethod.POST)
@@ -91,7 +87,6 @@ public class MypageController {
 		return"mypage/Withdrawal";
 	}
 	
-
 	@RequestMapping(value = "/mypage/Withdrawal", method = RequestMethod.GET)
 	public void Withdrawal() {
 		

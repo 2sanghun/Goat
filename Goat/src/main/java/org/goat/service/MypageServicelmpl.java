@@ -44,11 +44,13 @@ public class MypageServicelmpl implements MypageService {
 	public int removechk(MemberVO member){
 		return mm.removechk(member);
 	}
-	public ArrayList<BoardVO> myboard(MemberVO member) {
-		return mm.myboard(member);
+	public ArrayList<BoardVO> myboard(CriteriaVO cri) {
+		System.out.println(cri);
+		return mm.myboard(cri);
 	}
     
-	public int total() {
-		return mm.total();
+	public int total(CriteriaVO cri) {
+		System.out.println(cri);
+		return mm.total(cri);
 	}
 }

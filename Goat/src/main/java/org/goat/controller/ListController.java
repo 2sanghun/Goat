@@ -1,5 +1,7 @@
 package org.goat.controller;
- 
+  
+import org.goat.model.CriteriaVO;
+import org.goat.model.pageVO;
 import org.goat.service.ListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,10 +15,14 @@ public class ListController {
 	ListService ls;
 	
 	@RequestMapping(value = "/list/list", method = RequestMethod.GET)
-	public String list(Model model) {
+	public String list(Model model, CriteriaVO cri) {
 		// list.jsp 실행 할 때 select 된 결과를 가져가라.
-		model.addAttribute("list", ls.list());
-		//      list 폴더 안에 있는 list.jsp 실행
+		model.addAttribute("list", ls.list(cri));
+		// list 폴더 안에 있는 list.jsp 실행 할 때 pageVO에 저장되어 있는 데이터를 가져와라.
+		//							생성자 호출(매개변수가 없는 생성자)
+		// int total = ls.total();
+		int total = ls.total(cri);
+		model.addAttribute("paging", new pageVO(cri, total));
 		return "list/list";
 		
 	}

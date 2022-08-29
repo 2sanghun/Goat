@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 <style>
 #mypagenav{
-    height: 20px;
+     height: 20px;
     padding: 1rem;
-    background-color:green;
+    background-color:teal;
     list-style-type:none;
     margin:;
     padding:;
@@ -21,14 +21,13 @@
     padding-bottom:10px;
     margin-top: 20px;
     word-spacing: 10px;
-  
+    border-radius: 50px;
 }
 li{float:left;}
 #mypagenav li a {
-		
-        display :block;
-        background-color:green;
-        color:#000000;
+		display :block;
+        background-color:teal;
+        color: white;
         padding:8px;
         text-decoration:none;
         text-align:center;
@@ -56,6 +55,14 @@ table{
    top:100px;
 }
 
+.backbtn {
+	color: white;
+	padding: 5px 5px;
+	margin: 0px 10px 10px 0px;
+	border: 0.5px solid black;
+	background-color: teal;
+	border-radius: 4px;
+}
 </style>
 </head>
 <body>
@@ -75,7 +82,7 @@ table{
   </tr>
   </table>
    <div id = "footer">
-<a href = "../main/main"><input type = "button" value = "메인으로"></a>
+<a href = "../main/main"><input type = "button" value = "메인으로" class="backbtn"></a>
 </div>
   </div>
 </body>

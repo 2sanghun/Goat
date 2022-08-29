@@ -1,5 +1,5 @@
 package org.goat.model;
-
+ 
 // pageNum(페이지 번호)와 amount(한페이지당 게시물 갯수) 값을 전달하는 model
 public class CriteriaVO {
 	private int pageNum; // 페이지 번호
@@ -7,6 +7,7 @@ public class CriteriaVO {
 	private String id;
 	private String keyword;
 	private String type;
+	private String period;	// 검색 조건에 기간
 
 	// 생성자
 	public CriteriaVO() {
@@ -57,11 +58,21 @@ public class CriteriaVO {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	
+
+	public String getPeriod() {
+		return period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+	}
 
 	@Override
 	public String toString() {
 		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", id=" + id + ", keyword=" + keyword
-				+ ", type=" + type + "]";
+				+ ", type=" + type + ", period=" + period + "]";
 	}
 
 }

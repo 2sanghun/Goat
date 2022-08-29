@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../../resources/CSS/write.css" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/write.css?version=1.1" type="text/css">
 </head>
 <body>
 <div id="container"> 
 	<%@ include file="../header/header.jsp" %>
 <form action="/main/write" method="post">
 	<div id="top">
-		<h1>글 쓰기</h1>
+		<h1 id="writecss">글 쓰기</h1>
 	</div>
 	<div id="mid">
 		<table>

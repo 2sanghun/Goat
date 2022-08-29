@@ -6,14 +6,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
-<link rel="stylesheet" href="../../../resources/CSS/signup.css" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/signup.css?version=1.1" type="text/css">
 <script type="text/javascript" src="../../../resources/JS/signup.js?version=1.1"></script>
 <script type="text/javascript" src="../../../resources/JS/effective.js?version=1.1"></script>
 </head>
 <body>
 	<div id="container">
 		<%@ include file="../header/header.jsp" %>
-		<h1>회원가입</h1>
+		<h1 id="signupcss">회원가입</h1>
 		<div id="top">
 			<span style="color:red;">*</span>은 필수 입력입니다.
 		</div>
@@ -59,7 +59,7 @@
 					<td></td>
 					<td>E-mail</td>
 					<td>
-						<input type="text" id="email" name="email">
+						<input type="text" id="email" name="email" maxlength='20'>
 						@
 						<select name="email">
 							<option value="@naver.com">naver.com</option>
