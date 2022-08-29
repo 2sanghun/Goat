@@ -1,5 +1,5 @@
 package org.goat.model;
- 
+
 public class pageVO {
 
 	// 시작번호
@@ -18,10 +18,6 @@ public class pageVO {
 	public pageVO(CriteriaVO cri, int total) {
 		this.cri = cri;
 		this.total = total;
-		
-	
-		//끝번호 식 (1(현재번호)/10 =0.1(올림) => 1 => 1*10 => 10
-		//끝번호 식 (11(현재번호)/10 =1.1(올림) => 1 => 2*10 => 20
 
 		// 끝번호 식: 현재 페이지/10(올림) * 10
 		this.endPage = (int) (Math.ceil(cri.getPageNum() / 10.0)) * 10;
