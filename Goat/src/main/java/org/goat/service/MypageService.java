@@ -20,9 +20,10 @@ public interface MypageService {
 	
 	public int removechk(MemberVO member);
 	
-	public ArrayList<BoardVO> myboard(MemberVO member);
+	public ArrayList<BoardVO> myboard(CriteriaVO cri );
 	
-	public int total();
+	public int total(CriteriaVO cri);
 	
 
 }
+ 
