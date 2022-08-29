@@ -6,21 +6,54 @@
 
 <mapper namespace="org.goat.mapper.ManagerMapper">
 	<!-- 멤버 목록 리스트 설계 -->
-	<select id="memberlist" resultType="org.goat.model.MemberVO">
-		select * from member where id
-		not like 'manager';
+	<select id="list" resultType="org.goat.model.MemberVO">
+		select *
+		from(
+		select @rownum:=@rownum+1 rownum, m.*
+		from member m,
+		(select @rownum:=0) as tmp
+		<if test="keyword != null">
+			<choose>
+				<when test="type=='N'.toString()">
+					where name like CONCAT('%',#{keyword},'%')
+				</when>
+				<when test="type=='I'.toString()">
+					where id like CONCAT('%',#{keyword},'%')
+				</when>
+				<otherwise>
+					where nick like CONCAT('%',#{keyword},'%')
+				</otherwise>
+			</choose>
+		</if>
+		) as memberlist
+		<![CDATA[
+			where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+			]]>
 	</select>
 
 	<!-- 멤버 리스트에서 전체 회원수 조회 -->
-	<select id="totalmem" resultType="integer">
-		select count(*)-1 as cnt from
-		member ;
+	<select id="total" resultType="integer">
+		select count(*) from member
+		<if test="keyword != null">
+			<choose>
+				<when test="type=='N'.toString()">
+					where name like CONCAT('%',#{keyword},'%')
+				</when>
+				<when test="type=='I'.toString()">
+					where id like CONCAT('%',#{keyword},'%')
+				</when>
+				<otherwise>
+					where nick like CONCAT('%',#{keyword},'%')
+				</otherwise>
+			</choose>
+		</if>
+		;
 	</select>
 
 	<!-- 멤버 리스트에서 id 검색 -->
-	<select id="memsearch" resultType="org.goat.model.MemberVO">
-		select * from member where id like CONCAT('%',#{id},'%')
-	</select>
+	<!-- <select id="memsearch" resultType="org.goat.model.MemberVO"> select 
+		* from member <if test="id != null"> where id like CONCAT('%',#{id},'%') 
+		</if> </select> -->
 
 	<!-- 멤버 상세 페이지 설계 -->
 	<select id="memdetail" resultType="org.goat.model.MemberVO">
@@ -51,7 +84,9 @@
 	</select>
 
 	<!-- 댓글 삭제 -->
-
+	<delete id="repleremove">
+		delete from reple where reno=#{reno};
+	</delete>
 
 	<!-- <update id="modify"> update board set tutle='', content='' where bno=#{id}; 
 		</update> -->

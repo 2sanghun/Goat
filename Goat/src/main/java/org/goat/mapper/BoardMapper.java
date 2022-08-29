@@ -3,6 +3,7 @@ package org.goat.mapper;
 import java.util.ArrayList;
 
 import org.goat.model.BoardVO;
+import org.goat.model.CriteriaVO;
 
 public interface BoardMapper {
 	// 글쓰기 설계
@@ -21,5 +22,7 @@ public interface BoardMapper {
 //	public void remove(BoardVO board);
 
 	// 검색한 board 가져오기
-	public ArrayList<BoardVO> search(String search);
+	public ArrayList<BoardVO> search(CriteriaVO cri);
+	
+	public int total(CriteriaVO cri);
 }

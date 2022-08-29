@@ -19,7 +19,7 @@
 	background: rgb(61, 183, 204);
 }
 
-hr {
+#categoryhr {
 	margin: 0;
 	background: black;
 	height: 10px;
@@ -83,7 +83,7 @@ td {
 
 #searchform {
 	position: relative;
-	top: 35px;
+	top: 32px;
 }
 
 .search {
@@ -98,4 +98,16 @@ td {
 	background-color: teal;
 	border-radius: 4px;
 	margin-left: -5px;
+}
+
+#pagingArea {
+	position : relative;
+	top : 14px;
+}
+#paginghr {
+	position : relative;
+	top : 24px;
+	margin: 0;
+	background: #BDBDBD;
+	height: 1px;	
 }

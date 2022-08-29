@@ -22,7 +22,7 @@
 	line-height: 80px;
 	text-align: center;
 	color: white;
-	background-color: teal;	
+	background-color: teal;
 	border-radius: 50px;
 }
 
@@ -30,6 +30,10 @@
 	width: 1000px;
 	margin: auto;
 	background-color: white;
+}
+
+.bodytitle {
+	margin-top: 10px;
 }
 
 .membertable {
@@ -50,10 +54,21 @@
 	font-size: 18px;
 }
 
+.selectbox {
+	float: left;
+	width: 90px;
+	height: 40px;
+	border: 0px;
+	outline: none;
+	padding-left: 10px;
+	padding-right: 0px;
+}
+
 .rightdiv {
 	float: right;
+	margin-bottom: 10px;
 	height: 40px;
-	width: 300px;
+	width: 400px;
 	background: #ffffff;
 	border: 1px solid teal;
 }
@@ -61,7 +76,7 @@
 .search {
 	font-size: 14px;
 	width: 230px;
-	padding: 10px;
+	padding: 12px;
 	border: 0px;
 	outline: none;
 	float: left;
@@ -121,6 +136,11 @@ td {
 	color: gray;
 }
 
+.modifybtn:hover {
+	background-color: gray;
+	color: white;
+}
+
 .write1 {
 	width: 10%;
 }
@@ -136,4 +156,35 @@ td {
 .writelist {
 	text-align: center;
 	font-size: 14px;
+}
+
+.page {
+	padding: 30px;
+}
+
+.pagenum {
+	padding: 10px;
+	color: #8C8C8C;
+	background: white;
+	border-radius: 4px;
+}
+
+.pagenum:hover {
+	background-color: #8C8C8C;
+	color: white;
+}
+
+.selectpage {
+	padding: 10px;
+	background-color: #8C8C8C;
+	color: white;
+	border-radius: 4px;
+}
+
+.pagemove {
+	padding: 10px;
+	padding-bottom: 12px;
+	background-color: #8C8C8C;
+	color: white;
+	border-radius: 4px;
 }

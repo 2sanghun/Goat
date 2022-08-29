@@ -10,6 +10,10 @@
 select * from board where bno=#{bno}
 </select>
 
+<update id="cntup">
+update board set cnt = cnt + 1 where bno = #{bno}
+</update>
+
 <update id="modify">
 update board set title=#{title}, content=#{content} where bno=#{bno}
 </update>

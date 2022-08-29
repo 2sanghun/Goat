@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.goat.model.BoardVO;
+import org.goat.model.CriteriaVO;
 import org.goat.model.MemberVO;
+import org.goat.model.pageVO;
 import org.goat.service.BoardService;
 import org.goat.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +31,14 @@ public class MainController {
 	@RequestMapping(value = "/main/main", method = RequestMethod.GET)
 	 public void main() {}
 	
-	@RequestMapping(value = "/main/main", method = RequestMethod.POST)
-	public String search(String search,Model model) {
-		if(search=="") {
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String search(Model model, CriteriaVO cri) {
+		if(cri.getKeyword()=="") {
 			return "/main/main";
 		}
-		model.addAttribute("search",bs.search(search));
+		model.addAttribute("search",bs.search(cri));
+		int total = bs.total(cri); 
+		model.addAttribute("paging",new pageVO(cri,total));
 		return "/main/main";
 	}
 	

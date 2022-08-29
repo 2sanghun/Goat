@@ -23,7 +23,7 @@
 					<td class="subtitle">댓글 목록</td>
 				</tr>
 				<tr class="writetitle">
-					<td class="write2">글제목</td>
+					<td class="write2">글번호</td>
 					<td class="write3">댓글내용</td>
 					<td class="write2">작성일자</td>
 					<td class="write1">삭제</td>
@@ -33,7 +33,7 @@
 						<td>${WriteList.bno}</td>
 						<td>${RepleList.content}</td>
 						<td>${RepleList.repledate}</td>
-						<td><a href=""><input type="button" value="상세"
+						<td><a href="/manager/repleremove?reno=${RepleList.reno}"><input type="button" value="삭제"
 								class="modifybtn"></a></td>
 					</tr>
 				</c:forEach>

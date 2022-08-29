@@ -141,7 +141,8 @@ td {
 </tbody>
 </table>
 
-</form>	
+</form>
+
 </div>
 
 <%@ include file="../header/footer.jsp" %>

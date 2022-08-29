@@ -8,14 +8,16 @@
 <head>
 <meta charset="UTF-8">
 <title>List</title>
-<link rel="stylesheet" href="../../../resources/CSS/list.css?version=1.1" type="text/css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/resources/JS/list.js"></script>
+<link rel="stylesheet" href="../../../resources/CSS/list.css" type="text/css">
 </head>
 <body>
 	<%@ include file="../header/header.jsp" %>
 	<div id="content">
 		<div id="middle">
 			<p id="categorylist">전체</p>
-			<hr>
+			<hr id="categoryhr">
 			<table>
 				<tr id="tr1">
 					<td class="bno"><span></span></td>
@@ -40,24 +42,41 @@
 			</table>
 		</div>
 		<div id="search">
-			<form id="searchform">
+			<div id="pagingArea">
+				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
+				<c:if test="${paging.prev}">
+					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}">이전</a>
+				</c:if>
+		
+				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
+				<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}">${num}</a>
+				</c:forEach>
+				
+				<!-- next(다음)이 true이면 다음버튼 활성화 -->
+				<c:if test="${paging.next}">
+					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}">다음</a>
+				</c:if>
+			</div>
+			<hr id="paginghr">
+			<form action="/list/list" method="get" id="searchform">
 				<select class="search" name="period">
 					<option value="total">전체기간</option>
 					<option value="day">1일</option>
 					<option value="week">1주</option>
 					<option value="month">1개월</option>
-					<option value="total">6개월</option>
-					<option value="total">1년</option>
+					<option value="sixMonth">6개월</option>
+					<option value="year">1년</option>
 				</select>
-				<select class="search" name="condition">
-					<option value="conlistre">게시글 + 댓글</option>
-					<option value="contitle">제목만</option>
-					<option value="conid">글작성자</option>
-					<option value="conre">댓글내용</option>
-					<option value="conreid">댓글작성자</option>
+				<select class="search" name="type">
+					<option value="T">제목 </option>
+					<option value="N">글작성자</option>
+					<option value="TC">제목+게시글</option>
 				</select>
-				<input type="text" class="search" id="query" name="query" placeholder="검색어를 입력해주세요">
-				<button type="submit" class="search" id="searchbtn">검색</button>
+				<input type="text" class="search" id="query" name="keyword" placeholder="검색어를 입력해주세요">
+				<button type="button" class="search" id="searchbtn">검색</button>
+				<input type="hidden" name="pageNum" value="${paging.cri.pageNum}">
+				<input type="hidden" name="amount" value="${paging.cri.amount}">
 			</form>
 		</div>
 	</div>

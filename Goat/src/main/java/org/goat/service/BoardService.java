@@ -3,6 +3,7 @@ package org.goat.service;
 import java.util.ArrayList;
 
 import org.goat.model.BoardVO;
+import org.goat.model.CriteriaVO;
 
 public interface BoardService {
 	// 글쓰기 설계
@@ -21,5 +22,8 @@ public interface BoardService {
 	// public void remove(BoardVO board);
 	
 	// 글 검색
-	public ArrayList<BoardVO> search(String search);
+	public ArrayList<BoardVO> search(CriteriaVO cri);
+	
+	// board테이블 전체 건수 설계
+	public int total(CriteriaVO cri);
 }

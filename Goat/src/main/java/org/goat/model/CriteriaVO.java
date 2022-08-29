@@ -1,6 +1,8 @@
 package org.goat.model;
+
 // pageNum(페이지 번호)와 amount(한페이지당 게시물 갯수) 값을 전달하는 model
 public class CriteriaVO {
+<<<<<<< HEAD
 	 private int pageNum;   //페이지 번호
 	 private int amount;    // 한 페이지당 게시물 갯수
 	 private String id;      
@@ -16,25 +18,56 @@ public class CriteriaVO {
 		 
 	 }
 	 
+=======
+	private int pageNum; // 페이지 번호
+	private int amount; // 한 페이지당 게시물 갯수
+	private String id;
+	private String keyword;
+	private String type;
+	private String period;	// 검색 조건에 기간
+
+	// 생성자
+	public CriteriaVO() {
+		this(1, 10);
+	}
+
+	public CriteriaVO(int pageNum, int amount) {
+		this.pageNum = pageNum;
+		this.amount = amount;
+	}
+
+>>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git
 	public int getPageNum() {
 		return pageNum;
 	}
+
 	public void setPageNum(int pageNum) {
 		this.pageNum = pageNum;
 	}
+
 	public int getAmount() {
 		return amount;
 	}
+
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git
 	public String getId() {
 		return id;
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git
 	public void setId(String id) {
 		this.id = id;
 	}
+<<<<<<< HEAD
 	public String getKeyword() {
 		return keyword;
 	}
@@ -53,11 +86,40 @@ public class CriteriaVO {
 	public String toString() {
 		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", id=" + id + ", keyword=" + keyword
 				+ ", type=" + type + "]";
+=======
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+>>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git
 	}
 
 	
+	
+
+	public String getPeriod() {
+		return period;
 	}
 
-	 
-	 
+	public void setPeriod(String period) {
+		this.period = period;
+	}
 
+	@Override
+	public String toString() {
+		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", id=" + id + ", keyword=" + keyword
+				+ ", type=" + type + ", period=" + period + "]";
+	}
+
+}
