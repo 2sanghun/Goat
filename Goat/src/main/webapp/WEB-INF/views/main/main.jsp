@@ -16,20 +16,20 @@
 		<div id="top">
 		<br><br><br><br><br><br><br>
 		<form action="/main/main" method="post">
-			<input type="text" placeholder="검색" id="search" name="search">
+			<input type="text" placeholder="검색" id="search" name="keyword">
 			<input type="submit" value="검색" class="btn">
 		</form>
 		</div>
 		<!-- 검색 시 나타나며 검색한 내용이 포함된 제목과 내용이 포함된 게시글을 표시 -->
 		<div id="mid">
-			<table>
+			<table> 
 			<c:forEach items="${search}" var="searchlist">
 				<tr>
-					<td colspan="6">${searchlist.category}</td>
+					<td colspan="6">${searchlist.category}</td> 
 				</tr>
 				<tr>
 					<td></td>
-					<td>제목</td>
+					<td>제목</td> 
 					<td>작성일</td>
 					<td>작성자</td>
 					<td>조회수</td>

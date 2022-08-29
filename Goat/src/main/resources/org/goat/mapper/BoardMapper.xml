@@ -25,8 +25,15 @@
 		delete from board where bno=#{bno};
 	 -->
 	 <select id="search" resultType="org.goat.model.BoardVO">
-		select * from board 
-		where title like CONCAT('%',#{search},'%') or content like CONCAT('%',#{search},'%')
-		order by bno desc;
+		select * 
+		from (
+			select @rownum:=@rownum+1 rownum, b.*
+			from board b, (select @rownum:=0) as tmp
+			where title like CONCAT('%',#{keyword},'%') or content like CONCAT('%',#{keyword},'%')
+			order by bno desc
+		) as boardlist
+		<![CDATA[
+			where rownum>(#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		]]>
 	</select>
  </mapper> 

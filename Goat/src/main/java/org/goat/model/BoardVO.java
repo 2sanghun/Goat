@@ -18,9 +18,7 @@ public class BoardVO {
 	private int good;
 
 	private String category;
-	
-	private String search;
-		
+			
 	public String getCategory() {
 		return category;
 	}
@@ -98,12 +96,5 @@ public class BoardVO {
 				+ regdate + ", cnt=" + cnt + ", id=" + id + ", good=" + good + ", category=" + category + "]";
 	}
 
-	public String getSearch() {
-		return search;
-	}
-
-	public void setSearch(String search) {
-		this.search = search;
-	}
 
 }
