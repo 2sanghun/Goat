@@ -62,7 +62,7 @@ public class MainController {
 		System.out.println(nick);
 		bs.boardwrite(board);
 		System.out.println(board);
-		return "/list/list";
+		return "redirect:/list/list";
 	}
 
 	@RequestMapping(value = "/header/login", method = RequestMethod.GET)

@@ -24,6 +24,10 @@ header {
 	position: relative;
 	top: 90px;
 }
+#signupcss{
+	background:linear-gradient(to right, #2BC0E4,#EAECC6);
+	color : white;
+}
 #top{
 	text-align: right;
 }

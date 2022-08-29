@@ -1,7 +1,7 @@
 @charset "UTF-8";
 #container {
 	width: 100%;
-	height: 1700px;
+	height: 1500px;
 	margin: auto;
 	padding : 10px;
 	position: relative;
@@ -53,21 +53,24 @@ a {
 	background-color:transparent;
 }
 #mid tr:nth-child(3n-2) td{
-	font-weight:bold;
-	font-size:30px;
-}
-#mid tr:nth-child(3n-1) td{
 	color: gray;
 	font-weight: bold;
 	border-top: 3px solid #8C8C8C;
 	border-bottom: 2px solid #8C8C8C;
 	background-color: #F6F6F6;
 }
-#mid tr:nth-child(3n) td{
+#mid tr:nth-child(3n-1) td{
 	height:50px;
 	border-bottom: 1px solid #EAEAEA;
 }
-#mid td:nth-child(1){
+#mid tr:nth-child(3n) td{
+	padding:2px;
+}
+#mid tr:nth-child(3n-2) td:nth-child(1){
+	width:5%;
+	border-right: 1px solid #8C8C8C;
+}
+#mid tr:nth-child(3n-1) td:nth-child(1){
 	width:5%;
 	border-right: 1px solid #8C8C8C;
 }
