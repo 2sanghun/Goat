@@ -1,5 +1,5 @@
 package org.goat.model;
- 
+
 public class pageVO {
 
 	// 시작번호
@@ -18,24 +18,6 @@ public class pageVO {
 	public pageVO(CriteriaVO cri, int total) {
 		this.cri = cri;
 		this.total = total;
-<<<<<<< HEAD
-		
-	
-		//끝번호 식 (1(현재번호)/10 =0.1(올림) => 1 => 1*10 => 10
-		//끝번호 식 (11(현재번호)/10 =1.1(올림) => 1 => 2*10 => 20
-		//끝번호 식: 현재 페이지/10(올림) * 10
-		this.endpage=(int)Math.ceil(cri.getPageNum()/10.0)*10;
-		//시작번호, 끝번호, 이전버튼, 다음버튼 계산
-				//시작번호 식: 끝번호 -9
-		this.startpage = this.endpage -9;
-		
-		//제일 마지막 페이지 번호는 전체건수를 고려해야한다
-				//제일 마지막 끝번호 식: 전체건수(올림)/페이지당 게시물 갯수
-				//                             123*1.0=123.0 / 10
-				//                                     12.3(올림) =>13
-		int realEnd = (int)(Math.ceil((total*1.0)/cri.getAmount()));
-		
-=======
 
 		// 끝번호 식: 현재 페이지/10(올림) * 10
 		this.endPage = (int) (Math.ceil(cri.getPageNum() / 10.0)) * 10;
@@ -50,7 +32,6 @@ public class pageVO {
 		// 12.3(올림) =>13
 		int realEnd = (int) (Math.ceil((total * 1.0) / cri.getAmount()));
 
->>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git
 		// 13(realEnd) < 20(endpage) 면
 		// realEnd가 적용되게 함.
 		if (realEnd < this.endPage) {
