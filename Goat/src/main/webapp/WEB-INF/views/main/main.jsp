@@ -16,7 +16,7 @@
 		<div id="top">
 		<br><br><br><br><br><br><br>
 		<form action="/main/main" method="post">
-			<input type="text" placeholder="검색" id="search" name="search">
+			<input type="text" placeholder="검색" id="search" name="keyword">
 			<input type="submit" value="검색" class="btn">
 		</form>
 		</div>

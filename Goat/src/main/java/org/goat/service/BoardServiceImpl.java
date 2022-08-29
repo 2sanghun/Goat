@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.goat.mapper.BoardMapper;
 import org.goat.model.BoardVO;
+import org.goat.model.CriteriaVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 @Service
@@ -31,7 +32,7 @@ public class BoardServiceImpl implements BoardService {
 //	public void remove(BoardVO board) {
 //		bm.delete(board);
 //	}
-	public ArrayList<BoardVO> search(String search){
-		return bm.search(search);
+	public ArrayList<BoardVO> search(CriteriaVO cri){
+		return bm.search(cri);
 	}
 }
