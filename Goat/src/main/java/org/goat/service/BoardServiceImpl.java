@@ -35,4 +35,8 @@ public class BoardServiceImpl implements BoardService {
 	public ArrayList<BoardVO> search(CriteriaVO cri){
 		return bm.search(cri);
 	}
+	
+	public int total(CriteriaVO cri) {
+		return bm.total(cri);
+	}
 }
