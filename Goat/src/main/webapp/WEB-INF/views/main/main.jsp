@@ -23,7 +23,7 @@
 				<br>
 				<br>
 				<br>
-				<br>
+				<br> 
 				<form action="/main" method="get">
 					<input type="text" placeholder="검색" id="search" name="keyword">
 					<input type="submit" value="검색" class="btn">
@@ -42,7 +42,7 @@
 							<td>작성일</td>
 							<td>작성자</td>
 							<td>조회수</td>
-							<td>좋아요</td>
+							<td>좋아요</td> 
 						</tr>
 						<tr>
 							<td>${searchlist.bno}</td>
@@ -57,7 +57,7 @@
 				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
 				<c:if test="${paging.prev}">
 					<a
-						href="/main/main?pageNum=${paging.startPage-1}&amount=${paging.cri.amount}&keyword=${paging.cri.keyword}">이전</a>
+						href="/main?pageNum=${paging.startPage-1}&amount=${paging.cri.amount}&keyword=${paging.cri.keyword}">이전</a>
 				</c:if>
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
 				<c:if test="${paging.cri.keyword!=null}">
@@ -70,7 +70,7 @@
 				<!-- next(다음)이 true이면 다음버튼 활성화 -->
 				<c:if test="${paging.next}">
 					<a
-						href="/main/main?pageNum=${paging.endPage-1}&amount=${paging.cri.amount}&keyword=${paging.cri.keyword}">다음</a>
+						href="/main?pageNum=${paging.endPage-1}&amount=${paging.cri.amount}&keyword=${paging.cri.keyword}">다음</a>
 				</c:if>
 			</div>
 		</div>
