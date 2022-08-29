@@ -22,7 +22,7 @@
 	line-height: 80px;
 	text-align: center;
 	color: white;
-	background-color: teal;	
+	background-color: teal;
 	border-radius: 50px;
 }
 
@@ -30,6 +30,10 @@
 	width: 1000px;
 	margin: auto;
 	background-color: white;
+}
+
+.bodytitle {
+	margin-top: 10px;
 }
 
 .membertable {
@@ -51,17 +55,18 @@
 }
 
 .selectbox {
-    float: left;
-    width: 90px;
-    height: 40px;
-    border: 0px;
-    outline: none;
-    padding-left: 10px;
-    padding-right: 0px;
+	float: left;
+	width: 90px;
+	height: 40px;
+	border: 0px;
+	outline: none;
+	padding-left: 10px;
+	padding-right: 0px;
 }
 
 .rightdiv {
 	float: right;
+	margin-bottom: 10px;
 	height: 40px;
 	width: 400px;
 	background: #ffffff;
@@ -85,7 +90,7 @@
 	color: #ffffff;
 	outline: none;
 	float: right;
-} 
+}
 
 td {
 	margin-top: 5px;
@@ -146,4 +151,30 @@ td {
 .writelist {
 	text-align: center;
 	font-size: 14px;
+}
+
+.page {
+	padding: 30px;
+}
+
+.pagenum {
+	border: 1px solid black;
+	padding: 10px;
+	color: #8C8C8C;
+	background: white;
+	border-radius: 4px;
+}
+.pagenum:hover {
+	background-color: #8C8C8C;
+	color: white;
+}
+
+
+.pagemove{
+	border: 1px solid black;
+	padding: 10px;
+	color: white;
+	background: teal;
+	border-radius: 4px;
+	
 }

@@ -35,6 +35,7 @@ public interface ManagerService {
 	public ArrayList<RepleVO> RepleList(RepleVO write);
 
 	// 댓글 삭제
+	public void repleremove(RepleVO remove);
 
 	// 글 수정 설계
 	// public void modify(BoardVO board);

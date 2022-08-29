@@ -10,7 +10,8 @@
 		select *
 		from(
 		select @rownum:=@rownum+1 rownum, m.*
-		from member m, (select @rownum:=0) as tmp
+		from member m,
+		(select @rownum:=0) as tmp
 		<if test="keyword != null">
 			where id like CONCAT('%',#{keyword},'%')
 
@@ -88,7 +89,9 @@
 	</select>
 
 	<!-- 댓글 삭제 -->
-
+	<delete id="repleremove">
+		delete from reple where reno=#{reno};
+	</delete>
 
 	<!-- <update id="modify"> update board set tutle='', content='' where bno=#{id}; 
 		</update> -->

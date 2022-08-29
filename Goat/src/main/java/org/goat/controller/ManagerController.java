@@ -75,8 +75,17 @@ public class ManagerController {
 
 	// 댓글 리스트
 	@RequestMapping(value = "/manager/managerRepleList", method = RequestMethod.GET)
-	public void managerRepleList(RepleVO write, Model model) {
+	public void managerRepleList(RepleVO write, Model model, Model board) {
 		model.addAttribute("RList", ms.RepleList(write));
+		board.addAttribute("WList", ms.WriteList(null));
+	}
+	
+	// 댓글 삭제
+	@RequestMapping(value = "/manager/repleremove", method = RequestMethod.GET)
+	public String repleremove(RepleVO remove) {
+		ms.repleremove(remove);
+		// manager/manager.jsp 에서 삭제된 결과를 확인하기 위한 화면이동
+		return "redirect:/manager/manager";
 	}
 
 	/*

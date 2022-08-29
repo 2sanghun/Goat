@@ -58,7 +58,9 @@ public class ManagerServiceImpl implements ManagerService {
 		return mm.RepleList(write);
 	}
 	// 댓글 삭제
-
+	public void repleremove(RepleVO remove) {
+		mm.repleremove(remove);
+	}
 	/*
 	 * 글 수정 public void modify(BoardVO board) { mm.modify(board); }
 	 */

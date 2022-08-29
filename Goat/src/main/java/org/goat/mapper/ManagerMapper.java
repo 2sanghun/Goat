@@ -33,6 +33,7 @@ public interface ManagerMapper {
 	public ArrayList<RepleVO> RepleList(RepleVO write);
 
 	// 댓글 삭제
+	public void repleremove(RepleVO remove);
 
 	/*
 	 * 글 수정 public void modify(BoardVO board) { mm.modify(board); }
