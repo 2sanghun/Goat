@@ -14,7 +14,7 @@ public interface ManagerService {
 	public ArrayList<MemberVO> list(CriteriaVO cri);
 
 	// 멤버 리스트에서 전체 회원수 조회
-	public int totalmem();
+	public int total(CriteriaVO cri);
 
 	// 멤버 리스트에서 아이디 검색
 /*	public MemberVO memsearch(MemberVO member);
@@ -35,6 +35,7 @@ public interface ManagerService {
 	public ArrayList<RepleVO> RepleList(RepleVO write);
 
 	// 댓글 삭제
+	public void repleremove(RepleVO remove);
 
 	// 글 수정 설계
 	// public void modify(BoardVO board);

@@ -24,15 +24,16 @@ public class ManagerController {
 	public String list (Model model, CriteriaVO cri, Model totalmem) {
 		// manager.jsp 실행 할 때 select 된 결과를 가져와라
 		model.addAttribute("list", ms.list(cri));
-		totalmem.addAttribute("total", ms.totalmem());
-
+		totalmem.addAttribute("total", ms.total(cri));
+		System.out.println(cri.getKeyword());
 		// list.jsp 실행 할 때 pageVO에 저장되어 있는 데이터를 가져와라.
 		//							 생성자 호출(매개변수가 없는 생성자)
 		// board테이블(게시판테이블)에 전체 건수(select해서)를 아래에 190대신에 대입
-		int total=ms.totalmem();
+		int total = ms.total(cri);
 		// model.addAttribute("paging", new pageVO(cri, 190));
 		model.addAttribute("paging", new pageVO(cri, total));
 		return "manager/manager";
+		
 	}
 /*
 	// 멤버 리스트에서 아이디 검색
@@ -75,8 +76,17 @@ public class ManagerController {
 
 	// 댓글 리스트
 	@RequestMapping(value = "/manager/managerRepleList", method = RequestMethod.GET)
-	public void managerRepleList(RepleVO write, Model model) {
+	public void managerRepleList(RepleVO write, Model model, Model board) {
 		model.addAttribute("RList", ms.RepleList(write));
+		board.addAttribute("WList", ms.WriteList(null));
+	}
+	
+	// 댓글 삭제
+	@RequestMapping(value = "/manager/repleremove", method = RequestMethod.GET)
+	public String repleremove(RepleVO remove) {
+		ms.repleremove(remove);
+		// manager/manager.jsp 에서 삭제된 결과를 확인하기 위한 화면이동
+		return "redirect:/manager/manager";
 	}
 
 	/*
