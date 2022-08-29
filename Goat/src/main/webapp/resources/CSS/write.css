@@ -8,6 +8,10 @@
 	text-align:center;
 	top: 90px;
 }
+#writecss{
+	background:linear-gradient(to right, #2BC0E4,#EAECC6);
+	color : white;
+}
 table{
 	width:700px;
 	margin:auto;

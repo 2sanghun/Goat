@@ -1,7 +1,6 @@
 function idCheck(){
 	 $("#signup").attr("type", "button");
 	var id = $("#idchk").val();
-	alert(id);
 	$.ajax({
 		type : 'post',
 		url : "/header/idcheck",
