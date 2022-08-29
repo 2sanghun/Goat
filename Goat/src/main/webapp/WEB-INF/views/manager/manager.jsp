@@ -29,7 +29,8 @@
 
 				<div class="leftdiv">
 					<p class="allmem">
-			
+			 
+			 
 						<a href="/manager/manager">전체 회원수: ${total}명</a>
 					</p>
 				</div>
