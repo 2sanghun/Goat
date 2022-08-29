@@ -1,5 +1,5 @@
 package org.goat.model;
-
+ 
 public class pageVO {
 
 	// 시작번호

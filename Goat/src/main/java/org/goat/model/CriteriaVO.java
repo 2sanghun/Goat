@@ -1,5 +1,5 @@
 package org.goat.model;
-
+ 
 // pageNum(페이지 번호)와 amount(한페이지당 게시물 갯수) 값을 전달하는 model
 public class CriteriaVO {
 	private int pageNum; // 페이지 번호

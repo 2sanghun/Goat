@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+ 
 $(document).ready(function(){
 	// 검색버튼을 클릭하면
 	$("#searchbtn").on("click",function(){
