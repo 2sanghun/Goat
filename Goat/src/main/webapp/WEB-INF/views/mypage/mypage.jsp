@@ -12,89 +12,7 @@
 <script type="text/javascript" src="../../../resources/JS/effective.js?version=1.2"></script>
 <script type="text/javascript" src="../../../resources/JS/mypagesignup.js"></script>
 <script type="text/javascript" src="../../../resources/JS/Sing Up.js"></script>
-
-<style>
-#container {
-	widht: 50px;
-	position: relative;
-	top: 100px;
-}
-
-td:nth-child(1) {
-	width: 20px;
-	text-align: right;
-}
-
-td:nth-child(2) {
-	width: 100px;
-	text-align: justify;
-	padding: 20px;
-}
-
-#footer {
-	text-align: center;
-	margin-top: 20px;
-}
-
-.long {
-	width: 300px;
-}
-
-.short {
-	width: 100px;
-}
-
-table {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-tr {
-	border-bottom: 1px solid black
-}
-
-#mypagenav {
-	height: 20px;
-	padding: 1rem;
-	background-color: green;
-	list-style-type: none;
-	margin:;
-	padding:;
-	overflow: hidden;
-	font-weight: bold;
-	display: flex;
-	align-items: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-top: 20px;
-	word-spacing: 10px;
-	
-}
-
-li {
-	float: left;
-}
-
-#mypagenav li a {
-	display: block;
-	background-color: green;
-	color: #000000;
-	padding: 8px;
-	text-decoration: none;
-	text-align: center;
-	font-weight: bold;
-}
-
-li a:hover {
-	background-color: teal;
-	color: white;
-}
-
-h1 {
-	text-align: center;
-	text-shadow: 2px 2px 2px gray;
-}
-</style>
+<link rel="stylesheet" href="../../../resources/CSS/mypage.css?version=1.9" type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -102,7 +20,7 @@ h1 {
 	<form action="/mypage/mypage" method="post" onsubmit="return jsSubmit();">
 	<ul id="mypagenav">
 		<li><a>내정보</a></li>
-		<li><a href="memModify">내글</a></li>
+		<li><a href="/memModify">내글</a></li>
 		<li><a href="favorite">회원탈퇴</a></li>
 	</ul>
 
@@ -149,8 +67,8 @@ h1 {
 		</table>
 
 		<div id="footer">
-			<input type="submit" value="수정">
-			<a href="../main/main"><input type="button" value="취소"></a>
+			<input type="submit" value="수정" class="backbtn">
+			<a href="../main/main"><input type="button" value="취소" class="backbtn"></a>
 		</div>
 		</form>
 	</div>

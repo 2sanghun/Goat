@@ -3,16 +3,17 @@ package org.goat.model;
 public class CriteriaVO {
 	 private int pageNum;   //페이지 번호
 	 private int amount;    // 한 페이지당 게시물 갯수
-	 private int id;
-	 
+	 private String id;      
+	 private String keyword;  //키워드를 통해 검색
+	 private String type;     //
 	 //생성자
 	 public CriteriaVO() {
-		 this(1,10,20);
+		 this(1,10);
 	 }
-	 public CriteriaVO(int pageNum, int amount, int id) {
+	 public CriteriaVO(int pageNum, int amount) {
 		 this.pageNum = pageNum;
 		 this.amount = amount;
-		 this.id=id;
+		 
 	 }
 	 
 	public int getPageNum() {
@@ -27,16 +28,33 @@ public class CriteriaVO {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	public int getId() {
+	
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
+	public String getKeyword() {
+		return keyword;
+	}
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	
 	@Override
 	public String toString() {
-		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", id=" + id + "]";
+		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", id=" + id + ", keyword=" + keyword
+				+ ", type=" + type + "]";
 	}
+
 	
 	}
 
