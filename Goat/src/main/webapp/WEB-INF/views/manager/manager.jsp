@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>관리자 페이지</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerCSS.css?version=1.6">
-<script type="text/javascript" src="../../../resources/JS/managerjs.js"></script>
-<script type="text/javascript"
+	href="../../../resources/CSS/managerCSS.css?version=2.0">
+	<script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../resources/JS/managerjs.js"></script>
+
 </head>
 <body>
 
@@ -27,11 +29,12 @@
 
 				<div class="leftdiv">
 					<p class="allmem">
+			
 						<a href="/manager/manager">전체 회원수: ${total}명</a>
 					</p>
 				</div>
 
-				<form action="/manager/manager" id="searchForm">
+				<form action="/manager/manager" id="searchForm" method="get">
 					<div class="rightdiv">
 						<select name="type" class="selectbox">
 							<option value="N">회원이름</option>
@@ -84,12 +87,21 @@
 					<a class="pagemove"
 						href="/manager/manager?type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}"><</a>
 				</c:if>
-
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
 				<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 					var="num">
-					<a class="pagenum"
-						href="/manager/manager?type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}">${num}</a>
+				
+					<c:choose>
+						<c:when test="${paging.cri.pageNum==num}">
+							<a class="selectpage"
+								href="/manager/manager?type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}">${num}</a>
+						</c:when>
+						<c:otherwise>
+							<a class="pagenum"
+								href="/manager/manager?type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}">${num}</a>
+						</c:otherwise>
+					</c:choose>
+
 				</c:forEach>
 
 				<!-- next(다음)이 true이면 다음버튼 활성화 -->

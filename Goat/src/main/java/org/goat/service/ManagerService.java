@@ -14,7 +14,7 @@ public interface ManagerService {
 	public ArrayList<MemberVO> list(CriteriaVO cri);
 
 	// 멤버 리스트에서 전체 회원수 조회
-	public int totalmem();
+	public int total(CriteriaVO cri);
 
 	// 멤버 리스트에서 아이디 검색
 /*	public MemberVO memsearch(MemberVO member);

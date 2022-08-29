@@ -22,8 +22,8 @@ public class ManagerServiceImpl implements ManagerService {
 	}
 	
 	// 멤버 리스트에서 전체 회원수 조회
-	public int totalmem(){
-		return mm.totalmem();	
+	public int total(CriteriaVO cri){
+		return mm.total(cri);	
 	}
 	
 /*	// 멤버 리스트에서 아이디 검색

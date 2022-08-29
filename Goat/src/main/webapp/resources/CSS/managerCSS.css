@@ -136,6 +136,11 @@ td {
 	color: gray;
 }
 
+.modifybtn:hover {
+	background-color: gray;
+	color: white;
+}
+
 .write1 {
 	width: 10%;
 }
@@ -158,23 +163,28 @@ td {
 }
 
 .pagenum {
-	border: 1px solid black;
 	padding: 10px;
 	color: #8C8C8C;
 	background: white;
 	border-radius: 4px;
 }
+
 .pagenum:hover {
 	background-color: #8C8C8C;
 	color: white;
 }
 
-
-.pagemove{
-	border: 1px solid black;
+.selectpage {
 	padding: 10px;
+	background-color: #8C8C8C;
 	color: white;
-	background: teal;
 	border-radius: 4px;
-	
+}
+
+.pagemove {
+	padding: 10px;
+	padding-bottom: 12px;
+	background-color: #8C8C8C;
+	color: white;
+	border-radius: 4px;
 }

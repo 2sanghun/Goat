@@ -13,17 +13,15 @@
 		from member m,
 		(select @rownum:=0) as tmp
 		<if test="keyword != null">
-			where id like CONCAT('%',#{keyword},'%')
-
 			<choose>
 				<when test="type=='N'.toString()">
-					AND name like CONCAT('%',#{keyword},'%')
+					where name like CONCAT('%',#{keyword},'%')
 				</when>
 				<when test="type=='I'.toString()">
-					AND id like CONCAT('%',#{keyword},'%')
+					where id like CONCAT('%',#{keyword},'%')
 				</when>
 				<otherwise>
-					AND nick like CONCAT('%',#{keyword},'%')
+					where nick like CONCAT('%',#{keyword},'%')
 				</otherwise>
 			</choose>
 		</if>
@@ -34,21 +32,18 @@
 	</select>
 
 	<!-- 멤버 리스트에서 전체 회원수 조회 -->
-	<select id="totalmem" resultType="integer">
-		select count(*)-1 as cnt
-		from member
+	<select id="total" resultType="integer">
+		select count(*) from member
 		<if test="keyword != null">
-			where id like CONCAT('%',#{keyword},'%')
-
 			<choose>
 				<when test="type=='N'.toString()">
-					AND name like CONCAT('%',#{keyword},'%')
+					where name like CONCAT('%',#{keyword},'%')
 				</when>
 				<when test="type=='I'.toString()">
-					AND id like CONCAT('%',#{keyword},'%')
+					where id like CONCAT('%',#{keyword},'%')
 				</when>
 				<otherwise>
-					AND nick like CONCAT('%',#{keyword},'%')
+					where nick like CONCAT('%',#{keyword},'%')
 				</otherwise>
 			</choose>
 		</if>
