@@ -22,10 +22,10 @@
 		</div>
 		<!-- 검색 시 나타나며 검색한 내용이 포함된 제목과 내용이 포함된 게시글을 표시 -->
 		<div id="mid">
-			<table>
+			<table> 
 			<c:forEach items="${search}" var="searchlist">
 				<tr>
-					<td colspan="6">${searchlist.category}</td>
+					<td colspan="6">${searchlist.category}</td> 
 				</tr>
 				<tr>
 					<td></td>
