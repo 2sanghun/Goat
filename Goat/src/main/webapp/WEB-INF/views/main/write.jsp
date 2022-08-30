@@ -42,10 +42,16 @@
 						<td>내용</td>
 						<td><textarea name="content" id="uploadResult"></textarea></td>
 					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<div id="file">
+								<input type="file" name="uploadFile" multiple>
+							</div>
+						</td>
+					</tr>
 				</table>
-				<div>
-					<input type="file" name="uploadFile" multiple>
-				</div>
+
 				<div id="button">
 					<input type="button" id="uploadBtn" value="작성" class="button">
 					<a href="/main"><input type="button" value="취소" class="button"></a>
