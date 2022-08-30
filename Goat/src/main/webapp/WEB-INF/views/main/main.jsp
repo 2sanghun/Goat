@@ -51,7 +51,7 @@
 						</tr>
 						<tr>
 							<td><br></td>
-						</tr>
+						</tr> 
 					</c:forEach>
 				</table>
 				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
