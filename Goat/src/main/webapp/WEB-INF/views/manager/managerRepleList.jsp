@@ -1,15 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerWriteListCSS.css">
-
+	href="../../../resources/CSS/managerRepleListCSS.css?version=1.0">
+<script type="text/javascript">
+	function delchk() {
+		return confirm("삭제하시겠습니까?");
+	}
+</script>
 </head>
 <body>
 	<div class="container">
@@ -28,19 +32,20 @@
 					<td class="write2">작성일자</td>
 					<td class="write1">삭제</td>
 				</tr>
-			<c:forEach items="${RList}" var="RepleList">
+				<c:forEach items="${RList}" var="RepleList">
 					<tr class="writelist">
-						<td>${WriteList.bno}</td>
-						<td>${RepleList.content}</td>
+						<td>${RepleList.bno}</td>
+						<td><a href="/detail/detail?bno=${RepleList.bno}">${RepleList.content}</a></td>
 						<td>${RepleList.repledate}</td>
-						<td><a href="/manager/repleremove?reno=${RepleList.reno}"><input type="button" value="삭제"
+						<td><a href="/manager/repleremove?reno=${RepleList.reno}"><input
+								onclick="return delchk();" type="button" value="삭제"
 								class="modifybtn"></a></td>
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
 		<div class="footer">
-			<a href="manager"><input class="back" type="button" value="취소"></a>
+			<a href="manager"><input class="back" type="button" value="닫기"></a>
 
 		</div>
 	</div>

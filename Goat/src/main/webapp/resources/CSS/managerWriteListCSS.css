@@ -6,27 +6,31 @@
 }
 
 .container {
+	width: 100%;
+	margin: auto;
+	height: 1000px;
+}
+
+.header {
+	height: 80px;
 	width: 1000px;
 	margin: auto;
 }
 
-.header {
-	height: 100px;
-	width: 100%;
-}
-
 .title {
-	margin-top: 120px;
-	color: white;
-	background-color: teal;
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
+	margin-top: 130px;
+	padding: 20px;
+	width: 960px;
+	line-height: 80px;
 	text-align: center;
-	line-height: 100px;
+	color: black;
 }
 
 .body {
 	width: 1000px;
 	margin: auto;
-	background-color: white;
+	margin-top: 50px;
 }
 
 .writetable {
@@ -44,11 +48,11 @@
 }
 
 .writetitle {
-	color: gray;
+	color: black;
 	font-weight: bold;
+	font-size: 18px;
 	border-top: 3px solid #8C8C8C;
 	border-bottom: 2px solid #8C8C8C;
-	background-color: #F6F6F6;
 	text-align: center;
 }
 
@@ -59,7 +63,7 @@
 
 td {
 	margin-top: 5px;
-	border-bottom: 1px solid #EAEAEA;
+	border-bottom: 1px solid gray;
 	padding: 20px 0px 20px 0px;
 }
 
@@ -70,12 +74,17 @@ td {
 }
 
 .back {
-	color: white;
+	color: gray;
 	padding: 10px 15px;
 	margin: 50px 20px 10px 0px;
 	border: 0.5px solid black;
-	background-color: gray;
+	background-color: white;
 	border-radius: 4px;
+}
+
+.back:hover {
+	background-color: #2BC0E4;
+	color: white;
 }
 
 .modifybtn {
@@ -84,6 +93,11 @@ td {
 	padding: 5px 5px;
 	border-radius: 4px;
 	color: gray;
+}
+
+.modifybtn:hover {
+	background-color: red;
+	color: white;
 }
 
 .write1 {

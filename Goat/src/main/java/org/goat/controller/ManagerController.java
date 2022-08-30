@@ -78,7 +78,6 @@ public class ManagerController {
 	@RequestMapping(value = "/manager/managerRepleList", method = RequestMethod.GET)
 	public void managerRepleList(RepleVO write, Model model, Model board) {
 		model.addAttribute("RList", ms.RepleList(write));
-		board.addAttribute("WList", ms.WriteList(null));
 	}
 	
 	// 댓글 삭제
