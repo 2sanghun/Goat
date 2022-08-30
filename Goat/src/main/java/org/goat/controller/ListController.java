@@ -41,10 +41,12 @@ public class ListController {
 		return "list/houselist";
 	}
 	@RequestMapping(value = "/list/sitelist", method = RequestMethod.GET)
-	public String sitelist(Model model) {
+	public String sitelist(Model model, CriteriaVO cri) {
 		// sitelist.jsp 실행 할 때 select 된 결과를 가져가라.
-		model.addAttribute("sitelist", ls.sitelist());
+		model.addAttribute("sitelist", ls.sitelist(cri));
 		//
+		int total = ls.total(cri);
+		model.addAttribute("paging", new pageVO(cri, total));
 		return "list/sitelist";
 	}
 	@RequestMapping(value = "/list/tourlist", method = RequestMethod.GET)

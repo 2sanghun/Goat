@@ -26,18 +26,18 @@
 					<td class="cnt"><span>조회</span></td>
 					<td class="good"><span>좋아요</span></td>
 				</tr>
-			<!-- for문 시작 -->
-			<c:forEach items="${list }" var="boardlist">
-				<tr>
-					<td class="bno">${boardlist.bno}</td>
-					<td class="title"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
-					<td class="nick">${boardlist.nick}</td>
-					<td class="regdate">${boardlist.regdate}</td>
-					<td class="cnt">${boardlist.cnt}</td>
-					<td class="good">${boardlist.good}</td>
-				</tr>
-			</c:forEach>
-			<!-- for문 끝 -->
+				<!-- for문 시작 -->
+				<c:forEach items="${list }" var="boardlist">
+					<tr>
+						<td class="bno">${boardlist.bno}</td>
+						<td class="title"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
+						<td class="nick">${boardlist.nick}</td>
+						<td class="regdate">${boardlist.regdate}</td>
+						<td class="cnt">${boardlist.cnt}</td>
+						<td class="good">${boardlist.good}</td>
+					</tr>
+				</c:forEach>
+				<!-- for문 끝 -->
 			</table>
 		</div>
 		<div id="search">
