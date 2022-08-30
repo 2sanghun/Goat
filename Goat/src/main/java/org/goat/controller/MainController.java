@@ -58,10 +58,7 @@ public class MainController {
 		String nick = (String) session.getAttribute("nick");
 		board.setId(id);
 		board.setNick(nick);
-		System.out.println(id);
-		System.out.println(nick);
 		bs.boardwrite(board);
-		System.out.println(board);
 		return "redirect:/list/list";
 	}
 

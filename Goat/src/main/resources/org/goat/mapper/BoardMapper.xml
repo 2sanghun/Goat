@@ -5,6 +5,9 @@
 <!-- namespace로 TestMapper와 연결 -->
 <mapper namespace="org.goat.mapper.BoardMapper">
 	<insert id="boardwrite">
+	<selectKey keyProperty="bno" order="BEFORE" resultType="int">
+		select MAX(bno)+1 from board;
+	</selectKey>
 		insert into board(title, content, category, id, nick)
 		values(#{title},#{content},#{category},#{id}, #{nick})
 	</insert>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.goat.mapper.BoardAttachMapper">
+	<insert id="insert">
+		<!-- 파일경로, 파일명, uuid, image여부를 attach테이블 insert -->
+		insert into attach(uuid, uploadPath, fileName, image,bno)
+		value(#{uuid}, #{uploadPath}, #{fileName}, #{image},#{bno});
+	</insert>
+	<select id="attachlist" resultType="org.goat.model.AttachFileVO">
+		select * from attach where bno = #{bno};
+	</select>
+</mapper>
