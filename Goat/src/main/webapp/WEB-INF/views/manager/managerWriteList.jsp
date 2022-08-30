@@ -25,7 +25,6 @@
 				<tr class="writetitle">
 					<td class="write1">글번호</td>
 					<td class="write2">제목</td>
-					<td class="write3">내용</td>
 					<td class="write2">작성일자</td>
 					<td class="write1">관리</td>
 				</tr>
@@ -33,10 +32,10 @@
 					<tr class="writelist">
 						<td>${WriteList.bno}</td>
 						<td>${WriteList.title}</td>
-						<td>${WriteList.content}</td>
 						<td>${WriteList.regdate}</td>
-						<td><a href="/manager/writeremove?bno=${WriteList.bno}"><input
-								type="button" value="삭제" class="modifybtn"></a></td>
+						<td><a href="/detail/detail?bno=${WriteList.bno}"><input type="button" value="이동" class="modifybtn"></a>
+						<a href="/manager/writeremove?bno=${WriteList.bno}"><input type="button" value="삭제" class="modifybtn"></a>
+						  </td>
 					</tr>
 				</c:forEach>
 			</table>

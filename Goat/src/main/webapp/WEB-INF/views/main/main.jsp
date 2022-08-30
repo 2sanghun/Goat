@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/main.css" type="text/css">
+	href="../../../resources/CSS/main.css?version=1.3" type="text/css">
 <script type="text/javascript"
 	src="../../../resources/JS/main.js"></script>
 </head>
@@ -34,15 +34,12 @@
 				<table>
 					<c:forEach items="${search}" var="searchlist">
 						<tr>
-							<td colspan="6">${searchlist.category}</td>
-						</tr>
-						<tr>
 							<td></td>
 							<td>제목</td>
 							<td>작성일</td>
 							<td>작성자</td>
 							<td>조회수</td>
-							<td>좋아요</td> 
+							<td>카테고리</td> 
 						</tr>
 						<tr>
 							<td>${searchlist.bno}</td>
@@ -50,7 +47,10 @@
 							<td>${searchlist.regdate}</td>
 							<td>${searchlist.nick}</td>
 							<td>${searchlist.cnt}</td>
-							<td>${searchlist.good}</td>
+							<td>${searchlist.category}</td>
+						</tr>
+						<tr>
+							<td><br></td>
 						</tr>
 					</c:forEach>
 				</table>

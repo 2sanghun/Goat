@@ -9,7 +9,10 @@
 	text-align:center;
 	top: 90px;
 }
-
+#logincss{
+	background:linear-gradient(to right, #2BC0E4,#EAECC6);
+	color : white;
+}
 .input {
 	width:300px;
 	height: 25px;
