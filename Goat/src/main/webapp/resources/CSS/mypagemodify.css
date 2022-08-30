@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 #mypagenav {
-	height: 20px;
+    height: 20px;
 	padding: 1rem;
 	color: white;
-	background-color: teal;
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
 	list-style-type: none;
 	margin:;
 	padding:;
@@ -26,7 +26,7 @@ li {
 #mypagenav li a {
 	display: block;
 	color: white;
-	background-color: teal;
+	background-color:rgba(0,0,0,0);
 	padding: 8px;
 	text-decoration: none;
 	text-align: center;
@@ -34,7 +34,7 @@ li {
 }
 
 li a:hover {
-	background-color: teal;
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
 	color: white;
 }
 
@@ -104,6 +104,7 @@ tr {
 
 h1 {
 	text-align: center;
+	color: #2BC0E4;
 	text-shadow: 2px 2px 2px gray;
 }
 
@@ -116,11 +117,8 @@ h4 {
 	padding: 10px 15px;
 	margin: 50px 20px 10px 0px;
 	border: 0.5px solid black;
-	background-color: teal;
+	background-color: #2BC0E4;
 	border-radius: 4px;
 }
-
-
-
 
 

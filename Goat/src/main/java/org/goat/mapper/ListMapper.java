@@ -26,5 +26,5 @@ public interface ListMapper {
 
 	// board 테이블 전체건수 DB설계
 	public int total(CriteriaVO cri);
-	
+
 }

@@ -8,15 +8,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../../resources/CSS/mypagefavorite.css?version=1.9" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/mypagefavorite.css?version=1.3" type="text/css">
 </head>
 <body>
  <div id = "container">
   <%@ include file="../header/header.jsp"%>
   <form action="/mypage/favorite" method="post">
 <ul id="mypagenav">
-    <li><a href = "mypage">내정보</a></li>
-    <li><a href = "memModify">내글</a></li>
+    <li><a href = "/mypage/mypage">내정보</a></li>
+    <li><a href = "/memModify">내글</a></li>
     <li><a>회원탈퇴</a></li>
 </ul>
   <hr size = "1" color = "black">

@@ -10,9 +10,9 @@
 <script type="text/javascript"
 	src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../resources/JS/effective.js?version=1.2"></script>
-<script type="text/javascript" src="../../../resources/JS/mypagesignup.js"></script>
+<script type="text/javascript" src="../../../resources/JS/mypagesignup.js?version=1.2"></script>
 <script type="text/javascript" src="../../../resources/JS/Sing Up.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/mypage.css?version=1.9" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/mypage.css?version=1.2" type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -21,7 +21,7 @@
 	<ul id="mypagenav">
 		<li><a>내정보</a></li>
 		<li><a href="/memModify">내글</a></li>
-		<li><a href="favorite">회원탈퇴</a></li>
+		<li><a href="/mypage/favorite">회원탈퇴</a></li>
 	</ul>
 
 		<hr size="1" color="black">
