@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name ="google-signin-client_id" content="1060483348379-lhrt8j3q10mi8irutv532l8497oggsur.apps.googleusercontent.com">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../../resources/CSS/login.css" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/login.css?version=1.1" type="text/css">
 <script type="text/javascript" src="../../../resources/JS/effective.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
