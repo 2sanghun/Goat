@@ -8,9 +8,8 @@
 <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
 <script type="text/javascript" src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../resources/JS/mypagelist.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/mypagelist.css?version=1.9" type="text/css">
-<link rel="stylesheet" href="../../../resources/CSS/mypagemodify.css?version=1.9" type="text/css">
-<link rel="stylesheet" href="../../../resources/CSS/mypagefavorite.css?version=1.9" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/mypagelist.css?version=2.3" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/mypagemodify.css?version=1.2" type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -18,9 +17,9 @@
 
 
 		<ul id="mypagenav">
-			<li><a href="mypage">내정보</a></li>
+			<li><a href="/mypage/mypage">내정보</a></li>
 			<li><a>내글</a></li>
-			<li><a href="favorite">회원탈퇴</a></li>
+			<li><a href="/mypage/favorite">회원탈퇴</a></li>
 		</ul>
 
 		<hr size="1" color="black">
@@ -54,47 +53,45 @@
 					<!--  for문 끝 -->
 				</table>
 			</div>
+			<div id="search">
+			<div id="pagingArea">
             <h4>
 			<!-- prev(이전)이 true이면 이전버튼 활성화 -->
-			<c:if test="${paging.prev}">
-				<a href="/memModify?type=${paging.cri.type}
-             &keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}">이전</a>
+            <c:if test="${paging.prev}">
+					<a href="/memModify?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}">이전</a>
 			</c:if>
-
 			<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
-			<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
-				var="num">
-				<a href="/memModify?type=${paging.cri.type}
-              &keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}">${num}</a>
+            <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+					<a href="/memModify?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}">${num}</a>
 			</c:forEach>
-
 			<!-- next(다음)이 true이면 다음버튼 활성화 -->
 			<c:if test="${paging.next}">
-				<a href="/memModify?type=${paging.cri.type}
-              &keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}">다음</a>
+					<a href="/memModify?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}">다음</a>
 			</c:if>
             </h4>
-			<div id="search">
+            <hr id="paginghr">
 				<form id="searchForm" action="/memModify" method="get">
-					<select class="search" name="condition">
+					<select class="search" name="period">
 						<option value="total">전체기간</option>
 						<option value="day">1일</option>
 						<option value="week">1주</option>
 						<option value="month">1개월</option>
-						<option value="total">6개월</option>
-						<option value="total">1년</option>
-					</select> <select class="search" name="type">
+						<option value="sixMonth">6개월</option>
+						<option value="year">1년</option>
+					</select>
+					 <select class="search" name="type">
 						<option value="T">제목</option>
 						<option value="W">글작성자</option>
 						<option value="TC">제목 + 게시글</option>
 					</select>
-					<input type = "text" name = "keyword" class="search">
-					<input type = "hidden" name = "pageNum" class="search" value = "${paging.cri.pageNum}">
-					<input type = "hidden" name = "amount" class="search" value = "${paging.cri.amount}" >
-					<input type = "button" value = "검색" class="search" id="searchbtn">
+					<input type = "text" name = "keyword" class="search"  placeholder="검색어를 입력해주세요">
+					<input type="button" class="search" id="searchbtn" value = "검색">
+					<input type = "hidden" name = "pageNum"  value = "${paging.cri.pageNum}">
+					<input type = "hidden" name = "amount"  value = "${paging.cri.amount}" >
 				</form>
 			</div>
 		</div>
-	</div>
+		</div>
+		</div>
 </body>
 </html>
