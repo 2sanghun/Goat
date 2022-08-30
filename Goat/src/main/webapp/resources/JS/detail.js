@@ -1,3 +1,18 @@
 /**
- 뭐 넣을꺼 없나 수정 삭제 누르면 폭죽 터지게 할까
+
  **/
+
+$(document).ready(function(){
+	
+	console.log($("#id").val());
+	if($("#id").val()==""){
+		console.log("비회원이면 말이다")
+		 $('#title').attr('readonly',true);
+		 $('#contenttext').attr('readonly',true);
+	      }else{
+	    	  console.log("회원이면")
+	     $('#title').attr('readonly',false);
+	     $('#contenttext').attr('readonly',false);
+	      }
+ 
+})

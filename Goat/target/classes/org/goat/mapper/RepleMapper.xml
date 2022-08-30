@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.goat.mapper.RepleMapper">
+
+<insert id="writeReple">insert into reple(content,id,bno)values(#{content},#{id},#{bno}) </insert>
+
+
+<select id="list" resultType="org.goat.model.RepleVO">
+
+<!-- select * from reple where bno= #{bno} -->
+
+select * from reple, member where reple.id = member.id and bno= #{bno} 
+</select>
+
+<delete id="remove">delete from replewhere rno = #{rno} </delete>
+
+<update id="modify">update reple set content = #{content} where rno = #{rno} </update>
+
+</mapper>

@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>관리자 페이지</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerCSS.css?version=2.2">
+	href="../../../resources/CSS/managerCSS.css?version=2.4">
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../resources/JS/managerjs.js"></script>
@@ -29,7 +29,7 @@
 
 				<div class="leftdiv">
 					<p class="allmem">
-						<a href="/manager/manager">전체 회원수: ${total}명</a>
+						전체 회원수 <a href="/manager/manager" class="totalmem">${total}</a>명
 					</p>
 				</div>
 

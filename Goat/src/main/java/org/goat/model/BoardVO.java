@@ -1,4 +1,6 @@
 package org.goat.model;
+ 
+import java.util.ArrayList;
 
 public class BoardVO {
 	private int bno;
@@ -18,6 +20,9 @@ public class BoardVO {
 	private int good;
 
 	private String category;
+	
+	// AttachFileVO(파일 업로드 관련 model)
+	private ArrayList<AttachFileVO> attach;
 			
 	public String getCategory() {
 		return category;
@@ -89,11 +94,21 @@ public class BoardVO {
 
 	public void setGood(int good) {
 		this.good = good;
+	}	
+	
+	public ArrayList<AttachFileVO> getAttach() {
+		return attach;
 	}
+
+	public void setAttach(ArrayList<AttachFileVO> attach) {
+		this.attach = attach;
+	}
+
 	@Override
 	public String toString() {
 		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", nick=" + nick + ", regdate="
-				+ regdate + ", cnt=" + cnt + ", id=" + id + ", good=" + good + ", category=" + category + "]";
+				+ regdate + ", cnt=" + cnt + ", id=" + id + ", good=" + good + ", category=" + category + ", attach="
+				+ attach + "]";
 	}
 
 

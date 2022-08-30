@@ -8,19 +8,19 @@
 .container {
 	width: 100%;
 	margin: auto;
-	background: linear-gradient(to right, #70e1f5, #eaecc6);
 }
 
 .header {
 	width: 1000px;
-	height: 80px;
+	height: 100px;
 	margin: auto;
 }
 
 .title {
-	margin-top: 96px;
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
+	margin-top: 130px;
 	padding: 20px;
-	width: auto;
+	width: 960px;
 	line-height: 80px;
 	text-align: center;
 	color: black;
@@ -29,7 +29,7 @@
 .body {
 	width: 1000px;
 	margin: auto;
-	margin-top: 40px;
+	margin-top: 30px;
 }
 
 .bodytitle {
@@ -52,6 +52,12 @@
 	padding: 10px;
 	font-weight: bold;
 	font-size: 18px;
+}
+
+.totalmem{
+	color: blue;
+	font-size: 24px;
+	
 }
 
 .selectbox {

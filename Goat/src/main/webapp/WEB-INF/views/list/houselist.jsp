@@ -15,7 +15,7 @@
 	<div id="content">
 		<div id="middle">
 			<p id="categorylist">숙소</p>
-			<hr>
+			<hr id="categoryhr">
 			<table>
 				<tr id="tr1">
 					<td class="bno"><span></span></td>

@@ -1,5 +1,5 @@
 package org.goat.service;
-  
+   
 import java.util.ArrayList;
 
 import org.goat.model.BoardVO;
@@ -10,7 +10,7 @@ public interface ListService {
 	public ArrayList<BoardVO> list(CriteriaVO cri);
 	
 	// 관광 글 목록 리스트 설계
-	public ArrayList<BoardVO> sitelist();
+	public ArrayList<BoardVO> sitelist(CriteriaVO cri);
 	
 	// 숙소 글 목록 리스트 설계
 	public ArrayList<BoardVO> houselist();

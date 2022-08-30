@@ -8,8 +8,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerWriteListCSS.css">
+	href="../../../resources/CSS/managerWriteListCSS.css?version=1.0">
 
+<script type="text/javascript">
+	function delchk() {
+		return confirm("삭제하시겠습니까?");
+	}
+</script>
 </head>
 <body>
 	<div class="container">
@@ -31,11 +36,11 @@
 				<c:forEach items="${WList}" var="WriteList">
 					<tr class="writelist">
 						<td>${WriteList.bno}</td>
-						<td>${WriteList.title}</td>
+						<td><a href="/detail/detail?bno=${WriteList.bno}">${WriteList.title}</a></td>
 						<td>${WriteList.regdate}</td>
-						<td><a href="/detail/detail?bno=${WriteList.bno}"><input type="button" value="이동" class="modifybtn"></a>
-						<a href="/manager/writeremove?bno=${WriteList.bno}"><input type="button" value="삭제" class="modifybtn"></a>
-						  </td>
+						<td><a href="/manager/writeremove?bno=${WriteList.bno}"><input
+								onclick="return delchk();" type="button" value="삭제"
+								class="modifybtn"></a></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -43,7 +48,7 @@
 		</div>
 
 		<div class="footer">
-			<a href="manager"><input class="back" type="button" value="취소"></a>
+			<a href="manager"><input class="back" type="button" value="닫기"></a>
 
 		</div>
 	</div>
