@@ -38,6 +38,7 @@ public class MypageController {
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		cri.setId(id);
+		System.out.println(id);
 		model.addAttribute("myboard",mm.myboard(cri));
 		int total=mm.total(cri);
 		System.out.println("total="+total);

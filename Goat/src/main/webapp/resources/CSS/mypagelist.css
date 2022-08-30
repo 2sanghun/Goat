@@ -3,7 +3,7 @@
 	width: 1000px;
 	margin: 0 auto;
 	position: relative;
-	top: 40px;
+	top: 90px;
 }
 
 #middle {
@@ -20,7 +20,7 @@
 
 
 table {
-	
+	width: 1000px;
 	border-collapse: collapse;
 	table-layout: fixed;
 }
@@ -34,9 +34,11 @@ span {
 }
 
 td {
-	height: 20px;
+	height: 30px;
 	border-bottom: 1px solid black;
-
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .bno {
@@ -67,17 +69,13 @@ td {
 	text-align: center;
 }
 
-#search {
-	height: 100px;
-	background: #DCDCDC;
-	text-align: center;
-}
 
-#searchform {
-	position: relative;
-	top: 35px;
+#searchbtn {
+	color: white;
+	background-color: teal;
+	border-radius: 4px;
+	margin-left: -5px;
 }
-
 .search {
 	height: 30px;
 	margin: 0;
@@ -85,9 +83,39 @@ td {
 	border: none;
 }
 
+#paginghr {
+	position : relative;
+	top : 24px;
+	margin: 0;
+	background: #BDBDBD;
+	height: 1px;	
+}
+
+#searchform {
+	position: relative;
+	top: 32px;
+}
+
 #searchbtn {
 	color: white;
-	background-color: teal;
+	background-color: #2BC0E4;
 	border-radius: 4px;
 	margin-left: -5px;
+}
+
+#search {
+	height: 100px;
+	background: #DCDCDC;
+	text-align: center;
+}
+#pagingArea {
+	position : relative;
+	top : 14px;
+}
+#paginghr {
+	position : relative;
+	top :-15px;
+	margin: 0;
+	background: #BDBDBD;
+	height: 1px;	
 }

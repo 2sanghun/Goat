@@ -2,6 +2,7 @@ package org.goat.service;
 
 import java.util.ArrayList;
 
+import org.goat.model.AttachFileVO;
 import org.goat.model.BoardVO;
 import org.goat.model.CriteriaVO;
 
@@ -9,6 +10,8 @@ public interface BoardService {
 	// 글쓰기 설계
 	public void boardwrite(BoardVO board);
 	
+	public ArrayList<AttachFileVO> attachlist(int bno);
+
 	// 글 목록 리스트 설계
 	// public ArrayList<BoardVO> list();
 
