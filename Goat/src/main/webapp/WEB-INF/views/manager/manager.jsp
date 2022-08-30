@@ -9,8 +9,8 @@
 <meta charset="UTF-8">
 <title>관리자 페이지</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerCSS.css?version=2.0">
-	<script type="text/javascript"
+	href="../../../resources/CSS/managerCSS.css?version=2.2">
+<script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../resources/JS/managerjs.js"></script>
 
@@ -29,8 +29,6 @@
 
 				<div class="leftdiv">
 					<p class="allmem">
-			 
-			 
 						<a href="/manager/manager">전체 회원수: ${total}명</a>
 					</p>
 				</div>
@@ -91,7 +89,7 @@
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
 				<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 					var="num">
-				
+
 					<c:choose>
 						<c:when test="${paging.cri.pageNum==num}">
 							<a class="selectpage"
