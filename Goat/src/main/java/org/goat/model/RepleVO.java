@@ -3,13 +3,16 @@ package org.goat.model;
 public class RepleVO {
 	private String id;
 	
-	private int reno;
+    private int rno;
 	
 	private String content;
 	
 	private String repledate;
 	
 	private int bno;
+	
+	private String nick;
+	
 
 	public String getId() {
 		return id;
@@ -19,12 +22,14 @@ public class RepleVO {
 		this.id = id;
 	}
 
-	public int getReno() {
-		return reno;
+
+
+	public int getRno() {
+		return rno;
 	}
 
-	public void setReno(int reno) {
-		this.reno = reno;
+	public void setRno(int rno) {
+		this.rno = rno;
 	}
 
 	public String getContent() {
@@ -51,10 +56,19 @@ public class RepleVO {
 		this.bno = bno;
 	}
 
+	
+	public String getNick() {
+		return nick;
+	}
+
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+
 	@Override
 	public String toString() {
-		return "RepleModel [id=" + id + ", reno=" + reno + ", content=" + content + ", repledate=" + repledate
-				+ ", bno=" + bno + "]";
+		return "RepleVO [id=" + id + ", rno=" + rno + ", content=" + content + ", repledate=" + repledate + ", bno="
+				+ bno + ", nick=" + nick + "]";
 	}
 	
 }
