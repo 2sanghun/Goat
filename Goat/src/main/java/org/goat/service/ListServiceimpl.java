@@ -47,5 +47,5 @@ public class ListServiceimpl implements ListService{
 	public int total(CriteriaVO cri) {
 		return lm.total(cri);
 	}
-
+	
 }
