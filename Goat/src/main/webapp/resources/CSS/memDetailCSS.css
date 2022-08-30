@@ -6,27 +6,31 @@
 }
 
 .container {
-	width: 1000px;
+	width: 100%;
 	margin: auto;
+	height: 1000px;
 }
 
 .header {
-	width: 100%;
-	height: 100px;
+	width: 1000px;
+	height: 80px;
 	margin: auto;
 }
 
 .title {
-	margin-top: 120px;
-	width: auto;
-	background-color: teal;
-	line-height: 100px;
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
+	margin-top: 130px;
+	padding: 20px;
+	width: 960px;
+	line-height: 80px;
 	text-align: center;
-	color: white;
+	color: black;
 }
 
 .body {
 	width: 1000px;
+	margin: auto;
+	margin-top: 50px;
 }
 
 table {
@@ -37,13 +41,15 @@ table {
 
 td {
 	margin-top: 5px;
-	border-bottom: 1px solid #EAEAEA;
-	padding: 20px 0px 20px 0px;
+	border-bottom: 1px solid gray;
+	padding: 25px 10px 25px 10px;
 	text-align: left;
 }
 
 .tdleft {
 	width: 100px;
+	font-weight: bold;
+	font-size: 17px;
 }
 
 .short {
@@ -56,27 +62,36 @@ td {
 	text-align: center;
 }
 
-.cancle, .ban  {
-	color: white;
+.cancle, .ban {
+	color: gray;
 	padding: 10px 15px;
-	margin: 10px 20px 10px 0px;
-	border: 0.5px solid black;
+	margin: 30px 20px 10px 0px;
+	border: 0.5px solid gray;
 	border-radius: 4px;
 }
 
-.postnum {
-	color: white;
+/* .postnum {
+	color: gray;
 	padding: 10px 15px;
 	border: 0.5px solid teal;
 	border-radius: 24px;
 	background-color: teal;
 	border-radius: 24px;
+} */
+.cancle {
+	background-color: white;
 }
 
-.cancle {
-	background-color: gray;
+.cancle:hover {
+	background-color: #2BC0E4;
+	color: white;
 }
 
 .ban {
+	background-color: white;
+}
+
+.ban:hover {
 	background-color: red;
+	color: white;
 }

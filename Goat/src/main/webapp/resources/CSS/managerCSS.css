@@ -6,30 +6,30 @@
 }
 
 .container {
-	width: 1000px;
+	width: 100%;
 	margin: auto;
 }
 
 .header {
 	width: 1000px;
-	height: 80px;
+	height: 100px;
 	margin: auto;
 }
 
 .title {
-	margin-top: 120px;
-	width: auto;
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
+	margin-top: 130px;
+	padding: 20px;
+	width: 960px;
 	line-height: 80px;
 	text-align: center;
-	color: white;
-	background-color: teal;
-	border-radius: 50px;
+	color: black;
 }
 
 .body {
 	width: 1000px;
 	margin: auto;
-	background-color: white;
+	margin-top: 30px;
 }
 
 .bodytitle {
@@ -54,6 +54,12 @@
 	font-size: 18px;
 }
 
+.totalmem{
+	color: blue;
+	font-size: 24px;
+	
+}
+
 .selectbox {
 	float: left;
 	width: 90px;
@@ -69,8 +75,8 @@
 	margin-bottom: 10px;
 	height: 40px;
 	width: 400px;
-	background: #ffffff;
-	border: 1px solid teal;
+	background: white;
+	border: 1px solid #2BC0E4;
 }
 
 .search {
@@ -86,7 +92,7 @@
 	width: 45px;
 	height: 100%;
 	border: 0px;
-	background: teal;
+	background: #2BC0E4;
 	color: #ffffff;
 	outline: none;
 	float: right;
@@ -94,16 +100,17 @@
 
 td {
 	margin-top: 5px;
-	border-bottom: 1px solid #EAEAEA;
+	border-bottom: 1px solid gray;
 	padding: 20px 0px 20px 0px;
 }
 
 .memlistnav {
-	color: gray;
+	color: black;
 	font-weight: bold;
+	font-size: 18px;
 	border-top: 3px solid #8C8C8C;
 	border-bottom: 2px solid #8C8C8C;
-	background-color: #F6F6F6;
+	background: #;
 }
 
 .footer {
@@ -129,7 +136,7 @@ td {
 }
 
 .modifybtn {
-	background-color: white;
+	background: white;
 	border: 0.5px solid gray;
 	padding: 5px 5px;
 	border-radius: 4px;
@@ -137,7 +144,7 @@ td {
 }
 
 .modifybtn:hover {
-	background-color: gray;
+	background-color: #2BC0E4;
 	color: white;
 }
 
@@ -170,13 +177,13 @@ td {
 }
 
 .pagenum:hover {
-	background-color: #8C8C8C;
+	background-color: #2BC0E4;
 	color: white;
 }
 
 .selectpage {
 	padding: 10px;
-	background-color: #8C8C8C;
+	background-color: #2BC0E4;
 	color: white;
 	border-radius: 4px;
 }
@@ -184,7 +191,7 @@ td {
 .pagemove {
 	padding: 10px;
 	padding-bottom: 12px;
-	background-color: #8C8C8C;
+	background-color: #2BC0E4;
 	color: white;
 	border-radius: 4px;
 }

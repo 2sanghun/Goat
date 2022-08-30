@@ -8,8 +8,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerWriteListCSS.css">
+	href="../../../resources/CSS/managerWriteListCSS.css?version=1.0">
 
+<script type="text/javascript">
+	function delchk() {
+		return confirm("삭제하시겠습니까?");
+	}
+</script>
 </head>
 <body>
 	<div class="container">
@@ -25,18 +30,17 @@
 				<tr class="writetitle">
 					<td class="write1">글번호</td>
 					<td class="write2">제목</td>
-					<td class="write3">내용</td>
 					<td class="write2">작성일자</td>
 					<td class="write1">관리</td>
 				</tr>
 				<c:forEach items="${WList}" var="WriteList">
 					<tr class="writelist">
 						<td>${WriteList.bno}</td>
-						<td>${WriteList.title}</td>
-						<td>${WriteList.content}</td>
+						<td><a href="/detail/detail?bno=${WriteList.bno}">${WriteList.title}</a></td>
 						<td>${WriteList.regdate}</td>
 						<td><a href="/manager/writeremove?bno=${WriteList.bno}"><input
-								type="button" value="삭제" class="modifybtn"></a></td>
+								onclick="return delchk();" type="button" value="삭제"
+								class="modifybtn"></a></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -44,7 +48,7 @@
 		</div>
 
 		<div class="footer">
-			<a href="manager"><input class="back" type="button" value="취소"></a>
+			<a href="manager"><input class="back" type="button" value="닫기"></a>
 
 		</div>
 	</div>

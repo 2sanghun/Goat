@@ -1,5 +1,5 @@
 package org.goat.model;
-
+ 
 public class AttachFileVO {
 	
 	// 1. 파일이 저장되어 있는 경로
