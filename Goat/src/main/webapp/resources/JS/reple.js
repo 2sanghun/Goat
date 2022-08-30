@@ -92,6 +92,7 @@ function list(bno){// list 함수 선언 시작
     	console.log(data)
     	console.log($("#id").val())
     	
+	
     	
     	var str = ""; 
     	
@@ -101,10 +102,18 @@ function list(bno){// list 함수 선언 시작
     			str+="<td>"+data[i].nick+"</td>"
     			str+="</tr>"
     				
-    			str+="<tr>"
-                str+="<td><textarea class='replycontent' id='replycontent"+data[i].rno+"'>"+data[i].content+"</textarea></td>"
-        	    str+="</tr>"
-        	    	
+    				if($("#id").val()==data[i].id){
+				    	 console.log("댓글 쓴 회원만 자기 댓글에 손댈 수 있어");
+				    	      str+="<tr>"
+	    		              str+="<td><textarea class='replycontent' id='replycontent"+data[i].rno+"'>"+data[i].content+"</textarea></td>"
+	    		              str+="</tr>"
+	    		    }else{
+	    		         console.log("나머지는 다 손 못대");
+	    		              str+="<tr>"
+	    		              str+="<td><textarea class='replycontent' id='replycontent"+data[i].rno+"' readonly>"+data[i].content+"</textarea></td>"
+	    		              str+="</tr>"
+	    		    }
+				    	 
         	    if($("#id").val()==data[i].id){
         	    str+="<tr>"
         	    str+="<td><div class='upde'><input class='update' type='button' value='수정' data-rno="+data[i].rno+" data-reply='"+data[i].content+"'> " 

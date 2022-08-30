@@ -126,6 +126,8 @@ input{
 <hr>
 <hr>
 
+<input type="hidden" id="id" value="${id}">
+
 <div id="content">
 
 <form method="post">
