@@ -9,6 +9,7 @@
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="../../../resources/CSS/write.css?version=1.2"
 	type="text/css">
+
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
 </head>
 <body>
@@ -29,6 +30,12 @@
 									<option value="음식">음식</option>
 									<option value="교통">교통</option>
 									<option value="투어">투어</option>
+									<%
+										if (id.equals("manager")) {
+									%><option value="공지">공지</option>
+									<%
+										}
+									%>
 								</select>
 							</div> <input type="text" name="title" id="uploadtitle"
 							placeholder="제목을 입력하세요">
