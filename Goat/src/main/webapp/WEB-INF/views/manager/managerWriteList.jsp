@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerWriteListCSS.css?version=1.0">
+	href="../../../resources/CSS/managerWriteListCSS.css?version=1.1">
 
 <script type="text/javascript">
 	function delchk() {
