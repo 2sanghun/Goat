@@ -24,6 +24,9 @@ public interface ListService {
 	// 투어 글 목록 리스트 설계
 	public ArrayList<BoardVO> tourlist();
 	
+	// 매니저 글 목록 리스트 설계
+	public ArrayList<BoardVO> manager();
+	
 	// board 테이블 전체건수 설계
 	public int total(CriteriaVO cri);
 	
