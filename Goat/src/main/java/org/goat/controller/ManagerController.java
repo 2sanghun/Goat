@@ -71,7 +71,7 @@ public class ManagerController {
 	public String bremove(BoardVO bremove) {
 		ms.bremove(bremove);
 		// manager/manager.jsp 에서 삭제된 결과를 확인하기 위한 화면이동
-		return "redirect:/manager/manager";
+		return "redirect:/manager/managerWriteList?id=";
 	}
 
 	// 댓글 리스트

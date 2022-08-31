@@ -85,7 +85,7 @@
 
 	<!-- 댓글 삭제 -->
 	<delete id="repleremove">
-		delete from reple where reno=#{reno};
+		delete from reple where rno=#{rno};
 	</delete>
 
 	<!-- <update id="modify"> update board set tutle='', content='' where bno=#{id}; 
