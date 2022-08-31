@@ -1,136 +1,97 @@
 @charset "UTF-8";
-
-#content {
+#container {
 	width: 1000px;
-	margin: 0 auto;
-	position: relative;
-	top: 90px;
-}
-
-#categorylist {
-	line-height: 80px;
-	height: 80px;
-	font-size: 32px;
-	font-weight: bold;
-	margin-top: 15px;
-	margin-bottom: 10px;
-	padding: 20px;
-	text-align: center;
-	background: linear-gradient(to right, #70e1f5, #eaecc6);
-}
-
-table {
-	width: 1000px;
-	border-collapse: collapse;
-	table-layout: fixed;
-}
-
-#tr1 {
-	font-weight: bold;
-	font-size: 18px;
-	border-top: 3px solid #8C8C8C;
-	border-bottom: 2px solid #8C8C8C;
-}
-
-td {
-	height: 30px;
-	border-bottom: 1px solid gray;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
-	padding: 20px
-}
-
-.bno {
-	width: 10%;
-	text-align: center;
-}
-
-.title {
-	width: 30%;
-	text-align: center;
-}
-
-.nick {
-	width: 8%;
-	text-align: center;
-}
-
-.regdate {
-	width: 18%;
-	text-align: center;
-}
-
-.cnt {
-	width: 8%;
-	text-align: center;
-}
-
-.good {
-	width: 8%;
-	text-align: center;
-}
-
-#search {
-	height: 200px;
-	text-align: center;
-}
-
-#searchform {
-	position: relative;
-	top: 32px;
-}
-
-#searchAll {
-	border: 1px solid #2BC0E4;
-	height: 44px;
-	width: 660px;
+	height: 1050px;
 	margin: auto;
+	padding : 10px;
+	position: relative;
+	text-align:center;
+	top: 66px;
+}
+#writecss{
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
+	padding: 20px;
+	height: 80px;
+	line-height: 80px;
+}
+table{
+	width:1000px;
+	margin:auto;
+	position:relative;
+}
+#mid td select {
+	width: 100px;
 }
 
-.search {
-	font-size: 14px;
-	width: 130px;
+#mid td input{
+	float: left;
+	width: 860px;
+	margin-left: 5px;
+	margin-bottom: 15px;
 	padding: 12px;
+}
+#mid textarea{
+	width: 97%;
+	height: 500px;
+	resize: none;
+	margin-bottom: 10px;
+
+}
+
+select{
+	border: 1px solid gray;
+	border-radius: 10px;
 	outline: none;
-	border: none;
+	height: 40px;
+	padding: 10px;
+	font-size: 18px;
 	float: left;
 }
 
-#query {
-	width: 310px;
+#uploadtitle{
+    border: 1px solid gray;
+	border-radius: 4px;
+	padding: 10px;
 }
 
-#searchbtn {
+#uploadResult{
+    border: 1px solid gray;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+label{
+float: left;
+	border: none;
+	border-radius: 8px;
 	color: white;
 	background-color: #2BC0E4;
-	padding: 10px;
-	float: right;
-	width: 60px;
-	height: 44px;
+	padding: 20px;
 }
 
-#pagingArea {
-	margin-top: 30px;
-	position: relative;
+label:hover{
+	color: white;
+	background-color: blue;
 }
 
-#pageNum {
-	padding: 10px;
-	color: #8C8C8C;
-	background: white;
+#mid{
+	text-align:center;
+}
+
+.button {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: white;
+	padding: 20px 30px;
+	color:gray;
+	border:1px solid gray;
 	border-radius: 4px;
 }
 
-#pageNum:hover {
+.button:hover{
 	background-color: #2BC0E4;
-	color: white;
+    color: white;
 }
 
-#pageBtn {
-	padding: 10px;
-	padding-bottom: 12px;
-	background-color: #2BC0E4;
-	color: white;
-	border-radius: 4px;
-}
+
+

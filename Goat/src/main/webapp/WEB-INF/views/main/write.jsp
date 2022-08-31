@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/write.css"
+<link rel="stylesheet" href="../../../resources/CSS/write.css?version=1.0"
 	type="text/css">
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
 </head>
@@ -21,7 +21,6 @@
 			<div id="mid">
 				<table>
 					<tr>
-						<td>카테고리</td>
 						<td>
 							<div id="select">
 								<select name="category">
@@ -31,24 +30,18 @@
 									<option value="교통">교통</option>
 									<option value="투어">투어</option>
 								</select>
-							</div>
+							</div> <input type="text" name="title" id="uploadtitle"
+							placeholder="제목입력">
 						</td>
 					</tr>
 					<tr>
-						<td>제목</td>
-						<td><input type="text" name="title"></td>
+						<td colspan="2"><textarea name="content" id="uploadResult"
+								placeholder="내용입력"></textarea></td>
 					</tr>
 					<tr>
-						<td>내용</td>
-						<td><textarea name="content" id="uploadResult"></textarea></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>
-							<div id="file">
-								<input type="file" name="uploadFile" multiple>
-							</div>
-						</td>
+						<td><label> 파일첨부 <input type="file" name="uploadFile"
+								id="uploadFile" hidden="" multiple>
+						</label></td>
 					</tr>
 				</table>
 
