@@ -7,26 +7,20 @@
 	top: 90px;
 }
 
-#middle {
-	margin: 20px auto 0;
-}
-
 #categorylist {
+	line-height: 80px;
+	height: 80px;
 	font-size: 32px;
 	font-weight: bold;
-	margin: 0;
+	margin-top: 15px;
+	margin-bottom: 10px;
 	padding: 20px;
 	text-align: center;
 	background: linear-gradient(to right, #70e1f5, #eaecc6);
 }
 
-#categoryhr {
-	margin: 0;
-}
-
 table {
 	width: 1000px;
-	margin-top: 20px;
 	border-collapse: collapse;
 	table-layout: fixed;
 }
@@ -54,8 +48,7 @@ td {
 
 .title {
 	width: 30%;
-		text-align: center;
-
+	text-align: center;
 }
 
 .nick {
@@ -88,28 +81,56 @@ td {
 	top: 32px;
 }
 
+#searchAll {
+	border: 1px solid #2BC0E4;
+	height: 44px;
+	width: 660px;
+	margin: auto;
+}
+
 .search {
 	font-size: 14px;
-	width: 150px;
+	width: 130px;
 	padding: 12px;
 	outline: none;
-	border: 0px;
+	border: none;
 	float: left;
+}
+
+#query {
+	width: 310px;
 }
 
 #searchbtn {
 	color: white;
 	background-color: #2BC0E4;
 	padding: 10px;
+	float: right;
+	width: 60px;
+	height: 44px;
 }
 
 #pagingArea {
-	margin-top: 10px;
-	position : relative;
-	background-color: blue;
+	margin-top: 30px;
+	position: relative;
 }
 
-#footer{
-	
+#pageNum {
+	padding: 10px;
+	color: #8C8C8C;
+	background: white;
+	border-radius: 4px;
 }
 
+#pageNum:hover {
+	background-color: #2BC0E4;
+	color: white;
+}
+
+#pageBtn {
+	padding: 10px;
+	padding-bottom: 12px;
+	background-color: #2BC0E4;
+	color: white;
+	border-radius: 4px;
+}
