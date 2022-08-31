@@ -36,7 +36,7 @@
 						<tr>
 							<td></td>
 							<td>제목</td>
-							<td>작성일</td>
+							<td>작성일</td> 
 							<td>작성자</td>
 							<td>조회수</td>
 							<td>카테고리</td> 
@@ -70,7 +70,7 @@
 				<!-- next(다음)이 true이면 다음버튼 활성화 -->
 				<c:if test="${paging.next}">
 					<a
-						href="/main?pageNum=${paging.endPage-1}&amount=${paging.cri.amount}&keyword=${paging.cri.keyword}">다음</a>
+						href="/main?pageNum=${paging.endPage+1}&amount=${paging.cri.amount}&keyword=${paging.cri.keyword}">다음</a>
 				</c:if>
 			</div>
 		</div>

@@ -19,8 +19,8 @@ public class ListServiceimpl implements ListService{
 	}
 	
 	// ListService에서 설계되어 진 sitelist 추상메서드를 구현
-	public ArrayList<BoardVO> sitelist(){
-		return lm.sitelist();
+	public ArrayList<BoardVO> sitelist(CriteriaVO cri){
+		return lm.sitelist(cri);
 	}
 	
 	// ListService에서 설계되어 진 houselist 추상메서드를 구현
@@ -47,5 +47,5 @@ public class ListServiceimpl implements ListService{
 	public int total(CriteriaVO cri) {
 		return lm.total(cri);
 	}
-
+	
 }
