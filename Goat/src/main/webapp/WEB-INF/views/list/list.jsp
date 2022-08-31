@@ -16,7 +16,7 @@
 	<div id="content">
 		<div id="middle">
 			<p id="categorylist">전체</p>
-			<hr id="categoryhr">
+		<!--  	<hr id="categoryhr"> -->
 			<table>
 				<tr id="tr1">
 					<td class="bno"><span></span></td>
@@ -44,21 +44,22 @@
 			<div id="pagingArea">
 				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
 				<c:if test="${paging.prev}">
-					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}">이전</a>
+					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}" class="pageBtn">이전</a>
 				</c:if>
 		
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
 				<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}">${num}</a>
+					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}" id="pageNum">${num}</a>
 				</c:forEach>
 				
 				<!-- next(다음)이 true이면 다음버튼 활성화 -->
 				<c:if test="${paging.next}">
-					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}">다음</a>
+					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}" class="pageBtn">다음</a>
 				</c:if>
 			</div>
-			<hr id="paginghr">
-			<form action="/list/list" method="get" id="searchform">
+		<!--  	<hr id="paginghr"> -->
+			<form action="/list/list" method="get" id="searchform"> <!-- 검섹을 div 하나로 묶엇허   -->
+			<div id="searchAll">
 				<select class="search" name="period">
 					<option value="total">전체기간</option>
 					<option value="day">1일</option>
@@ -74,8 +75,11 @@
 				</select>
 				<input type="text" class="search" id="query" name="keyword" placeholder="검색어를 입력해주세요">
 				<button type="button" class="search" id="searchbtn">검색</button>
+			</div>
+			<div>
 				<input type="hidden" name="pageNum" value="${paging.cri.pageNum}">
 				<input type="hidden" name="amount" value="${paging.cri.amount}">
+			</div>
 			</form>
 		</div>
 	</div>

@@ -16,6 +16,7 @@ public class ListController {
 	
 	@RequestMapping(value = "/list/list", method = RequestMethod.GET)
 	public String list(Model model, CriteriaVO cri) {
+		System.out.println(cri);
 		// list.jsp 실행 할 때 select 된 결과를 가져가라.
 		model.addAttribute("list", ls.list(cri));
 		// list 폴더 안에 있는 list.jsp 실행 할 때 pageVO에 저장되어 있는 데이터를 가져와라.
