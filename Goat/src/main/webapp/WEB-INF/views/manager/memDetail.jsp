@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/memDetailCSS.css?version=1.1">
+	href="../../../resources/CSS/memDetailCSS.css?version=1.2">
 <script type="text/javascript">
 	function delchk() {
 		return confirm("탈퇴하시겠습니까?");
