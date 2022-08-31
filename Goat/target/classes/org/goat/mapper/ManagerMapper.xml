@@ -47,7 +47,7 @@
 				</otherwise>
 			</choose>
 		</if>
-		;
+		; 
 	</select>
 
 	<!-- 멤버 리스트에서 id 검색 -->
