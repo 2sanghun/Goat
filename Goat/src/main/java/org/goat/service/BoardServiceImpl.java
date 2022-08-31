@@ -9,23 +9,28 @@ import org.goat.model.BoardVO;
 import org.goat.model.CriteriaVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 @Service
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	BoardMapper bm;
 	@Autowired
 	BoardAttachMapper bam;
-	
+
 	// 글쓰기 설계도를 보고 구현하기
 	public void boardwrite(BoardVO board) {
 		bm.boardwrite(board);
+		System.out.println(board.getBno());
 		System.out.println(board.getAttach());
-		board.getAttach().forEach(attach->{
-			attach.setBno(board.getBno());
-			bam.insert(attach);
-		});
+		if (board.getAttach() != null) {
+			board.getAttach().forEach(attach -> {
+				attach.setBno(board.getBno());
+				bam.insert(attach);
+			});
+		}
 	}
-	public ArrayList<AttachFileVO> attachlist(int bno){
+
+	public ArrayList<AttachFileVO> attachlist(int bno) {
 		return bam.attachlist(bno);
 	}
 
@@ -33,7 +38,6 @@ public class BoardServiceImpl implements BoardService {
 //		return bm.list();
 //	}
 
-	
 //	public BoardVO detail(BoardVO board){
 //		return bm.detail(board);
 //	}
@@ -41,14 +45,14 @@ public class BoardServiceImpl implements BoardService {
 //	public void modify(BoardVO board) {
 //		bm.modify(board);
 //	}
-	
+
 //	public void remove(BoardVO board) {
 //		bm.delete(board);
 //	}
-	public ArrayList<BoardVO> search(CriteriaVO cri){
+	public ArrayList<BoardVO> search(CriteriaVO cri) {
 		return bm.search(cri);
 	}
-	
+
 	public int total(CriteriaVO cri) {
 		return bm.total(cri);
 	}
