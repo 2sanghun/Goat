@@ -44,7 +44,7 @@ public class MainController {
 	
 	// main폴더 안에 있는 write.jsp를 실행할 때
 	@RequestMapping(value = "/main/write", method = RequestMethod.GET)
-	public void write(HttpServletRequest request) {
+	public void write(HttpServletRequest request, Model model) {
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		System.out.println(id);
