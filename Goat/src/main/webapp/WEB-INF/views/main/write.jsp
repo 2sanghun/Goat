@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet"
-	href="../../../resources/CSS/write.css?version=1.0" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/write.css?version=1.2"
+	type="text/css">
+
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
 </head>
 <body>
@@ -37,12 +38,12 @@
 									%>
 								</select>
 							</div> <input type="text" name="title" id="uploadtitle"
-							placeholder="제목입력">
+							placeholder="제목을 입력하세요">
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2"><textarea name="content" id="uploadResult"
-								placeholder="내용입력"></textarea></td>
+								placeholder="내용을 입력하세요"></textarea></td>
 					</tr>
 					<tr>
 						<td><label> 파일첨부 <input type="file" name="uploadFile"
