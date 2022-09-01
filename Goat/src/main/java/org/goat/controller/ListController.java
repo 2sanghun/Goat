@@ -56,6 +56,7 @@ public class ListController {
 		return "list/sitelist";
 	}
 
+/* 컨트롤러 하나만 사용하게 수정
 	@RequestMapping(value = "/list/houselist", method = RequestMethod.GET)
 	public String houselist(Model model, CriteriaVO cri) {
 		System.out.println(cri);
@@ -131,6 +132,7 @@ public class ListController {
 		System.out.println(cri.getKeyword());		
 		return "list/tourlist";
 	}
+*/
 
 /* 매퍼에 sql 수정으로 인해 수정 했다
 	@RequestMapping(value = "/list/sitelist", method = RequestMethod.GET)
