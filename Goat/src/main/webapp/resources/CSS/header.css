@@ -29,7 +29,7 @@ header >#category> ul > li > a {
 
 header ul > li > a:hover{
 	background-color:#2BC0E4;
-	color: white
+	color: white;
 }
 img{
 	width:150px;
