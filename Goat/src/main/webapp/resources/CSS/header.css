@@ -28,8 +28,7 @@ header >#category> ul > li > a {
 
 
 header ul > li > a:hover{
-	background-color:#2BC0E4;
-	color: white;
+	color: #2BC0E4;
 }
 img{
 	width:150px;
@@ -43,7 +42,7 @@ a{
 	text-decoration : none;
 	color: black;
 }
-header .btn{
+.headerbtn{
 	color:gray;
 	padding: 8px 10px;
 	border: 0.5px solid gray;
@@ -51,7 +50,7 @@ header .btn{
 	border-radius:4px;
 }
 
-header .btn:hover{
+.headerbtn:hover{
 background-color:#2BC0E4;
 	color: white
 }
