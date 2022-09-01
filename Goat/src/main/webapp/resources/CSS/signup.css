@@ -122,3 +122,7 @@ float: left;
 .cancle:hover{
 	background-color: white;
 }
+
+#footer{
+		margin-top: 700px;
+	}

@@ -7,22 +7,16 @@
 	top: 90px;
 }
 
-#middle {
-	margin: 20px auto 0;
-}
-
 #categorylist {
-	font-size: 50px;
-	font-weight: 900;
-	margin: 0;
+	line-height: 80px;
+	height: 80px;
+	font-size: 32px;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	padding: 20px;
 	text-align: center;
-	background: rgb(61, 183, 204);
-}
-
-#categoryhr {
-	margin: 0;
-	background: black;
-	height: 10px;
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
 }
 
 table {
@@ -31,33 +25,51 @@ table {
 	table-layout: fixed;
 }
 
-span {
-	font-weight: 1000;
+#notice td {
+	background: #f2f2f2;
+}
+#nodata {
+	height : 100px;
+	text-align : center;
+}
+
+#nodatah{
+	font-size: 15px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #tr1 {
-	background: #DCDCDC;
+	font-weight: bold;
+	font-size: 18px;
+	border-top: 3px solid #8C8C8C;
+	border-bottom: 2px solid #8C8C8C;
 }
 
 td {
 	height: 30px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid gray;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
+	padding: 20px
 }
 
 .bno {
-	width: 8%;
+	width: 10%;
 	text-align: center;
 }
 
 .title {
-	width: 50%;
+	width: 30%;
+	text-align: center;
 }
 
 .nick {
 	width: 8%;
+	text-align: center;
 }
 
 .regdate {
@@ -76,8 +88,7 @@ td {
 }
 
 #search {
-	height: 100px;
-	background: #DCDCDC;
+	height: 200px;
 	text-align: center;
 }
 
@@ -86,28 +97,56 @@ td {
 	top: 32px;
 }
 
+#searchAll {
+	border: 1px solid #2BC0E4;
+	height: 44px;
+	width: 660px;
+	margin: auto;
+}
+
 .search {
-	height: 30px;
-	margin: 0;
-	padding: 0;
+	font-size: 14px;
+	width: 130px;
+	padding: 12px;
+	outline: none;
 	border: none;
+	float: left;
+}
+
+#query {
+	width: 310px;
 }
 
 #searchbtn {
 	color: white;
-	background-color: teal;
-	border-radius: 4px;
-	margin-left: -5px;
+	background-color: #2BC0E4;
+	padding: 10px;
+	float: right;
+	width: 60px;
+	height: 44px;
 }
 
 #pagingArea {
-	position : relative;
-	top : 14px;
+	margin-top: 30px;
+	position: relative;
 }
-#paginghr {
-	position : relative;
-	top : 24px;
-	margin: 0;
-	background: #BDBDBD;
-	height: 1px;	
+
+#pageNum {
+	padding: 10px;
+	color: #8C8C8C;
+	background: white;
+	border-radius: 4px;
+}
+
+#pageNum:hover {
+	background-color: #2BC0E4;
+	color: white;
+}
+
+#pageBtn {
+	padding: 10px;
+	padding-bottom: 12px;
+	background-color: #2BC0E4;
+	color: white;
+	border-radius: 4px;
 }

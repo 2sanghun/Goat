@@ -118,7 +118,7 @@ input{
 </style>
 
 </head>
-
+ 
 <body>
 
 <%@ include file="../header/header.jsp" %>
