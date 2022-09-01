@@ -16,7 +16,7 @@ header {
 	right:0;
 	border-bottom: solid 1px black;
 }
-a {
+header a {
 	decoration: none;
 	text-decoration : none;
 	color: black;
@@ -27,7 +27,7 @@ header >#category> ul > li > a {
 }
 
 
-a:hover{
+header a:hover{
 	background-color:#2BC0E4;
 	color: white
 }
@@ -38,7 +38,7 @@ img{
 input{
 	background-color : lightteal;
 }
-header a{
+a{
 	text-decoration:none;
 
 }
