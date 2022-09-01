@@ -1,9 +1,14 @@
 package org.goat.controller;
 
+import java.util.ArrayList;
+
+import org.goat.model.AttachFileVO;
 import org.goat.model.BoardVO;
 import org.goat.service.DetailService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,4 +41,11 @@ public class DetailController {
 		ds.remove(board);
 		return "redirect:/list/list";
 	}
+	
+	// 해당게시물의 첨부파일의 데이터를 ajax로 전송
+	@RequestMapping(value = "/attachlist", method = RequestMethod.GET)
+	public ResponseEntity<ArrayList<AttachFileVO>> attachlist(int bno){
+		return new ResponseEntity<>(ds.attachlist(bno), HttpStatus.OK);
+	}
+	
 }
