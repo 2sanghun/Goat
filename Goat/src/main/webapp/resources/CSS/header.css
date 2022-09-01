@@ -16,7 +16,7 @@ header {
 	right:0;
 	border-bottom: solid 1px black;
 }
-header a {
+header ul > li > a {
 	decoration: none;
 	text-decoration : none;
 	color: black;
@@ -27,7 +27,7 @@ header >#category> ul > li > a {
 }
 
 
-header a:hover{
+header ul > li > a:hover{
 	background-color:#2BC0E4;
 	color: white
 }
@@ -39,10 +39,11 @@ input{
 	background-color : lightteal;
 }
 a{
-	text-decoration:none;
-
+	decoration:none;
+	text-decoration : none;
+	color: black;
 }
-.btn{
+header .btn{
 	color:gray;
 	padding: 8px 10px;
 	border: 0.5px solid gray;
@@ -50,7 +51,7 @@ a{
 	border-radius:4px;
 }
 
-.btn:hover{
+header .btn:hover{
 background-color:#2BC0E4;
 	color: white
 }

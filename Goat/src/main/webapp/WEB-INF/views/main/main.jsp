@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/main.css?version=1.3" type="text/css">
+	href="../../../resources/CSS/main.css?version=1.4" type="text/css">
 <script type="text/javascript"
 	src="../../../resources/JS/main.js"></script>
 </head>
@@ -25,8 +25,10 @@
 				<br>
 				<br> 
 				<form action="/main" method="get">
+				<div class="searchdiv">
 					<input type="text" placeholder="검색" id="search" name="keyword">
 					<input type="submit" value="검색" class="btn">
+					</div>
 				</form>
 			</div>
 			<!-- 검색 시 나타나며 검색한 내용이 포함된 제목과 내용이 포함된 게시글을 표시 -->
