@@ -25,6 +25,22 @@ table {
 	table-layout: fixed;
 }
 
+#notice td {
+	background: #f2f2f2;
+}
+#nodata {
+	height : 100px;
+	text-align : center;
+}
+
+#nodatah{
+	font-size: 15px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 #tr1 {
 	font-weight: bold;
 	font-size: 18px;

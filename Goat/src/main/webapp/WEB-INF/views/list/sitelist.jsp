@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +25,22 @@
 					<td class="cnt"><span>조회</span></td>
 					<td class="good"><span>좋아요</span></td>
 				</tr>
-				<!--  for문 시작 -->
-				<c:forEach items="${sitelist}" var="sitelist">
+				<c:if test="${paging.cri.pageNum == 1 and (keyword == null or keyword == '')}">
+					<!-- 매니저글 for문 시작 -->
+					<c:forEach items="${manager}" var="managerlist">
+						<tr id="notice">
+							<td class="bno">공지</td>
+							<td class="title"><a href="../detail/detail?bno=${managerlist.bno}">${managerlist.title}</a></td>
+							<td class="nick">${managerlist.nick}</td>
+							<td class="regdate">${managerlist.regdate}</td>
+							<td class="cnt">${managerlist.cnt}</td>
+							<td class="good">${managerlist.good}</td>
+						</tr>
+					</c:forEach>
+					<!-- 매니저글 for문 끝 -->
+				</c:if>
+				<!--  게시글 목록 for문 시작 -->
+				<c:forEach items="${list}" var="sitelist">
 				<tr>
 					<td class="bno">${sitelist.bno}</td>
 					<td class="title"><a href="../detail/detail?bno=${sitelist.bno}">${sitelist.title}</a></td>
@@ -36,8 +50,13 @@
 					<td class="good">${sitelist.good}</td>
 				</tr>
 				</c:forEach>
-				<!--  for문 끝 -->
+				<!-- 게시글 for문 끝 -->
 			</table>
+			<c:if test="${paging.total == 0}">
+				<div id="nodata">
+					<p id="nodatah">등록된 게시글이 없습니다</p>
+				</div>
+			</c:if>
 		</div>
 		<div id="search">
 			<div id="pagingArea">
@@ -77,7 +96,7 @@
 				<div>
 					<input type="hidden" name="pageNum" value="${paging.cri.pageNum}">
 					<input type="hidden" name="amount" value="${paging.cri.amount}">
-<!--					<input type="hidden" name="category" value="${paging.cri.category}"> -->
+					<input type="hidden" name="category" value="${paging.cri.category}">
 				</div>
 			</form>
 		</div>
