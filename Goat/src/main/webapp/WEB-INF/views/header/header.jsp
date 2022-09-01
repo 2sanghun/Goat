@@ -11,7 +11,7 @@
 <body>
 	<header>
 		<h1><a href="../main/main"><img src="../../../resources/image/logo.jpg"></a></h1>
-		<div id="category">
+		<div id="category"> 
 				<ul id="canav">
 					<li><a href="../list/list">전체</a></li>
 					<li><a href="../list/list?category=관광">관광</a></li>
