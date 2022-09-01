@@ -11,72 +11,81 @@
 		from(
 			 select @rownum:=@rownum+1 rownum, b.*
 			 from board b, (select @rownum:=0) as tmp
-			 where id!='manager'
-			 <if test="keyword!=null">
-			 	<choose>
-			 		<when test="period == 'day'.toString()">
-			 			and (regdate between date_ADD(now(), interval -1 day) and now())
-			 		</when>
-			 		<when test="period == 'week'.toString()">
-			 			and (regdate between date_ADD(now(), interval -1 week) and now())
-			 		</when>
-			 		<when test="period == 'month'.toString()">
-			 			and (regdate between date_ADD(now(), interval -1 month) and now())
-			 		</when>
-			 		<when test="period == 'sixMonth'.toString()">
-			 			and (regdate between date_ADD(now(), interval -6 month) and now())
-			 		</when>
-			 		<when test="period == 'year'.toString()">
-			 			and (regdate between date_ADD(now(), interval -1 year) and now())
-			 		</when>
-			 	</choose>
-			 	<choose>
-			 		<when test="type == 'T'.toString()">
-			 			and title like concat('%',#{keyword},'%')
-			 		</when>
-			 		<when test="type == 'N'.toString()">
-			 			and nick like concat('%',#{keyword},'%')
-			 		</when>
-			 		<when test="type == 'TC'.toString()">
-			 			and (title like concat('%',#{keyword},'%')
-							or content like concat('%',#{keyword},'%'))
-			 		</when>
-			 	</choose>
-			 </if>
+			 <choose>
+	  			<when test="category != null and !category.equals('')" >
+	  				where id!='manager' and category=#{category}
+		 			<if test="keyword!=null">
+						<choose>
+							<when test="period == 'day'.toString()">
+								and (regdate between date_ADD(now(), interval -1 day) and now())
+							</when>
+							<when test="period == 'week'.toString()">
+								and (regdate between date_ADD(now(), interval -1 week) and now())
+							</when>
+							<when test="period == 'month'.toString()">
+								and (regdate between date_ADD(now(), interval -1 month) and now())
+							</when>
+							<when test="period == 'sixMonth'.toString()">
+								and (regdate between date_ADD(now(), interval -6 month) and now())
+							</when>
+							<when test="period == 'year'.toString()">
+								and (regdate between date_ADD(now(), interval -1 year) and now())
+							</when>
+						</choose>
+	 					<choose>
+					 		<when test="type == 'T'.toString()">
+					 			and title like concat('%',#{keyword},'%')
+					 		</when>
+					 		<when test="type == 'N'.toString()">
+					 			and nick like concat('%',#{keyword},'%')
+					 		</when>
+					 		<when test="type == 'TC'.toString()">
+					 			and (title like concat('%',#{keyword},'%')
+									or content like concat('%',#{keyword},'%'))
+					 		</when>
+					 	</choose>	
+					</if>
+	  			</when>			 
+	  			<otherwise>
+	  				where id!='manager'
+		 			<if test="keyword!=null">
+						<choose>
+							<when test="period == 'day'.toString()">
+								and (regdate between date_ADD(now(), interval -1 day) and now())
+							</when>
+							<when test="period == 'week'.toString()">
+								and (regdate between date_ADD(now(), interval -1 week) and now())
+							</when>
+							<when test="period == 'month'.toString()">
+								and (regdate between date_ADD(now(), interval -1 month) and now())
+							</when>
+							<when test="period == 'sixMonth'.toString()">
+								and (regdate between date_ADD(now(), interval -6 month) and now())
+							</when>
+							<when test="period == 'year'.toString()">
+								and (regdate between date_ADD(now(), interval -1 year) and now())
+							</when>
+						</choose>
+	 					<choose>
+					 		<when test="type == 'T'.toString()">
+					 			and title like concat('%',#{keyword},'%')
+					 		</when>
+					 		<when test="type == 'N'.toString()">
+					 			and nick like concat('%',#{keyword},'%')
+					 		</when>
+					 		<when test="type == 'TC'.toString()">
+					 			and (title like concat('%',#{keyword},'%')
+									or content like concat('%',#{keyword},'%'))
+					 		</when>
+					 	</choose>
+					</if>
+	  			</otherwise>			 
+			 </choose>
 			 order by bno desc
 		) as boardlist
 		<![CDATA[
 		where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
-  	</select>
-  	
-  	<select id="sitelist" resultType="org.goat.model.BoardVO">
-  		select *
-		from(
-			 select @rownum:=@rownum+1 rownum, b.*
-			 from board b, (select @rownum:=0) as tmp
-			 where id!='manager' and category=#{category} 
-			 order by bno desc
-		) as boardlist
-		<![CDATA[
-		where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
-		]]>
-  	</select>
-  	
-  	<select id="houselist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='숙소' order by id='manager' desc, bno desc
-  	</select>
-  	
-   	<select id="foodlist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='음식' order by id='manager' desc, bno desc
-  	</select>
-  	
-   	<select id="translist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='교통' order by id='manager' desc, bno desc
-  	</select>
-  	
-   	<select id="tourlist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='투어' order by id='manager' desc, bno desc
   	</select>
   	
   	<select id="manager" resultType="org.goat.model.BoardVO">
@@ -86,7 +95,7 @@
 	<select id="total" resultType="int">
   		select count(*) from board
 		<choose> 
-  			<when test="category != null">
+  			<when test="category != null and !category.equals('')">
   				where id!='manager' and category=#{category}
 	 			<if test="keyword!=null">
 					<choose>
@@ -156,5 +165,36 @@
   			</otherwise>
   		</choose>	
 	</select>
+
+<!-- 
+  	<select id="sitelist" resultType="org.goat.model.BoardVO">
+  		select *
+		from(
+			 select @rownum:=@rownum+1 rownum, b.*
+			 from board b, (select @rownum:=0) as tmp
+			 where id!='manager' and category=#{category} 
+			 order by bno desc
+		) as boardlist
+		<![CDATA[
+		where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		]]>
+  	</select>
+  	
+  	<select id="houselist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='숙소' order by id='manager' desc, bno desc
+  	</select>
+  	
+   	<select id="foodlist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='음식' order by id='manager' desc, bno desc
+  	</select>
+  	
+   	<select id="translist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='교통' order by id='manager' desc, bno desc
+  	</select>
+  	
+   	<select id="tourlist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='투어' order by id='manager' desc, bno desc
+  	</select>
+ -->
 
   </mapper>
