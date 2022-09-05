@@ -5,6 +5,7 @@ function idCheck(){
 		type : 'post',
 		url : "/header/idcheck",
 		data : {"id" : id},
+		dataType:"json",
 		success : function(data){
 			if(data==1){
 				alert("중복된 아이디 입니다.");

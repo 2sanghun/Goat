@@ -13,5 +13,10 @@ $(document).ready(function(){
 		// form태그를 submit
 		$("#searchForm").submit();
 	})
+
+	$('.scrollToTop').click(function(){
+		$('html, body').animate({scrollTop : 0}, 600);
+		return false;
+		});
 	
 })

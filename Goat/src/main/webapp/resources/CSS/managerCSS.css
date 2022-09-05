@@ -18,7 +18,7 @@
 
 .title {
 	background: linear-gradient(to right, #70e1f5, #eaecc6);
-	margin-top: 130px;
+	margin-top: 106px;
 	padding: 20px;
 	width: 960px;
 	line-height: 80px;
@@ -54,10 +54,9 @@
 	font-size: 18px;
 }
 
-.totalmem{
+.totalmem {
 	color: blue;
 	font-size: 24px;
-	
 }
 
 .selectbox {
@@ -163,6 +162,16 @@ td {
 .writelist {
 	text-align: center;
 	font-size: 14px;
+}
+
+.scrollToTop {
+	width: 50px;
+	height: 50px;
+	background-image: url("../../../resources/image/topbutton.png");
+    background-size: cover;
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
 }
 
 .page {

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -8,7 +10,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/memDetailCSS.css?version=1.1">
+	href="../../../resources/CSS/memDetailCSS.css?version=1.4">
+	<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript"
+	src="../../../resources/JS/scrollToTop.js?version=1.2"></script>
+
 <script type="text/javascript">
 	function delchk() {
 		return confirm("탈퇴하시겠습니까?");
@@ -71,6 +78,9 @@
 					</tr>
 
 				</table>
+
+				<a href="#" class="scrollToTop"></a>
+
 			</div>
 			<div class="footer">
 				<input class="cancle" type="submit" value="닫기" formaction="manager">

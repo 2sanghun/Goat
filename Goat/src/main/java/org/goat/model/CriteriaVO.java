@@ -8,6 +8,7 @@ public class CriteriaVO {
 	private String keyword;
 	private String type;
 	private String period;	// 검색 조건에 기간
+	private String category;	// total에 반영하기 위해 category 필요
 
 	// 생성자
 	public CriteriaVO() {
@@ -68,11 +69,19 @@ public class CriteriaVO {
 	public void setPeriod(String period) {
 		this.period = period;
 	}
+	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
 	@Override
 	public String toString() {
 		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", id=" + id + ", keyword=" + keyword
-				+ ", type=" + type + ", period=" + period + "]";
+				+ ", type=" + type + ", period=" + period + ", category=" + category + "]";
 	}
 
 }

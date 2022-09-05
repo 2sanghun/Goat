@@ -8,8 +8,8 @@ window.addEventListener('load', function() {
 		if (idreg.test(idValue)) {
 			idmsg.innerHTML = "";
 		} else {
-			idmsg.innerHTML = "5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.";
-			idmsg.style.color = "red";
+			idmsg.innerHTML = "* 5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.";
+			idmsg.style.color = "gray";
 		}
 	} 
 	
@@ -23,8 +23,8 @@ window.addEventListener('load', function() {
 		if (pwreg.test(pwValue)) {
 			pwmsg.innerHTML = "";
 		} else {
-			pwmsg.innerHTML = "8~16자 영문, 숫자, 특수문자를 사용하세요.";
-			pwmsg.style.color = "red";
+			pwmsg.innerHTML = "* 8~16자 영문, 숫자, 특수문자를 사용하세요.";
+			pwmsg.style.color = "gray";
 		}
 	}
 	
@@ -37,8 +37,8 @@ window.addEventListener('load', function() {
 		if (pwValue==reValue) {
 			remsg.innerHTML = "";
 		} else {
-			remsg.innerHTML = "비밀번호가 일치하지 않습니다.";
-			remsg.style.color = "red";
+			remsg.innerHTML = "* 비밀번호가 일치하지 않습니다.";
+			remsg.style.color = "gray";
 		}
 	}
 	
@@ -51,8 +51,8 @@ window.addEventListener('load', function() {
 		if(numreg.test(numValue)){
 			nummsg.innerHTML = "";
 		} else {
-			nummsg.innerHTML = "양식에 맞게 입력해주세요";
-			nummsg.style.color = "red";
+			nummsg.innerHTML = "* 양식에 맞게 입력해주세요";
+			nummsg.style.color = "gray";
 		}
 	}
 	
@@ -66,8 +66,8 @@ window.addEventListener('load', function() {
 		if(bdreg.test(bdValue)){
 			bdmsg.innerHTML = "";
 		} else {
-			bdmsg.innerHTML = "양식에 맞게 입력해주세요";
-			bdmsg.style.color = "red";
+			bdmsg.innerHTML = "* 양식에 맞게 입력해주세요";
+			bdmsg.style.color = "gray";
 		}
 	}
 });

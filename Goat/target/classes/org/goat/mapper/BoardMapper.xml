@@ -5,12 +5,13 @@
 <!-- namespace로 TestMapper와 연결 -->
 <mapper namespace="org.go.mapper.BoardMapper">
 	<insert id="boardwrite">
-	<selectKey keyProperty="bno" order="BEFORE" resultType="int">
-		select MAX(bno)+1 from board;
-	</selectKey>
 		insert into board(title, content, category, id, nick)
 		values(#{title},#{content},#{category},#{id}, #{nick})
+		<selectKey keyProperty="bno" order="AFTER" resultType="int">
+			select LAST_INSERT_ID();
+		</selectKey>
 	</insert>
+<<<<<<< HEAD
 	<!--
 	<select id="list" resultType="org.goat.model.BoardVO">
 		select * from board;
@@ -29,19 +30,31 @@
 	 -->
 	 <select id="search" resultType="org.go.model.BoardVO">
 		select * 
+=======
+	<!-- <select id="list" resultType="org.goat.model.BoardVO"> select * from 
+		board; </select> <select id="detail" resultType="org.goat.model.BoardVO"> 
+		select * from board where bno=#{bno}; </select> <update id="modify"> update 
+		board set title=#{title}, content=#{content} where bno=#{bno} </update> <delete 
+		id="remove"> delete from board where bno=#{bno}; -->
+	<select id="search" resultType="org.goat.model.BoardVO">
+		select *
+>>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git
 		from (
-			select @rownum:=@rownum+1 rownum, b.*
-			from board b, (select @rownum:=0) as tmp
-			where title like CONCAT('%',#{keyword},'%') or content like CONCAT('%',#{keyword},'%')
-			order by bno desc
+		select @rownum:=@rownum+1 rownum, b.*
+		from board b, (select @rownum:=0) as tmp
+		where title like CONCAT('%',#{keyword},'%') or content like
+		CONCAT('%',#{keyword},'%')
+		order by bno desc
 		) as boardlist
 		<![CDATA[
 			where rownum>(#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
 	</select>
-	
+
 	<select id="total" resultType="int">
 		select count(*) from board
-		where title like CONCAT('%',#{keyword},'%') or content like CONCAT('%',#{keyword},'%')
+		where
+		title like CONCAT('%',#{keyword},'%') or content like
+		CONCAT('%',#{keyword},'%')
 	</select>
- </mapper> 
+</mapper> 

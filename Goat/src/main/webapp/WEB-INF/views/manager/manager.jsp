@@ -9,10 +9,10 @@
 <meta charset="UTF-8">
 <title>관리자 페이지</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerCSS.css?version=2.4">
+	href="../../../resources/CSS/managerCSS.css?version=2.8">
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../../../resources/JS/managerjs.js"></script>
+<script type="text/javascript" src="../../../resources/JS/managerjs.js?version=1.1"></script>
 
 </head>
 <body>
@@ -29,7 +29,7 @@
 
 				<div class="leftdiv">
 					<p class="allmem">
-						전체 회원수 <a href="/manager/manager" class="totalmem">${total}</a>명
+						회원수 <a href="/manager/manager" class="totalmem">${total}</a>명
 					</p>
 				</div>
 
@@ -75,6 +75,7 @@
 					</tr>
 				</c:forEach>
 			</table>
+<a href="#" class="scrollToTop"></a>
 
 		</div>
 		<!-- body -->

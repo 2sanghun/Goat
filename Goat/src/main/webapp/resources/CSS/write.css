@@ -1,46 +1,107 @@
 @charset "UTF-8";
+
 #container {
 	width: 1000px;
 	height: 1050px;
 	margin: auto;
-	padding : 10px;
+	padding: 10px;
 	position: relative;
-	text-align:center;
-	top: 90px;
-}
-#writecss{
-	background:linear-gradient(to right, #2BC0E4,#EAECC6);
-	color : white;
-}
-table{
-	width:700px;
-	margin:auto;
-	position:relative;
-	left:-40px;
-}
-td:nth-child(1){
 	text-align: center;
+	top: 67px;
 }
-td:nth-child(2){
-	width:600px;
+
+#writecss {
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
+	padding: 20px;
+	height: 80px;
+	line-height: 80px;
 }
-#mid td input{
-	width:600px;
+
+table {
+	width: 1000px;
+	margin: auto;
+	position: relative;
 }
-#mid textarea{
+
+#mid td select {
+	width: 100px;
+}
+
+#mid td input {
+	float: left;
+	width: 860px;
+	margin-left: 5px;
+	margin-bottom: 15px;
+	padding: 12px;
+}
+
+#mid textarea {
+	width: 97%;
 	height: 500px;
-	width:600px;
+	resize: none;
+	margin-bottom: 10px;
 }
-#select{
-	text-align:right;
+
+select {
+	border: 1px solid gray;
+	border-radius: 10px;
+	outline: none;
+	height: 40px;
+	padding: 10px;
+	font-size: 18px;
+	float: left;
 }
-#mid{
-	text-align:center;
+
+#uploadtitle {
+	border: 1px solid gray;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+#uploadResult {
+	border: 1px solid gray;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+label {
+	float: left;
+	border: none;
+	border-radius: 8px;
+	color: #2BC0E4;
+	background-color: white;
+	border: 1px solid #2BC0E4;
+	padding: 20px;
+	margin-left: 5px;
+		font-size: 18px;
+	font-weight: bold;
+	transition: 0.5s;
+}
+
+label:hover {
+	color: white;
+	background-color: #2BC0E4;
+}
+
+#mid {
+	text-align: center;
 }
 
 .button {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: white;
+	padding: 15px 25px;
+	color: gray;
+	border: 1px solid gray;
+	border-radius: 4px;
+		font-size: 18px;
+	font-weight: bold;
+		margin: 5px;
+
+}
+
+.button:hover {
 	background-color: #2BC0E4;
-	padding: 10px 40px 10px 40px;
-	color:white;
-	border:none;
+	color: white;
 }

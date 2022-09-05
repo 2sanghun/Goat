@@ -1,153 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
- 
+
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
   
   <mapper namespace="org.go.mapper.ListMapper">
   	<select id="list" resultType="org.go.model.BoardVO">
+=======
+
+  <mapper namespace="org.goat.mapper.ListMapper">
+
+  	<select id="list" resultType="org.goat.model.BoardVO">
+>>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git
   		select *
 		from(
 			 select @rownum:=@rownum+1 rownum, b.*
 			 from board b, (select @rownum:=0) as tmp
-			 <if test = "keyword != null">
-			 	<choose>
-			 		<when test="type == 'T'.toString()">
-			 			where title like concat('%',#{keyword},'%')
-			 		</when>
-			 		<when test="type == 'N'.toString()">
-			 			where nick like concat('%',#{keyword},'%')
-			 		</when>
-			 		<otherwise>
-				 		where title like concat('%',#{keyword},'%')
-				 		or content like concat('%',#{keyword},'%')
-				 	</otherwise>			 		
-			 	</choose>
-			 </if>
-		     order by bno desc
+			 <choose>
+	  			<when test="category != null and !category.equals('')" >
+	  				where category!='공지' and category=#{category}
+		 			<if test="keyword!=null">
+						<choose>
+							<when test="period == 'day'.toString()">
+								and (regdate between date_ADD(now(), interval -1 day) and now())
+							</when>
+							<when test="period == 'week'.toString()">
+								and (regdate between date_ADD(now(), interval -1 week) and now())
+							</when>
+							<when test="period == 'month'.toString()">
+								and (regdate between date_ADD(now(), interval -1 month) and now())
+							</when>
+							<when test="period == 'sixMonth'.toString()">
+								and (regdate between date_ADD(now(), interval -6 month) and now())
+							</when>
+							<when test="period == 'year'.toString()">
+								and (regdate between date_ADD(now(), interval -1 year) and now())
+							</when>
+						</choose>
+	 					<choose>
+					 		<when test="type == 'T'.toString()">
+					 			and title like concat('%',#{keyword},'%')
+					 		</when>
+					 		<when test="type == 'N'.toString()">
+					 			and nick like concat('%',#{keyword},'%')
+					 		</when>
+					 		<when test="type == 'TC'.toString()">
+					 			and (title like concat('%',#{keyword},'%')
+									or content like concat('%',#{keyword},'%'))
+					 		</when>
+					 	</choose>	
+					</if>
+	  			</when>			 
+	  			<otherwise>
+	  				where category!='공지'
+		 			<if test="keyword!=null">
+						<choose>
+							<when test="period == 'day'.toString()">
+								and (regdate between date_ADD(now(), interval -1 day) and now())
+							</when>
+							<when test="period == 'week'.toString()">
+								and (regdate between date_ADD(now(), interval -1 week) and now())
+							</when>
+							<when test="period == 'month'.toString()">
+								and (regdate between date_ADD(now(), interval -1 month) and now())
+							</when>
+							<when test="period == 'sixMonth'.toString()">
+								and (regdate between date_ADD(now(), interval -6 month) and now())
+							</when>
+							<when test="period == 'year'.toString()">
+								and (regdate between date_ADD(now(), interval -1 year) and now())
+							</when>
+						</choose>
+	 					<choose>
+					 		<when test="type == 'T'.toString()">
+					 			and title like concat('%',#{keyword},'%')
+					 		</when>
+					 		<when test="type == 'N'.toString()">
+					 			and nick like concat('%',#{keyword},'%')
+					 		</when>
+					 		<when test="type == 'TC'.toString()">
+					 			and (title like concat('%',#{keyword},'%')
+									or content like concat('%',#{keyword},'%'))
+					 		</when>
+					 	</choose>
+					</if>
+	  			</otherwise>			 
+			 </choose>
+			 order by bno desc
 		) as boardlist
 		<![CDATA[
-		where rownum>(#{pageNum}-1)*#{amount} and rownum<=#{pageNum}*#{amount}
+		where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
-		<if test = "keyword != null">
-			<choose>
-				<when test = "period == 'day'.toString()">
-					and regdate between date_ADD(now(), interval -1 day) and now()
-				</when>
-				<when test = "period == 'week'.toString()">
-					and regdate between date_ADD(now(), interval -1 week) and now()
-				</when>
-				<when test = "period == 'month'.toString()">
-					and regdate between date_ADD(now(), interval -1 month) and now()
-				</when>
-				<when test = "period == 'sixMonth'.toString()">
-					and regdate between date_ADD(now(), interval -6 month) and now()
-				</when>
-				<when test = "period == 'year'.toString()">
-					and regdate between date_ADD(now(), interval -1 year) and now()
-				</when>
-			</choose>
-		</if>
-		order by id='manager' desc, bno desc;
   	</select>
   	
+<<<<<<< HEAD
   	<select id="sitelist" resultType="org.go.model.BoardVO">
-  		select *
-		from(
-			 select @rownum:=@rownum+1 rownum, b.*
-			 from board b, (select @rownum:=0) as tmp
-			 <if test = "keyword != null">
-			 	<choose>
-			 		<when test="type == 'T'.toString()">
-			 			where title like concat('%',#{keyword},'%')
-			 		</when>
-			 		<when test="type == 'N'.toString()">
-			 			where nick like concat('%',#{keyword},'%')
-			 		</when>
-			 		<otherwise>
-				 		where title like concat('%',#{keyword},'%')
-				 		or content like concat('%',#{keyword},'%')
-				 	</otherwise>			 		
-			 	</choose>
-			 </if>
-		     order by bno desc
-		) as boardlist
-		<![CDATA[
-		where rownum>(#{pageNum}-1)*#{amount} and rownum<=#{pageNum}*#{amount}
-		]]>
-		and category='관광'
-		<if test = "keyword != null">
-			<choose>
-				<when test = "period == 'day'.toString()">
-					and regdate between date_ADD(now(), interval -1 day) and now()
-				</when>
-				<when test = "period == 'week'.toString()">
-					and regdate between date_ADD(now(), interval -1 week) and now()
-				</when>
-				<when test = "period == 'month'.toString()">
-					and regdate between date_ADD(now(), interval -1 month) and now()
-				</when>
-				<when test = "period == 'sixMonth'.toString()">
-					and regdate between date_ADD(now(), interval -6 month) and now()
-				</when>
-				<when test = "period == 'year'.toString()">
-					and regdate between date_ADD(now(), interval -1 year) and now()
-				</when>
-			</choose>
-		</if>
-		order by id='manager' desc, bno desc;
-  	</select>
-  	
-  	<select id="houselist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='숙소' order by id='manager' desc, bno desc;
-  	</select>
-  	
-   	<select id="foodlist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='음식' order by id='manager' desc, bno desc;
-  	</select>
-  	
-   	<select id="translist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='교통' order by id='manager' desc, bno desc;
-  	</select>
-  	
-   	<select id="tourlist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='투어' order by id='manager' desc, bno desc;
+=======
+  	<select id="manager" resultType="org.goat.model.BoardVO">
+  		select * from board where category='공지' order by bno desc;
   	</select>
 
 	<select id="total" resultType="int">
-		select count(*) from board
-		<if test="keyword != null">
-			<choose>
-				<when test="type == 'T'.toString()">
-					where title like concat('%',#{keyword},'%')
-				</when>
-				<when test="type == 'N'.toString()">
-					where nick like concat('%',#{keyword},'%')
-				</when>
-				<otherwise>
-					where title like concat('%',#{keyword},'%')
-					or content
-					like concat('%',#{keyword},'%')
-				</otherwise>
-			</choose>
-			<choose>
-				<when test = "period == 'day'.toString()">
-					and regdate between date_ADD(now(), interval -1 day) and now()
-				</when>
-				<when test = "period == 'week'.toString()">
-					and regdate between date_ADD(now(), interval -1 week) and now()
-				</when>
-				<when test = "period == 'month'.toString()">
-					and regdate between date_ADD(now(), interval -1 month) and now()
-				</when>
-				<when test = "period == 'sixMonth'.toString()">
-					and regdate between date_ADD(now(), interval -6 month) and now()
-				</when>
-				<when test = "period == 'year'.toString()">
-					and regdate between date_ADD(now(), interval -1 year) and now()
-				</when>
-			</choose>
-		</if>		
+  		select count(*) from board
+		<choose> 
+  			<when test="category != null and !category.equals('')">
+  				where category!='공지' and category=#{category}
+	 			<if test="keyword!=null">
+					<choose>
+						<when test="period == 'day'.toString()">
+							and (regdate between date_ADD(now(), interval -1 day) and now())
+						</when>
+						<when test="period == 'week'.toString()">
+							and (regdate between date_ADD(now(), interval -1 week) and now())
+						</when>
+						<when test="period == 'month'.toString()">
+							and (regdate between date_ADD(now(), interval -1 month) and now())
+						</when>
+						<when test="period == 'sixMonth'.toString()">
+							and (regdate between date_ADD(now(), interval -6 month) and now())
+						</when>
+						<when test="period == 'year'.toString()">
+							and (regdate between date_ADD(now(), interval -1 year) and now())
+						</when>
+					</choose>
+ 					<choose>
+				 		<when test="type == 'T'.toString()">
+				 			and title like concat('%',#{keyword},'%')
+				 		</when>
+				 		<when test="type == 'N'.toString()">
+				 			and nick like concat('%',#{keyword},'%')
+				 		</when>
+				 		<when test="type == 'TC'.toString()">
+				 			and (title like concat('%',#{keyword},'%')
+								or content like concat('%',#{keyword},'%'))
+				 		</when>
+				 	</choose>	
+				</if>
+  			</when>
+  			<otherwise>
+  				where category!='공지'
+	 			<if test="keyword!=null">
+					<choose>
+						<when test="period == 'day'.toString()">
+							and (regdate between date_ADD(now(), interval -1 day) and now())
+						</when>
+						<when test="period == 'week'.toString()">
+							and (regdate between date_ADD(now(), interval -1 week) and now())
+						</when>
+						<when test="period == 'month'.toString()">
+							and (regdate between date_ADD(now(), interval -1 month) and now())
+						</when>
+						<when test="period == 'sixMonth'.toString()">
+							and (regdate between date_ADD(now(), interval -6 month) and now())
+						</when>
+						<when test="period == 'year'.toString()">
+							and (regdate between date_ADD(now(), interval -1 year) and now())
+						</when>
+					</choose>
+ 					<choose>
+				 		<when test="type == 'T'.toString()">
+				 			and title like concat('%',#{keyword},'%')
+				 		</when>
+				 		<when test="type == 'N'.toString()">
+				 			and nick like concat('%',#{keyword},'%')
+				 		</when>
+				 		<when test="type == 'TC'.toString()">
+				 			and (title like concat('%',#{keyword},'%')
+								or content like concat('%',#{keyword},'%'))
+				 		</when>
+				 	</choose>
+				</if>
+  			</otherwise>
+  		</choose>	
 	</select>
+
+<!-- 
+  	<select id="sitelist" resultType="org.goat.model.BoardVO">
+>>>>>>> branch 'master' of https://github.com/2sanghun/Goat.git
+  		select *
+		from(
+			 select @rownum:=@rownum+1 rownum, b.*
+			 from board b, (select @rownum:=0) as tmp
+			 where id!='manager' and category=#{category} 
+			 order by bno desc
+		) as boardlist
+		<![CDATA[
+		where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		]]>
+  	</select>
+  	
+  	<select id="houselist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='숙소' order by id='manager' desc, bno desc
+  	</select>
+  	
+   	<select id="foodlist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='음식' order by id='manager' desc, bno desc
+  	</select>
+  	
+   	<select id="translist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='교통' order by id='manager' desc, bno desc
+  	</select>
+  	
+   	<select id="tourlist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='투어' order by id='manager' desc, bno desc
+  	</select>
+ -->
 
   </mapper>

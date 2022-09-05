@@ -1,0 +1,96 @@
+@charset "UTF-8";
+header {
+	height: 75px;
+	width:1000px;
+	margin:auto;
+	padding: 1rem;
+	color: white;
+	background: teal;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+#container {
+	width: 1000px;
+	height: 1050px;
+	margin: auto;
+	padding : 10px;
+	text-align:center;
+	position: relative;
+	top: 67px;
+}
+#signupcss{
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
+	color : black;
+	padding: 20px;
+	height: 80px;
+	line-height: 80px;
+}
+#top{
+	font-size: 20px;
+	font-weight: bold;
+	text-align: left;
+}
+
+table{
+	border-collapse:collapse;
+	width:100%;
+	margin-top: 20px;
+}
+
+tr{
+	border:1px solid black;	
+}
+
+td{
+	padding: 20px;
+}
+td:nth-child(1){
+	color:red;
+	width:1px;
+	text-align:right;
+}
+td:nth-child(2){
+	width:70px;
+	border-right:1px solid black;
+}
+td:nth-child(3){
+	width:500px;
+	text-align:left;
+}
+
+.box{
+	padding: 10px;
+	width: 250px;
+}
+
+.input {
+	width: 300px;
+	height: 25px;
+}
+
+.short{
+	width: 50px;
+}
+.button {
+	color:gray;
+	background-color: white;	
+	border: 1px solid gray;
+	padding: 20px 30px;
+	margin:20px;
+	border-radius: 4px;
+}
+
+.button:hover{
+	background-color: #2BC0E4;
+	color:white;
+}
+
+
+
+
