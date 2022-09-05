@@ -12,7 +12,7 @@
 	href="../../../resources/CSS/managerCSS.css?version=2.8">
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../../../resources/JS/managerjs.js"></script>
+<script type="text/javascript" src="../../../resources/JS/managerjs.js?version=1.1"></script>
 
 </head>
 <body>
