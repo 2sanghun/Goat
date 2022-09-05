@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace로 TestMapper와 연결 -->
-<mapper namespace="org.goat.mapper.BoardMapper">
+<mapper namespace="org.go.mapper.BoardMapper">
 	<insert id="boardwrite">
 	<selectKey keyProperty="bno" order="BEFORE" resultType="int">
 		select MAX(bno)+1 from board;
@@ -27,7 +27,7 @@
 	<delete id="remove">
 		delete from board where bno=#{bno};
 	 -->
-	 <select id="search" resultType="org.goat.model.BoardVO">
+	 <select id="search" resultType="org.go.model.BoardVO">
 		select * 
 		from (
 			select @rownum:=@rownum+1 rownum, b.*

@@ -1,4 +1,5 @@
 package org.goat.dbtest;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.goat.mapper.TestMapper;

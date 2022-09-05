@@ -4,8 +4,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace="org.goat.mapper.ListMapper">
-  	<select id="list" resultType="org.goat.model.BoardVO">
+  <mapper namespace="org.go.mapper.ListMapper">
+  	<select id="list" resultType="org.go.model.BoardVO">
   		select *
 		from(
 			 select @rownum:=@rownum+1 rownum, b.*
@@ -51,7 +51,7 @@
 		order by id='manager' desc, bno desc;
   	</select>
   	
-  	<select id="sitelist" resultType="org.goat.model.BoardVO">
+  	<select id="sitelist" resultType="org.go.model.BoardVO">
   		select *
 		from(
 			 select @rownum:=@rownum+1 rownum, b.*
