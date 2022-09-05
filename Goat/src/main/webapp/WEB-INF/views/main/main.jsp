@@ -51,7 +51,7 @@
 				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
 				<div class="page">
 				<c:if test="${paging.prev}">
-					<a class="pagemove">
+					<a class="pagemove"
 						href="/main?pageNum=${paging.startPage-1}&amount=${paging.cri.amount}&keyword=${paging.cri.keyword}">이전</a>
 				</c:if>
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
