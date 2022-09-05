@@ -24,9 +24,8 @@
 				</c:otherwise>
 			</c:choose>
 		<div class="align">
-		<div class="sortby">
-			<div class=sortby>
-				<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum">10개씩</a>
+			<div class="sortby">
+				<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum">${paging.cri.amount}개씩</a>
 				<ul>
 					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=5" id="pageNum">5개씩</a></li>
 					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum">10개씩</a></li>
@@ -34,7 +33,6 @@
 					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=20" id="pageNum">20개씩</a></li>
 				</ul>
 			</div>
-		</div>
 		</div>
 			<table>
 				<tr id="tr1">

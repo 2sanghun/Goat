@@ -24,13 +24,14 @@ $(document).ready(function(){
 		}
 	})
 
-	$("div.align > div > a").click(function() {
+	$("div.sortby > a").click(function() {
 		$(this).next("ul").toggle();
 		return false;
 	});
-	
-	$("div.align > div > ul > li").click(function() {
-		$(this).parent().hide().parent("div.align").children("a").text($(this).text());
+/*	
+	$("div.sortby > ul > li").click(function() {
+		$(this).parent().hide().parent("div.sortby").children("a").text($(this).text());
 		$(this).prependTo($(this).parent());
 	});
+*/
 })
