@@ -9,7 +9,7 @@
 <link rel="stylesheet"
 	href="../../../resources/CSS/signup.css?version=1.3" type="text/css">
 <script type="text/javascript"
-	src="../../../resources/JS/signup.js?version=1.1"></script>
+	src="../../../resources/JS/signup.js?"></script>
 <script type="text/javascript"
 	src="../../../resources/JS/effective.js?version=1.1"></script>
 </head>
