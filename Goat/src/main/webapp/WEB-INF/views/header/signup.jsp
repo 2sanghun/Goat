@@ -23,7 +23,7 @@
 		<form action="/header/signup" method="post"
 			onsubmit="return jsSubmit();">
 			<div id="main">
-				<table>
+				<table> 
 					<tr class="firstchild">
 						<td>*</td>
 						<td>이름</td>
