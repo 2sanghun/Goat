@@ -47,7 +47,7 @@
 							<td>${searchlist.category}</td>
 						</tr> 
 					</c:forEach>
-				</table>
+				</table> 
 				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
 				<div class="page">
 				<c:if test="${paging.prev}">
