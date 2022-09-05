@@ -23,6 +23,19 @@
 					<p id="categorylist">${paging.cri.category}</p>
 				</c:otherwise>
 			</c:choose>
+		<div class="align">
+		<div class="sortby">
+			<div class=sortby>
+				<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum">10개씩</a>
+				<ul>
+					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=5" id="pageNum">5개씩</a></li>
+					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum">10개씩</a></li>
+					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=15" id="pageNum">15개씩</a></li>
+					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=20" id="pageNum">20개씩</a></li>
+				</ul>
+			</div>
+		</div>
+		</div>
 			<table>
 				<tr id="tr1">
 					<td class="bno"><span></span></td>
@@ -69,17 +82,17 @@
 			<div id="pagingArea">
 				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
 				<c:if test="${paging.prev}">
-					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}" class="pageBtn">이전</a>
+					<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}" class="pageBtn">이전</a>
 				</c:if>
 		
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
 				<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}" id="pageNum">${num}</a>
+					<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}" id="pageNum">${num}</a>
 				</c:forEach>
 				
 				<!-- next(다음)이 true이면 다음버튼 활성화 -->
 				<c:if test="${paging.next}">
-					<a href="/list/list?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}" class="pageBtn">다음</a>
+					<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}" class="pageBtn">다음</a>
 				</c:if>
 			</div>
 			<form action="/list/list" method="get" id="searchform">
@@ -102,7 +115,7 @@
 				</div>
 				<div>	
 					<input type="hidden" name="pageNum" value="${paging.cri.pageNum}">
-					<input type="hidden" name="amount" value="${paging.cri.amount}">
+ 					<input type="hidden" name="amount" value="${paging.cri.amount}">
 					<input type="hidden" name="category" value="${paging.cri.category}">
 				</div>
 			</form>

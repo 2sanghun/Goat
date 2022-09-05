@@ -23,4 +23,14 @@ $(document).ready(function(){
 			$("#searchform").submit();
 		}
 	})
+
+	$("div.align > div > a").click(function() {
+		$(this).next("ul").toggle();
+		return false;
+	});
+	
+	$("div.align > div > ul > li").click(function() {
+		$(this).parent().hide().parent("div.align").children("a").text($(this).text());
+		$(this).prependTo($(this).parent());
+	});
 })

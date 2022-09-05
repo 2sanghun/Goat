@@ -19,6 +19,45 @@
 	background: linear-gradient(to right, #70e1f5, #eaecc6);
 }
 
+.align {
+	position: relative;
+	line-height: 35px;
+}
+
+.sortby {
+	float: right;
+}
+
+.align > a {
+	width: 100px;
+	display: block;
+	border: 1px solid #777;
+	padding: 0 8px;
+	overflow: hidden;
+}
+
+.align > a:after {
+	content: '▼';
+}
+
+.align > ul {
+	position:absolute; 
+	width:100%; 
+	top:20px; 
+	background:#fff; 
+	display:none;
+}
+
+.align > ul > li {
+	cursor:pointer; 
+	padding:0 8px; 
+	border-top:0;
+}
+
+.align > ul > li:first-child:after {
+	content:'▲';
+}
+
 table {
 	width: 1000px;
 	border-collapse: collapse;
