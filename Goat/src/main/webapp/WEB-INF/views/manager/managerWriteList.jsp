@@ -8,19 +8,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerWriteListCSS.css?version=1.1">
+	href="../../../resources/CSS/managerWriteListCSS.css?version=1.2">
 
 <script type="text/javascript">
 	function delchk() {
 		return confirm("삭제하시겠습니까?");
 	}
+	
 </script>
 </head>
 <body>
 	<div class="container">
 		<%@ include file="../header/header.jsp"%>
 		<div class="header">
-			<h1 class="title">회원 게시물</h1>
+			<h1 class="title">회원 게시물 목록</h1>
 		</div>
 		<div class="body">
 			<table class="writetable">
@@ -44,6 +45,7 @@
 					</tr>
 				</c:forEach>
 			</table>
+			<a href="#" class="scrollToTop"></a>
 
 		</div>
 

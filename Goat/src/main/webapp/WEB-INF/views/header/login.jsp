@@ -46,11 +46,10 @@
 			<!-- 카카오 스크립트 -->
 			<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 			<br>
-
-			<!-- API관련 JS연결 -->
-			<script type="text/javascript" src="../../../resources/JS/login.js"></script>
-			<%@ include file="../header/footer.jsp"%>
 		</div>
 	</div>
+	<!-- API관련 JS연결 -->
+			<script type="text/javascript" src="../../../resources/JS/login.js"></script>
+			<%@ include file="../header/footer.jsp"%>
 </body>
 </html>
