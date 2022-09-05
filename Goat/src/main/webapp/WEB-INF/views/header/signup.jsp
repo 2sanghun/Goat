@@ -13,7 +13,7 @@
 <script type="text/javascript"
 	src="../../../resources/JS/effective.js?version=1.1"></script>
 </head>
-<body>
+<body> 
 	<div id="container">
 		<%@ include file="../header/header.jsp"%>
 		<h1 id="signupcss">회원가입</h1>
