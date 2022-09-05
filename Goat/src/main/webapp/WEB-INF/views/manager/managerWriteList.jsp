@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <html>
@@ -8,13 +9,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerWriteListCSS.css?version=1.2">
+	href="../../../resources/CSS/managerWriteListCSS.css?version=1.3">
+	<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript"
+	src="../../../resources/JS/scrollToTop.js?version=1.2"></script>
 
 <script type="text/javascript">
 	function delchk() {
 		return confirm("삭제하시겠습니까?");
 	}
-	
 </script>
 </head>
 <body>
