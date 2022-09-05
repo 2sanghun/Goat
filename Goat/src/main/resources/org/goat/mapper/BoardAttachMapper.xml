@@ -9,6 +9,7 @@
 		insert into attach(uuid, uploadPath, fileName, image,bno)
 		value(#{uuid}, #{uploadPath}, #{fileName}, #{image},#{bno});
 	</insert>
+	
 	<select id="attachlist" resultType="org.goat.model.AttachFileVO">
 		select * from attach where bno = #{bno};
 	</select>

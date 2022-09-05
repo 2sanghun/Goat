@@ -15,7 +15,14 @@
 	<%@ include file="../header/header.jsp" %>
 	<div id="content">
 		<div id="middle">
-			<p id="categorylist">전체</p>
+			<c:choose>
+				<c:when test="${paging.cri.category == null or paging.cri.category == ''}">
+					<p id="categorylist">전체</p>
+				</c:when>
+				<c:otherwise>
+					<p id="categorylist">${paging.cri.category}</p>
+				</c:otherwise>
+			</c:choose>
 			<table>
 				<tr id="tr1">
 					<td class="bno"><span></span></td>

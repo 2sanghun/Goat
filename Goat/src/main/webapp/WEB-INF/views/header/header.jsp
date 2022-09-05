@@ -11,14 +11,14 @@
 <body>
 	<header>
 		<h1><a href="../main/main"><img src="../../../resources/image/logo.jpg"></a></h1>
-		<div id="category">
+		<div id="category"> 
 				<ul id="canav">
 					<li><a href="../list/list">전체</a></li>
-					<li><a href="../list/sitelist?category=관광">관광</a></li>
-					<li><a href="../list/houselist?category=숙소">숙소</a></li>
-					<li><a href="../list/foodlist?category=음식">음식</a></li>
-					<li><a href="../list/translist?category=교통">교통</a></li>
-					<li><a href="../list/tourlist?category=투어">투어</a></li>
+					<li><a href="../list/list?category=관광">관광</a></li>
+					<li><a href="../list/list?category=숙소">숙소</a></li>
+					<li><a href="../list/list?category=음식">음식</a></li>
+					<li><a href="../list/list?category=교통">교통</a></li>
+					<li><a href="../list/list?category=투어">투어</a></li>
 				</ul>
 			</div>
 		<nav>

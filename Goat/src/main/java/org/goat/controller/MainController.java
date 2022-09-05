@@ -24,7 +24,7 @@ public class MainController {
 	
 	@Autowired
 	BoardService bs;
-	
+	 
 	@Autowired
 	MemberService ms;
 	

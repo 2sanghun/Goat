@@ -13,7 +13,7 @@
 			 from board b, (select @rownum:=0) as tmp
 			 <choose>
 	  			<when test="category != null and !category.equals('')" >
-	  				where id!='manager' and category=#{category}
+	  				where category!='공지' and category=#{category}
 		 			<if test="keyword!=null">
 						<choose>
 							<when test="period == 'day'.toString()">
@@ -47,7 +47,7 @@
 					</if>
 	  			</when>			 
 	  			<otherwise>
-	  				where id!='manager'
+	  				where category!='공지'
 		 			<if test="keyword!=null">
 						<choose>
 							<when test="period == 'day'.toString()">
@@ -89,14 +89,14 @@
   	</select>
   	
   	<select id="manager" resultType="org.goat.model.BoardVO">
-  		select * from board where id='manager' order by bno desc;
+  		select * from board where category='공지' order by bno desc;
   	</select>
 
 	<select id="total" resultType="int">
   		select count(*) from board
 		<choose> 
   			<when test="category != null and !category.equals('')">
-  				where id!='manager' and category=#{category}
+  				where category!='공지' and category=#{category}
 	 			<if test="keyword!=null">
 					<choose>
 						<when test="period == 'day'.toString()">
@@ -130,7 +130,7 @@
 				</if>
   			</when>
   			<otherwise>
-  				where id!='manager'
+  				where category!='공지'
 	 			<if test="keyword!=null">
 					<choose>
 						<when test="period == 'day'.toString()">
