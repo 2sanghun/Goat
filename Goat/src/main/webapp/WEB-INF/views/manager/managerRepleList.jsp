@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerRepleListCSS.css?version=1.1">
+	href="../../../resources/CSS/managerRepleListCSS.css?version=1.2">
 <script type="text/javascript">
 	function delchk() {
 		return confirm("삭제하시겠습니까?");
@@ -43,6 +43,8 @@
 					</tr>
 				</c:forEach>
 			</table>
+			<a href="#" class="scrollToTop"></a>
+			
 		</div>
 		<div class="footer">
 			<a href="manager"><input class="back" type="button" value="닫기"></a>
