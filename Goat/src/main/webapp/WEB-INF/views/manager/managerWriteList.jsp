@@ -21,7 +21,7 @@
 	<div class="container">
 		<%@ include file="../header/header.jsp"%>
 		<div class="header">
-			<h1 class="title">회원 게시물</h1>
+			<h1 class="title">회원 게시물 목록</h1>
 		</div>
 		<div class="body">
 			<table class="writetable">
