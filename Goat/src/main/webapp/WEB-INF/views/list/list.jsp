@@ -24,6 +24,13 @@
 				</c:otherwise>
 			</c:choose>
 		<div class="align">
+			<div class="sort">
+				<ul>
+					<li><a href=""><img src="/resources/image/align_icon3.png" class="sortimg"></a></li>
+					<li><a href=""><img src="/resources/image/align_icon2.png" class="sortimg"></a></li>
+					<li><a href=""><img src="/resources/image/align_icon1_1.png" class="sortimg"></a></li>
+				</ul>
+			</div>
 			<div class="sortby">
 				<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum">${paging.cri.amount}개씩</a>
 				<ul>

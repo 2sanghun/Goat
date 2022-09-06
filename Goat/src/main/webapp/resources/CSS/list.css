@@ -21,7 +21,26 @@
 
 .align {
 	position: relative;
-	line-height: 30px;
+	line-height: 40px;
+}
+
+.sort {
+	position: relative;
+	left: 530px;
+}
+
+.sort > ul {
+	list-style: none;
+}
+
+.sort > ul > li {
+	float: left;
+	margin-left: 30px;
+}
+
+.sortimg {
+	width: 60px;
+	height: 60px;
 }
 
 .sortby {
@@ -43,17 +62,15 @@
 .sortby > ul {
 	position: absolute; 
 	width: 80px; 
-	top: 38px; 
+	top: 42px; 
 	background: #fff; 
-	display: none;
-	border: 1px solid #777;
-	
+	display: none;	
 }
 
 .sortby > ul > li {
 	cursor: pointer; 
 	list-style: none; 
-	border-top: 0;	
+	border-top: 0;
 }
 
 table {
