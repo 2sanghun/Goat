@@ -10,7 +10,6 @@ $(document).ready(function() {
 	}
 	
 	$('input[name="uploadFile"]').change(function() {
-		var j=0;
 		var str="";
 		for(var i=0;i<this.files.length;i++){
 			var fileName = this.files[i].name;
@@ -18,7 +17,6 @@ $(document).ready(function() {
 			fileType = fileType.slice(fileType.indexOf(".")+1).toLowerCase();
 			if(fileType !="jpg" && fileType !="png" && fileType != "gif" && fileType !="bmp"){
 				str+="<span><img src='../../../resources/image/folder.png' style='width:30px; height:30px'>"+fileName+"</span>";
-				j++;
 			}else{
 				str +="<img id='imageArea"+i+"' style='width:200px; height:100px'>";
 			}
