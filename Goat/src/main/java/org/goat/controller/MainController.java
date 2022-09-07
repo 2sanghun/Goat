@@ -82,9 +82,7 @@ public class MainController {
 			out.flush();
 			return "/header/login";
 		}
-		out.println("<script>alert('로그인 되셨습니다.'); </script>");
-		out.flush();
-		return "/main/main";
+		return "redirect:/main/main";
 	}
 	
 	@RequestMapping(value = "/header/logout", method = RequestMethod.GET)

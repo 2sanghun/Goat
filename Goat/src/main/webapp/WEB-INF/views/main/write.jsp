@@ -11,6 +11,9 @@
 	type="text/css">
 
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
+<script type="text/javascript" src="../../../resources/JS/writeAttach.js"></script>
+
+
 </head>
 <body>
 	<div id="container">
@@ -51,7 +54,7 @@
 						</label></td>
 					</tr>
 				</table>
-
+				<img id="imgArea" style="width:200px; height:100px">
 				<div id="button">
 					<input type="button" id="uploadBtn" value="작성" class="button">
 					<a href="/main"><input type="button" value="취소" class="button"></a>
