@@ -12,7 +12,7 @@
 
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
 <script type="text/javascript"
-	src="../../../resources/JS/writeAttach.js?version=1.5"></script>
+	src="../../../resources/JS/writeAttach.js?version=1.6"></script>
 
 
 </head>
