@@ -63,12 +63,13 @@ a {
 }
 
 .btn {
+	cursor: pointer;
 	width: 80px;
 	height: 100%;
 	background: #2BC0E4;
+	color: white;
 	border: 1px solid #2BC0E4;
 	border-radius: 4px;
-	color: white;
 	outline: none;
 	float: right;
 	font-size: 18px;
@@ -76,7 +77,9 @@ a {
 }
 
 .btn:hover {
-	background: #2BAFE4;
+	background: #347ef4;
+	border: 1px solid #347ef4;
+	color: white;
 	opacity: 0.9;
 }
 
@@ -100,8 +103,9 @@ a {
 	width: 50px;
 }
 
-#mid table td:nth-child(2) {
-	
+#mid table td:nth-child(2) a:hover {
+	color: #2BC0E4;
+	font-weight: bold;
 }
 
 #mid table td:nth-child(3) {
