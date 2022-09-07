@@ -21,14 +21,33 @@
 
 .align {
 	position: relative;
-	line-height: 35px;
+	line-height: 40px;
+}
+
+.sort {
+	position: relative;
+	left: 530px;
+}
+
+.sort > ul {
+	list-style: none;
+}
+
+.sort > ul > li {
+	float: left;
+	margin-left: 30px;
+}
+
+.sortimg {
+	width: 60px;
+	height: 60px;
 }
 
 .sortby {
 	float: right;
 }
 
-.align > a {
+.sortby > a {
 	width: 100px;
 	display: block;
 	border: 1px solid #777;
@@ -36,26 +55,22 @@
 	overflow: hidden;
 }
 
-.align > a:after {
+.sortby > a:after {
 	content: '▼';
 }
 
-.align > ul {
-	position:absolute; 
-	width:100%; 
-	top:20px; 
-	background:#fff; 
-	display:none;
+.sortby > ul {
+	position: absolute; 
+	width: 80px; 
+	top: 42px; 
+	background: #fff; 
+	display: none;	
 }
 
-.align > ul > li {
-	cursor:pointer; 
-	padding:0 8px; 
-	border-top:0;
-}
-
-.align > ul > li:first-child:after {
-	content:'▲';
+.sortby > ul > li {
+	cursor: pointer; 
+	list-style: none; 
+	border-top: 0;
 }
 
 table {
