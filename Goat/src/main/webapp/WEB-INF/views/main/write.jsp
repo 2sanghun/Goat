@@ -7,11 +7,12 @@
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/write.css?version=1.3"
-	type="text/css"> 
+<link rel="stylesheet"
+	href="../../../resources/CSS/write.css?version=1.3" type="text/css">
 
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
-<script type="text/javascript" src="../../../resources/JS/writeAttach.js"></script>
+<script type="text/javascript"
+	src="../../../resources/JS/writeAttach.js?version=1.5"></script>
 
 
 </head>
@@ -40,9 +41,10 @@
 										}
 									%>
 								</select>
-							</div> <input type="text" name="title" id="uploadtitle"
-							placeholder="제목을 입력하세요">
+							</div>
 						</td>
+						<td><input type="text" name="title" id="uploadtitle"
+							placeholder="제목을 입력하세요"></td>
 					</tr>
 					<tr>
 						<td colspan="2"><textarea name="content" id="uploadResult"
@@ -52,9 +54,9 @@
 						<td><label> 파일첨부 <input type="file" name="uploadFile"
 								id="uploadFile" hidden="" multiple>
 						</label></td>
+						<td style="text-align: left"><div id="uploadResult2"></div></td>
 					</tr>
 				</table>
-				<img id="imgArea" style="width:200px; height:100px">
 				<div id="button">
 					<input type="button" id="uploadBtn" value="작성" class="button">
 					<a href="/main"><input type="button" value="취소" class="button"></a>

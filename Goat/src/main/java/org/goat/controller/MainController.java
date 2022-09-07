@@ -88,7 +88,7 @@ public class MainController {
 	@RequestMapping(value = "/header/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "/header/login";
+		return "redirect:/header/login";
 	}
 	
 	@RequestMapping(value = "/header/signup", method = RequestMethod.GET)
