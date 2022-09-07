@@ -8,7 +8,7 @@
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="../../../resources/CSS/write.css?version=1.3"
-	type="text/css">
+	type="text/css"> 
 
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
 <script type="text/javascript" src="../../../resources/JS/writeAttach.js"></script>
