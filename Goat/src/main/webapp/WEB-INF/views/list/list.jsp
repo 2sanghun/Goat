@@ -27,8 +27,8 @@
 			<div class="sort">
 				<ul>
 					<li><a href=""><img src="/resources/image/align_icon3.png" class="sortimg"></a></li>
-					<li><a href=""><img src="/resources/image/align_icon2.png" class="sortimg"></a></li>
-					<li><a href=""><img src="/resources/image/align_icon1_1.png" class="sortimg"></a></li>
+					<li><a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}"><img src="/resources/image/align_icon2.png" class="sortimg"></a></li>
+					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}"><img src="/resources/image/align_icon1_1.png" class="sortimg"></a></li>
 				</ul>
 			</div>
 			<div class="sortby">
@@ -65,7 +65,7 @@
 					<!-- 매니저글 for문 끝 -->
 				</c:if>
 				<!-- 게시글 목록 for문 시작 -->
-			<c:forEach items="${list }" var="boardlist">
+				<c:forEach items="${list }" var="boardlist">
 					<tr>
 						<td class="bno">${boardlist.bno}</td>
 						<td class="title"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
