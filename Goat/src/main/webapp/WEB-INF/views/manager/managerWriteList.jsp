@@ -9,8 +9,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerWriteListCSS.css?version=1.6">
-	<script type="text/javascript"
+	href="../../../resources/CSS/managerWriteListCSS.css?version=1.7">
+<script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript"
 	src="../../../resources/JS/scrollToTop.js?version=1.3"></script>
@@ -54,6 +54,35 @@
 		</div>
 
 		<div class="footer">
+			<div class="page">
+				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
+				<c:if test="${paging.prev}">
+					<a class="pagemove"
+						href="/manager/managerWriteList?id=${paging.cri.id}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}"><</a>
+				</c:if>
+				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
+				<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
+					var="num">
+					<c:choose>
+						<c:when test="${paging.cri.pageNum==num}">
+							<a class="selectpage"
+								href="/manager/managerWriteList?id=${paging.cri.id}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}">${num}</a>
+						</c:when>
+						<c:otherwise>
+
+							<a class="pagenum"
+								href="/manager/managerWriteList?id=${paging.cri.id}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}">${num}</a>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+
+				<!-- next(다음)이 true이면 다음버튼 활성화 -->
+				<c:if test="${paging.next}">
+					<a class="pagemove"
+						href="/manager/managerWriteList?id=${paging.cri.id}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}">></a>
+				</c:if>
+			</div>
+			<!-- 페이징 -->
 			<a href="manager"><input class="back" type="button" value="닫기"></a>
 
 		</div>

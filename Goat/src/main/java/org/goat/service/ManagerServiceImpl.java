@@ -44,8 +44,13 @@ public class ManagerServiceImpl implements ManagerService {
 	}
 
 	// 작성 글 리스트
-	public ArrayList<BoardVO> WriteList(BoardVO write) {
-		return mm.WriteList(write);
+	public ArrayList<BoardVO> WriteList(CriteriaVO cri) {
+		return mm.WriteList(cri);
+	}
+	
+	// 작성 글 리스트에서 전체 게시물수 조회
+	public int boardtotal(CriteriaVO cri) {
+		return mm.boardtotal(cri);
 	}
 
 	// 글 삭제
@@ -54,9 +59,15 @@ public class ManagerServiceImpl implements ManagerService {
 	}
 
 	// 댓글 리스트
-	public ArrayList<RepleVO> RepleList(RepleVO write) {
-		return mm.RepleList(write);
+	public ArrayList<RepleVO> RepleList(CriteriaVO cri) {
+		return mm.RepleList(cri);
 	}
+	
+	// 댓글 리스트에서 전체 댓글수 조회
+	public int repletotal(CriteriaVO cri) {
+		return mm.repletotal(cri);
+	}
+	
 	// 댓글 삭제
 	public void repleremove(RepleVO remove) {
 		mm.repleremove(remove);

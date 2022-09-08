@@ -25,7 +25,6 @@ public class ManagerController {
 		// manager.jsp 실행 할 때 select 된 결과를 가져와라
 		model.addAttribute("list", ms.list(cri));
 		totalmem.addAttribute("total", ms.total(cri));
-		System.out.println(cri.getKeyword());
 		// list.jsp 실행 할 때 pageVO에 저장되어 있는 데이터를 가져와라.
 		//							 생성자 호출(매개변수가 없는 생성자)
 		// board테이블(게시판테이블)에 전체 건수(select해서)를 아래에 190대신에 대입
@@ -62,8 +61,12 @@ public class ManagerController {
 
 	// 작성 글 리스트
 	@RequestMapping(value = "/manager/managerWriteList", method = RequestMethod.GET)
-	public void managerWriteList(BoardVO write, Model model) {
-		model.addAttribute("WList", ms.WriteList(write));
+	public String managerWriteList(Model model,CriteriaVO cri) {
+		model.addAttribute("WList", ms.WriteList(cri));
+		int total = ms.boardtotal(cri);
+		System.out.println(total);
+		model.addAttribute("paging", new pageVO(cri, total));
+		return "manager/managerWriteList";
 	}
 
 	// 글 삭제
@@ -76,9 +79,13 @@ public class ManagerController {
 
 	// 댓글 리스트
 	@RequestMapping(value = "/manager/managerRepleList", method = RequestMethod.GET)
-	public void managerRepleList(RepleVO write, Model model, Model board) {
-		model.addAttribute("RList", ms.RepleList(write));
-	}
+	public String managerRepleList(Model model, CriteriaVO cri) {
+		model.addAttribute("RList", ms.RepleList(cri));
+		
+		int total = ms.repletotal(cri);
+		model.addAttribute("paging", new pageVO(cri, total));
+		return "manager/managerRepleList";	
+		}
 	
 	// 댓글 삭제
 	@RequestMapping(value = "/manager/repleremove", method = RequestMethod.GET)

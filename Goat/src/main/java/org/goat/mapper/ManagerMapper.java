@@ -24,13 +24,19 @@ public interface ManagerMapper {
 	public void remove(MemberVO remove);
 
 	// 작성 글 리스트
-	public ArrayList<BoardVO> WriteList(BoardVO write);
+	public ArrayList<BoardVO> WriteList(CriteriaVO cri);
+	
+	// 작성 글 리스트에서 전체 게시물수 조회
+	public int boardtotal(CriteriaVO cri);
 
 	// 글 삭제
 	public void bremove(BoardVO bremove);
 
 	// 댓글 리스트
-	public ArrayList<RepleVO> RepleList(RepleVO write);
+	public ArrayList<RepleVO> RepleList(CriteriaVO cri);
+	
+	// 댓글 리스트에서 전체 댓글수 조회
+	public int repletotal(CriteriaVO cri);
 
 	// 댓글 삭제
 	public void repleremove(RepleVO remove);
