@@ -15,7 +15,7 @@ insert into reple(content,id,bno)values(#{content},#{id},#{bno})
 <!-- select * from reple where bno= #{bno} -->
 <!-- select * from reple, member where reple.id = member.id and bno= #{bno} -->
 
-SELECT *FROM (SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, R.*FROM REPLE AS R, (SELECT @ROWNUM:=0) AS TMPWHERE BNO = #{bno}) AS REPLELIST, member where REPLELIST.id = member.id 
+SELECT *FROM (SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, R.*FROM REPLE AS R, (SELECT @ROWNUM:=0) AS TMP WHERE BNO = #{bno}) AS REPLELIST, member where REPLELIST.id = member.id 
 <![CDATA[
 	AND ROWNUM > (#{reple.pageNum}-1)*#{reple.amount} AND ROWNUM <= #{reple.pageNum}*#{reple.amount}
 	]]>

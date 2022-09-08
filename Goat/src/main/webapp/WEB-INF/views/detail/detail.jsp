@@ -141,6 +141,12 @@ input{
 	color:#999999;
 	text-decoration:none;}
 
+ul li{ 
+   list-style-type: none;
+   display: inline;
+   margin-left: 20px;
+}
+
 </style>
 
 </head>
@@ -157,8 +163,6 @@ input{
 <div id="content">
 
 <form method="post">
-
-
 
 <table border="1">
 
@@ -207,7 +211,7 @@ input{
 </table>
 
 </form>
-</div>
+
 <br>
 <div>
 <c:if test="${ id != null }">
@@ -240,6 +244,7 @@ input{
 </div>
 
 <div id="replePage"></div>
+</div>
     		
 <%@ include file="../header/footer.jsp" %>
 
