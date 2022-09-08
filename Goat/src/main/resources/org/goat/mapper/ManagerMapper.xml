@@ -47,7 +47,7 @@
 				</otherwise>
 			</choose>
 		</if>
-		; 
+		;
 	</select>
 
 	<!-- 멤버 리스트에서 id 검색 -->
@@ -57,7 +57,9 @@
 
 	<!-- 멤버 상세 페이지 설계 -->
 	<select id="memdetail" resultType="org.goat.model.MemberVO">
-		select id,name,password,replace(email,',','') as email,addr,memdate,birth,nick,phone from member
+		select
+		id,name,password,replace(email,',','') as
+		email,addr,memdate,birth,nick,phone from member
 		where id=#{id};
 	</select>
 
@@ -68,8 +70,23 @@
 
 	<!-- 작성 글 리스트 -->
 	<select id="WriteList" resultType="org.goat.model.BoardVO">
-		select * from board where
-		id=#{id};
+		select *
+		from(
+		select @rownum:=@rownum+1 rownum, b.*
+		from board b,
+		(select @rownum:=0) as tmp
+		where id=#{id}
+		) as boardlist
+		<![CDATA[
+			where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+			]]>
+	</select>
+
+	<!-- 작성 글 리스트에서 전체 게시물수 조회 -->
+	<select id="boardtotal" resultType="integer">
+		select count(*)
+		from board
+		where id=#{id};
 	</select>
 
 	<!-- 글 삭제 -->
@@ -79,8 +96,23 @@
 
 	<!-- 댓글 리스트 -->
 	<select id="RepleList" resultType="org.goat.model.RepleVO">
-		select * from reple where
-		id=#{id};
+		select *
+		from(
+		select @rownum:=@rownum+1 rownum, r.*
+		from reple r,
+		(select @rownum:=0) as tmp
+		where id=#{id}
+		) as replelist
+		<![CDATA[
+			where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+			]]>
+	</select>
+
+	<!-- 댓글 리스트에서 전체 댓글수 조회 -->
+	<select id="repletotal" resultType="integer">
+		select count(*)
+		from reple
+		where id=#{id};
 	</select>
 
 	<!-- 댓글 삭제 -->

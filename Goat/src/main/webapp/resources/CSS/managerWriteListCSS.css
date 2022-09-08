@@ -134,3 +134,41 @@ td:nth-child(4) {
 	right: 30px;
 	bottom: 30px;
 }
+
+.footer{
+	width: 1000px;
+	margin: auto;
+}
+
+.page {
+	padding: 30px;
+	margin: auto;
+}
+
+
+.pagenum {
+	padding: 10px;
+	color: #8C8C8C;
+	background: white;
+	border-radius: 4px;
+}
+
+.pagenum:hover {
+	background-color: #2BC0E4;
+	color: white;
+}
+
+.selectpage {
+	padding: 10px;
+	background-color: #2BC0E4;
+	color: white;
+	border-radius: 4px;
+}
+
+.pagemove {
+	padding: 10px;
+	padding-bottom: 12px;
+	background-color: #2BC0E4;
+	color: white;
+	border-radius: 4px;
+}

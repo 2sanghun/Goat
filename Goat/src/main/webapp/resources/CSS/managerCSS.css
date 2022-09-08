@@ -60,6 +60,7 @@
 }
 
 .selectbox {
+	cursor: pointer;
 	float: left;
 	width: 90px;
 	height: 40px;
@@ -88,6 +89,7 @@
 }
 
 .searchbtn {
+	cursor: pointer;
 	width: 45px;
 	height: 100%;
 	border: 0px;
@@ -103,14 +105,14 @@ td {
 	padding: 30px 0px 30px 0px;
 }
 
-td:nth-child(5){
+td:nth-child(5) {
 	padding: 0px;
 }
 
-td:nth-child(6){
+td:nth-child(6) {
 	padding: 0px;
-
 }
+
 .memlistnav {
 	color: black;
 	font-weight: bold;
