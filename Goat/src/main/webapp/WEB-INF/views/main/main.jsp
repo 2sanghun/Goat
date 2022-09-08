@@ -66,7 +66,7 @@
 									<c:otherwise>
 										<a class="pagenum"
 											href="/main?pageNum=${num}&amount=${paging.cri.amount}&keyword=${paging.cri.keyword}">${num}</a>
-						</c:otherwise>
+									</c:otherwise>
 								</c:choose>
 							</c:forEach>
 						</c:if>

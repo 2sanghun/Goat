@@ -8,8 +8,8 @@
 	<selectKey keyProperty="bno" order="BEFORE" resultType="int">
 		select MAX(bno)+1 from board;
 	</selectKey>
-		insert into board(title, content, category, id, nick)
-		values(#{title},#{content},#{category},#{id}, #{nick})
+		insert into board(title, content, category, id, nick, bno)
+		values(#{title},#{content},#{category},#{id}, #{nick}, #{bno})
 	</insert>
 	<!--
 	<select id="list" resultType="org.goat.model.BoardVO">
