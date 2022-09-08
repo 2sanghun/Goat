@@ -11,6 +11,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../resources/JS/detail.js"></script>
 <script type="text/javascript" src="../../../resources/JS/reple.js"></script>
+<script type="text/javascript" src="/resources/JS/attach.js"></script>
 
 <!-- css 파트 나중에 다시 뺄꺼야 -->
 
@@ -171,20 +172,23 @@ input{
 
 <tbody>
   <tr class="tr1">
-    <td colspan="4">
-    <input type="text" name="nick" id="nick" value="${detail.nick}" readonly>
-    <input type="text" name="regdate" id="regdate" value="${detail.regdate}" readonly>
-    </td>
-  </tr>
-  <tr>
+     <td colspan="4"><input type="text" name="nick" id="nick" value="${detail.nick}" readonly>
+                     <input type="text" name="regdate" id="regdate" value="${detail.regdate}" readonly>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="4">
+                     <textarea name="content" id="contenttext" rows="40">${detail.content}</textarea>
+                     <div id="uploadResult">   <!-- 업로드 파일 영역(textarea영역에 포함시켰어요 -->
+                        <ul>
+                        
+                        </ul>
+                     </div>
+                  </td>
 
-    <td colspan="4"><textarea name="content" id="contenttext" rows="40">${detail.content}</textarea></td>
+               </tr>
+               <tr>
 
-  </tr>
-
-<tr>
- 
-  <tr>
   <c:choose> 
    <c:when test="${ id != null && id == detail.id}">
 	    <td colspan="4" id="td1">
@@ -203,6 +207,7 @@ input{
 </table>
 
 </form>
+</div>
 <br>
 <div>
 <c:if test="${ id != null }">
