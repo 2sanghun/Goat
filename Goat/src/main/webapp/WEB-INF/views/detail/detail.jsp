@@ -11,7 +11,6 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../resources/JS/detail.js"></script>
 <script type="text/javascript" src="../../../resources/JS/reple.js"></script>
-<script type="text/javascript" src="/resources/JS/attach.js"></script>
 
 <!-- css 파트 나중에 다시 뺄꺼야 -->
 
@@ -116,96 +115,128 @@ input{
 
 .upde{float:right;}
 
-ul li{ 
-	list-style-type: none;
-	display: inline;
-	margin-left: 20px;
+#replePage {
+   
+	margin: 0px;
+	padding:0px;
+	width: 994px;
+	overflow: auto;
+	display:inline-block;
 }
+
+#cntdiv{width:170px; margin:auto;}
+
+.cntul{list-style:none; display:inline; margin-left:20px;}
+.cntli{display:block;
+	margin:0 3px;
+	float:left;
+	border:1px solid #e6e6e6;
+	width:28px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	background-color:#fff;
+	font-size:13px;
+	color:#999999;
+	text-decoration:none;}
 
 </style>
 
 </head>
-
+ 
 <body>
 
-	<%@ include file="../header/header.jsp"%>
+<%@ include file="../header/header.jsp" %>
 
-	<hr>
-	<hr>
+<hr>
+<hr>
 
-	<input type="hidden" id="id" value="${id}">
+<input type="hidden" id="id" value="${id}">
 
-	<div id="content">
+<div id="content">
 
-		<form method="post">
-			<table border="1">
-				<thead>
-					<tr class="tr1">
-						<th colspan="4">
-							<input type="hidden" name="bno" value="${detail.bno}"><input type="text" name="title" id="title" value="${detail.title}">
-						</th>
-					</tr>
-				</thead>
+<form method="post">
 
-				<tbody>
-					<tr class="tr1">
-						<td colspan="4"><input type="text" name="nick" id="nick" value="${detail.nick}" readonly>
-							<input type="text" name="regdate" id="regdate" value="${detail.regdate}" readonly>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="4">
-							<textarea name="content" id="contenttext" rows="40">${detail.content}</textarea>
-							<div id="uploadResult">	<!-- 업로드 파일 영역(textarea영역에 포함시켰어요 -->
-								<ul>
-								
-								</ul>
-							</div>
-						</td>
 
-					</tr>
-					<tr>
-						<c:choose>
-							<c:when test="${ id != null && id == detail.id}">
-								<td colspan="4" id="td1"><input type="submit" value="수정" formaction="/detail/modify" id="modify"> &nbsp;&nbsp; 
-									<input type="submit" value="삭제" onclick="confirm('정말 삭제하시겠습니까?')" formaction="/detail/remove" class="remove">
-								</td>
-							</c:when>
-							<c:when test="${id eq 'manager'}">
-								<td colspan="4" id="td1">
-									<input type="submit" value="삭제" onclick="confirm('매니저야 정말 삭제할꺼야?')" formaction="/detail/remove" class="remove">
-								</td>
-							</c:when>
-						</c:choose>
-					</tr>
-				</tbody>
-			</table>
-		</form>
-		<br>
-		<div>
-			<c:if test="${ id != null }">
-				<textarea rows="10" cols="140" id="reply"></textarea>
-				<input type="hidden" value="${id}" id="replyid">
-				<input type="button" value="댓글 작성" id="add">
-			</c:if>
-		</div>
 
-		<div id="chat">
-			<table id="replyUL">
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>
-						<div></div>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</div>
+<table border="1">
 
-	<%@ include file="../header/footer.jsp"%>
+<thead>
+  <tr class="tr1">  
+ 
+    <th colspan="4"><input type="hidden" name="bno" value="${detail.bno}"><input type="text" name="title" id="title" value="${detail.title}"></th>
+
+  </tr>
+</thead>
+
+<tbody>
+  <tr class="tr1">
+    <td colspan="4">
+    <input type="text" name="nick" id="nick" value="${detail.nick}" readonly>
+    <input type="text" name="regdate" id="regdate" value="${detail.regdate}" readonly>
+    </td>
+  </tr>
+  <tr>
+
+    <td colspan="4"><textarea name="content" id="contenttext" rows="40">${detail.content}</textarea></td>
+
+  </tr>
+
+<tr>
+ 
+  <tr>
+  <c:choose> 
+   <c:when test="${ id != null && id == detail.id}">
+	    <td colspan="4" id="td1">
+	    <input type="submit" value="수정"  formaction="/detail/modify" id="modify"> &nbsp;&nbsp;
+	    <input type="submit" value="삭제"  onclick="confirm('정말 삭제하시겠습니까?')" formaction="/detail/remove" class="remove">
+	   </td>
+  </c:when>
+  <c:when test="${id eq 'manager'}">
+       <td colspan="4" id="td1">
+       <input type="submit" value="삭제"  onclick="confirm('매니저야 정말 삭제할꺼야?')" formaction="/detail/remove" class="remove">
+	   </td>
+  </c:when>
+  </c:choose>     
+  </tr>
+</tbody>
+</table>
+
+</form>
+<br>
+<div>
+<c:if test="${ id != null }">
+<textarea rows="10" cols="140" id="reply"></textarea>
+
+<input type="hidden" value="${id}" id="replyid" >
+<input type="button" value="댓글 작성" id="add">
+</c:if>
+</div>
+
+
+<div id="chat">
+
+<table id="replyUL">
+ 
+<tr>
+<td></td>
+<td></td>
+</tr>
+
+
+<tr>
+<td>
+<div> </div>
+</td>
+</tr>
+
+
+</table>
+</div>
+
+<div id="replePage"></div>
+    		
+<%@ include file="../header/footer.jsp" %>
 
 </body>
 </html>

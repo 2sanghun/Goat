@@ -13,6 +13,38 @@ public class RepleVO {
 	
 	private String nick;
 	
+	private int pageNum; // 댓글 페이지 번호 
+	private int amount;  // 한 댓글 페이지당 게시물 개수 
+	
+	
+    // 생성자를 이용해서 초기화 
+	public RepleVO() {
+		this(1,10);
+	}
+	
+	public RepleVO(int pageNum, int amount) {
+		this.pageNum = pageNum;
+		this.amount = amount;
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getPageNum() {
+		return pageNum;
+	}
+	public void setPageNum(int pageNum) {
+		this.pageNum = pageNum;
+	}
+
+
+	public int getAmount() {
+		return amount;
+	}
+
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
 
 	public String getId() {
 		return id;
@@ -68,7 +100,7 @@ public class RepleVO {
 	@Override
 	public String toString() {
 		return "RepleVO [id=" + id + ", rno=" + rno + ", content=" + content + ", repledate=" + repledate + ", bno="
-				+ bno + ", nick=" + nick + "]";
+				+ bno + ", nick=" + nick + ", pageNum=" + pageNum + ", amount=" + amount + "]";
 	}
 	
 }

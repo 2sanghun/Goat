@@ -6,14 +6,23 @@
 
 <mapper namespace="org.goat.mapper.RepleMapper">
 
-<insert id="writeReple">insert into reple(content,id,bno)values(#{content},#{id},#{bno}) </insert>
-
+<insert id="writeReple"> 
+insert into reple(content,id,bno)values(#{content},#{id},#{bno}) 
+</insert>
 
 <select id="list" resultType="org.goat.model.RepleVO">
 
 <!-- select * from reple where bno= #{bno} -->
+<!-- select * from reple, member where reple.id = member.id and bno= #{bno} -->
 
-select * from reple, member where reple.id = member.id and bno= #{bno} 
+SELECT *FROM (SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, R.*FROM REPLE AS R, (SELECT @ROWNUM:=0) AS TMPWHERE BNO = #{bno}) AS REPLELIST, member where REPLELIST.id = member.id 
+<![CDATA[
+	AND ROWNUM > (#{reple.pageNum}-1)*#{reple.amount} AND ROWNUM <= #{reple.pageNum}*#{reple.amount}
+	]]>
+</select>
+
+<select id="rplcnt" resultType="int"> 
+select count(*) from reple where bno=#{bno} 
 </select>
 
 <delete id="remove">delete from replewhere rno = #{rno} </delete>
