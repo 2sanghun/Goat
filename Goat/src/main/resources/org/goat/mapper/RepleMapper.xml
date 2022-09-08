@@ -11,7 +11,7 @@ insert into reple(content,id,bno)values(#{content},#{id},#{bno})
 </insert>
 
 <select id="list" resultType="org.goat.model.RepleVO">
-
+ 
 <!-- select * from reple where bno= #{bno} -->
 <!-- select * from reple, member where reple.id = member.id and bno= #{bno} -->
 
