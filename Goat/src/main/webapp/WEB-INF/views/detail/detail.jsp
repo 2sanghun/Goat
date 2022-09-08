@@ -208,8 +208,8 @@ ul li{
   </c:choose>     
   </tr>
 </tbody>
-</table>
- 
+</table> 
+  
 </form>
 
 <br>
