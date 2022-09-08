@@ -20,4 +20,12 @@ public class MemberServiceImpl implements MemberService{
 	public MemberVO login(MemberVO member) {
 		return mm.login(member);
 	}
+	
+	public String idsearch(MemberVO member) {
+		return mm.idsearch(member);
+	}
+	
+	public String pwsearch(MemberVO member) {
+		return mm.pwsearch(member);
+	}
 }

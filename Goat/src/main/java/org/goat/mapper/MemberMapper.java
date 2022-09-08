@@ -9,4 +9,8 @@ public interface MemberMapper {
 	public int idcheck(MemberVO member);
 	// 로그인
 	public MemberVO login(MemberVO member);
+	// 아이디 찾기
+	public String idsearch(MemberVO member);
+	// 비밀번호 찾기
+	public String pwsearch(MemberVO member);
 }

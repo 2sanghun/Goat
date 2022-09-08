@@ -33,16 +33,25 @@
 	margin: 5px;
 }
 
-
-
 .signupbutton {
 	color: gray;
 	font-size: 18px;
 	font-weight: bold;
 	margin:auto;
-	margin-left: 370px;
+	margin-left: 200px;
+}
+.signupbutton2 {
+	color: gray;
+	font-size: 18px;
+	font-weight: bold;
+	margin:auto;
+	margin-left: 0px;
 }
 .signupbutton:hover{
+background-color: #0000;
+	color: #2BC0E4;
+}
+.signupbutton2:hover{
 background-color: #0000;
 	color: #2BC0E4;
 }
