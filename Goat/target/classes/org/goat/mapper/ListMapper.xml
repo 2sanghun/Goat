@@ -165,6 +165,55 @@
   			</otherwise>
   		</choose>	
 	</select>
+ 
+	<select id="imglist" resultType="org.goat.model.BoardVO">
+		select b.bno, title, content, nick, regdate, cnt, id, good, category,
+		concat(replace(uploadpath, '\\','/'),'/s_' ,uuid,'_' ,filename) filePath	
+		from (
+			  select *
+   			  from attach
+      		  where image=1
+     		  ) as attach
+		join board b
+		on b.bno = attach.bno
+		group by bno
+		<choose>
+			<when test="category != null and !category.equals('')">
+				having category=#{category}
+			</when>
+			<otherwise>
+			
+			</otherwise>
+		</choose>
+		order by b.bno desc
+	</select>
+    
+<!--       
+	<resultMap type="org.goat.model.attachFileVO" id="AttachFileVO">
+	 	<result column="uuid" property="uuid"/>
+	 	<result column="uploadPath" property="uploadPath"/>
+	 	<result column="filename" property="filename"/>
+	 	<result column="image" property="image"/>
+	</resultMap>
+	
+	<resultMap type="org.goat.model.boardVO" id="BoardVO">
+	 	<result column="b.bno" property="bno"/>
+	 	<result column="title" property="title"/>
+	 	<result column="content" property="content"/>
+	 	<result column="nick" property="nick"/>
+	 	<result column="regdate" property="regdate"/>
+	 	<result column="cnt" property="cnt"/>
+	 	<result column="id" property="id"/>
+	 	<result column="good" property="good"/>
+	 	<result column="category" property="category"/>
+	 	<collection property="AttachFileVO" resultMap="AttachFileVO"/>
+	</resultMap>
+
+	<select id="imglist" parameterType="org.goat.model.boardVO" resultMap="BoardVO">
+		select b.bno, title, content, nick, regdate, cnt, id, good, category, uuid, replace(uploadpath, '\\','/') uploadPath, filename, image 
+		from board b join attach a on b.bno = a.bno where image=1 order by b.bno desc	
+	</select>
+-->
 
 <!-- 
   	<select id="sitelist" resultType="org.goat.model.BoardVO">

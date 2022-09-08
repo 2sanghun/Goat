@@ -20,10 +20,12 @@ public class BoardVO {
 	private int good;
 
 	private String category;
+
+	private String filePath;
 	
 	// AttachFileVO(파일 업로드 관련 model)
 	private ArrayList<AttachFileVO> attach;
-			
+
 	public String getCategory() {
 		return category;
 	}
@@ -104,11 +106,19 @@ public class BoardVO {
 		this.attach = attach;
 	}
 
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+
 	@Override
 	public String toString() {
 		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", nick=" + nick + ", regdate="
-				+ regdate + ", cnt=" + cnt + ", id=" + id + ", good=" + good + ", category=" + category + ", attach="
-				+ attach + "]";
+				+ regdate + ", cnt=" + cnt + ", id=" + id + ", good=" + good + ", category=" + category + ", filePath="
+				+ filePath + ", attach=" + attach + "]";
 	}
 
 
