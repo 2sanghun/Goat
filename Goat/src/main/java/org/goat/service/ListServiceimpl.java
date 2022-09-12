@@ -32,7 +32,11 @@ public class ListServiceimpl implements ListService{
 	public ArrayList<BoardVO> imglist(CriteriaVO cri){		
 		return lm.imglist(cri);
 	}
-	
+
+	// board 테이블 이미지 전체건수 설계
+	public int imgtotal(CriteriaVO cri) {
+		return lm.imgtotal(cri);
+	}
 /*	
 	// ListService에서 설계되어 진 sitelist 추상메서드를 구현
 	public ArrayList<BoardVO> sitelist(CriteriaVO cri){

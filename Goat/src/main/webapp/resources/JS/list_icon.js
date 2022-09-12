@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function(){
-/*
+/* 혹시 모르니까 주석 처리 해놓자
 	// list_icon2에서 이미지 게시글 bno값 배열로 저장
 	var bno = $("#listbno").val();
 	alert(bno);

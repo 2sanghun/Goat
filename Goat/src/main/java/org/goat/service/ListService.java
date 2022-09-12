@@ -18,6 +18,9 @@ public interface ListService {
 	// 이미지가 있는 게시글 목록 리스트 설계
 	public ArrayList<BoardVO> imglist(CriteriaVO cri);
 	
+	// board 테이블 이미지 전체건수 설계
+	public int imgtotal(CriteriaVO cri);
+	
 /* 필요가 없다
 	// 관광 글 목록 리스트 설계
 	public ArrayList<BoardVO> sitelist(CriteriaVO cri);
