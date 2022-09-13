@@ -45,10 +45,10 @@
 				<tr id="tr1">
 					<td class="bno"><span>게시판</span></td>
 					<td class="title"><span>제목</span></td>
-					<td class="nick"><span>작성자</span></td>
+					<td class="nick"><span>글쓴이</span></td>
 					<td class="regdate"><span>작성일</span></td>
-					<td class="cnt"><span>조회</span></td>
-					<td class="good"><span>좋아요</span></td>
+					<td class="cnt"><span>추천</span></td>
+					<td class="good"><span>조회</span></td>
 				</tr>
 				<c:if test="${paging.cri.pageNum == 1 and (keyword == null or keyword == '')}">
 					<!-- 매니저글 for문 시작 -->
@@ -58,8 +58,8 @@
 							<td class="title"><a href="../detail/detail?bno=${managerlist.bno}">${managerlist.title}</a></td>
 							<td class="nick">${managerlist.nick}</td>
 							<td class="regdate">${managerlist.regdate}</td>
-							<td class="cnt">${managerlist.cnt}</td>
-							<td class="good">${managerlist.good}</td>
+							<td class="cnt">${managerlist.good}</td>
+							<td class="good">${managerlist.cnt}</td>
 						</tr>
 					</c:forEach>
 					<!-- 매니저글 for문 끝 -->
@@ -71,8 +71,8 @@
 						<td class="title"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 						<td class="nick">${boardlist.nick}</td>
 						<td class="regdate">${boardlist.regdate}</td>
-						<td class="cnt">${boardlist.cnt}</td>
-						<td class="good">${boardlist.good}</td>
+						<td class="cnt">${boardlist.good}</td>
+						<td class="good">${boardlist.cnt}</td>
 					</tr>
 				</c:forEach>
 				<!-- 게시글 for문 끝 -->
