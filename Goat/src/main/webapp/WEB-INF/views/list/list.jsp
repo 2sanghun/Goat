@@ -9,7 +9,7 @@
 <title>List</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/list.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/list.css?version=1.6" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/list.css?version=1.7" type="text/css">
 </head>
 <body>
 	<%@ include file="../header/header.jsp" %>
@@ -43,7 +43,7 @@
 		</div>
 			<table>
 				<tr id="tr1">
-					<td class="bno"><span></span></td>
+					<td class="bno"><span>게시판</span></td>
 					<td class="title"><span>제목</span></td>
 					<td class="nick"><span>작성자</span></td>
 					<td class="regdate"><span>작성일</span></td>
@@ -67,7 +67,7 @@
 				<!-- 게시글 목록 for문 시작 -->
 				<c:forEach items="${list }" var="boardlist">
 					<tr>
-						<td class="bno">${boardlist.bno}</td>
+						<td class="bno">${boardlist.category}</td>
 						<td class="title"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 						<td class="nick">${boardlist.nick}</td>
 						<td class="regdate">${boardlist.regdate}</td>

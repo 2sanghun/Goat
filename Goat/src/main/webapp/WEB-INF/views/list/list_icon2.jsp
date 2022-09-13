@@ -9,7 +9,7 @@
 <title>List</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/list_icon.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/list_icon2.css" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/list_icon2.css?version=1.2" type="text/css">
 </head>
 <body>
 	<%@ include file="../header/header.jsp" %>
@@ -27,20 +27,12 @@
 			<div class="sort">
 				<ul>
 					<li><a href="/list/list_icon3?category=${paging.cri.category}&pageNum=1&amount=20"><img src="/resources/image/align_icon3.png" class="sortimg"></a></li>
-					<li><a href="/list/list_icon2?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon2.png" class="sortimg"></a></li>
+					<li><a href="/list/list_icon2?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon2.png" class="sortimg_1"></a></li>
 					<li><a href="/list/list?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon1.png" class="sortimg"></a></li>
 				</ul>
 			</div>
 		</div>
 			<table>
-				<tr id="tr1">
-					<td class="bno"><span></span></td>
-					<td class="title"><span>제목</span></td>
-					<td class="nick"><span>작성자</span></td>
-					<td class="regdate"><span>작성일</span></td>
-					<td class="cnt"><span>조회</span></td>
-					<td class="good"><span>좋아요</span></td>
-				</tr>
 				<c:if test="${paging.cri.pageNum == 1 and (keyword == null or keyword == '')}">
 					<!-- 매니저글 for문 시작 -->
 					<c:forEach items="${manager}" var="managerlist">
@@ -57,16 +49,16 @@
 				</c:if>
 				
 				<!-- 이미지 게시글 목록 for문 시작 -->
-				<c:forEach items="${list }" var="boardlist">
+				<c:forEach items="${list}" var="boardlist">
 					<tr>
-						<td colspan="4"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 						<td colspan="2" rowspan="3" id="uploadResult"><img src="/display?fileName=${boardlist.filePath}"></td>
+						<td colspan="4"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 					</tr>
 					<tr>
-						<td colspan="4"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.content}</a></td>
+						<td colspan="4">${boardlist.category}</td>
 					</tr>
 					<tr>
-						<td colspan="4">${boardlist.regdate}</td>
+						<td colspan="4">${boardlist.regdate} / ${boardlist.nick}</td>
 					</tr>
 				</c:forEach>
 				<!-- 이미지 게시글 for문 끝 -->
