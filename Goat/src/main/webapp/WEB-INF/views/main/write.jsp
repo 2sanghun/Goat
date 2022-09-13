@@ -44,7 +44,7 @@
 							</div>
 						</td>
 						<td><input type="text" name="title" id="uploadtitle"
-							placeholder="제목을 입력하세요"></td>
+							placeholder="제목을 입력하세요" maxlength="20"></td>
 					</tr>
 					<tr>
 						<td colspan="2"><textarea name="content" id="uploadResult"

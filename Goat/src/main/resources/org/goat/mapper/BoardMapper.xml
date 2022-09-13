@@ -5,12 +5,18 @@
 <!-- namespace로 TestMapper와 연결 -->
 <mapper namespace="org.goat.mapper.BoardMapper">
 	<insert id="boardwrite">
-	<selectKey keyProperty="bno" order="BEFORE" resultType="int">
+	<!-- <selectKey keyProperty="bno" order="BEFORE" resultType="int">
 		select MAX(bno)+1 from board;
+	</selectKey> 이 selecKey를 사용하기 위해서는 insert문에 bno를 추가해 주어야 함.-->
+		insert into board(title, content, category, id, nick)
+		values(#{title},#{content},#{category},#{id}, #{nick})
+	<!--  위의 select문에서 bno를 삭제후 아래의 selectKey를 사용하면 board테이블이 비어있어도 사용 가능 -->
+	<selectKey keyProperty="bno" order="AFTER" resultType="int">
+		select LAST_INSERT_ID();
 	</selectKey>
-		insert into board(title, content, category, id, nick, bno)
-		values(#{title},#{content},#{category},#{id}, #{nick}, #{bno})
 	</insert>
+	
+	
 	<!--
 	<select id="list" resultType="org.goat.model.BoardVO">
 		select * from board;
