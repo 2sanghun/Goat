@@ -113,6 +113,7 @@
 			<!-- 페이징 -->
 		</div>
 		<!-- footer -->
+				<%@ include file="../header/footer.jsp"%>
 	</div>
 	<!-- container -->
 

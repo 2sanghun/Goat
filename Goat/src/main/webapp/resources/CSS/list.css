@@ -26,50 +26,53 @@
 
 .sort {
 	position: relative;
-	left: 530px;
+	border: 1px solid black;
+	height: 80px;
 }
 
-.sort > ul {
+.sort>ul {
 	list-style: none;
+	line-height: 80px;
 }
 
 .sort > ul > li {
 	float: left;
-	margin-left: 30px;
+	margin-left: 10px;
 }
 
 .sortimg {
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
 }
 
 .sortby {
 	float: right;
 }
 
-.sortby > a {
-	width: 100px;
+.sortby>a {
+	width: auto;
 	display: block;
 	border: 1px solid #777;
-	padding: 0 8px;
+	padding: 0px 6px;
 	overflow: hidden;
+	font-size: 14px;
 }
 
-.sortby > a:after {
+.sortby>a:after {
 	content: '▼';
 }
 
-.sortby > ul {
-	position: absolute; 
-	width: 80px; 
-	top: 42px; 
-	background: #fff; 
-	display: none;	
+.sortby>ul {
+	position: absolute;
+	width: 80px;
+	top: 42px;
+	background: #fff;
+	display: none;
 }
 
-.sortby > ul > li {
-	cursor: pointer; 
-	list-style: none; 
+.sortby>ul>li {
+	cursor: pointer;
+	list-style: none;
 	border-top: 0;
 }
 
@@ -82,12 +85,13 @@ table {
 #notice td {
 	background: #f2f2f2;
 }
+
 #nodata {
-	height : 100px;
-	text-align : center;
+	height: 100px;
+	text-align: center;
 }
 
-#nodatah{
+#nodatah {
 	font-size: 15px;
 	position: relative;
 	top: 50%;
@@ -180,19 +184,49 @@ td {
 	height: 44px;
 }
 
+.sortby>ul {
+	padding: 0px;
+	margin-top: 0px;
+	width: 70px;
+	font-size: 14px;
+}
+
+.listcount {
+	color: #8C8C8C;
+	padding: 0px;
+	border-radius: 4px;
+	width: 200px;
+}
+
+.listcount:hover {
+	background: #2BC0E4;
+	color: white;
+}
+
+.listnum {
+	color: #8C8C8C;
+	padding: 10px 12px;
+	border-radius: 4px;
+}
+
+.listnum:hover {
+	background: #2BC0E4;
+	color: white;
+}
+
 #pagingArea {
 	margin-top: 30px;
 	position: relative;
 }
 
-#pageNum {
+#pagingArea>#pageNum {
 	padding: 10px;
 	color: #8C8C8C;
 	background: white;
 	border-radius: 4px;
 }
 
-#pageNum:hover {
+#pagingArea>#pageNum:hover {
 	background-color: #2BC0E4;
 	color: white;
 }

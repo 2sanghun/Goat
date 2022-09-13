@@ -86,6 +86,7 @@
 			<a href="manager"><input class="back" type="button" value="닫기"></a>
 
 		</div>
+				<%@ include file="../header/footer.jsp"%>
 	</div>
 </body>
 </html>

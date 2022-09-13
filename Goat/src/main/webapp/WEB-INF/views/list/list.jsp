@@ -9,7 +9,7 @@
 <title>List</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/list.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/list.css" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/list.css?version=1.1" type="text/css">
 </head>
 <body>
 	<%@ include file="../header/header.jsp" %>
@@ -28,16 +28,16 @@
 				<ul>
 					<li><a href="/list/list_icon3?category=${paging.cri.category}&pageNum=1&amount=20"><img src="/resources/image/align_icon3.png" class="sortimg"></a></li>
 					<li><a href="/list/list_icon2?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon2.png" class="sortimg"></a></li>
-					<li><a href="/list/list?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon1_1.png" class="sortimg"></a></li>
+					<li><a href="/list/list?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon1.png" class="sortimg"></a></li>
 				</ul>
 			</div>
 			<div class="sortby">
-				<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum">${paging.cri.amount}개씩</a>
+				<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum" class="listcount">${paging.cri.amount}개씩</a>
 				<ul>
-					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=5" id="pageNum">5개씩</a></li>
-					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum">10개씩</a></li>
-					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=15" id="pageNum">15개씩</a></li>
-					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=20" id="pageNum">20개씩</a></li>
+					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=5" id="pageNum" class="listnum">5개씩</a></li>
+					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum" class="listnum">10개씩</a></li>
+					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=15" id="pageNum" class="listnum">15개씩</a></li>
+					<li><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=20" id="pageNum" class="listnum">20개씩</a></li>
 				</ul>
 			</div>
 		</div>

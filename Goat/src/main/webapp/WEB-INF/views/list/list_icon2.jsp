@@ -27,7 +27,7 @@
 			<div class="sort">
 				<ul>
 					<li><a href="/list/list_icon3?category=${paging.cri.category}&pageNum=1&amount=20"><img src="/resources/image/align_icon3.png" class="sortimg"></a></li>
-					<li><a href="/list/list_icon2?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon2_1.png" class="sortimg"></a></li>
+					<li><a href="/list/list_icon2?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon2.png" class="sortimg"></a></li>
 					<li><a href="/list/list?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon1.png" class="sortimg"></a></li>
 				</ul>
 			</div>
