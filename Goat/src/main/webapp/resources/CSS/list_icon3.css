@@ -71,26 +71,33 @@
 .detail_img{
 	width: 190px;
 	height: 100px;
-	margin: 0px 5px 0px 5px;
 }
 
 #imglist > li{
 	height: 220px;
+	margin-right: 5px;
 
 }
 
-dl > dt:nth-child(1){
+dl > dd:nth-child(1){
 	text-overflow: ellipsis;
-	width: 200px;
+	width: 190px;
 }
 
-dt > a:nth-child(1){
-	font-size: 20px;
+dd > a:nth-child(1){
+	font-size: 19px;
 	font-weight: bold;
 	color: #3262c5;
 }
 
-dt:nth-child(3){
+dd:nth-child(2){
+color:#3262c5 ;
+	font-weight: bold;
+	font-size: 14px;
+}
+dd:nth-child(3){
+	color: gray;
+	font-size: 14px;
 	margin-bottom: 20px;
 }
 
