@@ -9,7 +9,7 @@
 <title>List</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/list.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/list.css?version=1.1" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/list.css?version=1.6" type="text/css">
 </head>
 <body>
 	<%@ include file="../header/header.jsp" %>
@@ -28,7 +28,7 @@
 				<ul>
 					<li><a href="/list/list_icon3?category=${paging.cri.category}&pageNum=1&amount=20"><img src="/resources/image/align_icon3.png" class="sortimg"></a></li>
 					<li><a href="/list/list_icon2?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon2.png" class="sortimg"></a></li>
-					<li><a href="/list/list?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon1.png" class="sortimg"></a></li>
+					<li><a href="/list/list?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon1.png" class="sortimg_1"></a></li>
 				</ul>
 			</div>
 			<div class="sortby">

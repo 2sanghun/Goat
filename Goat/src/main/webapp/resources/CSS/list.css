@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
 #content {
 	width: 1000px;
 	margin: 0 auto;
@@ -13,21 +18,22 @@
 	font-size: 32px;
 	font-weight: bold;
 	margin-top: 15px;
-	margin-bottom: 10px;
 	padding: 20px;
 	text-align: center;
 	background: linear-gradient(to right, #70e1f5, #eaecc6);
 }
 
 .align {
-	position: relative;
+	float: right;
 	line-height: 40px;
+	height: 70px;
+	margin-bottom: 5px;
 }
 
 .sort {
-	position: relative;
-	border: 1px solid black;
+	float: left;
 	height: 80px;
+	margin-right: 10px;
 }
 
 .sort>ul {
@@ -35,18 +41,35 @@
 	line-height: 80px;
 }
 
-.sort > ul > li {
+.sort>ul>li {
 	float: left;
-	margin-left: 10px;
+	margin-left: 1px;
 }
 
 .sortimg {
+	margin-top: 17px;
 	width: 40px;
 	height: 40px;
+	border: 1px solid gray;
+	opacity: 0.5;
+	border-radius: 4px;
+}
+.sortimg_1{
+	margin-top: 17px;
+	width: 40px;
+	height: 40px;
+	border: 1px solid gray;
+	border-radius: 4px;
+}
+
+.sortimg:hover {
+	opacity: 1;
 }
 
 .sortby {
 	float: right;
+	width: 80px;
+	text-align: center;
 }
 
 .sortby>a {
@@ -56,6 +79,7 @@
 	padding: 0px 6px;
 	overflow: hidden;
 	font-size: 14px;
+	margin-top: 17px;
 }
 
 .sortby>a:after {
@@ -65,7 +89,6 @@
 .sortby>ul {
 	position: absolute;
 	width: 80px;
-	top: 42px;
 	background: #fff;
 	display: none;
 }
@@ -73,7 +96,6 @@
 .sortby>ul>li {
 	cursor: pointer;
 	list-style: none;
-	border-top: 0;
 }
 
 table {
@@ -192,26 +214,26 @@ td {
 }
 
 .listcount {
-	color: #8C8C8C;
-	padding: 0px;
+	color: black;
 	border-radius: 4px;
-	width: 200px;
+	opacity: 0.5;
 }
 
 .listcount:hover {
-	background: #2BC0E4;
-	color: white;
+	opacity: 1;
 }
 
 .listnum {
-	color: #8C8C8C;
+	color: black;
 	padding: 10px 12px;
 	border-radius: 4px;
+	width: 200px;
+	opacity: 0.5;
 }
 
 .listnum:hover {
-	background: #2BC0E4;
-	color: white;
+	opacity: 1;
+	font-weight: bold;
 }
 
 #pagingArea {
