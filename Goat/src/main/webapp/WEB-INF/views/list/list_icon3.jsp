@@ -34,20 +34,7 @@
 		</div>
 			<table>
 				
-				<c:if test="${paging.cri.pageNum == 1 and (keyword == null or keyword == '')}">
-					<!-- 매니저글 for문 시작 -->
-					<c:forEach items="${manager}" var="managerlist">
-						<tr id="notice">
-							<td class="bno">공지</td>
-							<td class="title"><a href="../detail/detail?bno=${managerlist.bno}">${managerlist.title}</a></td>
-							<td class="nick">${managerlist.nick}</td>
-							<td class="regdate">${managerlist.regdate}</td>
-							<td class="cnt">${managerlist.cnt}</td>
-							<td class="good">${managerlist.good}</td>
-						</tr>
-					</c:forEach>
-					<!-- 매니저글 for문 끝 -->
-				</c:if>
+		
 			</table>
 			<ul id="imglist">
 				<!-- 이미지 게시글 목록 for문 시작 -->
