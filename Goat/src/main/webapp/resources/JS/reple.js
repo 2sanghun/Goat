@@ -162,36 +162,65 @@ function list(reple){ // list 함수 선언 시작
 
 function showReplePage(replecnt){
 	
-	var pageNum = Math.ceil(replecnt/10.0);
-	var endNum = Math.ceil(pageNum/10.0)*10;
-	var startNum = endNum-9
+	console.log(replecnt) // 지금 replecnt가 0이라서 문제인거야 그래서 
 	
-	var prev=startNum !=1;
-	//var prev=false;
+    if(replecnt=0){ 
+    	
+    	var pageNum = 1;
+    	
+    	var endNum = Math.ceil(pageNum/10.0)*10;
 	
+	    console.log(endNum);
+	
+	    var startNum = endNum-9;
+	
+	var str="<div id='cntdiv'><ul class='cntul'>";
+	
+	for(var i=startNum; i<=endNum; i++){
+		str+="<li class='cntli'><a href='"+i+"'>"+i+"</a></li>"
+	}
+	
+	str+="</ul></div>"
+		
+	console.log(str);
+	
+	$("#replePage").html(str);		
+
+    }else if(replecnt!=0){
+	
+    	var pageNum = Math.ceil(replecnt/10.0);
+	    
+    	console.log(pageNum)
+	
+    	var endNum = Math.ceil(pageNum/10.0)*10;
+	
+	    console.log(endNum);
+	
+	    var startNum = endNum-9;
+	
+	    var prev=startNum !=1;
+
 	var next=false;
 	
 	console.log(prev)
 	console.log(next)
 	
-	
 	if(endNum * 10 >= replecnt){
-		endNum = Math.ceil(replecnt/10.0)
+		endNum = Math.ceil(replecnt/10.0);
 	}
+	
 	if(endNum * 10 < replecnt){
 		next=true;
 	}
 	
-	// if(startNum!=1){prev=true;}
-	
+
 	var str="<div id='cntdiv'><ul class='cntul'>";
-	
 	
 	if(prev){
 		str+="<li id='prvli'><a href='"+(startNum-1)+"'>이전</a></li>";
 	}
 	
-	for(var i=startNum ; i<=endNum ; i++){
+	for(var i=startNum; i<=endNum; i++){
 		str+="<li class='cntli'><a href='"+i+"'>"+i+"</a></li>"
 	}
 	
@@ -202,7 +231,8 @@ function showReplePage(replecnt){
 		
 	console.log(str);
 	
-	$("#replePage").html(str);		
+	$("#replePage").html(str);
+	}
 }
 
 function modify(reple){ //댓글 수정을 하기 위한 함수 선언
