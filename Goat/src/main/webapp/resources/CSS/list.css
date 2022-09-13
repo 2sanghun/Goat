@@ -131,7 +131,7 @@ table {
 
 td {
 	height: 30px;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #eee;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
@@ -139,12 +139,11 @@ td {
 }
 
 .bno {
-	width: 10%;
+	width: 6%;
 	text-align: center;
 }
 
 .title {
-	width: 30%;
 	text-align: center;
 }
 
@@ -154,17 +153,17 @@ td {
 }
 
 .regdate {
-	width: 18%;
+	width: 15%;
 	text-align: center;
 }
 
 .cnt {
-	width: 8%;
+	width: 5%;
 	text-align: center;
 }
 
 .good {
-	width: 8%;
+	width: 5%;
 	text-align: center;
 }
 

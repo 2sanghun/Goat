@@ -93,6 +93,10 @@ table {
 	border-bottom: 2px solid #8C8C8C;
 }
 
+#uploadResult>img {
+	margin-bottom: 18px;
+}
+
 td {
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -107,6 +111,18 @@ td:nth-child(2)>a {
 	font-size: 26px;
 	font-weight: bold;
 	color: #3262c5;
+}
+
+td:nth-child(1)>a {
+	font-size: 14px;
+	font-weight: bold;
+	color: #3262c5;
+}
+
+.td_last {
+	padding-bottom: 30px;
+	font-size: 14px;
+	color: gray;
 }
 
 .bno {
