@@ -71,6 +71,7 @@
             </h4>
             <hr id="paginghr">
 				<form id="searchForm" action="/memModify" method="get">
+				<div id ="searchAll">
 					<select class="search" name="period">
 						<option value="total">전체기간</option>
 						<option value="day">1일</option>
@@ -86,8 +87,12 @@
 					</select>
 					<input type = "text" name = "keyword" class="search"  placeholder="검색어를 입력해주세요">
 					<input type="button" class="search" id="searchbtn" value = "검색">
+					</div>
+					<div>
 					<input type = "hidden" name = "pageNum"  value = "${paging.cri.pageNum}">
 					<input type = "hidden" name = "amount"  value = "${paging.cri.amount}" >
+					<input type="hidden" name="category" value="${paging.cri.category}">
+					</div>
 				</form>
 			</div>
 		</div>

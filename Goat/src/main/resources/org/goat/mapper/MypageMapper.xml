@@ -53,8 +53,9 @@
 		order by bno desc
 		) as boardlist 
       <![CDATA[
-     where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount};
+     where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
      ]]>
+     and category='관광'
      <if test = "keyword != null">
 			<choose>
 				<when test = "period == 'day'.toString()">
@@ -76,6 +77,22 @@
 		</if>
 		order by id='manager' desc, bno desc;
   	</select>
+  	
+  	<select id="houselist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='숙소' order by id='manager' desc, bno desc;
+  	</select>
+  	
+   	<select id="foodlist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='음식' order by id='manager' desc, bno desc;
+  	</select>
+  	
+   	<select id="translist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='교통' order by id='manager' desc, bno desc;
+  	</select>
+  	
+   	<select id="tourlist" resultType="org.goat.model.BoardVO">
+  		select * from board where category='투어' order by id='manager' desc, bno desc;
+  	</select>
 	
 	<select id="total" resultType="int">
 		select count(*) from board
@@ -88,6 +105,11 @@
 				<when test="type == 'W'.toString()">
 					and id like concat('%',#{keyword},'%')
 				</when>
+				<otherwise>
+					where title like concat('%',#{keyword},'%')
+					or content
+					like concat('%',#{keyword},'%')
+				</otherwise>
 			</choose>
 			<choose>
 				<when test = "period == 'day'.toString()">
@@ -107,5 +129,5 @@
 				</when>
 			</choose>
 		</if>
-	</select>
+	</select> 
 </mapper>
