@@ -56,7 +56,6 @@ window.addEventListener('load', function() {
 		}
 	}
 	
-	
 	// 생년월일
 	var bdchk =  document.querySelector("#bdchk");
 	var bdmsg = document.querySelector("#bdmsg");
