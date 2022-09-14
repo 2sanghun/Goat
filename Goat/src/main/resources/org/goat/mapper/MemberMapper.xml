@@ -15,4 +15,10 @@
 	<select id="login" resultType="org.goat.model.MemberVO">
 		select * from member where id=#{id} and password=#{password};
 	</select>
+	<select id="idsearch" resultType="String">
+		select id from member where name=#{name} and phone=#{phone} and birth=#{birth}
+	</select>
+	<select id="pwsearch" resultType="String">
+		select password from member where id=#{id} and phone=#{phone}
+	</select>
 </mapper>

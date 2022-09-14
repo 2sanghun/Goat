@@ -2,14 +2,13 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 <meta charset="UTF-8">
 <meta name="google-signin-client_id"
 	content="1060483348379-lhrt8j3q10mi8irutv532l8497oggsur.apps.googleusercontent.com">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/login.css?version=1.4" type="text/css">
-<script type="text/javascript" src="../../../resources/JS/effective.js"></script>
+	href="../../../resources/CSS/login.css" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -23,6 +22,7 @@
 				<input type="text" name="id" class="input" id="idchk"
 					placeholder="아이디를 입력해주세요"> <input type="password"
 					name="password" class="input" id="pwchk" placeholder="비밀번호를 입력해주세요"><br>
+				<a href="../header/idsearch" class="signupbutton2">아이디/비밀번호 찾기</a> 	
 				<a href="../header/signup" class="signupbutton">회원가입</a> <br>
 				 <input type="submit" value="로그인" class="loginbutton"> <br>
 			</form>

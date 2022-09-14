@@ -1,8 +1,7 @@
 package org.goat.service;
 
-import java.util.ArrayList;
-
 import org.goat.mapper.RepleMapper;
+import org.goat.model.ReplePageVO;
 import org.goat.model.RepleVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +21,20 @@ public class RepleServiceImpl implements RepleService {
 	}
 	
 	// 댓글 목록 리스트를 위한 구현
-	public ArrayList<RepleVO> list(int bno){
-			
-		return rm.list(bno);
+	/*public ArrayList<RepleVO> list(RepleVO reple){
 		
+		System.out.println("service="+reple);
+		
+		return ReplePageVO(rm.list(reple),rm.total(bno));
+	}*/
+    
+	public ReplePageVO list(RepleVO reple,int bno){
+		
+		System.out.println("service="+reple);
+		System.out.println("service="+bno);
+		
+		return new ReplePageVO(rm.rplcnt(bno), rm.list(reple, bno));
 	}
-	
 	// 댓글 삭제를 위한 구현 
 	public int remove(RepleVO reple) {
 		return rm.remove(reple);
@@ -38,5 +45,4 @@ public class RepleServiceImpl implements RepleService {
 		
 		return rm.modify(reple);
 	}
-
 }

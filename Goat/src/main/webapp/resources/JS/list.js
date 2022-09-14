@@ -23,4 +23,15 @@ $(document).ready(function(){
 			$("#searchform").submit();
 		}
 	})
+
+	$("div.sortby > a").click(function() {
+		$(this).next("ul").toggle();
+		return false;
+	});
+/*	
+	$("div.sortby > ul > li").click(function() {
+		$(this).parent().hide().parent("div.sortby").children("a").text($(this).text());
+		$(this).prependTo($(this).parent());
+	});
+*/
 })

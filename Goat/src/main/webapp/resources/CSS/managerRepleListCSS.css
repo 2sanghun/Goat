@@ -64,7 +64,16 @@
 td {
 	margin-top: 5px;
 	border-bottom: 1px solid gray;
-	padding: 20px 0px 20px 0px;
+	padding: 30px 0px 30px 0px;
+}
+
+td:nth-child(2) a:hover {
+	color: #2BC0E4;
+	font-weight: bold;
+}
+
+td:nth-child(4) {
+	padding: 13px;
 }
 
 .footer {
@@ -83,8 +92,10 @@ td {
 }
 
 .back:hover {
-	background-color: #2BC0E4;
-	color: white;
+	cursor: pointer;
+	border: 2px solid #2BC0E4;
+	color: #2BC0E4;
+	font-weight: bold;
 }
 
 .modifybtn {
@@ -96,8 +107,10 @@ td {
 }
 
 .modifybtn:hover {
-	background-color: red;
-	color: white;
+	cursor: pointer;
+	border: 2px solid red;
+	color: red;
+	font-weight: bold;
 }
 
 .write1 {
@@ -116,8 +129,47 @@ td {
 	width: 50px;
 	height: 50px;
 	background-image: url("../../../resources/image/topbutton.png");
-    background-size: cover;
+	background-size: cover;
 	position: fixed;
 	right: 30px;
 	bottom: 30px;
+}
+
+
+.footer{
+	width: 1000px;
+	margin: auto;
+}
+
+.page {
+	padding: 30px;
+	margin: auto;
+}
+
+
+.pagenum {
+	padding: 10px;
+	color: #8C8C8C;
+	background: white;
+	border-radius: 4px;
+}
+
+.pagenum:hover {
+	background-color: #2BC0E4;
+	color: white;
+}
+
+.selectpage {
+	padding: 10px;
+	background-color: #2BC0E4;
+	color: white;
+	border-radius: 4px;
+}
+
+.pagemove {
+	padding: 10px;
+	padding-bottom: 12px;
+	background-color: #2BC0E4;
+	color: white;
+	border-radius: 4px;
 }

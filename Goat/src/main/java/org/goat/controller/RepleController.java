@@ -1,8 +1,8 @@
 package org.goat.controller;
 
-import java.util.ArrayList;
-
+import org.goat.model.ReplePageVO;
 import org.goat.model.RepleVO;
+
 import org.goat.service.RepleService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class RepleController {
 @Autowired
 RepleService rs;
 
-@RequestMapping(value = "/reple/reple", method = RequestMethod.POST)   
+@RequestMapping(value = "/replies/write", method = RequestMethod.POST)   
 public ResponseEntity <String> replywrite(@RequestBody RepleVO reple){
 
 	// insert가 성공했으면 result 변수에 1 저장 
@@ -35,14 +35,16 @@ public ResponseEntity <String> replywrite(@RequestBody RepleVO reple){
 }
 
 //댓글 목록 리스트 
-@RequestMapping(value="/replies/{bno}", method=RequestMethod.GET)
-public ResponseEntity <ArrayList<RepleVO>> getList(@PathVariable int bno){
-	System.out.println(bno); // bno값이 넘어오는군
+@RequestMapping(value="/replies/list/{bno}/{pageNum}", method=RequestMethod.GET)
+public ResponseEntity <ReplePageVO> getList(@PathVariable("bno") int bno, @PathVariable("pageNum") int pageNum){
 	
-	rs.list(bno);
+	System.out.println(bno);
+	System.out.println(pageNum);
 	
-	return new ResponseEntity<>(rs.list(bno), HttpStatus.OK);
-	
+	RepleVO reple = new RepleVO(pageNum,10);
+
+	return new ResponseEntity<>(rs.list(reple,bno), HttpStatus.OK);
+		
 }
 
 // 댓글 삭제 
@@ -75,11 +77,5 @@ public ResponseEntity <String> replymodify (@RequestBody RepleVO reple){
 	return result==1? new ResponseEntity<> ("success", HttpStatus.OK)
 	               : new ResponseEntity<> (HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-
-//@RequestMapping(value = "/reple/reple", method = RequestMethod.GET)
-//public String repleGet(){
-
-//return "reple/reple";
-//}
 
 }

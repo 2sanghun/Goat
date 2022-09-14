@@ -30,19 +30,21 @@ table {
 #mid td input {
 	float: left;
 	width: 860px;
-	margin-left: 5px;
-	margin-bottom: 15px;
+	margin-left: 0px;
+	margin-bottom: 0px;
 	padding: 12px;
 }
 
 #mid textarea {
-	width: 97%;
+	width: 97.5%;
 	height: 500px;
 	resize: none;
 	margin-bottom: 10px;
+	margin-right: 3px;
 }
 
 select {
+	cursor: pointer;
 	border: 1px solid gray;
 	border-radius: 10px;
 	outline: none;
@@ -73,12 +75,13 @@ label {
 	border: 1px solid #2BC0E4;
 	padding: 20px;
 	margin-left: 5px;
-		font-size: 18px;
+	font-size: 14px;
 	font-weight: bold;
 	transition: 0.5s;
 }
 
 label:hover {
+	cursor: pointer;
 	color: white;
 	background-color: #2BC0E4;
 }
@@ -95,13 +98,13 @@ label:hover {
 	color: gray;
 	border: 1px solid gray;
 	border-radius: 4px;
-		font-size: 18px;
+	font-size: 18px;
 	font-weight: bold;
-		margin: 5px;
-
+	margin: 5px;
 }
 
 .button:hover {
-	background-color: #2BC0E4;
-	color: white;
+	cursor: pointer;
+	border: 2px solid #2BC0E4;
+	color: #2BC0E4;
 }

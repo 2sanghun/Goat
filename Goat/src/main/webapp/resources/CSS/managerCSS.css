@@ -60,6 +60,7 @@
 }
 
 .selectbox {
+	cursor: pointer;
 	float: left;
 	width: 90px;
 	height: 40px;
@@ -88,6 +89,7 @@
 }
 
 .searchbtn {
+	cursor: pointer;
 	width: 45px;
 	height: 100%;
 	border: 0px;
@@ -100,7 +102,15 @@
 td {
 	margin-top: 5px;
 	border-bottom: 1px solid gray;
-	padding: 20px 0px 20px 0px;
+	padding: 30px 0px 30px 0px;
+}
+
+td:nth-child(5) {
+	padding: 0px;
+}
+
+td:nth-child(6) {
+	padding: 0px;
 }
 
 .memlistnav {
@@ -143,8 +153,10 @@ td {
 }
 
 .modifybtn:hover {
-	background-color: #2BC0E4;
-	color: white;
+	cursor: pointer;
+	border: 2px solid #2BC0E4;
+	color: #2BC0E4;
+	font-weight: bold;
 }
 
 .write1 {
@@ -168,7 +180,7 @@ td {
 	width: 50px;
 	height: 50px;
 	background-image: url("../../../resources/image/topbutton.png");
-    background-size: cover;
+	background-size: cover;
 	position: fixed;
 	right: 30px;
 	bottom: 30px;

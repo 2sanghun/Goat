@@ -5,6 +5,8 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
+
 import org.goat.model.BoardVO;
 import org.goat.model.CriteriaVO;
 import org.goat.model.MemberVO;
@@ -82,15 +84,13 @@ public class MainController {
 			out.flush();
 			return "/header/login";
 		}
-		out.println("<script>alert('로그인 되셨습니다.'); </script>");
-		out.flush();
-		return "/main/main";
+		return "redirect:/main/main";
 	}
 	
 	@RequestMapping(value = "/header/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "/header/login";
+		return "redirect:/header/login";
 	}
 	
 	@RequestMapping(value = "/header/signup", method = RequestMethod.GET)
@@ -116,6 +116,52 @@ public class MainController {
 		}
 		ms.signup(member);
 		return "/header/login";
+	}
+	
+	@RequestMapping(value = "/header/idsearch", method = RequestMethod.GET)
+	public void idsearchpage() {}
+	
+	@RequestMapping(value = "/header/idsearch", method = RequestMethod.POST)
+	public String idsearch(MemberVO member) {
+		String id = ms.idsearch(member);
+		if(id!=null) {
+			int a = id.length()/2;
+			String b = "";
+			String serid;
+			for(int i=0;i<a;i++) {b+="*";}
+			if(id.length()%2==0) {
+				serid = id.substring(0,a) + b;
+			}else {
+				serid = id.substring(0,a) + b + "*";
+			}
+			JOptionPane.showMessageDialog(null, serid);
+			return "header/login";
+		}else {
+			JOptionPane.showMessageDialog(null, "아이디를 찾을 수 없습니다.");
+			return "header/idsearch";
+		}
+	}
+	
+	@RequestMapping(value = "/header/pwsearch", method = RequestMethod.POST)
+	public String pwsearch(MemberVO member) {
+		String pw = ms.pwsearch(member);
+		if(pw!=null) {
+			int a = pw.length()/2;
+			String b = "";
+			String serpw;
+			for(int i=0;i<a;i++) {b+="*";}
+			if(pw.length()%2==0) {
+				serpw = pw.substring(0,a) + b;
+			}else {
+				serpw = pw.substring(0,a) + b + "*";
+			}
+			JOptionPane.showMessageDialog(null, serpw);
+			return "header/login";
+		}else {
+			JOptionPane.showMessageDialog(null, "비밀번호를 찾을 수 없습니다.");
+			return "header/idsearch";
+		}
+		
 	}
 }
 
