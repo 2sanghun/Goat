@@ -34,6 +34,16 @@ $(document).ready(function(){
 	// 파일 전송번튼(id="uploadBtn")을 클릭하면
 	$("#uploadBtn").on("click",function(){
 		alert("aaaa");
+		var title = document.querySelector("#uploadtitle").value;
+		var content = document.querySelector("#uploadResult").value;
+		if(title==""){
+			alert("제목을 입력하세요.");
+			return false;
+		};
+		if(content==""){
+			alert("내용을 입력하세요.");
+			return false;
+		}
 		
 		// 파일 업로드 관련 로직 처리
 		var formData = new FormData();
