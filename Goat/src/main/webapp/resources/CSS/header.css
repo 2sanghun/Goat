@@ -1,6 +1,16 @@
 @charset "UTF-8";
 
-*{
+@font-face {
+	font-family: 'Kakaofont';
+	src: url(KakaoRegular.ttf)
+}
+
+@font-face {
+	font-family: 'Kakaofont_Bold';
+	src: url(KakaoBold.ttf)
+}
+
+* {
 	margin: 0;
 	padding: 0;
 }
@@ -20,20 +30,20 @@ header {
 	right: 0;
 }
 
-header ul > li > a {
+header ul>li>a {
 	color: black;
 	text-decoration: none;
 	decoration: none;
-	
+	font-family: 'Kakaofont_Bold';
 }
 
-a{
+a {
 	text-decoration: none;
 	color: black;
 }
 
 header>#category>ul>li>a {
-	margin:10px;
+	margin: 10px;
 }
 
 header ul>li>a:hover {
@@ -60,6 +70,10 @@ input {
 	border-radius: 50px;
 }
 
+.headerbtn_write:hover {
+	cursor: pointer;
+}
+
 .headerbtn {
 	color: gray;
 	font-weight: bold;
@@ -69,6 +83,10 @@ input {
 	border: 0.5px solid lightgray;
 	background-color: white;
 	border-radius: 50px;
+}
+
+.headerbtn:hover {
+	cursor: pointer;
 }
 
 .headerbtn_mypage {
@@ -82,6 +100,10 @@ input {
 	border-radius: 50px;
 }
 
+.headerbtn_mypage:hover {
+	cursor: pointer;
+}
+
 .headerbtn_sign {
 	color: white;
 	font-weight: bold;
@@ -93,8 +115,8 @@ input {
 	border-radius: 50px;
 }
 
-.headerbtn:hover {
-	
+.headerbtn_sign:hover {
+	cursor: pointer;
 }
 
 #category {
@@ -103,6 +125,6 @@ input {
 
 #canav li {
 	display: inline;
-	font-weight: bold;
-	font-size: 22px;
+	font-size: 30px;
+	margin: 10px;
 }
