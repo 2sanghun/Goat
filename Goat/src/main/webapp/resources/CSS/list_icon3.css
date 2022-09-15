@@ -30,14 +30,14 @@
 }
 
 .align {
-	height: 55px;
+	height: 58px;
 	margin-bottom: 10px;
-	border-bottom: 2px solid gray;
+	border-bottom: 3px solid gray;
 }
 
 .sort {
 	position: relative;
-	float: right;
+	float: left;
 }
 
 .sort>ul {
@@ -73,7 +73,6 @@
 	height: 120px;
 	border-radius: 20px;
 	border: 0.5px solid lightgray;
-	
 }
 
 #imglist>li {
@@ -183,14 +182,13 @@ td {
 }
 
 #search {
-	margin-top: 40px;
-	height: 200px;
 	text-align: center;
 }
 
 #searchform {
 	position: relative;
-	top: 32px;
+	float: right;
+	top: -1px;
 }
 
 #searchAll {

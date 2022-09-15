@@ -24,7 +24,7 @@
 }
 
 .align {
-	float: right;
+	float: left;
 	line-height: 40px;
 	height: 70px;
 	margin-bottom: 5px;
@@ -32,7 +32,7 @@
 }
 
 .sort {
-	float: right;
+	float: left;
 	height: 80px;
 }
 
@@ -168,13 +168,13 @@ td {
 }
 
 #search {
-	height: 200px;
 	text-align: center;
 }
 
 #searchform {
 	position: relative;
-	top: 32px;
+	top: 14px;
+	float: right;
 }
 
 #searchAll {
@@ -217,6 +217,7 @@ td {
 	color: black;
 	border-radius: 4px;
 	opacity: 0.5;
+	margin-left: 1px;
 }
 
 .listcount:hover {
