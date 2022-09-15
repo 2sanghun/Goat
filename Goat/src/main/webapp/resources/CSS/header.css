@@ -10,6 +10,15 @@
 	src: url(KakaoBold.ttf)
 }
 
+@font-face {
+	font-family: 'logofont';
+	src: url(Shrikhand-Regular.ttf)
+}
+
+body {
+	font-family: 'Kakaofont';
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -17,7 +26,7 @@
 
 header {
 	background-color: rgba(255, 255, 255, 0.9);
-	height: 50px;
+	height: 70px;
 	width: 99%;
 	margin: auto;
 	padding: 10px 20px 10px 10px;
@@ -40,6 +49,21 @@ header ul>li>a {
 a {
 	text-decoration: none;
 	color: black;
+}
+
+.logo>h1>a {
+	margin: 40px;
+	text-decoration: none;
+	color: #2BC0E4;
+	font-family: 'logofont';
+	font-size: 40px;
+}
+
+.logo>p {
+	margin-left: 51px;
+	margin-top: -19px;
+	font-size: 14px;
+	font-family: 'logofont';
 }
 
 header>#category>ul>li>a {
@@ -68,6 +92,7 @@ input {
 	border: 0.5px solid #2BC0E4;
 	background-color: #2BC0E4;
 	border-radius: 50px;
+	font-family: 'Kakaofont';
 }
 
 .headerbtn_write:hover {
@@ -83,6 +108,7 @@ input {
 	border: 0.5px solid lightgray;
 	background-color: white;
 	border-radius: 50px;
+	font-family: 'Kakaofont';
 }
 
 .headerbtn:hover {
@@ -98,6 +124,7 @@ input {
 	border: 0.5px solid #353535;
 	background-color: #353535;
 	border-radius: 50px;
+	font-family: 'Kakaofont';
 }
 
 .headerbtn_mypage:hover {
@@ -113,6 +140,7 @@ input {
 	border: 0.5px solid #353535;
 	background-color: #353535;
 	border-radius: 50px;
+	font-family: 'Kakaofont';
 }
 
 .headerbtn_sign:hover {

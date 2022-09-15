@@ -68,6 +68,8 @@ td {
 	margin: 30px 20px 10px 0px;
 	border: 0.5px solid gray;
 	border-radius: 4px;
+	font-size: 15px;
+	font-family: 'Kakaofont';
 }
 
 /* .postnum {

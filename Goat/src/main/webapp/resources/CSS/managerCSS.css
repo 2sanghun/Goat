@@ -5,6 +5,10 @@
 	padding: 0;
 }
 
+body {
+	font-family: 'Kakaofont';
+}
+
 .container {
 	width: 100%;
 	margin: auto;
@@ -68,6 +72,8 @@
 	outline: none;
 	padding-left: 10px;
 	padding-right: 0px;
+	font-size: 16px;
+	font-family: 'Kakaofont';
 }
 
 .rightdiv {
@@ -86,6 +92,7 @@
 	border: 0px;
 	outline: none;
 	float: left;
+	font-family: 'Kakaofont';
 }
 
 .searchbtn {
@@ -97,6 +104,7 @@
 	color: #ffffff;
 	outline: none;
 	float: right;
+	font-family: 'Kakaofont';
 }
 
 td {
@@ -150,6 +158,8 @@ td:nth-child(6) {
 	padding: 5px 5px;
 	border-radius: 4px;
 	color: gray;
+	font-size: 16px;
+	font-family: 'Kakaofont';
 }
 
 .modifybtn:hover {
