@@ -122,8 +122,10 @@ public class MainController {
 	public void idsearchpage() {}
 	
 	@RequestMapping(value = "/header/idsearch", method = RequestMethod.POST)
-	public String idsearch(MemberVO member) {
+	public String idsearch(MemberVO member,HttpServletResponse response) throws IOException {
 		String id = ms.idsearch(member);
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
 		if(id!=null) {
 			int a = id.length()/2;
 			String b = "";
@@ -134,17 +136,21 @@ public class MainController {
 			}else {
 				serid = id.substring(0,a) + b + "*";
 			}
-			JOptionPane.showMessageDialog(null, serid);
+			out.println("<script>alert('"+serid+"'); </script>");
+			out.flush();
 			return "header/login";
 		}else {
-			JOptionPane.showMessageDialog(null, "아이디를 찾을 수 없습니다.");
+			out.println("<script>alert('아이디를 찾을 수 없습니다.'); </script>");
+			out.flush();
 			return "header/idsearch";
 		}
 	}
 	
 	@RequestMapping(value = "/header/pwsearch", method = RequestMethod.POST)
-	public String pwsearch(MemberVO member) {
+	public String pwsearch(MemberVO member,HttpServletResponse response) throws IOException {
 		String pw = ms.pwsearch(member);
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
 		if(pw!=null) {
 			int a = pw.length()/2;
 			String b = "";
@@ -155,10 +161,12 @@ public class MainController {
 			}else {
 				serpw = pw.substring(0,a) + b + "*";
 			}
-			JOptionPane.showMessageDialog(null, serpw);
+			out.println("<script>alert('"+serpw+"'); </script>");
+			out.flush();
 			return "header/login";
 		}else {
-			JOptionPane.showMessageDialog(null, "비밀번호를 찾을 수 없습니다.");
+			out.println("<script>alert('비밀번호를 찾을 수 없습니다.'); </script>");
+			out.flush();
 			return "header/idsearch";
 		}
 		
