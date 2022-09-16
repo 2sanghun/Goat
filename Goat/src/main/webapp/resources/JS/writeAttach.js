@@ -39,7 +39,7 @@ $(document).ready(function() {
 //				reader.readAsDataURL(this.files[i]);
 //			}
 //		}
-		
+		 
 	});
 
 })

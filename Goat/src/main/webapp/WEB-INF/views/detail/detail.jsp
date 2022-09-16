@@ -15,8 +15,8 @@
 
 <script type="text/javascript" src="/resources/JS/attach.js"></script>
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
-<script type="text/javascript" src="../../../resources/JS/writeAttach.js?version=1.6"></script>
-<script type="text/javascript" src="../../../resources/JS/like.js"></script>
+
+<script type="text/javascript" src="../../../resources/JS/modifyAttach.js"></script>
 
 <!-- css 파트 나중에 다시 뺄꺼야 -->
 
@@ -166,7 +166,7 @@ ul li {
 
 .warning-circle:after{content: "\00d7"; font-size:15pt;  
  width: 35px; border-radius:55%; background-color:gray;
-position: absolute; top: 50px; left: 100px; transform: translate(-50%, -50%);}
+position: absolute; top: 45px; left: 100px; transform: translate(-50%, -50%);}
 
 </style>
 
@@ -183,7 +183,7 @@ position: absolute; top: 50px; left: 100px; transform: translate(-50%, -50%);}
 
    <div id="content">
 
-      <form method="post">
+      <form method="post" id="form">
 
          <table border="1">
 
@@ -232,7 +232,7 @@ position: absolute; top: 50px; left: 100px; transform: translate(-50%, -50%);}
                         id="uploadFile" hidden="" multiple>
                   </label>
                    <div id="uploadResult2"></div> 
-                   <input type="submit" value="파일업로드하기" id="addfile"> 
+                   <input type="button" value="파일업로드하기" id="addfile"> 
                         
                         </div>
                   

@@ -101,8 +101,72 @@ $(document).ready(function(){
 			}
 		})
 	})
-
+	
+	// 글 상세 화면에서 파일업로드하기 버튼을 클릭하면
+	$("#addfile").on("click",function(){
+		alert("으아아");
+	
+		
+		// 파일 업로드 관련 로직 처리
+		var formData = new FormData();
+		
+		var inputFile = $("input[name='uploadFile']");
+		// console.log(inputFile);
+		var files = inputFile[0].files;
+		
+		console.log(files);
+		
+		for(var i=0; i<files.length; i++){
+			// 함수 호출(checkExtension)
+			if(!checkExtension(files[i].name, files[i].size)){
+				return false;
+			}
+			
+			// .jsp 의 파일선택을 통해 선택한 파일들을 form태그에 추가
+			formData.append("uploadFile", files[i]);
+		}
+		
+		// ajax를 통해서 UploadController에 파일 관련 데이터 전송.
+		$.ajax({
+			type : "post",
+			url : "/uploadAjaxAction",
+			data : formData,
+			contentType : false,
+			processData : false,
+			dataType : "json",
+			success : function(result){
+				console.log(result);
+				
+				var str = "";
+				var input = "";
+				
+				
+				$(result).each(function(i, obj){	// result가 배열이면 each(for) i가 인덱스 번호, obj[i]
+					input +="<input type='text' name='attach["+i+"].fileName' value='" + obj.fileName+"'>";
+					input +="<input type='text' name='attach["+i+"].uuid' value='" + obj.uuid+"'>";
+					input +="<input type='text' name='attach["+i+"].uploadPath' value='" + obj.uploadPath+"'>";
+					input +="<input type='text' name='attach["+i+"].image' value='" + obj.image+"'>";
+					// 만약 image 결과가 true면
+					if(obj.image){
+						// 아래에 있는거 실행
+						var filePath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
+						console.log(filePath);
+					
+						//str+="<img src='display?fileName="+filePath+"'>"+obj.fileName;
+						
+						str+="<img src='display?fileName="+filePath+"'>";
+						
+					}else{	// 그렇지 않으면
+						// 다운로드 할 수 있도록 실행
+						var filePath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName);
+						
+						str += "<a href='/download?fileName="+filePath+"'>"+obj.fileName+"</a>";
+					}
+				})
+				
+				$("#uploadResult ul").html(str);
+				$("#addfile").append(input).submit();
+			}
+	    })
+	})    
 })
-
-
-
