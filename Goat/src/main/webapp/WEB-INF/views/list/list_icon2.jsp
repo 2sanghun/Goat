@@ -74,8 +74,8 @@
 				<!-- 이미지 게시글 목록 for문 시작 -->
 				<c:forEach items="${list}" var="boardlist">
 					<tr>
-						<td rowspan="3" id="uploadResult"><img
-							src="/display?fileName=${boardlist.filePath}"></td>
+						<td rowspan="3" id="uploadResult"><a href="../detail/detail?bno=${boardlist.bno}"><img
+							src="/display?fileName=${boardlist.filePath}"></a></td>
 						<td><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 					</tr>
 					<tr>
