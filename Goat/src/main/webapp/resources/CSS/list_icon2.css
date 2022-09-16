@@ -99,7 +99,7 @@ table {
 	border-bottom: 2px solid #8C8C8C;
 }
 
-#uploadResult>img {
+#uploadResult> a > img {
 	width: 150px;
 	height: 120px;
 	margin-bottom: 18px;
