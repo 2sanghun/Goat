@@ -55,7 +55,6 @@
       <![CDATA[
      where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
      ]]>
-     and category='관광'
      <if test = "keyword != null">
 			<choose>
 				<when test = "period == 'day'.toString()">
@@ -75,7 +74,6 @@
 				</when>
 			</choose>
 		</if>
-		order by id='manager' desc, bno desc;
   	</select>
   	
   	<select id="houselist" resultType="org.goat.model.BoardVO">
@@ -106,9 +104,8 @@
 					and id like concat('%',#{keyword},'%')
 				</when>
 				<otherwise>
-					where title like concat('%',#{keyword},'%')
-					or content
-					like concat('%',#{keyword},'%')
+					and (title like concat('%',#{keyword},'%')
+					or content like concat('%',#{keyword},'%'))
 				</otherwise>
 			</choose>
 			<choose>
