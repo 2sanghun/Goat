@@ -25,7 +25,7 @@ SELECT *FROM (SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, R.*FROM REPLE AS R, (SELECT @
 select count(*) from reple where bno=#{bno} 
 </select>
 
-<delete id="remove">delete from replewhere rno = #{rno} </delete>
+<delete id="remove">delete from reple where rno = #{rno} </delete>
 
 <update id="modify">update reple set content = #{content} where rno = #{rno} </update>
 
