@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.goat.mapper.LikeMapper">
+	<select id="checkLike" resultType="int">
+		select count(*) from b_like where bno=#{param1} and id=#{param2}
+	</select>
+	
+	<insert id="likeUp">
+		insert into b_like(hno, bno, id)
+		values((select * from (select max(hno)+1 from b_like) next), #{bno}, #{id})
+	</insert>
+	
+	<delete id="likeDown">
+		delete from b_like where bno=#{bno} and id=#{id}
+	</delete>
+</mapper>

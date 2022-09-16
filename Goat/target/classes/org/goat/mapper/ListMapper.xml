@@ -7,7 +7,7 @@
   <mapper namespace="org.goat.mapper.ListMapper">
 
   	<select id="list" resultType="org.goat.model.BoardVO">
-  		select *
+  		select *, (select count(*) from b_like where bno=boardlist.bno) as cnthno
 		from(
 			 select @rownum:=@rownum+1 rownum, b.*
 			 from board b, (select @rownum:=0) as tmp
