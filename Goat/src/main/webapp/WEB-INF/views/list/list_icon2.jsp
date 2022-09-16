@@ -84,7 +84,7 @@
 					<tr class="tr_last">
 						<td class="td_last">
 							${boardlist.regdate} / ${boardlist.nick} / 
-							<img src="/resources/image/love.png" class="ddimg"> ${boardlist.cnthno}
+							👍 ${boardlist.cnthno}
 						</td>
 					</tr>
 				</c:forEach>

@@ -9,7 +9,7 @@
 <title>List</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/list.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/list.css?version=2.2" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/list.css?version=2.3" type="text/css">
 </head>
 <body>
 	<%@ include file="../header/header.jsp" %>
@@ -94,7 +94,7 @@
 				<!-- 게시글 목록 for문 시작 -->
 				<c:forEach items="${list }" var="boardlist">
 					<tr>
-						<td class="bno">${boardlist.category}</td>
+						<td class="bno"><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a></td>
 						<td class="title"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 						<td class="nick">${boardlist.nick}</td>
 						<td class="regdate">${boardlist.regdate}</td>
