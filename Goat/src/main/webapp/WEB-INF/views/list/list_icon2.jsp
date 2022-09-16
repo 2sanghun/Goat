@@ -82,7 +82,10 @@
 						<td><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a></td>
 					</tr>
 					<tr class="tr_last">
-						<td class="td_last">${boardlist.regdate} / ${boardlist.nick}</td>
+						<td class="td_last">
+							${boardlist.regdate} / ${boardlist.nick} / 
+							<img src="/resources/image/love.png" class="ddimg"> ${boardlist.cnthno}
+						</td>
 					</tr>
 				</c:forEach>
 				<!-- 이미지 게시글 for문 끝 -->

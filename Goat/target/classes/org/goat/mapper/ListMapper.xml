@@ -168,7 +168,8 @@
  
 	<select id="imglist" resultType="org.goat.model.BoardVO">
 	select rownum, bno, title, content, nick, regdate, cnt, id, good, category,
-	       concat(replace(uploadpath, '\\','/'),'/s_' ,uuid,'_' ,filename) filePath
+	       concat(replace(uploadpath, '\\','/'),'/s_' ,uuid,'_' ,filename) filePath,
+	       (select count(*) from b_like where bno=balist.bno) as cnthno
 	from(
 		 select @rownum:=@rownum+1 rownum, t.*
 		 from(

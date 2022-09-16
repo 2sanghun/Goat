@@ -69,7 +69,9 @@
 						<a href="../detail/detail?bno=${boardlist.bno}"><img src="/display?fileName=${boardlist.filePath}" class="detail_img"></a>
 						<dl>
 							<dd><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></dd>
-							<dd>${boardlist.category}</dd>
+							<dd>${boardlist.category} /  
+								<img src="/resources/image/love.png" class="ddimg"> ${boardlist.cnthno}
+							</dd>
 							<dd>${boardlist.nick}</dd>
 						</dl>
 					</li>
