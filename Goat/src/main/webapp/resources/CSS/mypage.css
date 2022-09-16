@@ -1,7 +1,12 @@
 @charset "UTF-8";
 
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
 #container {
-	widht: 50px;
+	widht: 100%;
 	position: relative;
 	top: 100px;
 }
@@ -22,76 +27,102 @@ td:nth-child(2) {
 	margin-top: 20px;
 }
 
-.long {
-	width: 300px;
-}
-
-.short {
-	width: 100px;
-}
-
 table {
 	border-collapse: collapse;
-	width: 100%;
+	width: 1000px;
+	margin: auto;
 }
 
 tr {
-	border-bottom: 1px solid black
+	border-bottom: 1px solid gray;
+}
+
+.title {
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
+	margin: auto;
+	width: 1000px;
+	height: 120px;
+	line-height: 120px;
+	text-align: center;
 }
 
 #mypagenav {
-	height: 20px;
-	padding: 1rem;
-	color: white;
-	background: linear-gradient(to right, #70e1f5, #eaecc6);
+	margin: auto;
+	width: 960px;
+	padding: 20px;
 	list-style-type: none;
-	margin:;
-	padding:;
 	overflow: hidden;
 	font-weight: bold;
 	display: flex;
 	align-items: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-top: 20px;
-	word-spacing: 10px;
-	border-radius: 50px;
-	
-}
-
-li {
-	float: left;
+	border-bottom: 5px solid gray;
 }
 
 #mypagenav li a {
 	display: block;
-	color: white;
-	background-color:rgba(0,0,0,0);
-	padding: 8px;
-	text-decoration: none;
+	color: black;
 	text-align: center;
 	font-weight: bold;
+	margin-right: 30px;
 }
 
-li a:hover {
-	background: linear-gradient(to right, #70e1f5, #eaecc6);
-	color: white;
-}
-
-h1 {
-	text-align: center;
+#mypagenav>li>a:hover {
 	color: #2BC0E4;
-	text-shadow: 2px 2px 2px gray;
 }
+
+#container>h1 {
+	text-align: center;
+	color: black;
+	padding: 20px;
+	line-height: 80px;
+	width: 960px;
+	margin: auto;
+}
+
+.box {
+	padding: 10px;
+	width: 380px;
+	font-size: 14px;
+	font-weight: bold;
+	color: gray;
+}
+
 .backbtn {
-	color: white;
-	padding: 10px 15px;
-	margin: 50px 20px 10px 0px;
-	border: 0.5px solid black;
-	background-color: #2BC0E4;
+	color: gray;
+	padding: 15px 25px;
+	margin: 5px;
+	font-size: 18px;
+	font-weight: bold;
+	border: 0.5px solid gray;
+	background-color: white;
 	border-radius: 4px;
+}
+
+.backbtn:hover {
+	cursor: pointer;
+	color: #2BC0E4;
+	border: 2px solid #2BC0E4;
 }
 
 h4 {
 	text-align: center;
+}
+
+td {
+	padding: 25px 10px 25px 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+td:nth-child(1) {
+	color: red;
+}
+
+td:nth-child(2) {
+	font-weight: bold;
+}
+
+.btn {
+	text-align: center;
+	margin-top: 20px;
 }
