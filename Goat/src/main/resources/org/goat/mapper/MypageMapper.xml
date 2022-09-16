@@ -75,7 +75,7 @@
 			</choose>
 		</if>
   	</select>
-  	
+  
   	<select id="houselist" resultType="org.goat.model.BoardVO">
   		select * from board where category='숙소' order by id='manager' desc, bno desc;
   	</select>
