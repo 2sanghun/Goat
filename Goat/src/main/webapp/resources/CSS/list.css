@@ -143,8 +143,16 @@ td {
 	text-align: center;
 }
 
+.bno>a {
+	cursor: pointer;
+}
+
 .title {
 	text-align: center;
+}
+
+.title>a {
+	cursor: pointer;
 }
 
 .nick {

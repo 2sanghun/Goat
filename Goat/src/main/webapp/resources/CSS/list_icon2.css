@@ -118,12 +118,14 @@ td:nth-child(1) {
 }
 
 td:nth-child(2)>a {
+	cursor: pointer;
 	font-size: 26px;
 	font-weight: bold;
 	color: #3262c5;
 }
 
 td:nth-child(1)>a {
+	cursor: pointer;
 	font-size: 14px;
 	font-weight: bold;
 	color: #3262c5;
@@ -143,6 +145,10 @@ td:nth-child(1)>a {
 .title {
 	width: 30%;
 	text-align: center;
+}
+
+.title>a {
+	cursor: pointer;
 }
 
 .nick {
