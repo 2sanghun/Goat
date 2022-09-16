@@ -82,9 +82,9 @@
 
 dl>dd:nth-child(1) {
 	text-overflow: ellipsis;
-    width: 180px;
-    white-space: nowrap;
-    overflow: hidden;
+	width: 180px;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 dd>a:nth-child(1) {
@@ -200,6 +200,7 @@ td {
 }
 
 .search {
+	cursor: url(../Cursor/paper.png), auto;
 	font-size: 14px;
 	width: 130px;
 	padding: 12px;

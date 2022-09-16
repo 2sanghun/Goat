@@ -9,7 +9,7 @@
 <title>List</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/list.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/list.css?version=2.1" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/list.css?version=2.2" type="text/css">
 </head>
 <body>
 	<%@ include file="../header/header.jsp" %>
@@ -98,7 +98,7 @@
 						<td class="title"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 						<td class="nick">${boardlist.nick}</td>
 						<td class="regdate">${boardlist.regdate}</td>
-						<td class="cnt">${boardlist.good}</td>
+						<td class="cnt">${boardlist.cnthno}</td>
 						<td class="good">${boardlist.cnt}</td>
 					</tr>
 				</c:forEach>

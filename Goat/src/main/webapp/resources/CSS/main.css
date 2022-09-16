@@ -67,7 +67,7 @@ a {
 }
 
 .btn {
-	cursor: pointer;
+	cursor: url(../Cursor/paper.png), auto;
 	width: 80px;
 	height: 100%;
 	background: #2BC0E4;

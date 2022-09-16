@@ -177,6 +177,7 @@ td:nth-child(1)>a {
 }
 
 .search {
+	cursor: url(../Cursor/paper.png), auto;
 	font-size: 14px;
 	width: 130px;
 	padding: 12px;

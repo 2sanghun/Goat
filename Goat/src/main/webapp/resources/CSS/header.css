@@ -17,6 +17,7 @@
 
 body {
 	font-family: 'Kakaofont';
+	cursor: url(../Cursor/paper.png), auto;
 }
 
 * {
@@ -49,6 +50,7 @@ header ul>li>a {
 a {
 	text-decoration: none;
 	color: black;
+	cursor: url(../Cursor/paper.png), auto;
 }
 
 .logo {
@@ -101,7 +103,7 @@ input {
 }
 
 .headerbtn_write:hover {
-	cursor: pointer;
+	cursor: url(../Cursor/paper.png), auto;
 }
 
 .headerbtn {
@@ -117,7 +119,7 @@ input {
 }
 
 .headerbtn:hover {
-	cursor: pointer;
+	cursor: url(../Cursor/paper.png), auto;
 }
 
 .headerbtn_mypage {
@@ -133,7 +135,7 @@ input {
 }
 
 .headerbtn_mypage:hover {
-	cursor: pointer;
+	cursor: url(../Cursor/paper.png), auto;
 }
 
 .headerbtn_sign {
@@ -149,7 +151,7 @@ input {
 }
 
 .headerbtn_sign:hover {
-	cursor: pointer;
+	cursor: url(../Cursor/paper.png), auto;
 }
 
 #category {
