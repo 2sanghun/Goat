@@ -34,30 +34,34 @@ $(document).ready(function(){
 	
 	// like 함수 선언
 	function like(like){
-		if(likeValue==0){
-			$.ajax({
-				type : "post",
-				url : "/like/likeUp",
-				data : JSON.stringify(like),
-				contentType : "application/json; charset=utf-8",
-				success : function(result){
-					if(result == "success"){
-						alert("좋아요");
-					}
-				}
-			})
+		if(idValue==""){
+			alert("로그인이 필요합니다");
 		} else{
-			$.ajax({
-				type : "delete",
-				url : "/like/likeDown",
-				data : JSON.stringify(like),
-				contentType : "application/json; charset=utf-8",
-				success : function(result){
-					if(result == "success"){
-						alert("좋아요 취소");
+			if(likeValue==0){
+				$.ajax({
+					type : "post",
+					url : "/like/likeUp",
+					data : JSON.stringify(like),
+					contentType : "application/json; charset=utf-8",
+					success : function(result){
+						if(result == "success"){
+							alert("좋아요");
+						}
 					}
-				}
-			})
+				})
+			} else{
+				$.ajax({
+					type : "delete",
+					url : "/like/likeDown",
+					data : JSON.stringify(like),
+					contentType : "application/json; charset=utf-8",
+					success : function(result){
+						if(result == "success"){
+							alert("좋아요 취소");
+						}
+					}
+				})
+			}
 		}
 	}
 		
