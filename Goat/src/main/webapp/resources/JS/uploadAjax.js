@@ -166,7 +166,7 @@ $(document).ready(function(){
 				
 				$("#uploadResult ul").html(str);
 				$("#addfile").append(input).submit();
-			}
+			} 
 	    })
 	})    
 })

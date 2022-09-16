@@ -37,7 +37,7 @@ $(document).ready(function() {
 		$("#uploadResult ul").html(str);
 		$("#uploadlist ul").html(string);
 	})
-
+ 
 
 	$("#uploadlist ul").on("click","button",function(e){
 		console.log("delete file");

@@ -8,7 +8,7 @@ $(document).ready(function() {
 			reader.readAsDataURL(a);
 		}
 	}
-	
+	 
 	$('input[name="uploadFile"]').change(function() {
 		var str="";
 		for(var i=0;i<this.files.length;i++){

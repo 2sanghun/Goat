@@ -267,7 +267,7 @@ position: absolute; top: 45px; left: 100px; transform: translate(-50%, -50%);}
 
 
       <div id="chat">
-
+ 
          <table id="replyUL">
 
             <tr>
