@@ -69,7 +69,6 @@
 					<a href="/memModify?period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}">다음</a>
 			</c:if>
             </h4>
-            <hr id="paginghr">
 				<form id="searchForm" action="/memModify" method="get">
 				<div id ="searchAll">
 					<select class="search" name="period">
