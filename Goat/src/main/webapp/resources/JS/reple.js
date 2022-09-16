@@ -26,6 +26,7 @@ $(document).ready(function(){ // jquery 준비
             
    // 댓글 쓰기를 하기 위한 함수 호출
    add({bno:bnoValue,content:replyValue,id:idValue});
+   list({bno:bnoValue,pageNum:pageNumValue,amount:amountValue}); // 이러면 댓글 달면 바로 밑에 나옴 
    
    }) // 댓글 쓰기 
    
@@ -54,7 +55,7 @@ $(document).ready(function(){ // jquery 준비
    
    // 댓글 삭제를 하기 위한 함수 호출(댓글번호)
    remove({rno:rno,bno:bnoValue});
-        
+   list({bno:bnoValue,pageNum:pageNumValue,amount:amountValue});     
    } 
 
    }) // 댓글 삭제 
@@ -66,7 +67,7 @@ $(document).ready(function(){ // jquery 준비
       
       console.log(bnoValue)
       console.log(pageNumValue)
-      list({bno:bnoValue,pageNum:pageNumValue});
+      list(bnoValue, pageNumValue);
    
    })
 
@@ -88,7 +89,8 @@ function remove(reple){
          
          if(result=="success"){
             alert("삭제되었습니다"); 
-            list(reple.bno)}
+            // list(bnoValue, pageNumValue)
+         }
        }   
    })   
 }
@@ -105,7 +107,7 @@ function add(reple){ // add함수 선언 시작
          
          if(result=="success"){
             
-            list(reple.bno) // 이러면 댓글 달면 바로 밑에 나옴 
+            // list({bno:bnoValue,pageNum:pageNumValue}) // 이러면 댓글 달면 바로 밑에 나옴 
          }
       }   
    })
