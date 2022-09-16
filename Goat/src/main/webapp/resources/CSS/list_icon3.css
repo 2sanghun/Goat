@@ -81,11 +81,10 @@
 }
 
 dl>dd:nth-child(1) {
-	 text-overflow: ellipsis;
+	text-overflow: ellipsis;
     width: 180px;
     white-space: nowrap;
     overflow: hidden;
-}
 }
 
 dd>a:nth-child(1) {
