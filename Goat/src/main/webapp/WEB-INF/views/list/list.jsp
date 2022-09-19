@@ -73,9 +73,9 @@
 					<td class="bno"><span>게시판</span></td>
 					<td class="title"><span>제목</span></td>
 					<td class="nick"><span>글쓴이</span></td>
-					<td class="regdate"><span>작성일</span></td>
-					<td class="cnt"><span>추천</span></td>
-					<td class="good"><span>조회</span></td>
+					<td class="regdate"><span><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=regdate" class="orderBy"  id="byReg">작성일</a></span></td>
+					<td class="cnt"><span><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=cnthno" class="orderBy" id="cnthno">추천</a></span></td>
+					<td class="good"><span><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=cnt" class="orderBy" id="byCnt">조회</a></span></td>
 				</tr>
 				<c:if test="${paging.cri.pageNum == 1 and (keyword == null or keyword == '')}">
 					<!-- 매니저글 for문 시작 -->
@@ -114,17 +114,17 @@
 			<div id="pagingArea">
 				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
 				<c:if test="${paging.prev}">
-					<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}" class="pageBtn">이전</a>
+					<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" class="pageBtn">이전</a>
 				</c:if>
 		
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
 				<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-					<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}" id="pageNum">${num}</a>
+					<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" id="pageNum">${num}</a>
 				</c:forEach>
 				
 				<!-- next(다음)이 true이면 다음버튼 활성화 -->
 				<c:if test="${paging.next}">
-					<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}" class="pageBtn">다음</a>
+					<a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" class="pageBtn">다음</a>
 				</c:if>
 			</div>
 		</div>

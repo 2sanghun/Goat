@@ -9,6 +9,7 @@ public class CriteriaVO {
 	private String type;
 	private String period;	// 검색 조건에 기간
 	private String category;	// total에 반영하기 위해 category 필요
+	private String orderby;		// 최신순, 추천순, 조회순으로 정렬하기 위해 orderBY 필요
 
 	// 생성자
 	public CriteriaVO() {
@@ -59,8 +60,7 @@ public class CriteriaVO {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
-	
+		
 
 	public String getPeriod() {
 		return period;
@@ -78,10 +78,18 @@ public class CriteriaVO {
 		this.category = category;
 	}
 
+	public String getOrderby() {
+		return orderby;
+	}
+
+	public void setOrderby(String orderby) {
+		this.orderby = orderby;
+	}
+
 	@Override
 	public String toString() {
 		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", id=" + id + ", keyword=" + keyword
-				+ ", type=" + type + ", period=" + period + ", category=" + category + "]";
+				+ ", type=" + type + ", period=" + period + ", category=" + category + ", orderby=" + orderby + "]";
 	}
 
 }
