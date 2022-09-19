@@ -34,14 +34,14 @@ table {
    table-layout: fixed;
 }
 
-#title {
+#title1 {
    width: 990px;
    height: 30px;
    font-size: 20px;
    background-color: #DCDCDC;
 }
 
-#contenttext {
+#contenttext1 {
    width: 100%;
    border: none;
 }
@@ -179,7 +179,6 @@ position: absolute; top: 45px; left: 100px; transform: translate(-50%, -50%);}
    <hr>
    <hr>
 
-   <input type="hidden" id="id" value="${id}">
 
    <div id="content">
 
@@ -189,27 +188,49 @@ position: absolute; top: 45px; left: 100px; transform: translate(-50%, -50%);}
 
             <thead>
                <tr class="tr1">
+			
+				 <th colspan="4">
+   				 <input type="hidden" id="id" value="${id}">
+				 <input type="hidden" name="bno" value="${detail.bno}">
+   				
+				 <c:choose>
+				 	<c:when test="${ id==null || id != detail.id}">
+				 		
+				 		<input type="text" name="title" id="title1" value="${detail.title}" readonly>
+				 	</c:when>
+				 	<c:otherwise>
 
-                  <th colspan="4"><input type="hidden" name="bno"
-                     value="${detail.bno}"><input type="text" name="title"
-                     id="title" value="${detail.title}"></th>
+				 		<input type="text" name="title" id="title1" value="${detail.title}" >
+			 		</c:otherwise>
+				</c:choose>
+				 </th>
 
-               </tr>
-            </thead>
-
+              </tr>
+           </thead>
+           
             <tbody>
                <tr class="tr1">
+             
                   <td colspan="4"><input type="text" name="nick" id="nick"
                      value="${detail.nick}" readonly> <input type="text"
                      name="regdate" id="regdate" value="${detail.regdate}" readonly>
                   </td>
                </tr>
-               <tr>
-                  <td colspan="4"><textarea name="content" id="contenttext"
-                        rows="40">${detail.content}</textarea>
                
-                        
-                     <div id="uploadResult">
+
+
+               <tr>
+                  <td colspan="4"> 
+                  <c:choose>
+                  <c:when test="${ id==null || id != detail.id}">
+                  <textarea name="content" id="contenttext1" rows="40" readonly >${detail.content}</textarea>
+                  </c:when>
+                  <c:otherwise>
+                  <textarea name="content" id="contenttext1" rows="40" >${detail.content}</textarea>
+                  </c:otherwise>
+                  </c:choose>
+                                 
+               <div id="uploadResult">
                         <!-- 업로드 파일 영역(textarea영역에 포함시켰어요 -->
                         <ul>
 
@@ -217,8 +238,8 @@ position: absolute; top: 45px; left: 100px; transform: translate(-50%, -50%);}
                      </div></td>
 
                </tr>
+                      
                <tr>
-
                   <c:choose>
                      <c:when test="${ id != null && id == detail.id}">
                         <td colspan="4" id="td1">
