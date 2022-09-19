@@ -74,7 +74,7 @@
 					<td class="title"><span>제목</span></td>
 					<td class="nick"><span>글쓴이</span></td>
 					<td class="regdate"><span><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=regdate" class="orderBy"  id="byReg">작성일</a></span></td>
-					<td class="cnt"><span><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=cnthno" class="orderBy" id="cnthno">추천</a></span></td>
+					<td class="cnt"><span><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=cnthno" class="orderBy" id="byCntHno">추천</a></span></td>
 					<td class="good"><span><a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=cnt" class="orderBy" id="byCnt">조회</a></span></td>
 				</tr>
 				<c:if test="${paging.cri.pageNum == 1 and (keyword == null or keyword == '')}">
