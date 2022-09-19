@@ -103,7 +103,7 @@
 		where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
   	</select>
-  	
+
   	<select id="manager" resultType="org.goat.model.BoardVO">
   		select * from board where category='공지' order by bno desc;
   	</select>
