@@ -6,7 +6,7 @@ $(document).ready(function(){ // jquery 준비
    // 함수 호출 
    // detail jsp가 시작되자마자 bno 값을 가져오려면 
    // $(document).ready(function(){ 바로 아래에 선언해야 
-   var bnoValue = $("input[name='bno']").val();
+    var bnoValue = $("input[name='bno']").val();
    
     var pageNumValue = 1;
 
@@ -26,7 +26,8 @@ $(document).ready(function(){ // jquery 준비
             
    // 댓글 쓰기를 하기 위한 함수 호출
    add({bno:bnoValue,content:replyValue,id:idValue});
-   list({bno:bnoValue,pageNum:pageNumValue,amount:amountValue}); // 이러면 댓글 달면 바로 밑에 나옴 
+   
+   // list({bno:bnoValue,pageNum:pageNumValue,amount:amountValue}); // 이러면 댓글 달면 바로 밑에 나옴 
    
    }) // 댓글 쓰기 
    
@@ -48,26 +49,29 @@ $(document).ready(function(){ // jquery 준비
    
    // 댓글 삭제 버튼을 클릭하면
    $("#chat").on("click",".delete", function(){
-     
       if(confirm("삭제하시겠습니까?")){
       // 댓글 번호를 수집해서    
       var rno=$(this).data("rno");
    
    // 댓글 삭제를 하기 위한 함수 호출(댓글번호)
+  
    remove({rno:rno,bno:bnoValue});
-   list({bno:bnoValue,pageNum:pageNumValue,amount:amountValue});     
+   
+   // list({bno:bnoValue,pageNum:pageNumValue,amount:amountValue});     
    } 
 
    }) // 댓글 삭제 
 
    $("#replePage").on("click","li a",function(e){
       e.preventDefault();
+      //alert("댓글번호 클릭")
       var bnoValue=$("input[name='bno']").val();
       var pageNumValue = $(this).attr("href");
       
       console.log(bnoValue)
       console.log(pageNumValue)
-      list(bnoValue, pageNumValue);
+      list({bno:bnoValue,pageNum:pageNumValue})
+      //list(bnoValue, pageNumValue);
    
    })
 
@@ -77,7 +81,7 @@ $(document).ready(function(){ // jquery 준비
 // 함수 선언
 // 댓글 삭제를 하기 위한 함수 선언 
 function remove(reple){ 
-   
+   console.log(reple);
    $.ajax({
       type: "delete",
       url:"/replies/remove",
@@ -88,15 +92,19 @@ function remove(reple){
        success: function(result){
          
          if(result=="success"){
-            alert("삭제되었습니다"); 
+            alert("댓글이 삭제되었습니다"); 
+            
+            //list(reple.bno)
+            list({bno:reple.bno,pageNum:1})
             // list(bnoValue, pageNumValue)
+          
          }
        }   
    })   
 }
 // 댓글 쓰기를 위한 함수 선언
 function add(reple){ // add함수 선언 시작 
-
+	console.log(reple)
    $.ajax({ 
       type:"post",
       url:"/replies/write",  
@@ -107,7 +115,7 @@ function add(reple){ // add함수 선언 시작
          
          if(result=="success"){
             
-            // list({bno:bnoValue,pageNum:pageNumValue}) // 이러면 댓글 달면 바로 밑에 나옴 
+            list({bno:reple.bno,pageNum:1}) // 이러면 댓글 달면 바로 밑에 나옴 
          }
       }   
    })
@@ -166,16 +174,18 @@ function showReplePage(replecnt){
    
    console.log(replecnt) // 지금 replecnt가 0이라서 문제인거야 그래서 
    
-    if(replecnt=0){ 
+    if(replecnt==0){ 
        
        var pageNum = 1;
        
-       var endNum = Math.ceil(pageNum/10.0)*10;
-   
+       // var endNum = Math.ceil(pageNum/10.0)*10;
+       var endNum = 1;
+       
        console.log(endNum);
    
-       var startNum = endNum-9;
-   
+       // var startNum = endNum-9;
+       var startNum = endNum; 
+       
    var str="<div id='cntdiv'><ul class='cntul'>";
    
    for(var i=startNum; i<=endNum; i++){
@@ -184,11 +194,11 @@ function showReplePage(replecnt){
    
    str+="</ul></div>"
       
-   console.log(str);
+   console.log("str="+str);
    
    $("#replePage").html(str);      
 
-    }else if(replecnt!=0){
+    }else{
    
        var pageNum = Math.ceil(replecnt/10.0);
        
@@ -202,38 +212,37 @@ function showReplePage(replecnt){
    
        var prev=startNum !=1;
 
-   var next=false;
-   
-   console.log(prev)
-   console.log(next)
-   
-   if(endNum * 10 >= replecnt){
-      endNum = Math.ceil(replecnt/10.0);
-   }
-   
-   if(endNum * 10 < replecnt){
-      next=true;
-   }
+	   var next=false;
+	   
+	   console.log(prev)
+	   console.log(next)
+	   
+	   if(endNum * 10 >= replecnt){
+	      endNum = Math.ceil(replecnt/10.0);
+	   }
+	   
+	   if(endNum * 10 < replecnt){
+	      next=true;
+	   }
    
 
-   var str="<div id='cntdiv'><ul class='cntul'>";
-   
-   if(prev){
-      str+="<li id='prvli'><a href='"+(startNum-1)+"'>이전</a></li>";
-   }
-   
-   for(var i=startNum; i<=endNum; i++){
-      str+="<li class='cntli'><a href='"+i+"'>"+i+"</a></li>"
-   }
-   
-   if(next){
-      str+="<li id='nxtli'><a href='"+(endNum+1)+"'>다음</a></li>";
-   }
-   str+="</ul></div>"
-      
-   console.log(str);
-   
-   $("#replePage").html(str);
+	   var str="<div id='cntdiv'><ul class='cntul'>";
+	   
+	   if(prev){
+	      str+="<li id='prvli'><a href='"+(startNum-1)+"'>이전</a></li>";
+	   }
+	   
+	   for(var i=startNum; i<=endNum; i++){
+	      str+="<li class='cntli'><a href='"+i+"'>"+i+"</a></li>"
+	   }
+	   
+	   if(next){
+	      str+="<li id='nxtli'><a href='"+(endNum+1)+"'>다음</a></li>";
+	   }
+	   str+="</ul></div>"
+	      
+	   console.log(str);
+	   $("#replePage").html(str);
    }
 }
 
@@ -247,10 +256,11 @@ function modify(reple){ //댓글 수정을 하기 위한 함수 선언
       data:JSON.stringify(reple), 
       
       contentType:"application/json; charset=utf-8",
-        success: function(result){
+        
+      success: function(result){
          
          if(result=="success"){
-            alert("댓글 수정 성공");
+            alert("댓글이 수정됐습니다");
             
          }
       }   
