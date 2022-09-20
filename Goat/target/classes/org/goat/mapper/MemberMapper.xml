@@ -16,9 +16,9 @@
 		select * from member where id=#{id} and password=#{password};
 	</select>
 	<select id="idsearch" resultType="String">
-		select id from member where name=#{name} and phone=#{phone} and birth=#{birth}
+		select id from member where name=#{name} and phone=#{phone} and email=#{email};
 	</select>
 	<select id="pwsearch" resultType="String">
-		select password from member where id=#{id} and phone=#{phone}
+		select password from member where id=#{id} and email=#{email};
 	</select>
 </mapper>
