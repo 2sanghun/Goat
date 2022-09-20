@@ -87,7 +87,8 @@
 					<div id="nodata">
 						<p id="nodatah">등록된 게시글이 없습니다</p>
 					</div>
-			</c:if>						
+				</c:if>
+				<br>						
 			</div>
 		</div>
 		<div id="search">
