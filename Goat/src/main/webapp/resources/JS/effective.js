@@ -42,12 +42,30 @@ window.addEventListener('load', function() {
 		}
 	}
 	
+	// 이메일
+	var emchk = document.querySelector("#email")
+	var emmsg = document.querySelector("#emmsg");
+	var emreg = /^[A-Za-z0-9_\.\-]/;
+	emchk.onblur = function(){
+		var emValue = emchk.value;
+		var emValue = emchk.value;
+		if(emreg.test(emValue)){
+			emmsg.innerHTML = "";
+		} else {
+			emmsg.innerHTML = "* 양식에 맞게 입력해주세요";
+			emmsg.style.color = "gray";
+		}
+	}
+	
 	// 전화번호
-	var numchk =  document.querySelector("#numchk");
+	var numchk1 = document.querySelector("#numchk1");
+	var numchk2 = document.querySelector("#numchk2");
 	var nummsg = document.querySelector("#nummsg");
-	var numreg = /^(?=.*[0-9]).{8,12}$/;
-	numchk.onblur = function(){
-		var numValue = numchk.value;
+	var numreg = /^(?=.*[0-9]).{7,8}$/;
+	numchk1.onblur = function(){
+		var numV1 =  numchk1.value;
+		var numV2 =  numchk2.value;
+		var numValue = numV1.concat(numV2);
 		if(numreg.test(numValue)){
 			nummsg.innerHTML = "";
 		} else {
@@ -55,18 +73,15 @@ window.addEventListener('load', function() {
 			nummsg.style.color = "gray";
 		}
 	}
-	
-	// 생년월일
-	var bdchk =  document.querySelector("#bdchk");
-	var bdmsg = document.querySelector("#bdmsg");
-	var bdreg = /^(?=.*[0-9]).{8,8}$/;
-	bdchk.onblur = function(){
-		var bdValue = bdchk.value;
-		if(bdreg.test(bdValue)){
-			bdmsg.innerHTML = "";
+	numchk2.onblur = function(){
+		var numV1 =  numchk1.value;
+		var numV2 =  numchk2.value;
+		var numValue = numV1.concat(numV2);
+		if(numreg.test(numValue)){
+			nummsg.innerHTML = "";
 		} else {
-			bdmsg.innerHTML = "* 양식에 맞게 입력해주세요";
-			bdmsg.style.color = "gray";
+			nummsg.innerHTML = "* 양식에 맞게 입력해주세요";
+			nummsg.style.color = "gray";
 		}
 	}
 });

@@ -84,13 +84,13 @@
 		  			</otherwise>			 
 				 </choose>
 				 <choose>
-				 	<when test="orderby == 'cnt'.toString()">
+				 	<when test="orderby == '조회순'.toString()">
 				 		order by cnt desc, bno desc
 				 	</when>
-				 	<when test="orderby == 'cnthno'.toString()">
+				 	<when test="orderby == '추천순'.toString()">
 				 		order by cnthno desc, bno desc
 				 	</when>
-				 	<when test="orderby == 'regdate'.toString()">
+				 	<when test="orderby == '최신순'.toString()">
 				 		order by regdate desc
 				 	</when>
 				 	<otherwise>
@@ -183,11 +183,13 @@
 	</select>
  
 	<select id="imglist" resultType="org.goat.model.BoardVO">
-	select rownum, bno, title, content, nick, regdate, cnt, id, good, category,
-	       concat(replace(uploadpath, '\\','/'),'/s_' ,uuid,'_' ,filename) filePath,
-	       (select count(*) from b_like where bno=balist.bno) as cnthno
+select *
+from(	
+	select @rownum:=@rownum+1 rownum, bno, title, content, nick, regdate, cnt, id, good, category,
+	       concat(replace(uploadpath, '\\','/'),'/s_' ,uuid,'_' ,filename) filePath, cnthno
+	       
 	from(
-		 select @rownum:=@rownum+1 rownum, t.*
+		 select t.*, (select count(*) from b_like where bno=t.bno) as cnthno
 		 from(
 			  select *
 			  from(
@@ -269,8 +271,22 @@
 	  			  </otherwise>
 	  		  </choose>
 			  ) as t, (select @rownum:=0) as tmp
-		 order by bno desc
+			 <choose>
+				<when test="orderby == '조회순'.toString()">
+				 	order by cnt desc, bno desc
+				</when>
+				<when test="orderby == '추천순'.toString()">
+				 	order by cnthno desc, bno desc
+				</when>
+				<when test="orderby == '최신순'.toString()">
+				 	order by regdate desc
+				</when>
+				<otherwise>
+				 	order by bno desc
+				 </otherwise>
+			 </choose>
 	     ) as balist
+	)as blimglist
 	<![CDATA[
 	where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 	]]>
@@ -469,6 +485,100 @@
 		where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
   	</select>
+
+	<select id="imglist" resultType="org.goat.model.BoardVO">
+	select rownum, bno, title, content, nick, regdate, cnt, id, good, category,
+	       concat(replace(uploadpath, '\\','/'),'/s_' ,uuid,'_' ,filename) filePath,
+	       (select count(*) from b_like where bno=balist.bno) as cnthno
+	from(
+		 select @rownum:=@rownum+1 rownum, t.*
+		 from(
+			  select *
+			  from(
+				   select uuid, uploadPath, fileName, image, b.bno, title, content, nick, regdate, cnt, id, good, category
+				   from attach a
+				   join board b
+				   on a.bno=b.bno
+				   where image=1
+				   ) as j
+			  group by bno
+		 	  <choose> 
+	  			  <when test="category != null and !category.equals('')">
+	  				  having category!='공지' and category=#{category}
+		 			  <if test="keyword!=null">
+						  <choose>
+							  <when test="period == 'day'.toString()">
+								  and (regdate between date_ADD(now(), interval -1 day) and now())
+							  </when>
+							  <when test="period == 'week'.toString()">
+							   	  and (regdate between date_ADD(now(), interval -1 week) and now())
+							  </when>
+							  <when test="period == 'month'.toString()">
+								  and (regdate between date_ADD(now(), interval -1 month) and now())
+							  </when>
+							  <when test="period == 'sixMonth'.toString()">
+								  and (regdate between date_ADD(now(), interval -6 month) and now())
+							  </when>
+							  <when test="period == 'year'.toString()">
+								  and (regdate between date_ADD(now(), interval -1 year) and now())
+							  </when>
+						  </choose>
+	 					  <choose>
+					 		  <when test="type == 'T'.toString()">
+					 			  and title like concat('%',#{keyword},'%')
+					 		  </when>
+					 		  <when test="type == 'N'.toString()">
+					 			  and nick like concat('%',#{keyword},'%')
+					 		  </when>
+					 		  <when test="type == 'TC'.toString()">
+					 			  and (title like concat('%',#{keyword},'%')
+								  or content like concat('%',#{keyword},'%'))
+					 		  </when>
+					 	  </choose>	
+					  </if>
+	  			  </when>
+	  			  <otherwise>
+	  				  having category!='공지'
+		 			  <if test="keyword!=null">
+						  <choose>
+							  <when test="period == 'day'.toString()">
+								  and (regdate between date_ADD(now(), interval -1 day) and now())
+							  </when>
+							  <when test="period == 'week'.toString()">
+								  and (regdate between date_ADD(now(), interval -1 week) and now())
+							  </when>
+							  <when test="period == 'month'.toString()">
+								  and (regdate between date_ADD(now(), interval -1 month) and now())
+							  </when>
+							  <when test="period == 'sixMonth'.toString()">
+								  and (regdate between date_ADD(now(), interval -6 month) and now())
+							  </when>
+							  <when test="period == 'year'.toString()">
+								  and (regdate between date_ADD(now(), interval -1 year) and now())
+							  </when>
+						  </choose>
+	 					  <choose>
+					 		  <when test="type == 'T'.toString()">
+					 			  and title like concat('%',#{keyword},'%')
+					 		  </when>
+					 		  <when test="type == 'N'.toString()">
+					 			  and nick like concat('%',#{keyword},'%')
+					 		  </when>
+					 		  <when test="type == 'TC'.toString()">
+					 			  and (title like concat('%',#{keyword},'%')
+								  or content like concat('%',#{keyword},'%'))
+					 		  </when>
+					 	  </choose>
+					  </if>
+	  			  </otherwise>
+	  		  </choose>
+			  ) as t, (select @rownum:=0) as tmp
+		 order by bno desc
+	     ) as balist
+	<![CDATA[
+	where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+	]]>
+	</select>
   	
   	<select id="sitelist" resultType="org.goat.model.BoardVO">
   		select *

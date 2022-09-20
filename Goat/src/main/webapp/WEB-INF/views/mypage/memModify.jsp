@@ -11,7 +11,7 @@
 	src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../resources/JS/mypagelist.js"></script>
 <link rel="stylesheet"
-	href="../../../resources/CSS/mypagemodify.css?version=2.2"
+	href="../../../resources/CSS/mypagemodify.css?version=2.0"
 	type="text/css">
 </head>
 <body>
@@ -28,7 +28,6 @@
 			<form id="searchForm" action="/memModify" method="get">
 				<span>
 					<div id="searchAll">
-
 						<select class="search" name="period">
 							<option value="total">전체기간</option>
 							<option value="day">1일</option>
@@ -43,7 +42,7 @@
 						</select> <input type="text" name="keyword" class="search_bar"
 							placeholder="검색어를 입력해주세요"> <input type="button"
 							class="search_btn" value="검색">
-					</div>
+					</div> 
 					<div>
 						<input type="hidden" name="pageNum" value="${paging.cri.pageNum}">
 						<input type="hidden" name="amount" value="${paging.cri.amount}">

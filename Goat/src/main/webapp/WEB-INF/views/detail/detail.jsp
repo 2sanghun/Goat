@@ -14,10 +14,169 @@
 <script type="text/javascript" src="../../../resources/JS/reple.js?version=1.1"></script>
 <script type="text/javascript" src="/resources/JS/attach.js"></script>
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
+<<<<<<< HEAD
 <script type="text/javascript"
 	src="../../../resources/JS/writeAttach.js"></script>
 <link rel="stylesheet"
 	href="../../../resources/CSS/detail.css?version=1.5">
+=======
+
+<script type="text/javascript" src="../../../resources/JS/writeAttach.js"></script>
+<script type="text/javascript" src="../../../resources/JS/like.js"></script>
+
+<!-- css 파트 나중에 다시 뺄꺼야 -->
+
+<style>
+#content { 
+   width: 1000px;
+   margin: 0 auto;
+   position: relative;
+   top: 90px;
+}
+
+table {
+   width: 1000px;
+   border-collapse: collapse;
+   table-layout: fixed;
+}
+
+#title1 {
+   width: 990px;
+   height: 30px;
+   font-size: 20px;
+   background-color: #DCDCDC;
+}
+
+#contenttext1 {
+   width: 100%;
+   border: none;
+}
+
+td {
+   height: 30px;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+.tr1 {
+   background: #DCDCDC;
+}
+
+#td1 {
+   height: 30px;
+   border-bottom: 1px solid black;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+   padding: 5px 330px 5px 420px;
+}
+
+textarea {
+   resize: none;
+}
+
+input {
+   border: none;
+}
+
+.bno {
+   width: 8%;
+   text-align: center;
+}
+
+#nick {
+   background-color: #DCDCDC;
+   text-align: center;
+   outline: none;
+}
+
+#regdate {
+   background-color: #DCDCDC;
+   outline: none;
+}
+
+#modify {
+   color: white;
+   background-color: teal;
+   border-radius: 4px;
+   margin-left: -5px;
+}
+
+.remove {
+   color: white;
+   background-color: teal;
+   border-radius: 4px;
+   margin-left: -5px;
+}
+
+#add {
+   float: right;
+}
+
+#replyUL {
+   border-collapse: collapse;
+   border: none;
+}
+
+.replycontent {
+   width: 993px;
+   height: 50px;
+}
+
+.upde {
+   float: right;
+}
+
+#replePage {
+   margin: 0px;
+   padding: 0px;
+   width: 994px;
+   overflow: auto;
+   display: inline-block;
+}
+
+#cntdiv {
+   width: 170px;
+   margin: auto;
+}
+
+.cntul {
+   list-style: none;
+   display: inline;
+   margin-left: 20px;
+}
+
+.cntli {
+   display: block;
+   margin: 0 3px;
+   float: left;
+   border: 1px solid #e6e6e6;
+   width: 28px;
+   height: 28px;
+   line-height: 28px;
+   text-align: center;
+   background-color: #fff;
+   font-size: 13px;
+   color: #999999;
+   text-decoration: none;
+}
+
+ul li {
+   list-style-type: none;
+   display: inline;
+   margin-left: 20px;
+}
+
+.btn{position:relative;}
+
+.warning-circle:after{content: "\00d7"; font-size:15pt;  
+ width: 35px; border-radius:55%; background-color:gray;
+position: absolute; top: 45px; left: 100px; transform: translate(-50%, -50%);}
+
+</style>
+
+>>>>>>> branch 'master' of https://github.com/2sanghun/Goat
 </head>
 
 <body>
