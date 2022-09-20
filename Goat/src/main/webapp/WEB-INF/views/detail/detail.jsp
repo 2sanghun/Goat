@@ -16,7 +16,7 @@
 <script type="text/javascript" src="/resources/JS/attach.js"></script>
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
 
-<script type="text/javascript" src="../../../resources/JS/modifyAttach.js"></script>
+<script type="text/javascript" src="../../../resources/JS/writeAttach.js"></script>
 
 <!-- css 파트 나중에 다시 뺄꺼야 -->
 
@@ -244,16 +244,16 @@ position: absolute; top: 45px; left: 100px; transform: translate(-50%, -50%);}
                      <c:when test="${ id != null && id == detail.id}">
                         <td colspan="4" id="td1">
                   <div id="uploadlist">
-                  전에 첨부된 파일 목록 : 
+                  첨부된 파일 목록 : 
                   <ul></ul>
                   </div>                  
             
                   <div class = "form-group uploadDiv">
-                  <label> 파일첨부 <input type="file" name="uploadFile"
+                  <label> 파일 첨부 <input type="file" name="uploadFile"
                         id="uploadFile" hidden="" multiple>
                   </label>
                    <div id="uploadResult2"></div> 
-                   <input type="button" value="파일업로드하기" id="addfile"> 
+                   <input type="button" value="파일 업로드" id="addfile"> 
                         
                         </div>
                   
