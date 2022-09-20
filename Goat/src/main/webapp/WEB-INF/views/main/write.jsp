@@ -23,7 +23,7 @@
 			<div id="top">
 				<h1 id="writecss">글 쓰기</h1>
 			</div>
-			<div id="mid">
+			<div id="mid"> 
 				<table>
 					<tr>
 						<td>
