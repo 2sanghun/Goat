@@ -1,5 +1,7 @@
 package org.goat.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.goat.model.BoardVO;
 import org.goat.model.CriteriaVO;
 import org.goat.model.MemberVO;
@@ -71,10 +73,12 @@ public class ManagerController {
 
 	// 글 삭제
 	@RequestMapping(value = "/manager/writeremove", method = RequestMethod.GET)
-	public String bremove(BoardVO bremove) {
+	public String bremove(BoardVO bremove,HttpServletRequest request) {
 		ms.bremove(bremove);
 		// manager/manager.jsp 에서 삭제된 결과를 확인하기 위한 화면이동
-		return "redirect:/manager/managerWriteList?id=";
+		
+		 String referer = request.getHeader("Referer");		
+		 return "redirect:" + referer;
 	}
 
 	// 댓글 리스트
@@ -89,10 +93,11 @@ public class ManagerController {
 	
 	// 댓글 삭제
 	@RequestMapping(value = "/manager/repleremove", method = RequestMethod.GET)
-	public String repleremove(RepleVO remove) {
+	public String repleremove(RepleVO remove,HttpServletRequest request) {
 		ms.repleremove(remove);
 		// manager/manager.jsp 에서 삭제된 결과를 확인하기 위한 화면이동
-		return "redirect:/manager/manager";
+		String referer = request.getHeader("Referer");		
+		return "redirect:" + referer;
 	}
 
 	/*

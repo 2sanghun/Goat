@@ -24,7 +24,7 @@
 }
 
 .align {
-	float: right;
+	float: left;
 	line-height: 40px;
 	height: 70px;
 	margin-bottom: 5px;
@@ -32,7 +32,7 @@
 }
 
 .sort {
-	float: right;
+	float: left;
 	height: 80px;
 }
 
@@ -105,6 +105,9 @@ table {
 	table-layout: fixed;
 }
 
+.orderBy:after {
+	content: '▼';
+}
 #notice td {
 	background: #f2f2f2;
 }
@@ -143,8 +146,16 @@ td {
 	text-align: center;
 }
 
+.bno>a {
+	cursor: pointer;
+}
+
 .title {
 	text-align: center;
+}
+
+.title>a {
+	cursor: pointer;
 }
 
 .nick {
@@ -153,7 +164,7 @@ td {
 }
 
 .regdate {
-	width: 15%;
+	width: 16%;
 	text-align: center;
 }
 
@@ -168,13 +179,13 @@ td {
 }
 
 #search {
-	height: 200px;
 	text-align: center;
 }
 
 #searchform {
 	position: relative;
-	top: 32px;
+	top: 14px;
+	float: right;
 }
 
 #searchAll {
@@ -185,6 +196,7 @@ td {
 }
 
 .search {
+	cursor: url(../Cursor/paper.png), auto;
 	font-size: 14px;
 	width: 130px;
 	padding: 12px;
@@ -217,6 +229,7 @@ td {
 	color: black;
 	border-radius: 4px;
 	opacity: 0.5;
+	margin-left: 1px;
 }
 
 .listcount:hover {

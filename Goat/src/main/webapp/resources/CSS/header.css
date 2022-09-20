@@ -1,13 +1,33 @@
 @charset "UTF-8";
 
-*{
+@font-face {
+	font-family: 'Kakaofont';
+	src: url(KakaoRegular.ttf)
+}
+
+@font-face {
+	font-family: 'Kakaofont_Bold';
+	src: url(KakaoBold.ttf)
+}
+
+@font-face {
+	font-family: 'logofont';
+	src: url(Shrikhand-Regular.ttf)
+}
+
+body {
+	font-family: 'Kakaofont';
+	cursor: url(../Cursor/paper.png), auto;
+}
+
+* {
 	margin: 0;
 	padding: 0;
 }
 
 header {
 	background-color: rgba(255, 255, 255, 0.9);
-	height: 50px;
+	height: 70px;
 	width: 99%;
 	margin: auto;
 	padding: 10px 20px 10px 10px;
@@ -20,20 +40,41 @@ header {
 	right: 0;
 }
 
-header ul > li > a {
+header ul>li>a {
 	color: black;
 	text-decoration: none;
 	decoration: none;
-	
+	font-family: 'Kakaofont_Bold';
 }
 
-a{
+a {
 	text-decoration: none;
 	color: black;
+	cursor: url(../Cursor/paper.png), auto;
+}
+
+.logo {
+	margin-top: -10px;
+}
+
+.logo>h1>a {
+	margin: 40px;
+	text-decoration: none;
+	color: #2BC0E4;
+	font-family: 'logofont';
+	font-size: 40px;
+}
+
+.logo>p {
+	margin-left: 51px;
+	margin-top: -19px;
+	font-size: 14px;
+	font-family: 'logofont';
+	text-align: left;
 }
 
 header>#category>ul>li>a {
-	margin:10px;
+	margin: 10px;
 }
 
 header ul>li>a:hover {
@@ -58,6 +99,11 @@ input {
 	border: 0.5px solid #2BC0E4;
 	background-color: #2BC0E4;
 	border-radius: 50px;
+	font-family: 'Kakaofont';
+}
+
+.headerbtn_write:hover {
+	cursor: url(../Cursor/paper.png), auto;
 }
 
 .headerbtn {
@@ -69,6 +115,11 @@ input {
 	border: 0.5px solid lightgray;
 	background-color: white;
 	border-radius: 50px;
+	font-family: 'Kakaofont';
+}
+
+.headerbtn:hover {
+	cursor: url(../Cursor/paper.png), auto;
 }
 
 .headerbtn_mypage {
@@ -80,6 +131,11 @@ input {
 	border: 0.5px solid #353535;
 	background-color: #353535;
 	border-radius: 50px;
+	font-family: 'Kakaofont';
+}
+
+.headerbtn_mypage:hover {
+	cursor: url(../Cursor/paper.png), auto;
 }
 
 .headerbtn_sign {
@@ -91,10 +147,11 @@ input {
 	border: 0.5px solid #353535;
 	background-color: #353535;
 	border-radius: 50px;
+	font-family: 'Kakaofont';
 }
 
-.headerbtn:hover {
-	
+.headerbtn_sign:hover {
+	cursor: url(../Cursor/paper.png), auto;
 }
 
 #category {
@@ -103,6 +160,6 @@ input {
 
 #canav li {
 	display: inline;
-	font-weight: bold;
-	font-size: 22px;
+	font-size: 30px;
+	margin: 10px;
 }

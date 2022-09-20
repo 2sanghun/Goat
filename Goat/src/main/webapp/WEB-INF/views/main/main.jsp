@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/main.css?version=1.7" type="text/css">
+	href="../../../resources/CSS/main.css?version=2.0" type="text/css">
 <script type="text/javascript" src="../../../resources/JS/main.js"></script>
 </head>
 <body>

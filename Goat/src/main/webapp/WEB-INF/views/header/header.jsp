@@ -5,12 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../../resources/CSS/header.css?version=2.0" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/header.css?version=3.0" type="text/css">
 <script type="text/javascript" src="../../../resources/JS/header.js"></script>
 </head>
 <body>
 	<header>
-		<h1><a href="../main/main"><img src="../../../resources/image/logo.jpg"></a></h1>
+	<div class="logo">
+		<h1><a href="../main/main">GOAT</a></h1>
+		<p>go on a trip</p>
+		</div>
 		<div id="category"> 
 				<ul id="canav">
 					<li><a href="../list/list">전체</a></li>

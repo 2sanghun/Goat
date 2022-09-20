@@ -25,14 +25,14 @@
 }
 
 .align {
-	height: 55px;
+	height: 58px;
 	margin-bottom: 10px;
-	border-bottom: 2px solid gray;
+	border-bottom: 3px solid gray;
 }
 
 .sort {
 	position: relative;
-	float: right;
+	float: left;
 }
 
 .sort>ul {
@@ -56,6 +56,12 @@
 	width: 40px;
 	height: 40px;
 	border: 1px solid gray;
+	border-radius: 4px;
+}
+
+.ddimg {
+	width: 10px;
+	height: 10px;
 	border-radius: 4px;
 }
 
@@ -93,7 +99,7 @@ table {
 	border-bottom: 2px solid #8C8C8C;
 }
 
-#uploadResult>img {
+#uploadResult> a > img {
 	width: 150px;
 	height: 120px;
 	margin-bottom: 18px;
@@ -112,12 +118,14 @@ td:nth-child(1) {
 }
 
 td:nth-child(2)>a {
+	cursor: pointer;
 	font-size: 26px;
 	font-weight: bold;
 	color: #3262c5;
 }
 
 td:nth-child(1)>a {
+	cursor: pointer;
 	font-size: 14px;
 	font-weight: bold;
 	color: #3262c5;
@@ -137,6 +145,10 @@ td:nth-child(1)>a {
 .title {
 	width: 30%;
 	text-align: center;
+}
+
+.title>a {
+	cursor: pointer;
 }
 
 .nick {
@@ -160,13 +172,13 @@ td:nth-child(1)>a {
 }
 
 #search {
-	height: 200px;
 	text-align: center;
 }
 
 #searchform {
 	position: relative;
-	top: 32px;
+	float: right;
+	top: -1px;
 }
 
 #searchAll {
@@ -177,6 +189,7 @@ td:nth-child(1)>a {
 }
 
 .search {
+	cursor: url(../Cursor/paper.png), auto;
 	font-size: 14px;
 	width: 130px;
 	padding: 12px;

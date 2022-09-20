@@ -11,7 +11,7 @@
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/list_icon.js"></script>
 <link rel="stylesheet"
-	href="../../../resources/CSS/list_icon2.css?version=1.5"
+	href="../../../resources/CSS/list_icon2.css?version=1.9"
 	type="text/css">
 </head>
 <body>
@@ -27,6 +27,32 @@
 					<p id="categorylist">${paging.cri.category}</p>
 				</c:otherwise>
 			</c:choose>
+			<div id="search">
+				<form action="/list/list_icon2" method="get" id="searchform">
+					<div id="searchAll">
+						<select class="search" name="period">
+							<option value="total">전체기간</option>
+							<option value="day">1일</option>
+							<option value="week">1주</option>
+							<option value="month">1개월</option>
+							<option value="sixMonth">6개월</option>
+							<option value="year">1년</option>
+						</select> <select class="search" name="type">
+							<option value="T">제목</option>
+							<option value="N">글작성자</option>
+							<option value="TC">제목+게시글</option>
+						</select> <input type="text" class="search" id="query" name="keyword"
+							placeholder="검색어를 입력해주세요">
+						<button type="button" class="search" id="searchbtn">검색</button>
+					</div>
+					<div>
+						<input type="hidden" name="pageNum" value="${paging.cri.pageNum}">
+						<input type="hidden" name="amount" value="${paging.cri.amount}">
+						<input type="hidden" name="category"
+							value="${paging.cri.category}">
+					</div>
+				</form>
+			</div>
 			<div class="align">
 				<div class="sort">
 					<ul>
@@ -48,15 +74,18 @@
 				<!-- 이미지 게시글 목록 for문 시작 -->
 				<c:forEach items="${list}" var="boardlist">
 					<tr>
-						<td rowspan="3" id="uploadResult"><img
-							src="/display?fileName=${boardlist.filePath}"></td>
+						<td rowspan="3" id="uploadResult"><a href="../detail/detail?bno=${boardlist.bno}"><img
+							src="/display?fileName=${boardlist.filePath}"></a></td>
 						<td><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 					</tr>
 					<tr>
 						<td><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a></td>
 					</tr>
 					<tr class="tr_last">
-						<td class="td_last">${boardlist.regdate} / ${boardlist.nick}</td>
+						<td class="td_last">
+							${boardlist.regdate} / ${boardlist.nick} / 
+							👍 ${boardlist.cnthno}
+						</td>
 					</tr>
 				</c:forEach>
 				<!-- 이미지 게시글 for문 끝 -->
@@ -91,29 +120,6 @@
 						class="pageBtn">다음</a>
 				</c:if>
 			</div>
-			<form action="/list/list_icon2" method="get" id="searchform">
-				<div id="searchAll">
-					<select class="search" name="period">
-						<option value="total">전체기간</option>
-						<option value="day">1일</option>
-						<option value="week">1주</option>
-						<option value="month">1개월</option>
-						<option value="sixMonth">6개월</option>
-						<option value="year">1년</option>
-					</select> <select class="search" name="type">
-						<option value="T">제목</option>
-						<option value="N">글작성자</option>
-						<option value="TC">제목+게시글</option>
-					</select> <input type="text" class="search" id="query" name="keyword"
-						placeholder="검색어를 입력해주세요">
-					<button type="button" class="search" id="searchbtn">검색</button>
-				</div>
-				<div>
-					<input type="hidden" name="pageNum" value="${paging.cri.pageNum}">
-					<input type="hidden" name="amount" value="${paging.cri.amount}">
-					<input type="hidden" name="category" value="${paging.cri.category}">
-				</div>
-			</form>
 		</div>
 	</div>
 	<%@ include file="../header/footer.jsp"%>

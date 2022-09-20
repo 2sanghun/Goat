@@ -23,6 +23,8 @@ public class BoardVO {
 
 	private String filePath;
 	
+	private String cnthno;
+	
 	// AttachFileVO(파일 업로드 관련 model)
 	private ArrayList<AttachFileVO> attach;
 
@@ -114,11 +116,19 @@ public class BoardVO {
 		this.filePath = filePath;
 	}
 
+	public String getCnthno() {
+		return cnthno;
+	}
+
+	public void setCnthno(String cnthno) {
+		this.cnthno = cnthno;
+	}
+
 	@Override
 	public String toString() {
 		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", nick=" + nick + ", regdate="
 				+ regdate + ", cnt=" + cnt + ", id=" + id + ", good=" + good + ", category=" + category + ", filePath="
-				+ filePath + ", attach=" + attach + "]";
+				+ filePath + ", cnthno=" + cnthno + ", attach=" + attach + "]";
 	}
 
 

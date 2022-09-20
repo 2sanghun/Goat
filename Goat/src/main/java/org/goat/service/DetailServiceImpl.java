@@ -1,7 +1,7 @@
 package org.goat.service;
 
 import java.util.ArrayList;
-
+  
 import org.goat.mapper.BoardAttachMapper;
 import org.goat.mapper.DetailMapper;
 import org.goat.model.AttachFileVO;
@@ -24,7 +24,17 @@ public class DetailServiceImpl implements DetailService {
 	}
     public void modify(BoardVO board) {
     	dm.modify(board);
-    }
+    	
+    	System.out.println(board.getBno());
+		System.out.println(board.getAttach());
+		
+		if (board.getAttach() != null) {
+			board.getAttach().forEach(attach -> {
+				attach.setBno(board.getBno());
+				bam.insert(attach);
+            });
+		}	
+	}
 	
     public void remove(BoardVO board) {
     	dm.remove(board);
@@ -34,4 +44,11 @@ public class DetailServiceImpl implements DetailService {
     public ArrayList<AttachFileVO> attachlist(int bno){
     	return bam.attachlist(bno);
     }
+   
+	public void attachremove(AttachFileVO attach) {
+		
+		bam.attachremove(attach);
+	}
+    
+    
 }

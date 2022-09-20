@@ -31,7 +31,8 @@
 	height: 25px;
 	padding: 10px;
 	margin: 5px;
-}
+    box-sizing: unset;
+} 
 
 .signupbutton {
 	color: gray;

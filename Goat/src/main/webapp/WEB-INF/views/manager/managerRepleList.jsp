@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerRepleListCSS.css?version=1.5">
+	href="../../../resources/CSS/managerRepleListCSS.css?version=1.6">
 	<script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript"
