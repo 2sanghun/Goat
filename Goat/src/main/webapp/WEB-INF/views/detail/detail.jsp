@@ -17,6 +17,7 @@
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
 
 <script type="text/javascript" src="../../../resources/JS/writeAttach.js"></script>
+<script type="text/javascript" src="../../../resources/JS/like.js"></script>
 
 <!-- css 파트 나중에 다시 뺄꺼야 -->
 
