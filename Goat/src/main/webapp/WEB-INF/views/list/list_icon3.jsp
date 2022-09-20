@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
-
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,30 +24,31 @@
 				</c:otherwise>
 			</c:choose>
 			<div id="search">
-			<form action="/list/list_icon3" method="get" id="searchform">
-				<div id="searchAll"> 				
-					<select class="search" name="period">
-						<option value="total">전체기간</option>
-						<option value="day">1일</option>
-						<option value="week">1주</option>
-						<option value="month">1개월</option>
-						<option value="sixMonth">6개월</option>
-						<option value="year">1년</option>
-					</select> 
-					<select class="search" name="type">
-						<option value="T">제목</option>
-						<option value="N">글작성자</option>
-						<option value="TC">제목+게시글</option>
-					</select> 
-					<input type="text" class="search" id="query" name="keyword" placeholder="검색어를 입력해주세요">
-					<button type="button" class="search" id="searchbtn">검색</button>
-				</div>
-				<div>	
-					<input type="hidden" name="pageNum" value="${paging.cri.pageNum}">
- 					<input type="hidden" name="amount" value="${paging.cri.amount}">
-					<input type="hidden" name="category" value="${paging.cri.category}">
-				</div>
-			</form>
+				<form action="/list/list_icon3" method="get" id="searchform">
+					<div id="searchAll"> 				
+						<select class="search" name="period">
+							<option value="total">전체기간</option>
+							<option value="day">1일</option>
+							<option value="week">1주</option>
+							<option value="month">1개월</option>
+							<option value="sixMonth">6개월</option>
+							<option value="year">1년</option>
+						</select> 
+						<select class="search" name="type">
+							<option value="T">제목</option>
+							<option value="N">글작성자</option>
+							<option value="TC">제목+게시글</option>
+						</select> 
+						<input type="text" class="search" id="query" name="keyword" placeholder="검색어를 입력해주세요">
+						<button type="button" class="search" id="searchbtn">검색</button>
+					</div>
+					<div>	
+						<input type="hidden" name="pageNum" value="${paging.cri.pageNum}">
+	 					<input type="hidden" name="amount" value="${paging.cri.amount}">
+						<input type="hidden" name="category" value="${paging.cri.category}">
+					</div>
+				</form>
+			</div>
 		</div>
 		<div class="align">
 			<div class="sort">
