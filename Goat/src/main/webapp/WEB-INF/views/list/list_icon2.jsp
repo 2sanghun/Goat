@@ -82,7 +82,7 @@
 						<td><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 					</tr>
 					<tr>
-						<td><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a></td>
+						<td><a href="/detail/detail?bno=${boardlist.bno}">${boardlist.content}</a></td>
 					</tr>
 					<tr class="tr_last">
 						<td class="td_last">
