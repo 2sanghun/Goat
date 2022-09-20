@@ -82,7 +82,6 @@
 					</select>
 					 <select class="search" name="type">
 						<option value="T">제목</option>
-						<option value="W">글작성자</option>
 						<option value="TC">제목 + 게시글</option>
 					</select>
 					<input type = "text" name = "keyword" class="search"  placeholder="검색어를 입력해주세요">

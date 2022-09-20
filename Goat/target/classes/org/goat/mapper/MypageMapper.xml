@@ -45,9 +45,6 @@
 				<when test="type == 'T'.toString()">
 					and title like concat('%',#{keyword},'%')
 				</when>
-				<when test="type == 'W'.toString()">
-					and id like concat('%',#{keyword},'%')
-				</when>
 			</choose>
 		</if>
 		order by bno desc
