@@ -106,14 +106,11 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "/header/signup", method = RequestMethod.POST)
-	public String signuppost(MemberVO member, HttpServletResponse response) throws IOException {
-		response.setContentType("text/html; charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		if(ms.idcheck(member)==1) {
-			out.println("<script>alert('아이디가 중복됩니다.'); </script>");
-			out.flush();
-			return "/header/signup";
-		}
+	public String signuppost(MemberVO member) throws IOException {
+		member.setBirth(member.getBirth().replace("-", ""));
+		member.setEmail(member.getEmail().replace(",", ""));
+		member.setPhone(member.getPhone().replace(",", ""));
+		member.setAddr(member.getAddr().replace(",", " "));
 		ms.signup(member);
 		return "/header/login";
 	}
