@@ -5,7 +5,7 @@
 $(document).ready(function(){
 	var orderBy = $("#orderBy").val();
 	// alert(orderBy);
-
+ 
 	if(orderBy=="최신순"){
 		$("#byReg").text("작성일▼");
 	}else if(orderBy=="추천순"){
