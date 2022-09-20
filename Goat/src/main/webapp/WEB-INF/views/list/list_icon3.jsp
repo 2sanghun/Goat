@@ -49,46 +49,46 @@
 					</div>
 				</form>
 			</div>
-		</div>
-		<div class="align">
-			<div class="sort">
-				<ul>
-					<li><a href="/list/list_icon3?category=${paging.cri.category}&pageNum=1&amount=20&orderby=최신순"><img src="/resources/image/align_icon3.png" class="sortimg_1"></a></li>
-					<li><a href="/list/list_icon2?category=${paging.cri.category}&pageNum=1&amount=10&orderby=최신순"><img src="/resources/image/align_icon2.png" class="sortimg"></a></li>
-					<li><a href="/list/list?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon1.png" class="sortimg"></a></li>
-				</ul>
-			</div>
+			<div class="align">
+				<div class="sort">
+					<ul>
+						<li><a href="/list/list_icon3?category=${paging.cri.category}&pageNum=1&amount=20&orderby=최신순"><img src="/resources/image/align_icon3.png" class="sortimg_1"></a></li>
+						<li><a href="/list/list_icon2?category=${paging.cri.category}&pageNum=1&amount=10&orderby=최신순"><img src="/resources/image/align_icon2.png" class="sortimg"></a></li>
+						<li><a href="/list/list?category=${paging.cri.category}&pageNum=1&amount=10"><img src="/resources/image/align_icon1.png" class="sortimg"></a></li>
+					</ul>
+				</div>
 				<div class="sortby">
-					<a href="/list/list_icon3?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum" class="listcount">${paging.cri.orderby}</a>
+					<a href="/list/list_icon3?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" class="listcount">${paging.cri.orderby}</a>
 					<ul>
 						<li><a href="/list/list_icon3?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=최신순" class="orderBy"  id="byReg">최신순</a></li>
 						<li><a href="/list/list_icon3?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=추천순" class="orderBy" id="byCntHno">추천순</a></li>
 						<li><a href="/list/list_icon3?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=조회순" class="orderBy" id="byCnt">조회순</a></li>
 					</ul>
 				</div>
-		</div>
-		<div>
-			<ul id="imglist">
-				<!-- 이미지 게시글 목록 for문 시작 -->
-				<c:forEach items="${list}" var="boardlist">
-					<li>
-						<a href="../detail/detail?bno=${boardlist.bno}"><img src="/display?fileName=${boardlist.filePath}" class="detail_img"></a>
-						<dl>
-							<dd><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></dd>
-							<dd><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a> /  
-								👍 ${boardlist.cnthno}
-							</dd>
-							<dd>${boardlist.nick}</dd>
-						</dl>
-					</li>
-				</c:forEach>
-				<!-- 이미지 게시글 for문 끝 -->
-			</ul>			
-			<c:if test="${paging.total == 0}">
-				<div id="nodata">
-					<p id="nodatah">등록된 게시글이 없습니다</p>
-				</div>
+			</div>
+			<div>
+				<ul id="imglist">
+					<!-- 이미지 게시글 목록 for문 시작 -->
+					<c:forEach items="${list}" var="boardlist">
+						<li>
+							<a href="../detail/detail?bno=${boardlist.bno}"><img src="/display?fileName=${boardlist.filePath}" class="detail_img"></a>
+							<dl>
+								<dd><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></dd>
+								<dd><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a> /  
+									👍 ${boardlist.cnthno}
+								</dd>
+								<dd>${boardlist.nick}</dd>
+							</dl>
+						</li>
+					</c:forEach>
+					<!-- 이미지 게시글 for문 끝 -->
+				</ul>			
+				<c:if test="${paging.total == 0}">
+					<div id="nodata">
+						<p id="nodatah">등록된 게시글이 없습니다</p>
+					</div>
 			</c:if>						
+			</div>
 		</div>
 		<div id="search">
 			<div id="pagingArea">
@@ -96,12 +96,12 @@
 				<c:if test="${paging.prev}">
 					<a href="/list/list_icon3?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" class="pageBtn">이전</a>
 				</c:if>
-		
+
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
 				<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
 					<a href="/list/list_icon3?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" id="pageNum">${num}</a>
 				</c:forEach>
-				
+
 				<!-- next(다음)이 true이면 다음버튼 활성화 -->
 				<c:if test="${paging.next}">
 					<a href="/list/list_icon3?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" class="pageBtn">다음</a>

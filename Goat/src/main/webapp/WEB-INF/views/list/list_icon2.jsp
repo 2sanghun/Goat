@@ -65,7 +65,7 @@
 					</ul>
 				</div>
 				<div class="sortby">
-					<a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum" class="listcount">${paging.cri.orderby}</a>
+					<a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" class="listcount">${paging.cri.orderby}</a>
 					<ul>
 						<li><a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=최신순" class="orderBy" id="byReg">최신순</a></li>
 						<li><a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=추천순" class="orderBy" id="byCntHno">추천순</a></li>
@@ -74,8 +74,6 @@
 				</div>
 			</div>
 			<table>
-
-
 				<!-- 이미지 게시글 목록 for문 시작 -->
 				<c:forEach items="${list}" var="boardlist">
 					<tr>

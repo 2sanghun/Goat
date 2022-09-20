@@ -25,9 +25,10 @@
 }
 
 .align {
-   height: 58px;
-   margin-bottom: 10px;
-   border-bottom: 3px solid gray;
+	line-height: 40px;
+	height: 58px;
+	margin-bottom: 10px;
+	border-bottom: 3px solid gray;
 }
 
 .sort {
@@ -70,7 +71,9 @@
 }
 
 .sortby {
-	float: right;
+	position: absolute;
+	top: 118px;
+	left: 131px;
 	width: 80px;
 	text-align: center;
 }
@@ -82,7 +85,9 @@
 	padding: 0px 6px;
 	overflow: hidden;
 	font-size: 14px;
+	opacity: 0.5;
 	margin-top: 17px;
+	border-radius: 4px;
 }
 
 .sortby>a:after {
@@ -99,6 +104,7 @@
 .sortby>ul>li {
 	cursor: pointer;
 	list-style: none;
+	opacity: 0.5;
 }
 
 table {
