@@ -11,11 +11,14 @@
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../resources/JS/detail.js"></script>
-<script type="text/javascript" src="../../../resources/JS/reple.js?version=1.1"></script>
+<script type="text/javascript"
+	src="../../../resources/JS/reple.js?version=1.1"></script>
 <script type="text/javascript" src="/resources/JS/attach.js"></script>
 <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script>
-<script type="text/javascript" src="../../../resources/JS/writeAttach.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/detail.css?version=1.5">
+<script type="text/javascript"
+	src="../../../resources/JS/writeAttach.js"></script>
+<link rel="stylesheet"
+	href="../../../resources/CSS/detail.css?version=1.5">
 
 <script type="text/javascript" src="../../../resources/JS/like.js"></script>
 </head>
@@ -33,17 +36,16 @@
 						<td colspan="4"><c:choose>
 
 								<c:when test="${ id==null || id != detail.id}">
-									<input type="text" name="title" id="title"
-										value="${detail.title}" readonly>
+									<span id="title">${detail.title}</span>
+
 								</c:when>
 
 								<c:otherwise>
-									<input type="text" name="title" id="title"
-										value="${detail.title}">
+									<span id="title">${detail.title}</span>
+
 								</c:otherwise>
 
-							</c:choose> <input type="text" name="regdate" id="regdate"
-							value="${detail.regdate}" readonly></td>
+							</c:choose> <span id="regdate"> ${detail.regdate}</span></td>
 
 					</tr>
 				</thead>
@@ -53,15 +55,12 @@
 
 						<td colspan="4">
 							<div class="side">
-								<input type="text" name="nick" id="nick" value="${detail.nick}"
-									readonly>
+								<span class="title_nick">${detail.nick}</span>
 							</div>
 
 							<div class="side_right">
-								<span>조회 수<input type="text" name="cnt" id="cnt"
-									value="${detail.cnt}" readonly></span> <span>추천 수<input
-									type="text" name="cnthno" id="cnthno" value="${detail.cnthno}"
-									readonly></span>
+								조회 수<span class="title_cnt"> ${detail.cnt}</span> 추천 수<span
+									class="title_cnthno"> ${detail.cnthno}</span>
 							</div>
 						</td>
 					</tr>
@@ -131,7 +130,7 @@
 		<div>
 			<c:if test="${ id != null }">
 				<div class="reply_box">
-				<p>댓글 쓰기</p>
+					<p>댓글 쓰기</p>
 					<textarea rows="10" cols="140" id="reply"></textarea>
 
 					<input type="hidden" value="${id}" id="replyid"> <input

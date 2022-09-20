@@ -20,18 +20,19 @@ table {
 
 #title {
 	padding: 10px;
-	width: 800px;
-	height: 40px;
+	width: 700px;
+	line-height: 60px;
 	font-size: 20px;
 	font-weight: bold;
 	background-color: #0000;
 }
 
 #regdate {
+	font-size: 14px;
 	padding: 10px;
 	float: right;
 	line-height: 40px;
-	width: 130px;
+	width: 140px;
 	background-color: #0000;
 }
 
@@ -60,11 +61,22 @@ table {
 .side {
 	width: 200px;
 	float: left;
+	padding: 10px;
 }
 
 .side_right {
-	width: 290px;
+	width: 200px;
 	float: right;
+	padding: 10px;
+}
+
+.title_cnt {
+	font-weight: bold;
+	margin-right: 20px;
+}
+
+.title_cnthno {
+	font-weight: bold;
 }
 
 #uploadResult {
@@ -232,10 +244,6 @@ label {
 	border: none;
 }
 
-table {
-	border: 1px solid black;
-}
-
 .replynick {
 	font-weight: bold;
 	padding: 20px 0px 10px 20px;
@@ -293,8 +301,10 @@ ul li {
 	width: 50px;
 	border-radius: 55%;
 	color: white;
-	background-color: red;
+	border: 3px solid white;
+	background-color: #0000;
 	position: absolute;
 	top: 50px;
-	transform: translate(140%, -100%);
+	transform: translate(130%, -100%);
+	cursor: pointer;
 }
