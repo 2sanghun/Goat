@@ -11,9 +11,9 @@
 
 .nav {
 	margin: auto;
-	width: 1000px;
+	width: 1001px;
 	border-bottom: 5px solid gray;
-	height: 60px;
+	height: 59.5px;
 }
 
 #searchAll {
@@ -160,6 +160,8 @@ td:nth-child(6) {
 }
 
 #pagingArea>a:hover {
-	color: #2BC0E4;
+	color: white;
+	background: #2BC0E4;
 	cursor: pointer;
+	border-radius: 4px;
 }

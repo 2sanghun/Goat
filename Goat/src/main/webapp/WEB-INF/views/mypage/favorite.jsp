@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>회원탈퇴</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/mypagefavorite.css?version=1.7"
+	href="../../../resources/CSS/mypagefavorite.css?version=1.8"
 	type="text/css">
 </head>
 <body>
