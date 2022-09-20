@@ -138,7 +138,7 @@ function list(reple){ // list 함수 선언 시작
        
           for(var i=0; i<data.list.length; i++){
              str+="<tr>" 
-             str+="<td>"+data.list[i].nick+"</td>"
+             str+="<td><div class='replynick'>"+data.list[i].nick+"</div></td>"
              str+="</tr>"
                 
                 if($("#id").val()==data.list[i].id){

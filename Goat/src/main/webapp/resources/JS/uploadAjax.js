@@ -104,7 +104,7 @@ $(document).ready(function(){
 	
 	// 글 상세 화면에서 파일업로드하기 버튼을 클릭하면
 	$("#addfile").on("click",function(){
-		alert("으아아");
+		alert("업로드 완료");
 	
 		
 		// 파일 업로드 관련 로직 처리

@@ -37,6 +37,7 @@
 	widht: 50px;
 	position: relative;
 	top: 100px;
+	min-height: 800px;
 }
 
 .pw_table {
@@ -82,12 +83,12 @@ table {
 
 .backbtn, .removebtn {
 	color: gray;
-	padding: 15px 25px;
+	padding: 10px 15px;
 	margin: 5px;
 	border: 1px solid gray;
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: bold;
-	background-color: white;;
+	background-color: white;
 	border-radius: 4px;
 }
 
