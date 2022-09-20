@@ -37,7 +37,7 @@
 						<td class="regdate">작성일</td>
 						<td class="cnt">조회</td>
 						<td class="good">좋아요</td>
-					</tr>
+					</tr >
 					<!--  for문 시작 -->
 					<c:forEach items="${myboard}" var="myboard">
 						<tr>
