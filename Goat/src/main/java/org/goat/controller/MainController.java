@@ -133,7 +133,7 @@ public class MainController {
 			}else {
 				serid = id.substring(0,a) + b + "*";
 			}
-			out.println("<script>alert('"+serid+"'); </script>");
+			out.println("<script>alert('아이디:"+serid+"'); </script>");
 			out.flush();
 			return "header/login";
 		}else {
@@ -158,7 +158,7 @@ public class MainController {
 			}else {
 				serpw = pw.substring(0,a) + b + "*";
 			}
-			out.println("<script>alert('"+serpw+"'); </script>");
+			out.println("<script>alert('비밀번호:"+serpw+"'); </script>");
 			out.flush();
 			return "header/login";
 		}else {

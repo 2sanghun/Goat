@@ -43,5 +43,9 @@ $(document).ready(function(){
 		}
 	})
 	
+	$("div.sortby > a").click(function() {
+		$(this).next("ul").toggle();
+		return false;
+	});	
 	
 })
