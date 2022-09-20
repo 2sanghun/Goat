@@ -22,7 +22,7 @@
 <!-- css 파트 나중에 다시 뺄꺼야 -->
 
 <style>
-#content {
+#content { 
    width: 1000px;
    margin: 0 auto;
    position: relative;
