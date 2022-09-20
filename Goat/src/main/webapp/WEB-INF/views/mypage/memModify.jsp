@@ -18,7 +18,7 @@
 	<div id="container">
 		<%@ include file="../header/header.jsp"%>
 
-		<h1 class="title">내 글 페이지</h1>
+		<h1 class="title">내글 페이지</h1>
 		<div class="nav">
 			<ul id="mypagenav">
 				<li><a href="/mypage/mypage">내정보</a></li>
