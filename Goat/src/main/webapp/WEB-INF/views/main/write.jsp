@@ -48,7 +48,7 @@
 					</tr>
 					<tr>
 						<td colspan="2"><textarea name="content" id="uploadResult"
-								placeholder="내용을 입력하세요"></textarea></td>
+								placeholder="내용을 입력하세요" maxlength="5000"></textarea></td>
 					</tr>
 					<tr>
 						<td><label> 파일첨부 <input type="file" name="uploadFile"
