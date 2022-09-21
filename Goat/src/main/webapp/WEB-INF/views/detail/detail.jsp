@@ -18,7 +18,7 @@
 <script type="text/javascript"
 	src="../../../resources/JS/writeAttach.js"></script>
 <link rel="stylesheet"
-	href="../../../resources/CSS/detail.css?version=1.6">
+	href="../../../resources/CSS/detail.css?version=1.7">
 
 <script type="text/javascript" src="../../../resources/JS/like.js?version=1.0"></script>
 </head>
@@ -58,8 +58,8 @@
 							</div>
 
 							<div class="side_right">
-								<span class="title_cnt">조회 수 ${detail.cnt}</span>
-								<span class="title_cnthno">추천 수 ${detail.cnthno}</span>
+								조회 수 <span class="title_cnt">${detail.cnt}</span>
+								<span class="title_cnthno">추천 수 <span id="title_cnthno">${detail.cnthno}</span></span>
 							</div>
 						</td>
 					</tr>
