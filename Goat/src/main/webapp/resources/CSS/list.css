@@ -254,6 +254,9 @@ td {
 	font-weight: bold;
 }
 
+#cntrno{
+	color: red;
+}
 #pagingArea {
 	margin-top: 30px;
 	position: relative;

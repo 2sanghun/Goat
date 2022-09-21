@@ -11,7 +11,7 @@
   		from(
 	  		select @rownum:=@rownum+1 rownum, boardlist.*
 			from(
-				 select b.*, (select count(*) from b_like where bno=b.bno) as cnthno
+				 select b.*, (select count(*) from b_like where bno=b.bno) as cnthno, (select count(*) from reple where bno=b.bno) as cntrno
 				 from board b, (select @rownum:=0) as tmp
 				 <choose>
 		  			<when test="category != null and !category.equals('')" >
