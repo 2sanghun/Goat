@@ -134,6 +134,12 @@ label {
 	margin-right: 10px;
 }
 
+label:hover {
+	cursor: pointer;
+	color: white;
+	background-color: #2BC0E4;
+}
+
 #uploadlist {
 	list-style-type: none;
 	float: left;
@@ -154,47 +160,70 @@ label {
 	background-color: white;
 	border: 1px solid #2BC0E4;
 	padding: 10px;
+	transition: 0.3s;
 }
 
-.modifybtn {
-	background: green;
+#addfile:hover {
+	cursor: pointer;
+	font-weight: bold;
+	background: #2BC0E4;
+	color: white;
 }
 
 #modify {
 	color: #2BC0E4;
-	padding: 10px 15px;
+	padding: 15px 25px;
 	background-color: white;
 	border: 1px solid #2BC0E4;
 	border-radius: 4px;
 	margin: 20px 0px 20px 0px;
 }
 
+#modify:hover {
+	cursor: pointer;
+	font-weight: bold;
+	border: 2px solid #2BC0E4;
+}
+
 .remove {
 	color: #2BC0E4;
-	padding: 10px 15px;
+	padding: 15px 25px;
 	background-color: white;
 	border: 1px solid #2BC0E4;
 	border-radius: 4px;
 }
 
+.remove:hover {
+	cursor: pointer;
+	font-weight: bold;
+	border: 2px solid #2BC0E4;
+}
+
+.like_text {
+	font-weight: bold;
+}
+
 #like {
+	height: 100px;
 	text-align: center;
 }
 
 #likeBtn {
-	width: 80px;
-	height: 40px;
+	height: 43px;
 	background: white;
-	border: 1px solid black;
+	border: none;
 	border-radius: 4px;
 	font-size: 16px;
 	font-family: 'Kakaofont';
 }
 
-#likeBtn:hover {
-	border: 2px solid blue;
-	color: blue;
-	font-weight: bold;
+#likeImg {
+	width: 40px;
+	height: 40px;
+}
+
+#likeImg:hover {
+	cursor: pointer;
 }
 
 .reply_box {
@@ -307,4 +336,22 @@ ul li {
 	top: 50px;
 	transform: translate(130%, -100%);
 	cursor: pointer;
+}
+
+.cntul {
+	text-align: center;
+	height: 100px;
+	line-height: 100px;
+}
+
+.cntul>li>a {
+	color: #8C8C8C;
+	padding: 10px;
+}
+
+.cntul>li>a:hover {
+	color: white;
+	background: #2BC0E4;
+	padding: 10px;
+	border-radius: 4px;
 }

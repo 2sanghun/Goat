@@ -18,9 +18,9 @@
 <script type="text/javascript"
 	src="../../../resources/JS/writeAttach.js"></script>
 <link rel="stylesheet"
-	href="../../../resources/CSS/detail.css?version=1.5">
+	href="../../../resources/CSS/detail.css?version=1.6">
 
-<script type="text/javascript" src="../../../resources/JS/like.js"></script>
+<script type="text/javascript" src="../../../resources/JS/like.js?version=1.0"></script>
 </head>
 
 <body>
@@ -123,7 +123,8 @@
 
 		<div id="like">
 			<button type="button" id="likeBtn">
-				<span id="likeImg">추천 👍</span>
+			<p class="like_text">이 게시물을 추천합니다!</p><br>
+				<img src="../../../resources/image/star.png" id="likeImg"><br>
 			</button>
 		</div>
 		<br>

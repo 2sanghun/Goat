@@ -25,9 +25,9 @@ $(document).ready(function(){
 			// alert("checkLike 함수 실행 "+likeValue)
 			// alert("좋아요 체크(1이면 좋아요상태, 0이면 좋아요가 아닌 상태)"+likeValue);
 			if(likeValue>0){
-				$("#likeImg").attr("src","/resources/image/love.png");
+				$("#likeImg").attr("src","/resources/image/star.png");
 			} else{
-				$("#likeImg").attr("src","/resources/image/nlove.png");
+				$("#likeImg").attr("src","/resources/image/nstar.png");
 			}
 		})
 	}
