@@ -88,7 +88,7 @@
 						<td class="td_last">
 							${boardlist.regdate} / 
 							<a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10">${boardlist.nick} / </a> 
-							👍 ${boardlist.cnthno}
+							👍 ${boardlist.cnthno} / 💬 ${boardlist.cntrno}
 						</td>
 					</tr>
 				</c:forEach>
