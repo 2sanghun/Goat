@@ -36,12 +36,12 @@
 						<td colspan="4"><c:choose>
 
 								<c:when test="${ id==null || id != detail.id}">
-									<span id="title">${detail.title}</span>
+									<textarea name="title" id="title" readonly>${detail.title}</textarea>
 
 								</c:when>
 
 								<c:otherwise>
-									<span id="title">${detail.title}</span>
+									<textarea name="title" id="title" readonly>${detail.title}</textarea>
 
 								</c:otherwise>
 
