@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>관리자 페이지</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerCSS.css?version=3.1">
+	href="../../../resources/CSS/managerCSS.css?version=3.2">
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../resources/JS/managerjs.js?version=1.2"></script>

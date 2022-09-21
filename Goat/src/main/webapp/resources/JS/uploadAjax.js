@@ -31,9 +31,8 @@ $(document).ready(function(){
 		return true;
 	}
 		
-	// 파일 전송번튼(id="uploadBtn")을 클릭하면
+	// 파일 전송버튼(id="uploadBtn")을 클릭하면
 	$("#uploadBtn").on("click",function(){
-		alert("aaaa");
 		var title = document.querySelector("#uploadtitle").value;
 		var content = document.querySelector("#uploadResult").value;
 		if(title==""){
