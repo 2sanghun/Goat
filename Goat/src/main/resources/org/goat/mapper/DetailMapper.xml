@@ -6,7 +6,7 @@
   
 <mapper namespace="org.goat.mapper.DetailMapper">
 
-<select resultType="org.goat.model.BoardVO" id="detail"> select * from board where bno=#{bno} </select>
+<select resultType="org.goat.model.BoardVO" id="detail"> select *, (select count(*) from b_like where bno=board.bno) as cnthno from board where bno=#{bno} </select>
 
 <update id="cntup"> update board set cnt = cnt + 1 where bno = #{bno} </update>
 

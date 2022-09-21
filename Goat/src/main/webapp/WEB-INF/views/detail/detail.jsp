@@ -59,8 +59,8 @@
 							</div>
 
 							<div class="side_right">
-								조회 수<span class="title_cnt"> ${detail.cnt}</span> 추천 수<span
-									class="title_cnthno"> ${detail.cnthno}</span>
+								조회 수<span class="title_cnt"> ${detail.cnt}</span>
+								 추천 수<span class="title_cnthno"> ${detail.cnthno}</span>
 							</div>
 						</td>
 					</tr>
