@@ -130,7 +130,7 @@ function list(reple){ // list 함수 선언 시작
    var amount=reple.amount;
    
    $.getJSON("/replies/list/"+bno+'/'+pageNum+".json",function(data){
-   
+    
       console.log(data.replecnt)
       console.log(data.list)
       

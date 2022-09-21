@@ -1,5 +1,5 @@
 package org.goat.model;
-
+ 
 public class RepleVO {
 	private String id;
 	
