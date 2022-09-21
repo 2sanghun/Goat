@@ -33,15 +33,14 @@
 			<table border="1">
 				<thead>
 					<tr class="tr1">
-						<td colspan="4"><c:choose>
-
+						<td colspan="4">
+						<c:choose>
 								<c:when test="${ id==null || id != detail.id}">
 									<textarea name="title" id="title" readonly>${detail.title}</textarea>
-
 								</c:when>
 
 								<c:otherwise>
-									<textarea name="title" id="title" readonly>${detail.title}</textarea>
+									<textarea name="title" id="title">${detail.title}</textarea>
 
 								</c:otherwise>
 
@@ -59,8 +58,8 @@
 							</div>
 
 							<div class="side_right">
-								조회 수<span class="title_cnt"> ${detail.cnt}</span>
-								 추천 수<span class="title_cnthno"> ${detail.cnthno}</span>
+								<span class="title_cnt">조회 수 ${detail.cnt}</span>
+								<span class="title_cnthno">추천 수 ${detail.cnthno}</span>
 							</div>
 						</td>
 					</tr>

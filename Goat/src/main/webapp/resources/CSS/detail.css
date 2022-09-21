@@ -72,22 +72,22 @@ td {
 .side {
 	width: 200px;
 	float: left;
-	padding: 10px;
+	padding: 10px 10px 10px 20px;
 }
 
 .side_right {
-	width: 200px;
+	width: 180px;
 	float: right;
 	padding: 10px;
 }
 
 .title_cnt {
 	font-weight: bold;
-	margin-right: 20px;
 }
 
 .title_cnthno {
 	font-weight: bold;
+	float: right;
 }
 
 #uploadResult {
