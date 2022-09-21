@@ -209,7 +209,7 @@ label:hover {
 }
 
 #likeBtn {
-	height: 43px;
+	height: 20px;
 	background: white;
 	border: none;
 	border-radius: 4px;
@@ -217,13 +217,14 @@ label:hover {
 	font-family: 'Kakaofont';
 }
 
+#likeBtn:hover {
+	color: blue;
+	cursor: pointer;
+}
+
 #likeImg {
 	width: 40px;
 	height: 40px;
-}
-
-#likeImg:hover {
-	cursor: pointer;
 }
 
 .reply_box {
