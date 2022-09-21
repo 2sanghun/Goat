@@ -25,7 +25,7 @@ public interface ManagerMapper {
 
 	// 작성 글 리스트
 	public ArrayList<BoardVO> WriteList(CriteriaVO cri);
-	
+		
 	// 작성 글 리스트에서 전체 게시물수 조회
 	public int boardtotal(CriteriaVO cri);
 
@@ -40,6 +40,7 @@ public interface ManagerMapper {
 
 	// 댓글 삭제
 	public void repleremove(RepleVO remove);
+
 
 	/*
 	 * 글 수정 public void modify(BoardVO board) { mm.modify(board); }

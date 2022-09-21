@@ -61,6 +61,11 @@
 	font-size: 14px;
 }
 
+.cntrno {
+	font-weight: bold;
+	color: blue;
+}
+
 td {
 	margin-top: 5px;
 	border-bottom: 1px solid gray;
