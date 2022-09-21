@@ -105,6 +105,10 @@ table {
 	table-layout: fixed;
 }
 
+.orderBy{
+	cursor: pointer;
+}
+
 #notice td {
 	background: #f2f2f2;
 }
@@ -158,6 +162,10 @@ td {
 .nick {
 	width: 8%;
 	text-align: center;
+}
+
+.nick>a {
+	cursor: pointer;
 }
 
 .regdate {

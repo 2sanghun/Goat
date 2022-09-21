@@ -98,7 +98,7 @@
 					<tr>
 						<td class="bno"><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a></td>
 						<td class="title"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
-						<td class="nick"><a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10" id="pageNum">${boardlist.nick}</a></td>
+						<td class="nick"><a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10">${boardlist.nick}</a></td>
 						<td class="regdate">${boardlist.regdate}</td>
 						<td class="cnt">${boardlist.cnthno}</td>
 						<td class="good">${boardlist.cnt}</td>

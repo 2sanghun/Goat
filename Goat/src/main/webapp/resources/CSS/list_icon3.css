@@ -133,26 +133,30 @@ dl>dd:nth-child(1) {
 }
 
 dd:nth-child(1)>a {
-   cursor: pointer;
    font-size: 19px;
    font-weight: bold;
    color: #3262c5;
 }
 
 dd:nth-child(2), dd:nth-child(2)>a {
+	color: gray;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+dd:nth-child(2)>a{
+	color: #3262c5;
+}
+
+dd:nth-child(3), dd:nth-child(3)>a {
    color: #3262c5;
    font-weight: bold;
    font-size: 14px;
-}
-
-dd:nth-child(2)>a {
-   cursor: pointer;
-}
-
-dd:nth-child(3) {
-   color: gray;
-   font-size: 14px;
    margin-bottom: 20px;
+}
+
+dd > a {
+	cursor: pointer;
 }
 
 table {
