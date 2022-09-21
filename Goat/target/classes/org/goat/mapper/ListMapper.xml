@@ -186,10 +186,10 @@
 select *
 from(	
 	select @rownum:=@rownum+1 rownum, bno, title, content, nick, regdate, cnt, id, good, category,
-	       concat(replace(uploadpath, '\\','/'),'/s_' ,uuid,'_' ,filename) filePath, cnthno
+	       concat(replace(uploadpath, '\\','/'),'/s_' ,uuid,'_' ,filename) filePath, cnthno, cntrno
 	       
 	from(
-		 select t.*, (select count(*) from b_like where bno=t.bno) as cnthno
+		 select t.*, (select count(*) from b_like where bno=t.bno) as cnthno, (select count(*) from reple where bno=t.bno) as cntrno
 		 from(
 			  select *
 			  from(

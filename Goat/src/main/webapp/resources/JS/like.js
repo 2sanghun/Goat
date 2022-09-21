@@ -6,6 +6,7 @@ $(document).ready(function(){
 	
 	var bnoValue = $("input[name='bno']").val();
 	var idValue = $("#id").val();
+	var cnthno = parseInt($(".title_cnthno").text());
 	var likeValue;
 	$.ajaxSetup({async : false});
 	
@@ -14,6 +15,7 @@ $(document).ready(function(){
 	$("#likeBtn").on("click", function(){
 		like({bno:bnoValue, id:idValue});
 		checkLike(bnoValue, idValue);
+		$(".title_cnthno").text(cnthno);
 	})
 	
 	// checkLike 함수 선언
@@ -46,6 +48,7 @@ $(document).ready(function(){
 					success : function(result){
 						if(result == "success"){
 							alert("좋아요");
+							cnthno+=1;
 						}
 					}
 				})
@@ -58,6 +61,7 @@ $(document).ready(function(){
 					success : function(result){
 						if(result == "success"){
 							alert("좋아요 취소");
+							cnthno-=1;
 						}
 					}
 				})

@@ -1,5 +1,5 @@
 package org.goat.mapper;
-
+ 
 import org.goat.model.BoardVO;
 
 public interface DetailMapper {

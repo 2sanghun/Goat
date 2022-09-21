@@ -74,7 +74,7 @@
 							<a href="../detail/detail?bno=${boardlist.bno}"><img src="/display?fileName=${boardlist.filePath}" class="detail_img"></a>
 							<dl>
 								<dd><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></dd>
-								<dd><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a> / 👍 ${boardlist.cnthno}</dd>
+								<dd><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a> / 👍 ${boardlist.cnthno} / 💬 ${boardlist.cntrno}</dd>
 								<dd><a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10">${boardlist.nick}</a></dd>
 							</dl>
 						</li>
