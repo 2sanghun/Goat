@@ -59,7 +59,7 @@
 
 							<div class="side_right">
 								조회 수 <span class="title_cnt">${detail.cnt}</span>
-								<span class="title_cnthno">추천 수 <span id="title_cnthno">${detail.cnthno}</span></span>
+								<span class="title_cnthno">추천 수 <span class="cnthno">${detail.cnthno}</span></span>
 							</div>
 						</td>
 					</tr>
@@ -123,7 +123,7 @@
 		<div id="like">
 			<button type="button" id="likeBtn">
 			<p class="like_text">이 게시물을 추천합니다!</p><br>
-				<img src="../../../resources/image/star.png" id="likeImg"><br>
+				<img src="../../../resources/image/star.png" id="likeImg"><span class="cnthno"> ${detail.cnthno}</span><br>
 			</button>
 		</div>
 		<br>
