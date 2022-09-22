@@ -143,29 +143,43 @@ public class MainController {
 		}
 	}
 	
+	// 현재 다음에만 메일이 전송됨
 	@RequestMapping(value = "/header/pwsearch", method = RequestMethod.POST)
-	public String pwsearch(MemberVO member,HttpServletResponse response) throws IOException {
-		String pw = ms.pwsearch(member);
+	public String pwsearch(MemberVO member,HttpServletResponse response) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		if(pw!=null) {
-			int a = pw.length()/2;
-			String b = "";
-			String serpw;
-			for(int i=0;i<a;i++) {b+="*";}
-			if(pw.length()%2==0) {
-				serpw = pw.substring(0,a) + b;
-			}else {
-				serpw = pw.substring(0,a) + b + "*";
-			}
-			out.println("<script>alert('비밀번호:"+serpw+"'); </script>");
-			out.flush();
-			return "header/login";
-		}else {
-			out.println("<script>alert('비밀번호를 찾을 수 없습니다.'); </script>");
+		
+		if(ms.findPwCheck(member)==0) {
+			out.println("<script>alert('아이디와 이메일을 확인해 주세요'); </script>");
 			out.flush();
 			return "header/idsearch";
+		}else {
+			ms.findPw(member);
+			return "header/login";
 		}
+		
+//		JavaScript로 비밀번호 확인 - 비밀번호는 그대로 앞부분만 표시
+//		String pw = ms.pwsearch(member);
+//		response.setContentType("text/html; charset=UTF-8");
+//		PrintWriter out = response.getWriter();
+//		if(pw!=null) {
+//			int a = pw.length()/2;
+//			String b = "";
+//			String serpw;
+//			for(int i=0;i<a;i++) {b+="*";}
+//			if(pw.length()%2==0) {
+//				serpw = pw.substring(0,a) + b;
+//			}else {
+//				serpw = pw.substring(0,a) + b + "*";
+//			}
+//			out.println("<script>alert('비밀번호:"+serpw+"'); </script>");
+//			out.flush();
+//			return "header/login";
+//		}else {
+//			out.println("<script>alert('비밀번호를 찾을 수 없습니다.'); </script>");
+//			out.flush();
+//			return "header/idsearch";
+//		}
 		
 	}
 }
