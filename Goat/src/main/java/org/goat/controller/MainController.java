@@ -143,7 +143,7 @@ public class MainController {
 		}
 	}
 	
-	// 현재 다음에만 메일이 전송됨
+	// 현재 다음에만 메일이 전송됨 
 	@RequestMapping(value = "/header/pwsearch", method = RequestMethod.POST)
 	public String pwsearch(MemberVO member,HttpServletResponse response) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
