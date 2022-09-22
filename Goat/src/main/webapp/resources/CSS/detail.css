@@ -72,21 +72,24 @@ td {
 .side {
 	width: 200px;
 	float: left;
-	padding: 10px;
+	padding: 10px 10px 10px 20px;
 }
 
 .side_right {
-	width: 200px;
+	width: 180px;
 	float: right;
 	padding: 10px;
 }
 
 .title_cnt {
 	font-weight: bold;
-	margin-right: 20px;
 }
 
 .title_cnthno {
+	float: right;
+}
+
+#title_cnthno {
 	font-weight: bold;
 }
 
@@ -94,6 +97,11 @@ td {
 	padding: 20px;
 	text-align: center;
 	margin: auto;
+}
+
+#uploadResult>ul>li {
+	display: block;
+	margin-bottom: 10px;
 }
 
 #contenttext1 {

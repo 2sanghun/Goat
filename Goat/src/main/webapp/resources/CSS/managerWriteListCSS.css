@@ -58,7 +58,12 @@
 
 .writelist {
 	text-align: center;
-	font-size: 14px;
+	font-size: 16px;
+}
+
+.cntrno {
+	font-size: 16px;
+	color: #FF0000;
 }
 
 td {
@@ -67,13 +72,16 @@ td {
 	padding: 30px 0px 30px 0px;
 }
 
-td:nth-child(2) a:hover {
-	color: #2BC0E4;
-	font-weight: bold;
-}
-
 td:nth-child(4) {
 	padding: 13px;
+}
+
+td>a {
+	cursor: pointer;
+}
+
+td>a:hover {
+	font-weight: bold;
 }
 
 .footer {

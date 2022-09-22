@@ -66,7 +66,6 @@ public class ManagerController {
 	public String managerWriteList(Model model,CriteriaVO cri) {
 		model.addAttribute("WList", ms.WriteList(cri));
 		int total = ms.boardtotal(cri);
-		System.out.println(total);
 		model.addAttribute("paging", new pageVO(cri, total));
 		return "manager/managerWriteList";
 	}

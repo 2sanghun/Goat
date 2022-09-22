@@ -10,8 +10,8 @@
 	</select>
 	
 	<insert id="likeUp">
-		insert into b_like(hno, bno, id)
-		values((select * from (select max(hno)+1 from b_like) next), #{bno}, #{id})
+		insert into b_like(bno, id)
+		values(#{bno}, #{id})
 	</insert>
 	
 	<delete id="likeDown">

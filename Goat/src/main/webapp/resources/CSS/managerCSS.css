@@ -61,6 +61,7 @@ body {
 .totalmem {
 	color: blue;
 	font-size: 24px;
+	cursor: pointer;
 }
 
 .selectbox {

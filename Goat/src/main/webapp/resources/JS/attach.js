@@ -40,6 +40,7 @@ $(document).ready(function() {
  
 
 	$("#uploadlist ul").on("click","button",function(e){
+
 		console.log("delete file");
 		if(confirm("이 파일을 삭제하겠습니까?")){
 			var target = $(this).closest("li");
@@ -52,14 +53,14 @@ $(document).ready(function() {
 			
 			console.log("전에 첨부한 파일의 uuid는"+uuidValue);
 			
-			remove({uuid:uuidValue});
+			attachremove({uuid:uuidValue});
 		}
 });
 	
 })	
 
 
-function remove(attachlist){ 
+function attachremove(attachlist){ 
 	
 	console.log(attachlist)
 	
@@ -74,7 +75,7 @@ function remove(attachlist){
 			
 			if(result=="success"){
 				alert("삭제되었습니다"); 
-				// list(reple.bno)
+			
 				}
 	    }	
 	})	

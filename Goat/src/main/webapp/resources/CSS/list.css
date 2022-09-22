@@ -109,8 +109,16 @@ table {
 	cursor: pointer;
 }
 
-#notice td {
+#notice > td {
 	background: #f2f2f2;
+	color: red;
+	font-weight: bold;
+}
+
+#notice > td > a{
+	background: #f2f2f2;
+	color: red;
+	font-weight: bold;
 }
 
 #nodata {
@@ -254,6 +262,9 @@ td {
 	font-weight: bold;
 }
 
+#cntrno{
+	color: red;
+}
 #pagingArea {
 	margin-top: 30px;
 	position: relative;

@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+ 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${detail.title}</title>
+<title>${detail.title} - ${detail.category}</title>
 
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -18,7 +18,7 @@
 <script type="text/javascript"
 	src="../../../resources/JS/writeAttach.js"></script>
 <link rel="stylesheet"
-	href="../../../resources/CSS/detail.css?version=1.6">
+	href="../../../resources/CSS/detail.css?version=1.7">
 
 <script type="text/javascript" src="../../../resources/JS/like.js?version=1.0"></script>
 </head>
@@ -33,15 +33,14 @@
 			<table border="1">
 				<thead>
 					<tr class="tr1">
-						<td colspan="4"><c:choose>
-
+						<td colspan="4">
+						<c:choose>
 								<c:when test="${ id==null || id != detail.id}">
 									<textarea name="title" id="title" readonly>${detail.title}</textarea>
-
 								</c:when>
 
 								<c:otherwise>
-									<textarea name="title" id="title" readonly>${detail.title}</textarea>
+									<textarea name="title" id="title">${detail.title}</textarea>
 
 								</c:otherwise>
 
@@ -59,8 +58,8 @@
 							</div>
 
 							<div class="side_right">
-								조회 수<span class="title_cnt"> ${detail.cnt}</span>
-								 추천 수<span class="title_cnthno"> ${detail.cnthno}</span>
+								조회 수 <span class="title_cnt">${detail.cnt}</span>
+								<span class="title_cnthno">추천 수 <span class="cnthno">${detail.cnthno}</span></span>
 							</div>
 						</td>
 					</tr>
@@ -124,7 +123,7 @@
 		<div id="like">
 			<button type="button" id="likeBtn">
 			<p class="like_text">이 게시물을 추천합니다!</p><br>
-				<img src="../../../resources/image/star.png" id="likeImg"><br>
+				<img src="../../../resources/image/star.png" id="likeImg"><span class="cnthno"> ${detail.cnthno}</span><br>
 			</button>
 		</div>
 		<br>

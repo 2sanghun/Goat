@@ -6,7 +6,7 @@ $(document).ready(function(){
 	
 	var bnoValue = $("input[name='bno']").val();
 	var idValue = $("#id").val();
-	var cnthno = parseInt($(".title_cnthno").text());
+	var cnthno = parseInt($(".cnthno").text());
 	var likeValue;
 	$.ajaxSetup({async : false});
 	
@@ -15,7 +15,7 @@ $(document).ready(function(){
 	$("#likeBtn").on("click", function(){
 		like({bno:bnoValue, id:idValue});
 		checkLike(bnoValue, idValue);
-		$(".title_cnthno").text(cnthno);
+		$(".cnthno").text(cnthno);
 	})
 	
 	// checkLike 함수 선언

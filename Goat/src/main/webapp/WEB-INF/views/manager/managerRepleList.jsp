@@ -42,7 +42,8 @@
 				<c:forEach items="${RList}" var="RepleList">
 					<tr class="writelist">
 						<td>${RepleList.bno}</td>
-						<td><a href="/detail/detail?bno=${RepleList.bno}">${RepleList.content}</a></td>
+						<td><a href="/detail/detail?bno=${RepleList.bno}">${RepleList.content}</a>
+						</td>
 						<td>${RepleList.repledate}</td>
 						<td><a href="/manager/repleremove?rno=${RepleList.rno}"><input
 								onclick="return delchk();" type="button" value="삭제"
