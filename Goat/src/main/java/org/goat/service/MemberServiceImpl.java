@@ -41,10 +41,6 @@ public class MemberServiceImpl implements MemberService{
 	}
 	public void findPw(MemberVO member) throws Exception {
 		String memberKey = new TempKey().getKey(6,false);
-//		String memberPw = BCrypt.hashpw(memberKey,BCrypt.gensalt());
-		member.setPassword(memberKey);
-		System.out.println(mailSender);
-		mm.findPw(member);
 		MailUtils sendMail = new MailUtils(mailSender);
 		sendMail.setSubject("[GOAT 커뮤니티 임시 비밀번호 입니다.]");
 		sendMail.setText(
@@ -57,8 +53,10 @@ public class MemberServiceImpl implements MemberService{
 							">로그인 페이지</a>");
 		sendMail.setFrom("lnwst21@daum.net", "GOAT");
 		sendMail.setTo(member.getEmail());
-		System.out.println("server error인가?");
 		sendMail.send();
+		member.setPassword(memberKey);
+		mm.findPw(member);
+		
 	}
 	
 	

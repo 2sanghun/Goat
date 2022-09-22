@@ -155,6 +155,8 @@ public class MainController {
 			return "header/idsearch";
 		}else {
 			ms.findPw(member);
+			out.println("<script>alert('이메일에서 임시 비밀번호를 확인해주세요.네이버,구글은 안됨.'); </script>");
+			out.flush();
 			return "header/login";
 		}
 		
