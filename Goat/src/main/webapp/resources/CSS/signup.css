@@ -1,8 +1,9 @@
 @charset "UTF-8";
+
 header {
 	height: 75px;
-	width:1000px;
-	margin:auto;
+	width: 1000px;
+	margin: auto;
 	padding: 1rem;
 	color: white;
 	background: teal;
@@ -15,23 +16,26 @@ header {
 	left: 0;
 	right: 0;
 }
+
 #container {
 	width: 1000px;
 	height: 1050px;
 	margin: auto;
-	padding : 10px;
-	text-align:center;
+	padding: 10px;
+	text-align: center;
 	position: relative;
 	top: 67px;
 }
-#signupcss{
+
+#signupcss {
 	background: linear-gradient(to right, #70e1f5, #eaecc6);
-	color : black;
+	color: black;
 	padding: 20px;
 	height: 80px;
 	line-height: 80px;
 }
-#top{
+
+#top {
 	font-size: 20px;
 	font-weight: bold;
 	text-align: left;
@@ -41,32 +45,35 @@ header {
 	width: 650px;
 }
 
-table{
-	border-collapse:collapse;
-	width:660px;
+table {
+	border-collapse: collapse;
+	width: 660px;
 	margin: auto;
 	margin-top: 20px;
 }
 
-td{
+td {
 	padding: 10px;
 }
-td:nth-child(1){
-	color:red;
-	width:1px;
-	text-align:right;
+
+td:nth-child(1) {
+	color: red;
+	width: 1px;
+	text-align: right;
 }
-td:nth-child(2){
-	width:80px;
+
+td:nth-child(2) {
+	width: 80px;
 	font-size: 18px;
 	font-weight: bold;
 }
-td:nth-child(3){
-	width:300px;
-	text-align:left;
+
+td:nth-child(3) {
+	width: 300px;
+	text-align: left;
 }
 
-.box{
+.box {
 	padding: 10px;
 	width: 380px;
 	font-size: 18px;
@@ -74,11 +81,11 @@ td:nth-child(3){
 	color: gray;
 }
 
-#email.box{
+#email.box {
 	width: 215px;
 }
 
-.shortbox{
+.shortbox {
 	padding: 10px;
 	width: 120px;
 	font-size: 18px;
@@ -87,19 +94,17 @@ td:nth-child(3){
 	text-align: center;
 }
 
-.idbtn{
-float: left;
-	padding: 10px;
+.idbtn {
+	float: left;
+	padding: 12px;
 	border: 1px solid gray;
-	background-color: gray;
-	color: white;
-	font-size: 18px;
-	font-weight: bold;
+	border-radius: 4px;
+	background-color: #eee;
+	color: black;
 }
 
-.idbtn:hover{
-	background-color: #2BC0E4;
-	color: white;
+.idbtn:hover {
+	background-color: #ddd;
 }
 
 .input {
@@ -107,46 +112,54 @@ float: left;
 	height: 25px;
 }
 
-.emailselect{
+.emailselect {
 	padding: 10px;
 	font-size: 18px;
-    padding-right: 17px;
-    padding-left: 17px;
+	padding-right: 17px;
+	padding-left: 17px;
 }
 
-#addr1{
-	width:200px;
-	padding:5px;
-	margin-bottom:2px;
+#addr1 {
+	width: 200px;
+	padding: 5px;
+	margin-bottom: 2px;
 	font-size: 18px;
 }
 
-#addrButton{
-	
+#addrButton {
+	width: 100px;
+	height: 34px;
+	background-color: #eee;
+	border: 1px solid gray;
+	border-radius: 4px;
 }
 
-#addr2{
-	width:390px;
-	padding:5px;
-	margin-bottom:2px;
+#addrButton:hover {
+	background-color: #ddd;
+}
+
+#addr2 {
+	width: 390px;
+	padding: 5px;
+	margin-bottom: 2px;
 	font-size: 18px;
 }
 
-#addrDetail{
-	width:250px;
-	padding:5px;
+#addrDetail {
+	width: 250px;
+	padding: 5px;
 	font-size: 18px;
 }
 
-#addrExtra{
-	width:122px;
-	padding:5px;
+#addrExtra {
+	width: 122px;
+	padding: 5px;
 	font-size: 18px;
 }
 
 .button {
-	color:gray;
-	background-color: white;	
+	color: gray;
+	background-color: white;
 	border: 1px solid gray;
 	padding: 15px 25px;
 	margin: 5px;
@@ -155,15 +168,15 @@ float: left;
 	font-weight: bold;
 }
 
-.button:hover{
+.button:hover {
 	background-color: #2BC0E4;
-	color:white;
+	color: white;
 }
 
-.cancle:hover{
+.cancle:hover {
 	background-color: white;
 }
 
-#footer{
-		margin-top: 700px;
-	}
+#footer {
+	margin-top: 700px;
+}
