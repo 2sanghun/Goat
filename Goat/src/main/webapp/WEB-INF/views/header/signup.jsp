@@ -73,7 +73,7 @@
 							maxlength='20' class="box"> @ <select name="email"
 							class="emailselect">
 								<option value="@naver.com">naver.com</option>
-								<option value="@daum.com">daum.net</option>
+								<option value="@daum.net">daum.net</option>
 								<option value="@google.com">gmail.com</option>
 						</select></td>
 					</tr>
