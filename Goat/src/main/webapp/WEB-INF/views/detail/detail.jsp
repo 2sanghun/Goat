@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
- 
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${detail.title} - ${detail.category}</title>
+<title>${detail.title}-${detail.category}</title>
 
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -18,9 +18,10 @@
 <script type="text/javascript"
 	src="../../../resources/JS/writeAttach.js"></script>
 <link rel="stylesheet"
-	href="../../../resources/CSS/detail.css?version=1.7">
+	href="../../../resources/CSS/detail.css?version=1.8">
 
-<script type="text/javascript" src="../../../resources/JS/like.js?version=1.0"></script>
+<script type="text/javascript"
+	src="../../../resources/JS/like.js?version=1.0"></script>
 </head>
 
 <body>
@@ -33,8 +34,7 @@
 			<table border="1">
 				<thead>
 					<tr class="tr1">
-						<td colspan="4">
-						<c:choose>
+						<td colspan="4"><c:choose>
 								<c:when test="${ id==null || id != detail.id}">
 									<textarea name="title" id="title" readonly>${detail.title}</textarea>
 								</c:when>
@@ -58,8 +58,8 @@
 							</div>
 
 							<div class="side_right">
-								조회 수 <span class="title_cnt">${detail.cnt}</span>
-								<span class="title_cnthno">추천 수 <span class="cnthno">${detail.cnthno}</span></span>
+								조회 수 <span class="title_cnt">${detail.cnt}</span> <span
+									class="title_cnthno">추천 수 <span class="cnthno">${detail.cnthno}</span></span>
 							</div>
 						</td>
 					</tr>
@@ -104,17 +104,16 @@
 							<div id="uploadResult2"></div>
 
 						</div>
-
-						<input type="submit" value="수정" formaction="/detail/modify"
-							id="modify"> &nbsp;&nbsp; <input type="submit" value="삭제"
-							onclick="if(!confirm('정말 삭제하시겠습니까?')){return false}"
-							formaction="/detail/remove" class="remove">
+						<span class="modifybtn_box">
+								<input type="submit" value="수정" formaction="/detail/modify"id="modify"> &nbsp;&nbsp; 
+								<input type="submit"value="삭제" onclick="if(!confirm('정말 삭제하시겠습니까?')){return false}" formaction="/detail/remove" class="remove">
+						</span>
 					</c:when>
 
 					<c:when test="${id eq 'manager'}">
-						<input type="submit" value="삭제"
-							onclick="confirm('매니저야 정말 삭제할꺼야?')" formaction="/detail/remove"
-							class="remove">
+						<span class="modifybtn_box">
+							<input type="submit" value="삭제" onclick="confirm('매니저야 정말 삭제할꺼야?')" formaction="/detail/remove" class="remove">
+						</span>
 					</c:when>
 				</c:choose>
 			</div>
@@ -122,8 +121,9 @@
 
 		<div id="like">
 			<button type="button" id="likeBtn">
-			<p class="like_text">이 게시물을 추천합니다!</p><br>
-				<img src="../../../resources/image/star.png" id="likeImg"><span class="cnthno"> ${detail.cnthno}</span><br>
+				<p class="like_text">이 게시물을 추천합니다!</p>
+				<br> <img src="../../../resources/image/star.png" id="likeImg"><span
+					class="cnthno"> ${detail.cnthno}</span><br>
 			</button>
 		</div>
 		<br>

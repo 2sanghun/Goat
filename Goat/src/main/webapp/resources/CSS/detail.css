@@ -181,6 +181,7 @@ label:hover {
 	border: 1px solid #2BC0E4;
 	padding: 10px;
 	transition: 0.3s;
+	margin-bottom: 30px;
 }
 
 #addfile:hover {
@@ -188,6 +189,10 @@ label:hover {
 	font-weight: bold;
 	background: #2BC0E4;
 	color: white;
+}
+
+.modifybtn_box {
+	margin-left: 820px;
 }
 
 #modify {
@@ -226,6 +231,7 @@ label:hover {
 #like {
 	height: 100px;
 	text-align: center;
+	padding: 20px;
 }
 
 #likeBtn {
