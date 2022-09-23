@@ -7,6 +7,7 @@ $(document).ready(function() {
 	// alert(bno);
 	
 	$.getJSON("/attachlist",{bno:bno},function(attachlist){
+		
 		console.log(attachlist);
 		var str="";
 		
@@ -16,7 +17,19 @@ $(document).ready(function() {
 			// 만약 image결과가 true면
 			if(attach.image){
 				var filePath = encodeURIComponent(attach.uploadPath+"/s_"+attach.uuid+"_"+attach.fileName);
-				str+="<li><img src='/display?fileName="+filePath+"'></li>";
+				
+			    var originPath = attach.uploadPath+"\\"+attach.uuid+"_"+attach.fileName;
+			    originPath = originPath.replace(new RegExp(/\\/g),"/");
+				
+			    
+			    str +="<li><img src='/display?fileName="+originPath+"'style='width:600px; height:auto'></li>";
+			   
+			    
+			    //str += "<li>"
+			    //	+"<a href='javascript:showImage(\""+originPath+"\")'>"
+			    //	+"<img src='/display?fileName="+filePath+"'></a></li>";
+			    
+				//str+="<li><img src='/display?fileName="+filePath+"'></li>";
 
 			    string+="<li data-path='"+attach.uploadPath+"' data-uuid='"+attach.uuid+"'";
 			    string+="data-filename='"+attach.fileName+"' data-type='"+attach.image+"'><div class='btn'>";
@@ -25,6 +38,9 @@ $(document).ready(function() {
 			    string+="<img src='/display?fileName="+filePath+"'></div></li>";
 			}else{	// 그렇지 않으면
 				var filePath = encodeURIComponent(attach.uploadPath+"/"+attach.uuid+"_"+attach.fileName);
+				
+				
+				
 				str+="<li><a href='/download?fileName="+filePath+"'>"+attach.fileName+"</a></li>";
 				
 			    string+="<li data-path='"+attach.uploadPath+"' data-uuid='"+attach.uuid+"'";
@@ -37,8 +53,7 @@ $(document).ready(function() {
 		$("#uploadResult ul").html(str);
 		$("#uploadlist ul").html(string);
 	})
- 
-
+	
 	$("#uploadlist ul").on("click","button",function(e){
 
 		console.log("delete file");
@@ -57,8 +72,12 @@ $(document).ready(function() {
 		}
 });
 	
-})	
+}) // END $(document).ready(function()
 
+//function showImage(filepath){
+	
+	//$("#uploadResult ul").html("<img src='/display?fileName="+encodeURI(filePath)+"'style='width:600px; height:600px'>");
+//}
 
 function attachremove(attachlist){ 
 	
