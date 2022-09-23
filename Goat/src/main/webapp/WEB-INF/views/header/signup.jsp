@@ -52,7 +52,7 @@
 					<tr>
 
 						<td></td>
-						<td></td>
+						<td></td> 
 						<td colspan="2"><span id="pwmsg" class="msg"></span></td>
 					</tr>
 					<tr>
