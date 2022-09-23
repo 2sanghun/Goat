@@ -109,7 +109,7 @@ td {
 	font-size: 16px;
 	padding: 20px;
 	width: 950px;
-	border: none;
+	overflow-y: hidden;
 }
 
 td {
@@ -249,8 +249,8 @@ label:hover {
 }
 
 #likeImg {
-	width: 40px;
-	height: 40px;
+	width: 40px !important;
+	height: 40px !important;
 }
 
 .reply_box {

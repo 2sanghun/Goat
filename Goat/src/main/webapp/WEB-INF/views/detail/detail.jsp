@@ -18,7 +18,7 @@
 <script type="text/javascript"
 	src="../../../resources/JS/writeAttach.js"></script>
 <link rel="stylesheet"
-	href="../../../resources/CSS/detail.css?version=1.8">
+	href="../../../resources/CSS/detail.css?version=1.9">
 
 <script type="text/javascript"
 	src="../../../resources/JS/like.js?version=1.0"></script>
@@ -73,15 +73,19 @@
 								<ul>
 
 								</ul>
-							</div> <c:choose>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td  colspan="4" class="contenttext1"><c:choose>
 								<c:when test="${ id==null || id != detail.id}">
-									<textarea name="content" id="contenttext1" rows="40" readonly>${detail.content}</textarea>
+									<textarea name="content" id="contenttext1" onclick="adjustHeight();" readonly>${detail.content}</textarea>
 								</c:when>
 								<c:otherwise>
-									<textarea name="content" id="contenttext1" rows="40">${detail.content}</textarea>
+									<textarea name="content" id="contenttext1" onclick="adjustHeight();">${detail.content}</textarea>
 								</c:otherwise>
-							</c:choose>
-						</td>
+							</c:choose></td>
+					</tr>
 				</tbody>
 			</table>
 			<div class="upload_file">
@@ -104,15 +108,18 @@
 							<div id="uploadResult2"></div>
 
 						</div>
-						<span class="modifybtn_box">
-								<input type="submit" value="수정" formaction="/detail/modify"id="modify"> &nbsp;&nbsp; 
-								<input type="submit"value="삭제" onclick="if(!confirm('정말 삭제하시겠습니까?')){return false}" formaction="/detail/remove" class="remove">
+						<span class="modifybtn_box"> <input type="submit"
+							value="수정" formaction="/detail/modify" id="modify">
+							&nbsp;&nbsp; <input type="submit" value="삭제"
+							onclick="if(!confirm('정말 삭제하시겠습니까?')){return false}"
+							formaction="/detail/remove" class="remove">
 						</span>
 					</c:when>
 
 					<c:when test="${id eq 'manager'}">
-						<span class="modifybtn_box">
-							<input type="submit" value="삭제" onclick="confirm('매니저야 정말 삭제할꺼야?')" formaction="/detail/remove" class="remove">
+						<span class="modifybtn_box"> <input type="submit"
+							value="삭제" onclick="confirm('매니저야 정말 삭제할꺼야?')"
+							formaction="/detail/remove" class="remove">
 						</span>
 					</c:when>
 				</c:choose>
