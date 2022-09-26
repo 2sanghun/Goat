@@ -9,6 +9,7 @@
 	list-style-type: none;
 	position: absolute;
 	z-index: 100;
+	left: 650px;
 }
 
 .idul a:hover {

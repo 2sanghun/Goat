@@ -35,6 +35,7 @@ public class MypageServicelmpl implements MypageService {
 	}
 	public void modify(MemberVO member) {
 		mm.modify(member);
+		mm.modify_nick(member);
 	}
 	
 	public void remove(MemberVO member) {

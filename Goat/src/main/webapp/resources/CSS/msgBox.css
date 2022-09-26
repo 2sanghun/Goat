@@ -38,13 +38,25 @@
 	padding: 15px 75px 15px 75px;
 }
 
+#newBox:hover {
+	cursor: pointer;
+}
+
 #recieveBox {
 	padding: 15px 75px 15px 75px;
 	border-right: 1px solid gray;
 }
 
+#recieveBox:hover {
+	cursor: pointer;
+}
+
 #sendBox {
 	padding: 15px 75px 15px 75px;
+}
+
+#sendBox:hover {
+	cursor: pointer;
 }
 
 #messageArea {
@@ -83,7 +95,8 @@ li {
 }
 
 #message {
-	padding: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .sendRemove {
