@@ -13,12 +13,16 @@ $(document).ready(function(){
    $("#newBox").on("click", function(){
       newList(idValue);
    })
- 
+
+   $("#recieveBox").on("click", function(){
+	   recieveList({recv_id:idValue, pageNum:"1", amount:"10"});
+   })
+/* 
    // 방은 쪽지함을 클릭 했을 때
    $("#recieveBox").on("click", function(){
       recieveList(idValue);
    })
-
+*/
    $("#sendBox").on("click", function(){
       sendList(idValue);
    })
@@ -56,6 +60,22 @@ $(document).ready(function(){
       // alert("list함수호출")
    })
    
+   function recieveList(recv_id, pageNum, amount){
+	   $.getJSON("/message/recieveBox/"+recv_id+"/"+pageNum+"/"+amount+".json", function(msg){
+		   var str="";
+		   
+		   for(var i=0; i<msg.length; i++){
+			   str+="<li class='firstli'>"+msg[i].send_id+"</li>"
+			   str+="<li><textarea id='mcontent"+msg[i].mno+"'class='mcontent'>"+msg[i].mcontent+"</textarea></li>"
+			   str+="<li><textarea id='mcontent"+msg[i].mno+"' class='mcontent'>"+msg[i].mcontent+"</textarea></li>"
+			   str+="<li>"+msg[i].send_time+"</li>"
+			   str+="<li class='reMessageLi'><input class='reMessage' type='button' value='답장' data-mno="+msg[i].mno+"><li>"
+			   str+="<li class='lastli'><input class='recieveRemove' type='button' value='삭제' data-mno="+msg[i].mno+"><li>"
+		   }
+		   $("#message").html(str);
+	   })
+   }
+/*   
    // 받은 메세지 리스트 함수 선언
    function recieveList(recv_id){
       $.getJSON("/message/recieveBox/"+recv_id+".json",function(msg){
@@ -63,18 +83,17 @@ $(document).ready(function(){
          
          for(var i=0;i<msg.length;i++){
             str+="<li class='firstli'>"+msg[i].send_id+"</li>"
-<<<<<<< HEAD
             str+="<li><textarea id='mcontent"+msg[i].mno+"'class='mcontent'>"+msg[i].mcontent+"</textarea></li>"
-=======
             str+="<li><textarea id='mcontent"+msg[i].mno+"' class='mcontent'>"+msg[i].mcontent+"</textarea></li>"
->>>>>>> branch 'master' of https://github.com/2sanghun/Goat
             str+="<li>"+msg[i].send_time+"</li>"
+            str+="<li class='reMessageLi'><input class='reMessage' type='button' value='답장' data-mno="+msg[i].mno+"><li>"
             str+="<li class='lastli'><input class='recieveRemove' type='button' value='삭제' data-mno="+msg[i].mno+"><li>"
          }
          $("#message").html(str);
       })
    }
    // 리시브메세지 리스트 함수 선언 끝
+*/
    
    // 보낸 메세지 리스트 함수 선언
    function sendList(send_id){
