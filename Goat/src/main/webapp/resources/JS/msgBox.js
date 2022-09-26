@@ -17,15 +17,12 @@ $(document).ready(function(){
    $("#newBox").on("click", function(){
       newList(idValue);
    })
-   $("#recieveBox").on("click", function(){
-	   recieveList({recv_id:idValue, pageNum:pageNumValue, amount:amountValue});
-   })
-/*   
+ 
    // 방은 쪽지함을 클릭 했을 때
    $("#recieveBox").on("click", function(){
       recieveList(idValue);
    })
-*/
+
    $("#sendBox").on("click", function(){
       sendList(idValue);
    })
@@ -62,22 +59,6 @@ $(document).ready(function(){
       newList(idValue);
       // alert("list함수호출")
    })
-/*
-   // 받은 메세지 리스트 함수 선언
-   function recieveList(recv_id, pageNum, amount){
-	   $.getJSON("/message/recieveBox/"+recv_id+"/"+pageNum+"/"+amount+".json",function(msg){
-		   var str="";
-		   
-		   for(var i=0;i<msg.length;i++){
-			   str+="<li>"+msg[i].send_id+"</li>"
-			   str+="<li><textarea> id='mcontent"+msg[i].mno+"'>"+msg[i].mcontent+"</textarea></li>"
-			   str+="<li>날짜 : "+msg[i].send+time+"</li>"
-			   str+="<li><input class='recieveRemove' type='button' value='삭제' data-mno="+msg[i].mno+"><li>"			   
-		   }
-		   $("#message").html(str);
-	   })
-   }
-*/  
    
    // 받은 메세지 리스트 함수 선언
    function recieveList(recv_id){
