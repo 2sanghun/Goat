@@ -7,7 +7,7 @@
   <mapper namespace="org.goat.mapper.ListMapper">
 
   	<select id="list" resultType="org.goat.model.BoardVO">
-  		select bllist.rownum, bllist.bno, bllist.title, bllist.content, bllist.regdate,bllist.cnt,bllist.id,bllist.good,bllist.category,bllist.cnthno,bllist.cntrno, member.nick
+  		select *
   		from(
 	  		select @rownum:=@rownum+1 rownum, boardlist.*
 			from(
@@ -98,7 +98,7 @@
 				 	</otherwise>
 				 </choose>				 
 				) as boardlist
-			) as bllist join member using(id)
+			) as bllist
 		<![CDATA[
 		where rownum> (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
