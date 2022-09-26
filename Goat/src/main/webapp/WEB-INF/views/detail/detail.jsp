@@ -65,8 +65,6 @@
 						</td>
 					</tr>
 
-
-
 					<tr>
 						<td colspan="4">
 							<div id="uploadResult">

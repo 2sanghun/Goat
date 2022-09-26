@@ -10,7 +10,7 @@
 
 	<update id="modify">
 		update member 
-		set name = #{name}, password= #{password}, email=#{email}, addr=#{addr}
+		set name = #{name}, nick=#{nick}, password= #{password}, email=#{email}, addr=#{addr}, birth=#{birth}, phone=#{phone}
 		where id=#{id}
 	</update>
 

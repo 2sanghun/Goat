@@ -1,10 +1,16 @@
 @charset "UTF-8";
 
-.idul{
-   border: 1px solid;
-   border-radius: 4px;
-   display: none;
-   list-style-type : none;
-   position: absolute;
-   z-index: 100;
+.idul {
+	padding: 5px 10px;
+	background: #ffffe0;
+	border: 1px solid;
+	border-radius: 4px;
+	display: none;
+	list-style-type: none;
+	position: absolute;
+	z-index: 100;
+}
+
+.idul a:hover {
+	font-weight: bold;
 }

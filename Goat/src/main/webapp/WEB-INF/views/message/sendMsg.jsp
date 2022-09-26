@@ -9,14 +9,14 @@
 <title>쪽지 보내기</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/sendMsg.js"></script>
-<link rel="stylesheet" href="/resources/CSS/sendMsg.css" type="text/css">
+<link rel="stylesheet" href="/resources/CSS/sendMsg.css?version=1.0" type="text/css">
 </head>
 <body>
 	<div class="sendMsgArea">
-		<input type="text" id="sessionId" value="${id}" readonly>
-		<input type="text" id="recv_id" value="${message.recv_id}" readonly>
+		<input type="hidden" id="sessionId" value="${id}" readonly>
+		<input type="hidden" id="recv_id" value="${message.recv_id}" readonly>
 		<div class="recieveIdArea">
-			<span>받는사람 : </span>
+			<span>받는사람: </span>
 			<span>${message.recv_nick}</span>
 			<span>(${message.recv_id})</span>			
 		</div>
@@ -26,7 +26,7 @@
 		</div>
 		<div class="btnsArea">
 			<input type="button" value="보내기" id="send"> 
-			<input type="button" value="취소 " onclick="window.close()">
+			<input type="button" value="취소 " onclick="window.close()" class="cancle">
 		</div>
 	</div>
 </body>
