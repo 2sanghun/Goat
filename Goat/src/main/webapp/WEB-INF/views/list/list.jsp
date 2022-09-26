@@ -119,7 +119,7 @@
          </table>      
          <c:if test="${paging.total == 0}">
             <div id="nodata">
-               <p id="nodatah">등록된 게시글이 없습니다</p>
+               <p id="nodatah">등록된 게시글이 없습니다.</p>
             </div>
          </c:if>                  
       </div>
