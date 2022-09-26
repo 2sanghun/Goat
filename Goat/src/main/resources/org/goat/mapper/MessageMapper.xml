@@ -12,15 +12,28 @@
 	</insert>
 
 	<select id="recieveMsg" resultType="org.goat.model.MessageVO">
-		select * from message where recv_id=#{recv_id} and recv_chk=0
+		select *
+		from(
+			select @rownum:=@rownum+1 rownum, m.*
+			from message m, (select @rownum:=0) as tmp
+			where recv_id=#{recv_id} and recv_chk=0
+			order by mno desc
+		) as messagelist
+		<![CDATA[
+		where rownum>#{pageNum} and rownum<=#{amount}
+		]]>
 	</select>
-
+<!--  
+	<select id="recieveMsg" resultType="org.goat.model.MessageVO">
+		select * from message where recv_id=#{recv_id} and recv_chk=0 order by mno desc
+	</select>
+-->
 	<select id="sendMsg" resultType="org.goat.model.MessageVO">
-		select * from message where send_id=#{send_id} and send_chk=0
+		select * from message where send_id=#{send_id} and send_chk=0 order by mno desc
 	</select>
 
 	<select id="newMsg" resultType="org.goat.model.MessageVO">
-		select * from message where recv_id=#{recv_id} and new_msg=0
+		select * from message where recv_id=#{recv_id} and new_msg=0 order by mno desc
 	</select>
 
 	<update id="recvRemove">

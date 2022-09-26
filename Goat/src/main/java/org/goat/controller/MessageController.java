@@ -45,7 +45,18 @@ public class MessageController {
 	public String message() {
 		return "message/msgBox";
 	}
+
+	// 받은 메세지 리스트
+	@RequestMapping(value = ("/message/recieveBox/{recv_id}/{pageNum}/{amount}"), method=RequestMethod.GET)
+	public ResponseEntity<ArrayList<MessageVO>> recieveMsg(@PathVariable String recv_id, @PathVariable int pageNum, @PathVariable int amount){
+		System.out.println(recv_id);
+		System.out.println(pageNum);
+		System.out.println(amount);
+		
+		return new ResponseEntity<>(ms.recieveMsg(recv_id, pageNum, amount),HttpStatus.OK);
+	}
 	
+/* 받은 메세지 리스트 백업
 	// 받은 메세지 리스트
 	@RequestMapping(value = "/message/recieveBox/{recv_id}", method=RequestMethod.GET)
 	public ResponseEntity<ArrayList<MessageVO>> recieveMsg(@PathVariable String recv_id){
@@ -53,7 +64,7 @@ public class MessageController {
 		
 		return new ResponseEntity<>(ms.recieveMsg(recv_id),HttpStatus.OK);
 	}
-
+*/	
 	// 보낸 메세지 리스트
 	@RequestMapping(value = "/message/sendBox/{send_id}", method=RequestMethod.GET)
 	public ResponseEntity<ArrayList<MessageVO>> sendMsg(@PathVariable String send_id){

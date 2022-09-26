@@ -1,30 +1,68 @@
 @charset "UTF-8";
 
-
-.sendMsgArea{
-   width: 580px;
-   height: 380px;
-   background: yellow;
+@font-face {
+	font-family: 'Kakaofont';
+	src: url(KakaoBold.ttf)
 }
 
-.recieveIdArea{
-   width: 560px;
-   height: 80px;
-   background: blue;
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
 }
 
-.msgContent{
-   width: 560px;
-   height: 200px;
-   background: red;
+.sendMsgArea {
+	width: 650px;
+	height: 370px;
+	margin: auto;
+	font-size: 18px;
+	font-family: 'Kakaofont';
+	border: 1px solid black;
+	border-radius: 4px;
+	background: #ffebd5;
 }
 
-.btnsArea{
-   width: 560px;
-   height: 80px;
-   background: green;
+.recieveIdArea {
+	width: 560px;
+	height: 80px;
+	margin: auto;
+	line-height: 40px;
+	padding: 20px;
 }
 
-#msgContent{
-   resize: none;
+.msgContent {
+	width: 560px;
+	height: 200px; : red;
+	margin: auto;
+	padding: 10px;
+}
+
+.btnsArea {
+	width: 560px;
+	height: 80px;
+	margin: auto;
+	padding: 10px;
+	line-height: 60px;
+}
+
+#msgContent {
+	width: 480px;
+	height: 180px;
+	resize: none;
+	padding: 10px;
+	font-family: 'Kakaofont';
+	border-radius: 4px;
+}
+
+#send, .cancle {
+	margin: 5px;
+	padding: 10px 15px;
+	border-radius: 4px;
+	background: white;
+	color: gray;
+}
+
+#send:hover, .cancle:hover {
+	color: #2BC0E4;
+	border: 1px solid #2BC0E4;
 }

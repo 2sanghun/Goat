@@ -10,6 +10,9 @@ public class CriteriaVO {
 	private String period;	// 검색 조건에 기간
 	private String category;	// total에 반영하기 위해 category 필요
 	private String orderby;		// 최신순, 추천순, 조회순으로 정렬하기 위해 orderBY 필요
+	
+	// 임시 받은 쪽지 페이징 처리를 위해 만든다 나중에 안 될때 이거 지워야함
+	private String recv_id;		// 쪽지 받은 아이디
 
 	// 생성자
 	public CriteriaVO() {
@@ -86,10 +89,20 @@ public class CriteriaVO {
 		this.orderby = orderby;
 	}
 
+	
+	public String getRecv_id() {
+		return recv_id;
+	}
+
+	public void setRecv_id(String recv_id) {
+		this.recv_id = recv_id;
+	}
+
 	@Override
 	public String toString() {
 		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", id=" + id + ", keyword=" + keyword
-				+ ", type=" + type + ", period=" + period + ", category=" + category + ", orderby=" + orderby + "]";
+				+ ", type=" + type + ", period=" + period + ", category=" + category + ", orderby=" + orderby
+				+ ", recv_id=" + recv_id + "]";
 	}
 
 }

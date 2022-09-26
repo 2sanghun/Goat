@@ -18,9 +18,16 @@ public class MessageServiceimpl implements MessageService{
 	}
 
 	// 받은 메세지 리스트를 위한 구현
+	public ArrayList<MessageVO> recieveMsg(String recv_id, int pageNum, int amount){
+		return mm.recieveMsg(recv_id, pageNum, amount);
+	}
+	
+	/*
+	// 받은 메세지 리스트를 위한 구현
 	public ArrayList<MessageVO> recieveMsg(String recv_id){
 		return mm.recieveMsg(recv_id);
 	}
+	*/
 
 	// 보낸 메세지 리스트를 위한 구현
 	public ArrayList<MessageVO> sendMsg(String send_id){

@@ -63,7 +63,11 @@ $(document).ready(function(){
          
          for(var i=0;i<msg.length;i++){
             str+="<li class='firstli'>"+msg[i].send_id+"</li>"
+<<<<<<< HEAD
             str+="<li><textarea id='mcontent"+msg[i].mno+"'class='mcontent'>"+msg[i].mcontent+"</textarea></li>"
+=======
+            str+="<li><textarea id='mcontent"+msg[i].mno+"' class='mcontent'>"+msg[i].mcontent+"</textarea></li>"
+>>>>>>> branch 'master' of https://github.com/2sanghun/Goat
             str+="<li>"+msg[i].send_time+"</li>"
             str+="<li class='lastli'><input class='recieveRemove' type='button' value='삭제' data-mno="+msg[i].mno+"><li>"
          }

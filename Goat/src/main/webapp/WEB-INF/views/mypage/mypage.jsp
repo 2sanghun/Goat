@@ -15,7 +15,7 @@
 	src="../../../resources/JS/mypagesignup.js?version=1.2"></script>
 <script type="text/javascript" src="../../../resources/JS/Sing Up.js"></script>
 <link rel="stylesheet"
-	href="../../../resources/CSS/mypage.css?version=1.7" type="text/css">
+	href="../../../resources/CSS/mypage.css?version=1.0" type="text/css">
 </head>
 <body>
 	<div id="container">
