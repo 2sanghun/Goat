@@ -93,7 +93,7 @@
 								<ul class="idul">
 									<li><a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10">게시글 보기</a></li>
 									<c:if test="${id!=null and boardlist.id!=id}">
-                           				<li><a href="/message/send?recv_id=${boardlist.id}&recv_nick=${boardlist.nick}" onclick="window.open(this.href, '_blank', 'width=600, height=400');return false;">쪽지 보내기</a></li>
+                           				<li><a href="/message/send?recv_id=${boardlist.id}&recv_nick=${boardlist.nick}" onclick="window.open(this.href, '_blank', 'width=660, height=400');return false;">쪽지 보내기</a></li>
                         			</c:if>
 								</ul>
 							</span>
