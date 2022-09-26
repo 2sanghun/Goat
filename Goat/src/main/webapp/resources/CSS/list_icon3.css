@@ -155,9 +155,14 @@ dd:nth-child(3), dd:nth-child(3)>a {
 	margin-bottom: 20px;
 }
 
+.idul{
+	font-weight: normal;
+}
+
 dd>a {
 	cursor: pointer;
 }
+
 
 table {
 	width: 1000px;

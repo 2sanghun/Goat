@@ -175,6 +175,17 @@ td:nth-child(1)>a {
 	color: gray;
 }
 
+.td_last > span{
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+	color: #3262c5;		
+}
+
+.td_last > span > ul{
+	font-weight: normal;
+}
+
 .bno {
 	width: 10%;
 	text-align: center;

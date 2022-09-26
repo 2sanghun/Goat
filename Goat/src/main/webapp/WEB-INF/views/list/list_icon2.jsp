@@ -9,7 +9,9 @@
 <title>List</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/list_icon.js"></script>
+<script type="text/javascript" src="/resources/JS/idClickEvent.js"></script>
 <link rel="stylesheet" href="../../../resources/CSS/list_icon2.css?version=1.0" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/idClickEvent_icon2.css" type="text/css">
 </head>
 <body>
 	<%@ include file="../header/header.jsp"%>
@@ -87,7 +89,15 @@
 					<tr class="tr_last">
 						<td class="td_last">
 							${boardlist.regdate} / 
-							<a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10">${boardlist.nick} / </a> 
+							<span class="nick">${boardlist.nick} / 
+								<ul class="idul">
+									<li><a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10">게시글 보기</a></li>
+									<c:if test="${id!=null and boardlist.id!=id}">
+                           				<li><a href="/message/send?recv_id=${boardlist.id}&recv_nick=${boardlist.nick}" onclick="window.open(this.href, '_blank', 'width=600, height=400');return false;">쪽지 보내기</a></li>
+                        			</c:if>
+								</ul>
+							</span>
+							<a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10"></a> 
 							👍 ${boardlist.cnthno} / 💬 ${boardlist.cntrno}
 						</td>
 					</tr>

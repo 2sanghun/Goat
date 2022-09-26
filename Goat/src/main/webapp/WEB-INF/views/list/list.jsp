@@ -11,7 +11,7 @@
 <script type="text/javascript" src="/resources/JS/list.js"></script>
 <script type="text/javascript" src="/resources/JS/idClickEvent.js"></script>
 <link rel="stylesheet" href="../../../resources/CSS/list.css" type="text/css">
-<link rel="stylesheet" href="../../../resources/CSS/idClickEvent.css" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/idClickEvent_list.css" type="text/css">
 <link rel="stylesheet" href="../../../resources/CSS/list.css?version=1.0" type="text/css">
 
 </head>
