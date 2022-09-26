@@ -9,7 +9,7 @@
 <title>List</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/list_icon.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/list_icon2.css" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/list_icon2.css?version=1.0" type="text/css">
 </head>
 <body>
 	<%@ include file="../header/header.jsp"%>

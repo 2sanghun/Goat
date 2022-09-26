@@ -18,7 +18,7 @@
 <script type="text/javascript"
 	src="../../../resources/JS/writeAttach.js"></script>
 <link rel="stylesheet"
-	href="../../../resources/CSS/detail.css?version=1.9">
+	href="../../../resources/CSS/detail.css?version=2.0">
 
 <script type="text/javascript"
 	src="../../../resources/JS/like.js?version=1.0"></script>
