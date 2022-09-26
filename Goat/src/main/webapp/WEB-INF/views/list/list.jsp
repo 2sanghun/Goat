@@ -9,7 +9,10 @@
 <title>List</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/list.js"></script>
+<script type="text/javascript" src="/resources/JS/idClickEvent.js"></script>
 <link rel="stylesheet" href="../../../resources/CSS/list.css" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/idClickEvent.css" type="text/css">
+
 </head>
 <body>
 	<%@ include file="../header/header.jsp" %>
@@ -98,7 +101,14 @@
 					<tr>
 						<td class="bno"><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a></td>
 						<td class="title"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a> <span id="cntrno">[${boardlist.cntrno}]</span></td>
-						<td class="nick"><a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10">${boardlist.nick}</a></td>
+						<td class="nick">${boardlist.nick}
+							<ul class="idul">
+								<li><a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10">게시글 보기</a></li>
+								<c:if test="${id!=null and boardlist.id!=id}">
+									<li><a href="/message/send?recv_id=${boardlist.id}&recv_nick=${boardlist.nick}" onclick="window.open(this.href, '_blank', 'width=600, height=400');return false;">쪽지 보내기</a></li>
+								</c:if>
+							</ul>
+						</td>
 						<td class="regdate">${boardlist.regdate}</td>
 						<td class="cnt">${boardlist.cnthno}</td>
 						<td class="good">${boardlist.cnt}</td>
