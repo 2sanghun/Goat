@@ -89,7 +89,7 @@
 					<tr class="tr_last">
 						<td class="td_last">
 							${boardlist.regdate} / 
-							<span class="nick">${boardlist.nick} / 
+							<span class="nick">${boardlist.nick}  
 								<ul class="idul">
 									<li><a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10">게시글 보기</a></li>
 									<c:if test="${id!=null and boardlist.id!=id}">
@@ -98,7 +98,7 @@
 								</ul>
 							</span>
 							<a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10"></a> 
-							👍 ${boardlist.cnthno} / 💬 ${boardlist.cntrno}
+							/ 👍 ${boardlist.cnthno} / 💬 ${boardlist.cntrno}
 						</td>
 					</tr>
 				</c:forEach>
