@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+#content {
+	width: 800px;
+	height: 1000px;
+	background: yellow;
+	padding: 90px;
+	position: relative;
+}
+
+#messageMenuArea {
+	width: 300px;
+	height: 1000px;
+	float: left;
+	position: relative;
+	background: blue;
+}
+
+#messageArea {
+	width: 500px;
+	height: 1000px;
+	float: left;
+	position: relative;
+	background: red;
+}

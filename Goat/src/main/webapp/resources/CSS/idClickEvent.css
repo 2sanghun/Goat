@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.idul{
+   border: 1px solid;
+   border-radius: 4px;
+   display: none;
+   list-style-type : none;
+   position: absolute;
+   z-index: 100;
+}

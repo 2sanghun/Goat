@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+.sendMsgArea{
+   width: 580px;
+   height: 380px;
+   background: yellow;
+}
+
+.recieveIdArea{
+   width: 560px;
+   height: 80px;
+   background: blue;
+}
+
+.msgContent{
+   width: 560px;
+   height: 200px;
+   background: red;
+}
+
+.btnsArea{
+   width: 560px;
+   height: 80px;
+   background: green;
+}
+
+#msgContent{
+   resize: none;
+}

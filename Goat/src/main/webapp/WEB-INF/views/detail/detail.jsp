@@ -10,7 +10,7 @@
 
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../../../resources/JS/detail.js"></script>
+<script type="text/javascript" src="../../../resources/JS/detail.js?version=1.0"></script>
 <script type="text/javascript"
 	src="../../../resources/JS/reple.js?version=1.1"></script>
 <script type="text/javascript" src="/resources/JS/attach.js"></script>
@@ -18,10 +18,11 @@
 <script type="text/javascript"
 	src="../../../resources/JS/writeAttach.js"></script>
 <link rel="stylesheet"
-	href="../../../resources/CSS/detail.css?version=1.9">
+	href="../../../resources/CSS/detail.css?version=2.0">
 
 <script type="text/javascript"
 	src="../../../resources/JS/like.js?version=1.0"></script>
+
 </head>
 
 <body>
@@ -77,12 +78,12 @@
 						</td>
 					</tr>
 					<tr>
-						<td  colspan="4" class="contenttext1"><c:choose>
+						<td colspan="4" class="contenttext1"><c:choose>
 								<c:when test="${ id==null || id != detail.id}">
-									<textarea name="content" id="contenttext1" onclick="adjustHeight();" readonly>${detail.content}</textarea>
+									<textarea name="content" id="contenttext1" class="reHeight" readonly>${detail.content}</textarea>
 								</c:when>
 								<c:otherwise>
-									<textarea name="content" id="contenttext1" onclick="adjustHeight();">${detail.content}</textarea>
+									<textarea name="content" id="contenttext1" class="reHeight">${detail.content}</textarea>
 								</c:otherwise>
 							</c:choose></td>
 					</tr>
