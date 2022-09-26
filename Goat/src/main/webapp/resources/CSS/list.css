@@ -48,8 +48,8 @@
 
 .sortimg {
 	margin-top: 17px;
-	width: 40px;
-	height: 40px;
+	width: 40px !important;
+	height: 40px !important;
 	border: 1px solid gray;
 	opacity: 0.5;
 	border-radius: 4px;
@@ -57,8 +57,8 @@
 
 .sortimg_1 {
 	margin-top: 17px;
-	width: 40px;
-	height: 40px;
+	width: 40px !important;
+	height: 40px !important;
 	border: 1px solid gray;
 	border-radius: 4px;
 }
@@ -105,17 +105,17 @@ table {
 	table-layout: fixed;
 }
 
-.orderBy{
+.orderBy {
 	cursor: pointer;
 }
 
-#notice > td {
+#notice>td {
 	background: #f2f2f2;
 	color: red;
 	font-weight: bold;
 }
 
-#notice > td > a{
+#notice>td>a {
 	background: #f2f2f2;
 	color: red;
 	font-weight: bold;
@@ -262,9 +262,10 @@ td {
 	font-weight: bold;
 }
 
-#cntrno{
+#cntrno {
 	color: red;
 }
+
 #pagingArea {
 	margin-top: 30px;
 	position: relative;
