@@ -5,10 +5,6 @@
 $(document).ready(function(){
    $.ajaxSetup({async : false});
    var idValue = $("#sessionId").val();
-   var pageNumValue = 1;
-   //alert(pageNumValue);
-   var amountValue = 10;
-   //alert(amountValue);
    // alert(send_idValue);
 
    newList(idValue);
@@ -68,7 +64,7 @@ $(document).ready(function(){
          for(var i=0;i<msg.length;i++){
             str+="<li class='firstli'>"+msg[i].send_id+"</li>"
             str+="<li><textarea id='mcontent"+msg[i].mno+"'class='mcontent'>"+msg[i].mcontent+"</textarea></li>"
-            str+="<li>날짜 : "+msg[i].send_time+"</li>"
+            str+="<li>"+msg[i].send_time+"</li>"
             str+="<li class='lastli'><input class='recieveRemove' type='button' value='삭제' data-mno="+msg[i].mno+"><li>"
          }
          $("#message").html(str);
@@ -84,7 +80,7 @@ $(document).ready(function(){
          for(var i=0;i<msg.length;i++){
             str+="<li class='firstli'>"+msg[i].recv_id+"</li>"
             str+="<li><textarea id='mcontent"+msg[i].mno+"' class='mcontent'>"+msg[i].mcontent+"</textarea></li>"
-            str+="<li>날짜 : "+msg[i].send_time+"</li>"
+            str+="<li>"+msg[i].send_time+"</li>"
             str+="<li class='lastli'><input class='sendRemove' type='button' value='삭제' data-mno="+msg[i].mno+"><li>"
          }
          $("#message").html(str);
@@ -99,7 +95,7 @@ $(document).ready(function(){
          for(var i=0;i<msg.length;i++){
             str+="<li class='firstli'>"+msg[i].send_id+"</li>"
             str+="<li><textarea id='mcontent"+msg[i].mno+"' class='mcontent'>"+msg[i].mcontent+"</textarea></li>"
-            str+="<li>날짜 : "+msg[i].send_time+"</li>"
+            str+="<li>"+msg[i].send_time+"</li>"
             str+="<li class='lastli'><input class='newRemove' type='button' value='확인' data-mno="+msg[i].mno+"><li>"
          }
          $("#message").html(str);
