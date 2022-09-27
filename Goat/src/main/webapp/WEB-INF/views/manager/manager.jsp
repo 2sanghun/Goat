@@ -11,7 +11,7 @@
 <link rel="stylesheet"
 	href="../../../resources/CSS/managerCSS.css?version=3.2">
 <link rel="stylesheet"
-	href="../../../resources/CSS/idClickEvent.css?version=1.0">
+	href="../../../resources/CSS/idClickEvent_manager.css?version=1.0">
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript"
