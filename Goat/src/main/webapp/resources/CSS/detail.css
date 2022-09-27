@@ -105,7 +105,7 @@ td {
 }
 
 #contenttext1 {
-	font-family: 'Kakaofont_Bold';
+	font-family: 'Kakaofont_';
 	font-size: 16px;
 	padding: 20px;
 	width: 950px;
@@ -310,7 +310,7 @@ label:hover {
 	width: 900px;
 	padding-left: 20px;
 	border: none;
-	font-family: 'Kakaofont';
+	font-family: 'Kakaofont_';
 }
 
 .upde {

@@ -66,6 +66,19 @@
 	border-radius: 4px;
 }
 
+.listcount:hover {
+	opacity: 1;
+}
+
+.orderBy {
+	opacity: 0.5;
+}
+
+.orderBy:hover {
+	opacity: 1;
+	font-weight: bold;
+}
+
 .sortimg:hover {
 	opacity: 1;
 }
@@ -104,7 +117,6 @@
 .sortby>ul>li {
 	cursor: pointer;
 	list-style: none;
-	opacity: 0.5;
 }
 
 table {
@@ -175,14 +187,14 @@ td:nth-child(1)>a {
 	color: gray;
 }
 
-.td_last > span{
+.td_last>span {
 	cursor: pointer;
 	font-size: 14px;
 	font-weight: bold;
-	color: #3262c5;		
+	color: #3262c5;
 }
 
-.td_last > span > ul{
+.td_last>span>ul {
 	font-weight: normal;
 }
 

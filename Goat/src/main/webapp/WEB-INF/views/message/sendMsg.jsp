@@ -9,7 +9,7 @@
 <title>쪽지 보내기</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/sendMsg.js"></script>
-<link rel="stylesheet" href="/resources/CSS/sendMsg.css?version=1.0" type="text/css">
+<link rel="stylesheet" href="/resources/CSS/sendMsg.css?version=1.1" type="text/css">
 </head>
 <body>
 	<div class="sendMsgArea">

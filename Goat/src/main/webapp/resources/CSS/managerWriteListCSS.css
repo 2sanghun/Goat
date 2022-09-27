@@ -62,8 +62,9 @@
 }
 
 .cntrno {
-	font-size: 16px;
-	color: #FF0000;
+	color: #aaa;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 td {

@@ -100,13 +100,12 @@ a {
 	width: 50px;
 }
 
-#mid table td:nth-child(2) a:hover {
-	color: #2BC0E4;
-	font-weight: bold;
+#mid table td:nth-child(2)>a:hover {
+	cursor: pointer;
 }
 
 #mid table td:nth-child(3) {
-	width: 150px;
+	width: 157px;
 }
 
 #mid table td:nth-child(4) {

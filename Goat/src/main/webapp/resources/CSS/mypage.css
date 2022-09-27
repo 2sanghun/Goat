@@ -101,7 +101,7 @@ tr {
 .backbtn:hover {
 	cursor: pointer;
 	color: #2BC0E4;
-	border: 2px solid #2BC0E4;
+	border: 1px solid #2BC0E4;
 }
 
 h4 {

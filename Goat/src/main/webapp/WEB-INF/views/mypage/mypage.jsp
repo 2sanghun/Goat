@@ -94,9 +94,8 @@
 			</table>
 
 			<div class="btn">
-				<input type="submit" value="수정" class="backbtn"> <a
-					href="../main/main"><input type="button" value="취소"
-					class="backbtn"></a>
+				<input type="submit" value="수정" class="backbtn">
+				 <a href="../main/main"><input type="button" value="취소" class="backbtn"></a>
 			</div>
 		</form>
 	</div>

@@ -111,13 +111,13 @@ table {
 
 #notice>td {
 	background: #f2f2f2;
-	color: red;
+	color: orange;
 	font-weight: bold;
 }
 
 #notice>td>a {
 	background: #f2f2f2;
-	color: red;
+	color: orange;
 	font-weight: bold;
 }
 
@@ -165,6 +165,7 @@ td {
 
 .title>a {
 	cursor: pointer;
+	padding: 10px 5px 10px 20px;
 }
 
 .nick {
@@ -263,7 +264,9 @@ td {
 }
 
 #cntrno {
-	color: red;
+	color: #aaa;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 #pagingArea {
