@@ -16,7 +16,7 @@
 }
 
 body {
-	font-family: 'Kakaofont';
+	font-family: 'Kakaofont_';
 	cursor: url(../Cursor/paper.png), auto;
 }
 
@@ -160,17 +160,14 @@ header>nav {
 }
 
 .headerbtn_message {
-	padding: 0px 0px 2px 0px;
-	width: 37px;
+	padding: 0px 0px 3px 0px;
+	width: 35px;
 	height: 35px;
 	font-size: 20px;
 	color: white;
 	background: #96de92;
 	border: 1px solid #96de92;
 	border-radius: 50%;
-	position: fixed;
-	right: 260px;
-	top: 28px;
 }
 
 .headerbtn_message:hover {

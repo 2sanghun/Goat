@@ -60,6 +60,7 @@
 	border-radius: 4px;
 	background: white;
 	color: gray;
+	border: 1px solid gray;
 }
 
 #send:hover, .cancle:hover {
