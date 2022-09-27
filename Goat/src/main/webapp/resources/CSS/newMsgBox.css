@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+#content {
+	width: 1000px;
+	height: 1000px;
+	padding: 90px;
+	position: relative;
+	margin: auto;
+}
+
+#messageMenuArea {
+	width: 700px;
+	height: 200px;
+	font-family: 'Kakaofont';
+	font-weight: bold;
+	font-size: 20px;
+	margin: auto;
+	line-height: 70px;
+	border: 1px solid black;
+}
+
+.messagename {
+	background: #2BC0E4;
+	color: white;
+	border-bottom: 1px solid black;
+	height: 100px;
+	margin: auto;
+	text-align: center;
+	line-height: 100px;
+}
+
+#messageMenuArea>ul>li {
+	float: left;
+}
+
+#newBox {
+	border-right: 1px solid gray;
+	padding: 15px 75px 15px 75px;
+}
+
+#newBox:hover {
+	cursor: pointer;
+}
+
+#recieveBox {
+	padding: 15px 75px 15px 75px;
+	border-right: 1px solid gray;
+}
+
+#recieveBox:hover {
+	cursor: pointer;
+}
+
+#sendBox {
+	padding: 15px 75px 15px 75px;
+}
+
+#sendBox:hover {
+	cursor: pointer;
+}
+
+#messageArea {
+	width: 700px;
+	height: auto;
+	margin: auto;
+	position: relative;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+li {
+	padding: 5px;
+	display: block;
+}
+
+.lastli {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+}
+
+.firstli {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.mcontent {
+	width: 650px;
+	height: 40px;
+	resize: none;
+	border: none;
+	color: gray;
+	border-radius: 4px;
+	background: #fff0
+}
+
+#message {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.newRemove {
+	border: none;
+	background: white;
+}
+
+.newRemove:hover {
+	font-weight: bold;
+}

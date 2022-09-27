@@ -16,11 +16,11 @@
 		from(
 			select @rownum:=@rownum+1 rownum, m.*
 			from message m, (select @rownum:=0) as tmp
-			where recv_id=#{recv_id} and recv_chk=0
+			where recv_id=#{param1} and recv_chk=0
 			order by mno desc
 		) as messagelist
 		<![CDATA[
-		where rownum>#{pageNum} and rownum<=#{amount}
+		where rownum>(#{param2}-1)*#{param3} and rownum<=#{param2}*#{param3}
 		]]>
 	</select>
 <!--  
@@ -33,7 +33,16 @@
 	</select>
 
 	<select id="newMsg" resultType="org.goat.model.MessageVO">
-		select * from message where recv_id=#{recv_id} and new_msg=0 order by mno desc
+		select * 
+		from(
+			select @rownum:=@rownum+1 rownum, m.*
+			from message m, (select @rownum:=0) as tmp
+			where recv_id=#{param1} and new_msg=0
+			order by mno desc
+		) as messagelist
+		<![CDATA[
+		where rownum>(#{param2}-1)*#{param3} and rownum<=#{param2}*#{param3}
+		]]>
 	</select>
 
 	<update id="recvRemove">
@@ -53,5 +62,9 @@
 		set new_msg = 1
 		where mno = #{mno}
 	</update>
+	
+	<select id="newMsgTotal" resultType="int">
+		select count(*) from message where recv_id=#{recv_id} and new_msg=#{new_msg}
+	</select>
      
   </mapper>

@@ -2,6 +2,7 @@ package org.goat.service;
 
 import java.util.ArrayList;
 
+import org.goat.model.CriteriaVO;
 import org.goat.model.MessageVO;
 
 public interface MessageService {
@@ -17,12 +18,14 @@ public interface MessageService {
 	// 보낸 메세지 리스트를 위한 설계
 	public ArrayList<MessageVO> sendMsg(String send_id);
 	// 새로온 메세지 리스트를 위한 설계
-	public ArrayList<MessageVO> newMsg(String recv_id);
+	public ArrayList<MessageVO> newMsg(String recv_id, int pageNum, int amount);
 	// 받은 메세지 삭제를 위한 설계
 	public int recvRemove(MessageVO mvo);
 	// 보낸 메세지 삭제를 위한 설계
 	public int sendRemove(MessageVO mvo);
 	// 새로운 메세지 확인을 위한 설계
 	public int chkNewMsg(MessageVO mvo);
+	// 해당 메세지 전체건수 설계
+	public int newMsgTotal(CriteriaVO cri);
 	
 }

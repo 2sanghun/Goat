@@ -3,6 +3,7 @@ package org.goat.service;
 import java.util.ArrayList;
 
 import org.goat.mapper.MessageMapper;
+import org.goat.model.CriteriaVO;
 import org.goat.model.MessageVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,8 +36,8 @@ public class MessageServiceimpl implements MessageService{
 	}
 	
 	// 새로운 메세지 리스트를 위한 구현
-	public ArrayList<MessageVO> newMsg(String recv_id){
-		return mm.newMsg(recv_id);
+	public ArrayList<MessageVO> newMsg(String recv_id, int pageNum, int amount){
+		return mm.newMsg(recv_id, pageNum, amount);
 	}
 	
 	// 받은 메세지 삭제를 위한 구현
@@ -54,4 +55,8 @@ public class MessageServiceimpl implements MessageService{
 		return mm.chkNewMsg(mvo);
 	}
 
+	// 해당 메세지 전체건수 구현
+	public int newMsgTotal(CriteriaVO cri) {
+		return mm.newMsgTotal(cri);
+	}
 }

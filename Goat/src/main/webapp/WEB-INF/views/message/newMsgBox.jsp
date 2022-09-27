@@ -9,8 +9,8 @@
 <title>쪽지함</title>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/resources/JS/msgBox.js"></script>
-<link rel="stylesheet" href="/resources/CSS/msgBox.css?version=1.1"
+<script type="text/javascript" src="/resources/JS/newMsgBox.js"></script>
+<link rel="stylesheet" href="/resources/CSS/newMsgBox.css"
 	type="text/css">
 </head>
 <body>
@@ -18,6 +18,8 @@
 	<div id="content">
 		<div id="messageMenuArea">
 			<input type="hidden" id="sessionId" value="${id}" readonly>
+			<input type="hidden" id="msgTotal" value="${paging.total}" readonly>
+			<input type="text" id="pageNum" value="${paging.cri.pageNum}" readonly>
 			<div>
 			<h3 class="messagename">${nick}님의 쪽지함</h3>
 			</div>

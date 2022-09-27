@@ -3,9 +3,11 @@
  */
 
 $(document).ready(function(){
-   $.ajaxSetup({async : false});
-   var idValue = $("#sessionId").val();
-   // alert(send_idValue);
+	$.ajaxSetup({async : false});
+	var idValue = $("#sessionId").val();
+	var pageNumValue = 1;
+	var amountValue = 10;
+	// alert(send_idValue);
 
    newList(idValue);
    
@@ -14,8 +16,24 @@ $(document).ready(function(){
       newList(idValue);
    })
 
+   // 받은 쪽지함을 클릭 했을 때
    $("#recieveBox").on("click", function(){
-	   recieveList({recv_id:idValue, pageNum:"1", amount:"10"});
+	   recieveList(idValue, pageNumValue, amountValue);
+	   $(".pageNumBtn").on("click",function(){
+		   pageNumValue=parseInt($(this).text());
+		   alert(pageNumValue);
+		   recieveList(idValue, pageNumValue, amountValue);
+	   })
+	   $(".prevBtn").on("click",function(){
+		   pageNumValue-=1;
+		   alert(pageNumValue);
+		   recieveList(idValue, pageNumValue, amountValue);
+	   })
+	   $(".nextBtn").on("click",function(){
+		   pageNumValue+=1;
+		   alert(pageNumValue);
+		   recieveList(idValue, pageNumValue, amountValue);
+	   })
    })
 /* 
    // 방은 쪽지함을 클릭 했을 때
@@ -60,18 +78,25 @@ $(document).ready(function(){
       // alert("list함수호출")
    })
    
-   function recieveList(recv_id, pageNum, amount){
+   function recieveList(recv_id, pageNum, amount){	   
 	   $.getJSON("/message/recieveBox/"+recv_id+"/"+pageNum+"/"+amount+".json", function(msg){
 		   var str="";
 		   
 		   for(var i=0; i<msg.length; i++){
 			   str+="<li class='firstli'>"+msg[i].send_id+"</li>"
-			   str+="<li><textarea id='mcontent"+msg[i].mno+"'class='mcontent'>"+msg[i].mcontent+"</textarea></li>"
-			   str+="<li><textarea id='mcontent"+msg[i].mno+"' class='mcontent'>"+msg[i].mcontent+"</textarea></li>"
+			   str+="<li><textarea id='mcontent"+msg[i].mno+"'class='mcontent' readonly>"+msg[i].mcontent+"</textarea></li>"
 			   str+="<li>"+msg[i].send_time+"</li>"
 			   str+="<li class='reMessageLi'><input class='reMessage' type='button' value='답장' data-mno="+msg[i].mno+"><li>"
 			   str+="<li class='lastli'><input class='recieveRemove' type='button' value='삭제' data-mno="+msg[i].mno+"><li>"
 		   }
+//		   str+="<a href='javascript:void(0); onclick="+recieveList(recv_id, 2, 10)+"; return false;'>"+2+"</a>"
+//		   str+="<a href='#' onclick='"+recieveList(this.recv_id, this.2, this.10)+";'>"+2+"</a>"
+//		   str+="<a href='#' onclick='"+recieveList(recv_id, 1, 10)+";'>"+1+"</a>"
+//		   str+="<a href='#' onclick='"+recieveList(recv_id, 2, 10)+";'>"+2+"</a>"
+//		   str+="<a href='#' onclick='"+recieveList(recv_id, 3, 10)+";'>"+3+"</a>"
+//		   str+="<a href='/message/recieveBox/"+recv_id+"/"+1+"/"+amount+".json'>"+1+"</a>"
+//		   str+="<a href='/message/recieveBox/"+recv_id+"/"+2+"/"+amount+".json'>"+2+"</a>"
+//		   str+="<a href='/message/recieveBox/"+recv_id+"/"+3+"/"+amount+".json'>"+3+"</a>"
 		   $("#message").html(str);
 	   })
    }
@@ -172,4 +197,10 @@ $(document).ready(function(){
          }
       })
    }
+
 })
+
+
+
+
+
