@@ -49,6 +49,8 @@
 			</ul>
 		</div>
 	</div>
+	<div class="footer_1">
 	<%@ include file="../header/footer.jsp"%>
+	</div>
 </body>
 </html>

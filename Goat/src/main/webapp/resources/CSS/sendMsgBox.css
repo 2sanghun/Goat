@@ -38,7 +38,7 @@
 	padding: 15px 75px 15px 75px;
 }
 
-#newBox:hover {
+#newBox:hover a {
 	cursor: pointer;
 }
 
@@ -47,7 +47,7 @@
 	border-right: 1px solid gray;
 }
 
-#recieveBox:hover {
+#recieveBox:hover a {
 	cursor: pointer;
 }
 
@@ -55,7 +55,7 @@
 	padding: 15px 75px 15px 75px;
 }
 
-#sendBox:hover {
+#sendBox:hover a {
 	cursor: pointer;
 }
 
@@ -84,14 +84,14 @@ li {
 	padding-bottom: 10px;
 }
 
-.lastli > input {
+.lastli>input {
 	margin: 0 20px 0 0;
 	padding: 10px;
 	border: none;
 	background: white;
 }
 
-.lastli > input:hover {
+.lastli>input:hover {
 	background-color: #2BC0E4;
 	color: white;
 	font-weight: bold;
@@ -121,11 +121,11 @@ li {
 	text-align: center;
 }
 
-#messagePage > ul {
+#messagePage>ul {
 	display: inline;
 }
 
-#messagePage > ul > li {
+#messagePage>ul>li {
 	display: inline;
 	padding: 10px;
 	color: #8C8C8C;
@@ -133,8 +133,11 @@ li {
 	border-radius: 4px;
 }
 
-#messagePage > ul > li:hover {
+#messagePage>ul>li:hover {
 	background-color: #2BC0E4;
-	color: white;	
+	color: white;
 }
 
+.footer_1 {
+	margin-top: 1000px;
+}

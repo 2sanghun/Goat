@@ -18,8 +18,6 @@
 	src="../../../resources/JS/managerjs.js?version=1.2"></script>
 <script type="text/javascript"
 	src="../../../resources/JS/idClickEvent.js?version=1.0"></script>
-
-
 </head>
 <body>
 
