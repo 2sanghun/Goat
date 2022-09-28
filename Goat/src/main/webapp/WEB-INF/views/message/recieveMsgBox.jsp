@@ -24,7 +24,7 @@
 			<ul>
 				<li id="newBox"><a href="/message/newMsgBox?recv_id=${id}&new_chk=0">새 쪽지함</a></li>
 				<li id="recieveBox"><a href="/message/recieveMsgBox?recv_id=${id}&recv_chk=0">받은 쪽지함</a></li>
-				<li id="sendBox">보낸 쪽지함</li>
+				<li id="sendBox"><a href="/message/sendMsgBox?send_id=${id}&send_chk=0">보낸 쪽지함</a></li>
 			</ul>
 		</div>
 		<div id="messageArea">

@@ -42,16 +42,6 @@ public class MessageController {
 						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);		
 	}
 
-/*	갈아엎기 전 메세지 페이지
-	// 메세지 페이지(화면)
-	@RequestMapping(value = "/message/msgBox", method = RequestMethod.GET)
-	public String message(Model model, CriteriaVO cri) {
-		int total=ms.total();
-		model.addAttribute("paging", new pageVO(cri, total));
-		return "message/msgBox";
-	}
-*/
-
 	// 새로온 쪽지 페이지(화면)
 	@RequestMapping(value = "/message/newMsgBox", method = RequestMethod.GET)
 	public String newMsg(Model model, CriteriaVO cri) {
@@ -76,11 +66,12 @@ public class MessageController {
 	public String recieveMsg(Model model, CriteriaVO cri) {
 		int total=ms.recieveMsgTotal(cri);
 		System.out.println(total);
+		
 		model.addAttribute("paging", new pageVO(cri, total));
 		return "message/recieveMsgBox";
 	}
 	
-	// 받은 메세지 리스트
+	// 받은 쪽지 리스트
 	@RequestMapping(value = "/message/recieveBox/{recv_id}/{pageNum}/{amount}", method=RequestMethod.GET)
 	public ResponseEntity<ArrayList<MessageVO>> recieveMsg(@PathVariable String recv_id, @PathVariable int pageNum, @PathVariable int amount){
 		System.out.println("리시브 박스"+recv_id);
@@ -90,12 +81,24 @@ public class MessageController {
 		return new ResponseEntity<>(ms.recieveMsg(recv_id, pageNum, amount),HttpStatus.OK);
 	}
 	
-	// 보낸 메세지 리스트
-	@RequestMapping(value = "/message/sendBox/{send_id}", method=RequestMethod.GET)
-	public ResponseEntity<ArrayList<MessageVO>> sendMsg(@PathVariable String send_id){
-		System.out.println("센드 박스"+send_id);		
+	// 보낸 쪽지 페이지(화면)
+	@RequestMapping(value = "/message/sendMsgBox", method = RequestMethod.GET)
+	public String sendMsg(Model model, CriteriaVO cri) {
+		int total=ms.sendMsgTotal(cri);
+		System.out.println(total);
 		
-		return new ResponseEntity<>(ms.sendMsg(send_id),HttpStatus.OK);
+		model.addAttribute("paging", new pageVO(cri, total));
+		return "message/sendMsgBox";
+	}
+	
+	// 보낸 쪽지 리스트
+	@RequestMapping(value = "/message/sendBox/{send_id}/{pageNum}/{amount}", method=RequestMethod.GET)
+	public ResponseEntity<ArrayList<MessageVO>> sendMsg(@PathVariable String send_id, @PathVariable int pageNum, @PathVariable int amount){
+		System.out.println("센드 박스"+send_id);
+		System.out.println("센드 박스"+pageNum);
+		System.out.println("센드 박스"+amount);
+		
+		return new ResponseEntity<>(ms.sendMsg(send_id, pageNum, amount),HttpStatus.OK);
 	}
 
 	// 받은 메세지 삭제(실제 삭제는 안 되고 DB에 recv_chk 를 1로 업데이트 한다)

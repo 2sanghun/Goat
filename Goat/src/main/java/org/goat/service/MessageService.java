@@ -12,7 +12,7 @@ public interface MessageService {
 	// 받은 메세지 리스트를 위한 설계
 	public ArrayList<MessageVO> recieveMsg(String recv_id, int pageNum, int amount);
 	// 보낸 메세지 리스트를 위한 설계
-	public ArrayList<MessageVO> sendMsg(String send_id);
+	public ArrayList<MessageVO> sendMsg(String send_id, int pageNum, int amount);
 	// 새로온 메세지 리스트를 위한 설계
 	public ArrayList<MessageVO> newMsg(String recv_id, int pageNum, int amount);
 	// 받은 메세지 삭제를 위한 설계
@@ -25,5 +25,7 @@ public interface MessageService {
 	public int newMsgTotal(CriteriaVO cri);
 	// 받은 메세지 전체건수 설계
 	public int recieveMsgTotal(CriteriaVO cri);
+	// 보낸 쪽지 전체건수 설계
+	public int sendMsgTotal(CriteriaVO cri);
 	
 }
