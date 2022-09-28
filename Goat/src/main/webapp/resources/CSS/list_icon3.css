@@ -175,6 +175,10 @@ dd>a {
 	cursor: pointer;
 }
 
+dd>span {
+	cursor: pointer;
+}
+
 table {
 	width: 1000px;
 	border-collapse: collapse;
