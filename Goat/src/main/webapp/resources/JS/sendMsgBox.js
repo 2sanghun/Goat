@@ -25,7 +25,7 @@ $(document).ready(function(){
 	$(".pageNumBtn").on("click", function(){
 		pageNumValue=parseInt($(this).text());
 		//alert("현재페이지 "+pageNumValue);
-		recieveList(idValue, pageNumValue, amountValue);
+		sendList(idValue, pageNumValue, amountValue);
 		$("#pageNum").val(pageNumValue);
 	})
 	

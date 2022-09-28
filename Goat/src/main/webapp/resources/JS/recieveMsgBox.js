@@ -58,8 +58,8 @@ $(document).ready(function(){
 				str+="<li class='firstli' data-send_id>"+msg[i].send_id+"</li>"
 				str+="<li><textarea id='mcontent"+msg[i].mno+"'class='mcontent' readonly>"+msg[i].mcontent+"</textarea></li>"
 				str+="<li>"+msg[i].send_time+"</li>"
-				str+="<li class='reMessageLi'><input class='reMessage' type='button' value='답장' data-send_id="+msg[i].send_id+"><li>"
-				str+="<li class='lastli'><input class='recieveRemove' type='button' value='삭제' data-mno="+msg[i].mno+"><li>"
+				str+="<li class='lastli'><input class='reMessage' type='button' value='답장' data-send_id="+msg[i].send_id+">"
+				str+="<input class='recieveRemove' type='button' value='삭제' data-mno="+msg[i].mno+"><li>"
 			}
 			$("#message").html(str);
 		})
