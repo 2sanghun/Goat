@@ -113,6 +113,18 @@ li {
 	padding-right: 10px;
 }
 
+#noData {
+	height: 100px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 40%);
+}
+
+
 #messagePage {
 	width: 700px;
 	height: auto;

@@ -30,6 +30,11 @@
 		<div id="messageArea">
 			<ul id="message">
 			</ul>
+			<c:if test="${paging.total==0}">
+				<div id="noData">
+					<p> 쪽지가 없습니다. </p>
+				</div>				
+			</c:if>
 		</div>
 		<div id="messagePage">
 			<ul>

@@ -14,7 +14,7 @@ $(document).ready(function(){
 	
 	newList(idValue, pageNumValue, amountValue);
 	// pageBeginEnd(pageNumValue);
-	
+
 	// 새로운 쪽지에서 확인 버튼을 클릭하면
 	$("#message").on("click", ".newRemove", function(){
 		var mno = $(this).data("mno");
