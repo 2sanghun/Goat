@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>새로운 쪽지함</title>
+<title>받은 쪽지함</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/resources/JS/newMsgBox.js"></script>
-<link rel="stylesheet" href="/resources/CSS/newMsgBox.css" type="text/css">
+<script type="text/javascript" src="/resources/JS/recieveMsgBox.js"></script>
+<link rel="stylesheet" href="/resources/CSS/recieveMsgBox.css" type="text/css">
 </head>
 <body>
 	<%@ include file="../header/header.jsp"%>
@@ -49,6 +49,6 @@
 			</ul>
 		</div>
 	</div>
-	<%@ include file="../header/footer.jsp"%>
+	<%@ include file="../header/footer.jsp"%>	
 </body>
 </html>

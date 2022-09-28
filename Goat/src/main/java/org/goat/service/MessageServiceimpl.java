@@ -23,13 +23,6 @@ public class MessageServiceimpl implements MessageService{
 		return mm.recieveMsg(recv_id, pageNum, amount);
 	}
 	
-	/*
-	// 받은 메세지 리스트를 위한 구현
-	public ArrayList<MessageVO> recieveMsg(String recv_id){
-		return mm.recieveMsg(recv_id);
-	}
-	*/
-
 	// 보낸 메세지 리스트를 위한 구현
 	public ArrayList<MessageVO> sendMsg(String send_id){
 		return mm.sendMsg(send_id);
@@ -55,8 +48,13 @@ public class MessageServiceimpl implements MessageService{
 		return mm.chkNewMsg(mvo);
 	}
 
-	// 해당 메세지 전체건수 구현
+	// 새로온 메세지 전체건수 구현
 	public int newMsgTotal(CriteriaVO cri) {
 		return mm.newMsgTotal(cri);
+	}
+	
+	// 받은 메세지 전체건수 설계
+	public int recieveMsgTotal(CriteriaVO cri) {
+		return mm.recieveMsgTotal(cri);
 	}
 }

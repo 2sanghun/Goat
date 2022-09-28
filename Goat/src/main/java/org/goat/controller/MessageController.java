@@ -71,6 +71,15 @@ public class MessageController {
 		return new ResponseEntity<>(ms.newMsg(recv_id, pageNum, amount),HttpStatus.OK);
 	}
 	
+	// 받은 쪽지 페이지(화면)
+	@RequestMapping(value = "/message/recieveMsgBox", method = RequestMethod.GET)
+	public String recieveMsg(Model model, CriteriaVO cri) {
+		int total=ms.recieveMsgTotal(cri);
+		System.out.println(total);
+		model.addAttribute("paging", new pageVO(cri, total));
+		return "message/recieveMsgBox";
+	}
+	
 	// 받은 메세지 리스트
 	@RequestMapping(value = "/message/recieveBox/{recv_id}/{pageNum}/{amount}", method=RequestMethod.GET)
 	public ResponseEntity<ArrayList<MessageVO>> recieveMsg(@PathVariable String recv_id, @PathVariable int pageNum, @PathVariable int amount){
@@ -81,15 +90,6 @@ public class MessageController {
 		return new ResponseEntity<>(ms.recieveMsg(recv_id, pageNum, amount),HttpStatus.OK);
 	}
 	
-/* 받은 메세지 리스트 백업
-	// 받은 메세지 리스트
-	@RequestMapping(value = "/message/recieveBox/{recv_id}", method=RequestMethod.GET)
-	public ResponseEntity<ArrayList<MessageVO>> recieveMsg(@PathVariable String recv_id){
-		System.out.println(recv_id);		
-		
-		return new ResponseEntity<>(ms.recieveMsg(recv_id),HttpStatus.OK);
-	}
-*/	
 	// 보낸 메세지 리스트
 	@RequestMapping(value = "/message/sendBox/{send_id}", method=RequestMethod.GET)
 	public ResponseEntity<ArrayList<MessageVO>> sendMsg(@PathVariable String send_id){
@@ -98,15 +98,6 @@ public class MessageController {
 		return new ResponseEntity<>(ms.sendMsg(send_id),HttpStatus.OK);
 	}
 
-/*	
-	// 새로온 메세지 리스트
-	@RequestMapping(value = "/message/newBox/{recv_id}", method=RequestMethod.GET)
-	public ResponseEntity<ArrayList<MessageVO>> newMsg(@PathVariable String recv_id){
-		System.out.println(recv_id);		
-		
-		return new ResponseEntity<>(ms.newMsg(recv_id),HttpStatus.OK);
-	}
-*/
 	// 받은 메세지 삭제(실제 삭제는 안 되고 DB에 recv_chk 를 1로 업데이트 한다)
 	@RequestMapping(value = "/message/recvRemove", method=RequestMethod.PUT)
 	public ResponseEntity<String> recvRemove(@RequestBody MessageVO mvo){
