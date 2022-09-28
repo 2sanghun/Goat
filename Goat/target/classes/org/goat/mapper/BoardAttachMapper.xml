@@ -13,7 +13,19 @@
 	<delete id="attachremove">
     delete from attach where uuid=#{uuid};
 	</delete>
-	<select id="attachlist" resultType="org.goat.model.AttachFileVO">
+	
+	
+<!--<select id="attachlist" resultType="org.goat.model.AttachFileVO">
 		select * from attach where bno = #{bno};
+	</select> -->
+
+	<select id="attachlist" resultType="org.goat.model.AttachFileVO">
+		select a.* , b.content
+		from attach a
+		right outer join board b
+		on a.bno=b.bno
+		where b.bno = #{bno}
 	</select>
+
+	
 </mapper>
