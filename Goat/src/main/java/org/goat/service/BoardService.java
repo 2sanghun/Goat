@@ -9,8 +9,6 @@ import org.goat.model.CriteriaVO;
 public interface BoardService {
 	// 글쓰기 설계
 	public void boardwrite(BoardVO board);
-	
-	// public ArrayList<AttachFileVO> attachlist(int bno);
 
 	// 글 목록 리스트 설계
 	// public ArrayList<BoardVO> list();
