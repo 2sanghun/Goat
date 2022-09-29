@@ -21,7 +21,9 @@ body{
 	line-height: 80px;
 	margin-top: 20px;
 }
-
+li{
+	list-style:none;
+}
 table {
 	width: 1000px;
 	margin: auto;

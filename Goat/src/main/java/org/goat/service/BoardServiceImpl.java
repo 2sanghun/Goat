@@ -30,10 +30,6 @@ public class BoardServiceImpl implements BoardService {
 		}
 	}
 
-	public ArrayList<AttachFileVO> attachlist(int bno) {
-		return bam.attachlist(bno);
-	}
-
 //	public ArrayList<BoardVO> list(){
 //		return bm.list();
 //	}
