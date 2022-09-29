@@ -49,7 +49,7 @@
 				</table>
 					
 						<div id="uploadResult" contentEditable = "true" style="height:500px;">
-							<ul><li></li></ul>		
+							<ul></ul>		
 						</div>
 					
 				<table>

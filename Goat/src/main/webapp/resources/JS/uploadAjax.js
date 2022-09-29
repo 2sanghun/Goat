@@ -77,10 +77,6 @@ $(document).ready(function(){
 				var str = content;
 				var input = "";
 				$(result).each(function(i, obj){	// result가 배열이면 each(for) i가 인덱스 번호, obj[i]
-//					input +="<input type='text' name='attach["+i+"].fileName' value='" + obj.fileName+"'>";
-//					input +="<input type='text' name='attach["+i+"].uuid' value='" + obj.uuid+"'>";
-//					input +="<input type='text' name='attach["+i+"].uploadPath' value='" + obj.uploadPath+"'>";
-//					input +="<input type='text' name='attach["+i+"].image' value='" + obj.image+"'>";
 					var listdata = {"fileName":obj.fileName,"uuid":obj.uuid,"uploadPath":obj.uploadPath,"image":obj.image}
 					atlist.push(listdata);
 					// 만약 image 결과가 true면
@@ -97,14 +93,10 @@ $(document).ready(function(){
 					}
 				})
 				
-				$("#uploadResult ul").html(str);
-//				alert($("#uploadResult ul").html());
-//				input +="<textarea name='content'>"+ $("#uploadResult ul").html()+"</textarea>";
 				var titleVal = $("#uploadtitle").val()
-				var contentValue = $("#uploadResult > ul").html();
+				var contentValue = str;
 				var categoryVal = $("#select select").val();
 				writePost({content:contentValue,title:titleVal,category:categoryVal,attach:atlist})
-//				$("#form").append(input).submit();
 			}
 		})
 	})
