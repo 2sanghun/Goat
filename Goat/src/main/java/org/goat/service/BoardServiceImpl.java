@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import org.goat.mapper.BoardAttachMapper;
 import org.goat.mapper.BoardMapper;
-import org.goat.model.AttachFileVO;
 import org.goat.model.BoardVO;
 import org.goat.model.CriteriaVO;
 import org.springframework.beans.factory.annotation.Autowired;
