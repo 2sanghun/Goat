@@ -15,7 +15,7 @@
 	src="../../../resources/JS/writeAttach.js?version=1.6"></script>
 
 
-</head>
+</head> 
 <body>
 	<div id="container">
 		<%@ include file="../header/header.jsp"%>
