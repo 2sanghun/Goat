@@ -25,7 +25,16 @@
 	</select>
 
 	<select id="sendMsg" resultType="org.goat.model.MessageVO">
-		select * from message where send_id=#{send_id} and send_chk=0 order by mno desc
+		select *
+		from(
+			select @rownum:=@rownum+1 rownum, m.*
+			from message m, (select @rownum:=0) as tmp
+			where send_id=#{param1} and send_chk=0
+			order by mno desc
+		) as messagelist
+		<![CDATA[
+		where rownum>(#{param2}-1)*#{param3} and rownum<=#{param2}*#{param3}
+		]]>
 	</select>
 
 	<select id="newMsg" resultType="org.goat.model.MessageVO">
@@ -65,5 +74,9 @@
 	
 	<select id="recieveMsgTotal" resultType="int">
 		select count(*) from message where recv_id=#{recv_id} and recv_chk=#{recv_chk}
-	</select>     
+	</select>
+	
+	<select id="sendMsgTotal" resultType="int">
+		select count(*) from message where send_id=#{send_id} and send_chk=#{send_chk}
+	</select>
   </mapper>

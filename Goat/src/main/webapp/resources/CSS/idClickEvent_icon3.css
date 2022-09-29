@@ -10,11 +10,11 @@
 	list-style-type: none;
 	position: absolute;
 	z-index: 100;
-	left: 410px;
 }
 
 .idul a {
 	color: gray;
+	cursor: pointer;
 }
 
 .idul a:hover {

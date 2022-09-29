@@ -38,7 +38,7 @@
 	padding: 15px 75px 15px 75px;
 }
 
-#newBox:hover {
+#newBox:hover a {
 	cursor: pointer;
 }
 
@@ -47,7 +47,7 @@
 	border-right: 1px solid gray;
 }
 
-#recieveBox:hover {
+#recieveBox:hover a {
 	cursor: pointer;
 }
 
@@ -55,7 +55,7 @@
 	padding: 15px 75px 15px 75px;
 }
 
-#sendBox:hover {
+#sendBox:hover a {
 	cursor: pointer;
 }
 
@@ -74,14 +74,28 @@ li {
 	display: block;
 }
 
+.firstli {
+	font-weight: bold;
+	font-size: 18px;
+}
+
 .lastli {
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 10px;
 }
 
-.firstli {
+.lastli>input {
+	margin: 0 20px 0 0;
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	background: white;
+}
+
+.lastli>input:hover {
+	background-color: #2BC0E4;
+	color: white;
 	font-weight: bold;
-	font-size: 18px;
 }
 
 .mcontent {
@@ -99,11 +113,44 @@ li {
 	padding-right: 10px;
 }
 
-.recieveRemove {
-	border: none;
-	background: white;
+#noData {
+	height: 100px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 40%);
 }
 
-.recieveRemove:hover {
-	font-weight: bold;
+
+#messagePage {
+	width: 700px;
+	height: auto;
+	margin: auto;
+	padding: 15px 0 0 0;
+	position: relative;
+	text-align: center;
+}
+
+#messagePage>ul {
+	display: inline;
+}
+
+#messagePage>ul>li {
+	display: inline;
+	padding: 10px;
+	color: #8C8C8C;
+	background: white;
+	border-radius: 4px;
+}
+
+#messagePage>ul>li:hover {
+	background-color: #2BC0E4;
+	color: white;
+}
+
+.footer_1 {
+	margin-top: 1000px;
 }

@@ -150,6 +150,10 @@ td {
 	padding: 10px
 }
 
+#listTr > td.nick {
+	cursor: pointer;
+} 
+
 .bno {
 	width: 6%;
 	text-align: center;

@@ -24,8 +24,8 @@ public class MessageServiceimpl implements MessageService{
 	}
 	
 	// 보낸 메세지 리스트를 위한 구현
-	public ArrayList<MessageVO> sendMsg(String send_id){
-		return mm.sendMsg(send_id);
+	public ArrayList<MessageVO> sendMsg(String send_id, int pageNum, int amount){
+		return mm.sendMsg(send_id, pageNum, amount);
 	}
 	
 	// 새로운 메세지 리스트를 위한 구현
@@ -56,5 +56,10 @@ public class MessageServiceimpl implements MessageService{
 	// 받은 메세지 전체건수 설계
 	public int recieveMsgTotal(CriteriaVO cri) {
 		return mm.recieveMsgTotal(cri);
+	}
+	
+	// 보낸 쪽지 전체건수 설계
+	public int sendMsgTotal(CriteriaVO cri) {
+		return mm.sendMsgTotal(cri);
 	}
 }

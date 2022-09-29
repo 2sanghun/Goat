@@ -109,7 +109,11 @@
 
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
 				<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-					<a href="/list/list_icon3?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" id="pageNum">${num}</a>
+					<a href="/list/list_icon3?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" id="pageNum"
+						<c:if test="${paging.cri.pageNum==num}">
+							style="font-weight:bold"
+						</c:if>
+					>${num}</a>
 				</c:forEach>
 
 				<!-- next(다음)이 true이면 다음버튼 활성화 -->

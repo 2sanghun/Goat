@@ -24,12 +24,17 @@
 			<ul>
 				<li id="newBox"><a href="/message/newMsgBox?recv_id=${id}&new_chk=0">새 쪽지함</a></li>
 				<li id="recieveBox"><a href="/message/recieveMsgBox?recv_id=${id}&recv_chk=0">받은 쪽지함</a></li>
-				<li id="sendBox">보낸 쪽지함</li>
+				<li id="sendBox"><a href="/message/sendMsgBox?send_id=${id}&send_chk=0">보낸 쪽지함</a></li>
 			</ul>
 		</div>
 		<div id="messageArea">
 			<ul id="message">
 			</ul>
+			<c:if test="${paging.total==0}">
+				<div id="noData">
+					<p> 쪽지가 없습니다. </p>
+				</div>				
+			</c:if>
 		</div>
 		<div id="messagePage">
 			<ul>
@@ -49,6 +54,8 @@
 			</ul>
 		</div>
 	</div>
+	<div class="footer_1">
 	<%@ include file="../header/footer.jsp"%>	
+	</div>
 </body>
 </html>
