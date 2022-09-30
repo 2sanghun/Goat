@@ -162,11 +162,13 @@ td {
 	overflow: hidden;
 	white-space: nowrap;
 }
-td a li {
+
+.contentTd a * {
     list-style-type: none;
     display: inline-block;
 } 
-td a li img {
+
+.contentTd a li img {
     display: none;
 }
 td:nth-child(1) {
