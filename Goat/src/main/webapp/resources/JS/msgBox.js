@@ -87,6 +87,7 @@ $(document).ready(function(){
 	$("#pagingArea").on("click",".pageNumBtn",function(){
 		pageNumValue=parseInt($(this).text());
 		getList(idValue, pageNumValue, amountValue, box);
+		paging(pageNumValue, amountValue);
 	})
 	
 	// 이전 버튼을 클릭 했을 때
@@ -110,12 +111,13 @@ $(document).ready(function(){
 			
 			if(box=="send"){
 				for(var i=0;i<msg.length;i++){
-					str+="<li class='firstli>"+msg[i].recv_id+"</li>"
+					str+="<li class='firstli'>"+msg[i].recv_id+"</li>"
 					str+="<li><textarea id='mcontent"+msg[i].mno+"'class='mcontent' readonly>"+msg[i].mcontent+"</textarea></li>"
 					str+="<li>"+msg[i].send_time+"</li>"
 					str+="<li class='lastli'><input class='sendRemove' type='button' value='삭제' data-mno="+msg[i].mno+"><li>"
 				}
 			}
+			
 			if(box=="recieve"){
 				for(var i=0; i<msg.length; i++){
 					str+="<li class='firstli'>"+msg[i].send_id+"</li>"
@@ -167,7 +169,11 @@ $(document).ready(function(){
 			var prevStr="<li class='prevBtn'>이전</li>";
 		}
 		for(var i=startNum; i<=endNum; i++){
-			numStr+="<li class='pageNumBtn'>"+i+"</li>";
+			if(i==pageNumValue){
+				numStr+="<li class='pageNumBtn' style='color:red;'>"+i+"</li>";
+			}else{
+				numStr+="<li class='pageNumBtn'>"+i+"</li>";
+			}
 		}
 		if(next){
 			var nextStr="<li class='nextBtn'>다음</li>";	
