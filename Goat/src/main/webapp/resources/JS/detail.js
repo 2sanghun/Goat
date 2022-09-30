@@ -49,7 +49,7 @@ function checkExtension(fileName, fileSize){
 	
 	// 파일 전송버튼(id="addfile")을 클릭하면
 	$("#addfile").on("click",function(e){
-		alert("aaaaa");
+		
 		e.preventDefault();
 		
 		// 파일 업로드 관련 로직 처리
@@ -278,7 +278,7 @@ function detailList(){
 function modifyboard(board){ // 글 수정을 하기 위한 함수 선언
    
    console.log(board);
-   alert("되나안되나")
+   
    
    $.ajax({    
       type:"put",
