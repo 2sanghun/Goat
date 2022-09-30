@@ -20,7 +20,7 @@
 <link rel="stylesheet"
 	href="../../../resources/CSS/detail.css?version=1.7">
 
-<!-- <script type="text/javascript" src="../../../resources/JS/like.js?version=1.0"></script> -->
+<script type="text/javascript" src="../../../resources/JS/like.js?version=1.0"></script>
 </head>
 
 <body>
