@@ -81,9 +81,10 @@ header ul>li>a:hover {
 	color: #2BC0E4;
 }
 
+
 img {
-	width: 200px !important;
-	height: 60px !important;
+	width: 200px; 
+	height: 60px;
 }
 
 input {

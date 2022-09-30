@@ -48,7 +48,8 @@ public class DetailController {
 	   
    }
    
-   @RequestMapping(value = "/detail/remove", method = RequestMethod.POST)
+//   @RequestMapping(value = "/detail/remove", method = RequestMethod.POST)
+   @RequestMapping(value = "/detail/remove", method = RequestMethod.GET)
    public String remove(BoardVO board) {
       ds.remove(board);
       return "redirect:/list/list";
