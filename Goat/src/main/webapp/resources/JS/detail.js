@@ -98,7 +98,7 @@ function checkExtension(fileName, fileSize){
 						
 						str+="<img src='/display?fileName="+filePath+"'style='width:600px; height:auto;'>";
 						
-						
+						 
 					}else{	// 그렇지 않으면
 						// 다운로드 할 수 있도록 실행
 						var filePath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName);
