@@ -105,7 +105,7 @@ function checkExtension(fileName, fileSize){
 						str += "<a href='/download?fileName="+filePath+"'>"+obj.fileName+"</a>";
 					}
 				})
-				
+				 
 				$("#uploadResult ul").append(str);
 				//$("#form").append(input).submit();
 			}
