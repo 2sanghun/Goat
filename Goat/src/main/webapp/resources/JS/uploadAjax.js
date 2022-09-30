@@ -65,7 +65,7 @@ $(document).ready(function(){
 		
 		// ajax를 통해서 UploadController에 파일 관련 데이터 전송.
 		$.ajax({ 
-			type : "post",
+			type : "pos",
 			url : "/uploadAjaxAction",
 			data : formData,
 			contentType : false,
