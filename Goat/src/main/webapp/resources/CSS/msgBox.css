@@ -87,7 +87,6 @@ li {
 .lastli>input {
 	margin: 0 20px 0 0;
 	padding: 10px;
-	border: none;
 	border-radius: 4px;
 	background: white;
 }
@@ -137,35 +136,4 @@ li {
 #pagingArea > ul > li:hover {
 	background-color: #2BC0E4;
 	color: white;	
-}
-
-.sendRemove {
-	border: none;
-	background: white;
-}
-
-.sendRemove:hover {
-	font-weight: bold;
-}
-
-.recieveRemove {
-	border: none;
-	background: white;
-}
-
-.recieveRemove:hover {
-	font-weight: bold;
-}
-
-.newRemove {
-	border: none;
-	background: white;
-}
-
-.newRemove:hover {
-	font-weight: bold;
-}
-
-.footer_1 {
-	margin-top: 1000px;
 }
