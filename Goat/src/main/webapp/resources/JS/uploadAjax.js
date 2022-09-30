@@ -82,7 +82,7 @@ $(document).ready(function(){
 					// 만약 image 결과가 true면
 					if(obj.image){
 						// 아래에 있는거 실행
-						var filePath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
+						var filePath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName);
 						console.log(filePath);
 					
 						str+="<li><img src='/display?fileName="+filePath+"'></li>";

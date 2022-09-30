@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"> 
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -49,7 +49,6 @@
 				</table>
 					
 						<div id="uploadResult" contentEditable = "true" style="height:500px;">
-							<ul></ul>		
 						</div>
 					
 				<table>
