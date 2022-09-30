@@ -36,6 +36,9 @@ td {
 	font-weight: bold;
 	background-color: #0000;
 	font-family: 'Kakaofont_Bold';
+		
+	border: none;
+	resize: none;
 }
 
 #regdate {
@@ -97,14 +100,10 @@ td {
 	padding: 20px;
 	text-align: center;
 	margin: auto;
-}
-
-#uploadResult>ul>li {
-	display: block;
-	margin-bottom: 10px;
-}
-
-#contenttext1 {
+	
+	border: none;
+	resize: none;
+	
 	font-family: 'Kakaofont_';
 	font-size: 16px;
 	padding: 20px;
@@ -112,15 +111,33 @@ td {
 	overflow-y: hidden;
 }
 
+#uploadResult>ul>li {
+	display: block;
+	margin-bottom: 10px;
+}
+
+#uploadResult>ul>li>img{
+	width:600px;
+	height:auto;
+}
+
+/*#contenttext1 {
+	font-family: 'Kakaofont_';
+	font-size: 16px;
+	padding: 20px;
+	width: 950px;
+	overflow-y: hidden;
+}*/
+
 td {
 	height: 30px;
 	white-space: nowrap;
 }
 
-textarea {
+/*textarea {
 	border: none;
 	resize: none;
-}
+}*/
 
 input {
 	border: none;
@@ -192,7 +209,7 @@ label:hover {
 }
 
 .modifybtn_box {
-	margin-left: 820px;
+	margin-left: 800px;
 }
 
 #modify {
@@ -202,6 +219,8 @@ label:hover {
 	border: 1px solid #2BC0E4;
 	border-radius: 4px;
 	margin: 20px 0px 20px 0px;
+	
+	
 }
 
 #modify:hover {

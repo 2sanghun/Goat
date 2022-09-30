@@ -47,9 +47,10 @@ function checkExtension(fileName, fileSize){
 }
 	
 	
-		// 파일 전송버튼(id="addfile")을 클릭하면
-	$("#addfile").on("click",function(){
-	
+	// 파일 전송버튼(id="addfile")을 클릭하면
+	$("#addfile").on("click",function(e){
+		alert("aaaaa");
+		e.preventDefault();
 		
 		// 파일 업로드 관련 로직 처리
 		var formData = new FormData();
@@ -94,7 +95,7 @@ function checkExtension(fileName, fileSize){
 						var filePath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
 						console.log(filePath);
 						
-						str+="<img src='/display?fileName="+filePath+"'>"+obj.fileName;
+						str+="<img src='/display?fileName="+filePath+"'>";
 						
 					}else{	// 그렇지 않으면
 						// 다운로드 할 수 있도록 실행
@@ -103,8 +104,8 @@ function checkExtension(fileName, fileSize){
 					}
 				})
 				
-				$("#uploadResult ul").html(str);
-				$("#form").append(input).submit();
+				$("#uploadResult ul").append(str);
+				//$("#form").append(input).submit();
 			}
 		})
 	})
@@ -149,6 +150,8 @@ function checkExtension(fileName, fileSize){
 				attachremove({uuid:uuidValue});
 			}
 	    }); // 첨부파일 삭제 
+	
+	
 })
 
 $(window).on('load', function(){
@@ -213,7 +216,7 @@ function detailList(){
 		
 		console.log(attachlist);
 		
-		var string="";
+		//var string="";
 		var str="";
 		
 		$(attachlist).each(function(i,attach){
@@ -235,11 +238,11 @@ function detailList(){
 			    str += "<li>"+attach.content+"</li>"; // 이래야지 글이 나오는데 
 				
 				
-			    string+="<li data-path='"+attach.uploadPath+"' data-uuid='"+attach.uuid+"'";
-			    string+="data-filename='"+attach.fileName+"' data-type='"+attach.image+"'><div class='btn'>";
-			    string+="<button type='button' data-file='"+filePath+"' data-type='image' data-uuid='"+attach.uuid+"'";
-			    string+=" class='warning-circle'></button>";
-			    string+="<img src='/display?fileName="+filePath+"'></div></li>";
+//			    string+="<li data-path='"+attach.uploadPath+"' data-uuid='"+attach.uuid+"'";
+//			    string+="data-filename='"+attach.fileName+"' data-type='"+attach.image+"'><div class='btn'>";
+//			    string+="<button type='button' data-file='"+filePath+"' data-type='image' data-uuid='"+attach.uuid+"'";
+//			    string+=" class='warning-circle'></button>";
+//			    string+="<img src='/display?fileName="+filePath+"'></div></li>";
 			    
 			}else if(attach.fileName==null){
 				
@@ -253,11 +256,11 @@ function detailList(){
 				str += "<li>"+attach.content+"</li>";
 			
 				
-			    string+="<li data-path='"+attach.uploadPath+"' data-uuid='"+attach.uuid+"'";
-			    string+="data-filename='"+attach.fileName+"' data-type='"+attach.image+"'><div class='btn'>";
-			    string+="<button type='button' data-file='"+filePath+"' data-type='image' data-uuid='"+attach.uuid+"'";
-			    string+=" class='warning-circle'></button>";
-			    string+="<a href='/download?fileName="+filePath+"'>"+attach.fileName+"</a></div></li>";
+//			    string+="<li data-path='"+attach.uploadPath+"' data-uuid='"+attach.uuid+"'";
+//			    string+="data-filename='"+attach.fileName+"' data-type='"+attach.image+"'><div class='btn'>";
+//			    string+="<button type='button' data-file='"+filePath+"' data-type='image' data-uuid='"+attach.uuid+"'";
+//			    string+=" class='warning-circle'></button>";
+//			    string+="<a href='/download?fileName="+filePath+"'>"+attach.fileName+"</a></div></li>";
 			}
 		})
 		
@@ -266,7 +269,7 @@ function detailList(){
 	
 		
 		$("#uploadResult ul").html(str); 
-		$("#uploadlist ul").html(string); 
+		//$("#uploadlist ul").html(string); 
 	})
 	
 }
