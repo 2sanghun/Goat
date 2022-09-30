@@ -170,7 +170,7 @@ $(document).ready(function(){
 		}
 		for(var i=startNum; i<=endNum; i++){
 			if(i==pageNumValue){
-				numStr+="<li class='pageNumBtn' style='color:red;'>"+i+"</li>";
+				numStr+="<li class='pageNumBtn' style='font-weight:bold; color:red;'>"+i+"</li>";
 			}else{
 				numStr+="<li class='pageNumBtn'>"+i+"</li>";
 			}

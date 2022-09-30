@@ -84,7 +84,7 @@
 						<td><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 					</tr>
 					<tr>
-						<td><a href="/detail/detail?bno=${boardlist.bno}">${boardlist.content}</a></td>
+						<td class="contentTd"><a href="/detail/detail?bno=${boardlist.bno}">${boardlist.content}</a></td>
 					</tr>
 					<tr class="tr_last">
 						<td class="td_last">
@@ -122,7 +122,7 @@
 					var="num">
 					<a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" id="pageNum"
 						<c:if test="${paging.cri.pageNum==num}">
-							style="font-weight:bold"
+							style="font-weight:bold; color:red;"
 						</c:if>
 					>${num}</a>
 				</c:forEach>
