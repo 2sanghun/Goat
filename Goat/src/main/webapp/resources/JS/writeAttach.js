@@ -16,7 +16,7 @@ $(document).ready(function() {
 			var fileType = this.files[i].name;
 			fileType = fileType.slice(fileType.indexOf(".")+1).toLowerCase();
 			if(fileType !="jpg" && fileType !="png" && fileType != "gif" && fileType !="bmp"){
-				str+="<span><img src='../../../resources/image/folder.png' style='width:30px; height:30px'>"+fileName+"</span>";
+			     str+="<span><img src='../../../resources/image/folder.png' style='width:30px; height:30px'>"+fileName+"</span>";
 			}else{
 				str +="<img id='imageArea"+i+"' style='width:200px; height:100px'>";
 			}
@@ -41,5 +41,4 @@ $(document).ready(function() {
 //		}
 		 
 	});
-
 })

@@ -9,14 +9,22 @@
 <mapper namespace="org.goat.mapper.MypageMapper">
 
 	<update id="modify">
-		update member 
-		set name = #{name}, password= #{password}, email=#{email}, addr=#{addr}
+		update member
+		set name = #{name}, nick=#{nick}, password= #{password}, email=#{email},
+		addr=#{addr}, birth=#{birth}, phone=#{phone}
+		where id=#{id}
+	</update>
+
+	<update id="modify_nick">
+		update board
+		set nick=#{nick}
 		where id=#{id}
 	</update>
 
 	<delete id="remove">
 		delete from member
-		where password=#{password} and id=#{id};
+		where password=#{password} and
+		id=#{id};
 	</delete>
 	<select id="removechk" resultType="int">
 		select count(*) from member
@@ -32,14 +40,17 @@
 	<select id="detail" resultType="org.goat.model.MemberVO">
 		select *
 		from member
-		where id=#{id};
+		where
+		id=#{id};
 	</select>
 
 	<select id="myboard" resultType="org.goat.model.BoardVO">
-		select *, (select count(*) from b_like where bno=boardlist.bno) as cnthno
+		select *, (select count(*) from b_like where bno=boardlist.bno) as
+		cnthno
 		from(
 		select @rownum:=@rownum+1 rownum, b.*
-		from board b,(select @rownum:=0) as tmp
+		from board b,(select
+		@rownum:=0) as tmp
 		where id = #{id}
 		<if test="keyword !=null">
 			<choose>
@@ -53,43 +64,52 @@
       <![CDATA[
      where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
      ]]>
-     <if test = "keyword != null">
+		<if test="keyword != null">
 			<choose>
-				<when test = "period == 'day'.toString()">
-					and regdate between date_ADD(now(), interval -1 day) and now()
+				<when test="period == 'day'.toString()">
+					and regdate between date_ADD(now(), interval -1 day)
+					and now()
 				</when>
-				<when test = "period == 'week'.toString()">
-					and regdate between date_ADD(now(), interval -1 week) and now()
+				<when test="period == 'week'.toString()">
+					and regdate between date_ADD(now(), interval -1
+					week) and now()
 				</when>
-				<when test = "period == 'month'.toString()">
-					and regdate between date_ADD(now(), interval -1 month) and now()
+				<when test="period == 'month'.toString()">
+					and regdate between date_ADD(now(), interval -1
+					month) and now()
 				</when>
-				<when test = "period == 'sixMonth'.toString()">
-					and regdate between date_ADD(now(), interval -6 month) and now()
+				<when test="period == 'sixMonth'.toString()">
+					and regdate between date_ADD(now(), interval -6
+					month) and now()
 				</when>
-				<when test = "period == 'year'.toString()">
-					and regdate between date_ADD(now(), interval -1 year) and now()
+				<when test="period == 'year'.toString()">
+					and regdate between date_ADD(now(), interval -1
+					year) and now()
 				</when>
 			</choose>
 		</if>
-  	</select>
-  
-  	<select id="houselist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='숙소' order by id='manager' desc, bno desc;
-  	</select>
-  	
-   	<select id="foodlist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='음식' order by id='manager' desc, bno desc;
-  	</select>
-  	
-   	<select id="translist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='교통' order by id='manager' desc, bno desc;
-  	</select>
-  	
-   	<select id="tourlist" resultType="org.goat.model.BoardVO">
-  		select * from board where category='투어' order by id='manager' desc, bno desc;
-  	</select>
-	
+	</select>
+
+	<select id="houselist" resultType="org.goat.model.BoardVO">
+		select * from board where category='숙소' order by id='manager' desc, bno
+		desc;
+	</select>
+
+	<select id="foodlist" resultType="org.goat.model.BoardVO">
+		select * from board where category='음식' order by id='manager' desc, bno
+		desc;
+	</select>
+
+	<select id="translist" resultType="org.goat.model.BoardVO">
+		select * from board where category='교통' order by id='manager' desc, bno
+		desc;
+	</select>
+
+	<select id="tourlist" resultType="org.goat.model.BoardVO">
+		select * from board where category='투어' order by id='manager' desc, bno
+		desc;
+	</select>
+
 	<select id="total" resultType="int">
 		select count(*) from board
 		where id = #{id}
@@ -103,26 +123,33 @@
 				</when>
 				<otherwise>
 					and (title like concat('%',#{keyword},'%')
-					or content like concat('%',#{keyword},'%'))
+					or content like
+					concat('%',#{keyword},'%'))
 				</otherwise>
 			</choose>
 			<choose>
-				<when test = "period == 'day'.toString()">
-					and regdate between date_ADD(now(), interval -1 day) and now()
+				<when test="period == 'day'.toString()">
+					and regdate between date_ADD(now(), interval -1 day)
+					and now()
 				</when>
-				<when test = "period == 'week'.toString()">
-					and regdate between date_ADD(now(), interval -1 week) and now()
+				<when test="period == 'week'.toString()">
+					and regdate between date_ADD(now(), interval -1
+					week) and now()
 				</when>
-				<when test = "period == 'month'.toString()">
-					and regdate between date_ADD(now(), interval -1 month) and now()
+				<when test="period == 'month'.toString()">
+					and regdate between date_ADD(now(), interval -1
+					month) and now()
 				</when>
-				<when test = "period == 'sixMonth'.toString()">
-					and regdate between date_ADD(now(), interval -6 month) and now()
+				<when test="period == 'sixMonth'.toString()">
+					and regdate between date_ADD(now(), interval -6
+					month) and now()
 				</when>
-				<when test = "period == 'year'.toString()">
-					and regdate between date_ADD(now(), interval -1 year) and now()
+				<when test="period == 'year'.toString()">
+					and regdate between date_ADD(now(), interval -1
+					year) and now()
 				</when>
 			</choose>
 		</if>
-	</select> 
+	</select>
 </mapper>
+

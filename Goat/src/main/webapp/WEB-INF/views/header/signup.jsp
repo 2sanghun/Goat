@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 <link rel="stylesheet"
-	href="../../../resources/CSS/signup.css?version=1.3" type="text/css">
+	href="../../../resources/CSS/signup.css?version=1.4" type="text/css">
 <script type="text/javascript" src="../../../resources/JS/signup.js"></script>
 <script type="text/javascript"
-	src="../../../resources/JS/effective.js?version=1.1"></script>
+	src="../../../resources/JS/effective.js?version=1.2"></script>
 </head>
 <body>
 	<div id="container">
@@ -52,7 +52,7 @@
 					<tr>
 
 						<td></td>
-						<td></td>
+						<td></td> 
 						<td colspan="2"><span id="pwmsg" class="msg"></span></td>
 					</tr>
 					<tr>
@@ -73,7 +73,7 @@
 							maxlength='20' class="box"> @ <select name="email"
 							class="emailselect">
 								<option value="@naver.com">naver.com</option>
-								<option value="@daum.com">daum.com</option>
+								<option value="@daum.net">daum.net</option>
 								<option value="@google.com">gmail.com</option>
 						</select></td>
 					</tr>

@@ -18,6 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -53,15 +54,16 @@ public class MainController {
 	}
 	
 	// 글쓰기에서 카테고리, 제목, 내용을 DB로 보내기 위한 back작업을 위한...
-	@RequestMapping(value = "/main/write", method = RequestMethod.POST)
-	public String writePost(BoardVO board,HttpServletRequest request) {
+	@RequestMapping(value = "/main/write", method = RequestMethod.POST, consumes="application/json; charset=utf-8")
+	public ResponseEntity<String> writePost(HttpServletRequest request,@RequestBody BoardVO board) {
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		String nick = (String) session.getAttribute("nick");
 		board.setId(id);
 		board.setNick(nick);
+		System.out.println("board");
 		bs.boardwrite(board);
-		return "redirect:/list/list";
+		return new ResponseEntity<> ("success", HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/header/login", method = RequestMethod.GET)
@@ -143,29 +145,45 @@ public class MainController {
 		}
 	}
 	
+	// 현재 다음에만 메일이 전송됨 
 	@RequestMapping(value = "/header/pwsearch", method = RequestMethod.POST)
-	public String pwsearch(MemberVO member,HttpServletResponse response) throws IOException {
-		String pw = ms.pwsearch(member);
+	public String pwsearch(MemberVO member,HttpServletResponse response) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		if(pw!=null) {
-			int a = pw.length()/2;
-			String b = "";
-			String serpw;
-			for(int i=0;i<a;i++) {b+="*";}
-			if(pw.length()%2==0) {
-				serpw = pw.substring(0,a) + b;
-			}else {
-				serpw = pw.substring(0,a) + b + "*";
-			}
-			out.println("<script>alert('비밀번호:"+serpw+"'); </script>");
-			out.flush();
-			return "header/login";
-		}else {
-			out.println("<script>alert('비밀번호를 찾을 수 없습니다.'); </script>");
+		
+		if(ms.findPwCheck(member)==0) {
+			out.println("<script>alert('아이디와 이메일을 확인해 주세요'); </script>");
 			out.flush();
 			return "header/idsearch";
+		}else {
+			ms.findPw(member);
+			out.println("<script>alert('이메일에서 임시 비밀번호를 확인해주세요.네이버,구글은 안됨.'); </script>");
+			out.flush();
+			return "header/login";
 		}
+		
+//		JavaScript로 비밀번호 확인 - 비밀번호는 그대로 앞부분만 표시
+//		String pw = ms.pwsearch(member);
+//		response.setContentType("text/html; charset=UTF-8");
+//		PrintWriter out = response.getWriter();
+//		if(pw!=null) {
+//			int a = pw.length()/2;
+//			String b = "";
+//			String serpw;
+//			for(int i=0;i<a;i++) {b+="*";}
+//			if(pw.length()%2==0) {
+//				serpw = pw.substring(0,a) + b;
+//			}else {
+//				serpw = pw.substring(0,a) + b + "*";
+//			}
+//			out.println("<script>alert('비밀번호:"+serpw+"'); </script>");
+//			out.flush();
+//			return "header/login";
+//		}else {
+//			out.println("<script>alert('비밀번호를 찾을 수 없습니다.'); </script>");
+//			out.flush();
+//			return "header/idsearch";
+//		}
 		
 	}
 }

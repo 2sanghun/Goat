@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="org.goat.mapper.MessageMapper">
+
+	<insert id="send">
+		insert into message(send_id, recv_id, mcontent)
+		values(#{send_id}, #{recv_id}, #{mcontent})
+	</insert>
+
+	<select id="recieveMsg" resultType="org.goat.model.MessageVO">
+		select *
+		from(
+			select @rownum:=@rownum+1 rownum, m.*
+			from message m, (select @rownum:=0) as tmp
+			where recv_id=#{param1} and recv_chk=0
+			order by mno desc
+		) as messagelist
+		<![CDATA[
+		where rownum>(#{param2}-1)*#{param3} and rownum<=#{param2}*#{param3}
+		]]>
+	</select>
+
+	<select id="sendMsg" resultType="org.goat.model.MessageVO">
+		select *
+		from(
+			select @rownum:=@rownum+1 rownum, m.*
+			from message m, (select @rownum:=0) as tmp
+			where send_id=#{param1} and send_chk=0
+			order by mno desc
+		) as messagelist
+		<![CDATA[
+		where rownum>(#{param2}-1)*#{param3} and rownum<=#{param2}*#{param3}
+		]]>
+	</select>
+
+	<select id="newMsg" resultType="org.goat.model.MessageVO">
+		select * 
+		from(
+			select @rownum:=@rownum+1 rownum, m.*
+			from message m, (select @rownum:=0) as tmp
+			where recv_id=#{param1} and new_msg=0
+			order by mno desc
+		) as messagelist
+		<![CDATA[
+		where rownum>(#{param2}-1)*#{param3} and rownum<=#{param2}*#{param3}
+		]]>
+	</select>
+
+	<update id="recvRemove">
+		update message
+		set recv_chk = 1, new_msg = 1
+		where mno = #{mno}
+	</update>
+
+	<update id="sendRemove">
+		update message
+		set send_chk = 1
+		where mno = #{mno}
+	</update>
+
+	<update id="chkNewMsg">
+		update message
+		set new_msg = 1
+		where mno = #{mno}
+	</update>
+	
+	<select id="newMsgTotal" resultType="int">
+		select count(*) from message where recv_id=#{recv_id} and new_msg=#{new_msg}
+	</select>
+	
+	<select id="recieveMsgTotal" resultType="int">
+		select count(*) from message where recv_id=#{recv_id} and recv_chk=#{recv_chk}
+	</select>
+	
+	<select id="sendMsgTotal" resultType="int">
+		select count(*) from message where send_id=#{send_id} and send_chk=#{send_chk}
+	</select>
+  </mapper>

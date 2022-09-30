@@ -49,7 +49,6 @@
 		</if>
 		;
 	</select>
-
 	<!-- 멤버 리스트에서 id 검색 -->
 	<!-- <select id="memsearch" resultType="org.goat.model.MemberVO"> select 
 		* from member <if test="id != null"> where id like CONCAT('%',#{id},'%') 
@@ -72,9 +71,8 @@
 	<select id="WriteList" resultType="org.goat.model.BoardVO">
 		select *
 		from(
-		select @rownum:=@rownum+1 rownum, b.*
-		from board b,
-		(select @rownum:=0) as tmp
+		    select @rownum:=@rownum+1 rownum, b.* ,(select count(*) from reple where bno=b.bno) as cntrno
+		    from board b, (select @rownum:=0) as tmp
 		where id=#{id}
 		) as boardlist
 		<![CDATA[

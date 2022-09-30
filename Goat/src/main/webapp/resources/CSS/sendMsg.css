@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'Kakaofont';
+	src: url(KakaoBold.ttf)
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+.sendMsgArea {
+	width: 650px;
+	height: 370px;
+	margin: auto;
+	font-size: 18px;
+	font-family: 'Kakaofont';
+	border: 1px solid black;
+	border-radius: 4px;
+	background: #ffebd5;
+}
+
+.recieveIdArea {
+	width: 580px;
+	height: 80px;
+	margin: auto;
+	line-height: 40px;
+	padding: 20px;
+}
+
+.msgContent {
+	width: 580px;
+	height: 200px; : red;
+	margin: auto;
+	padding: 10px;
+}
+
+.btnsArea {
+	width: 580px;
+	height: 80px;
+	margin: auto;
+	padding: 10px;
+	line-height: 60px;
+}
+
+#msgContent {
+	width: 480px;
+	height: 180px;
+	resize: none;
+	padding: 10px;
+	font-family: 'Kakaofont_';
+	border-radius: 4px;
+}
+
+#send, .cancle {
+	margin: 5px;
+	padding: 10px 15px;
+	border-radius: 4px;
+	background: white;
+	color: gray;
+	border: 1px solid gray;
+}
+
+#send:hover, .cancle:hover {
+	color: #2BC0E4;
+	border: 1px solid #2BC0E4;
+}

@@ -1,81 +1,97 @@
 @charset "UTF-8";
 
 * {
-   margin: 0px;
-   padding: 0px;
+	margin: 0px;
+	padding: 0px;
 }
 
 #content {
-   width: 1000px;
-   height: 1200px;
-   margin: 0 auto;
-   position: relative;
-   top: 90px;
+	width: 1000px;
+	height: 1200px;
+	margin: 0 auto;
+	position: relative;
+	top: 90px;
 }
 
 #middle {
-   height: 1000px;
+	height: 1060px;
 }
 
 #categorylist {
-   line-height: 80px;
-   height: 80px;
-   font-size: 32px;
-   font-weight: bold;
-   margin-top: 15px;
-   margin-bottom: 15px;
-   padding: 20px;
-   text-align: center;
-   background: linear-gradient(to right, #70e1f5, #eaecc6);
+	line-height: 80px;
+	height: 80px;
+	font-size: 32px;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 20px;
+	text-align: center;
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
 }
 
 .align {
-   height: 58px;
-   margin-bottom: 10px;
-   border-bottom: 3px solid gray;
+	line-height: 40px;
+	height: 58px;
+	margin-bottom: 10px;
+	border-bottom: 3px solid gray;
 }
 
 .sort {
-   position: relative;
-   float: left;
+	position: relative;
+	float: left;
 }
 
 .sort>ul {
-   list-style: none;
+	list-style: none;
 }
 
 .sort>ul>li {
-   float: left;
-   margin-left: 1px;
+	float: left;
+	margin-left: 1px;
 }
 
 .sortimg {
-   width: 40px;
-   height: 40px;
-   border: 1px solid gray;
-   opacity: 0.5;
-   border-radius: 4px;
+	width: 40px !important;
+	height: 40px !important;
+	border: 1px solid gray;
+	opacity: 0.5;
+	border-radius: 4px;
 }
 
 .sortimg_1 {
-   width: 40px;
-   height: 40px;
-   border: 1px solid gray;
-   border-radius: 4px;
+	width: 40px !important;
+	height: 40px !important;
+	border: 1px solid gray;
+	border-radius: 4px;
 }
 
 .ddimg {
-   width: 10px;
-   height: 10px;
-   border-radius: 4px;
+	width: 10px;
+	height: 10px;
+	border-radius: 4px;
+}
+
+.listcount:hover {
+	opacity: 1;
+}
+
+.orderBy {
+	opacity: 0.5;
+}
+
+.orderBy:hover {
+	opacity: 1;
+	font-weight: bold;
 }
 
 .sortimg:hover {
-   opacity: 1;
+	opacity: 1;
 }
 
 .sortby {
-	float: right;
+	position: absolute;
+	top: 118px;
+	left: 131px;
 	width: 80px;
 	text-align: center;
 }
@@ -87,7 +103,9 @@
 	padding: 0px 6px;
 	overflow: hidden;
 	font-size: 14px;
+	opacity: 0.5;
 	margin-top: 17px;
+	border-radius: 4px;
 }
 
 .sortby>a:after {
@@ -107,190 +125,202 @@
 }
 
 .detail_img {
-   cursor: pointer;
-   width: 190px;
-   height: 120px;
-   border-radius: 20px;
-   border: 0.5px solid lightgray;
+	cursor: pointer;
+	width: 190px !important;
+	height: 120px !important;
+	border-radius: 20px;
+	border: 0.5px solid lightgray;
 }
 
 #imglist>li {
-   height: 220px;
-   margin-right: 5px;
+	height: 220px;
+	margin-right: 5px;
 }
 
 dl>dd:nth-child(1) {
-   text-overflow: ellipsis;
-   width: 180px;
-   white-space: nowrap;
-   overflow: hidden;
+	text-overflow: ellipsis;
+	width: 180px;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 dd:nth-child(1)>a {
-   cursor: pointer;
-   font-size: 19px;
-   font-weight: bold;
-   color: #3262c5;
+	font-size: 19px;
+	font-weight: bold;
+	color: #3262c5;
 }
 
 dd:nth-child(2), dd:nth-child(2)>a {
-   color: #3262c5;
-   font-weight: bold;
-   font-size: 14px;
+	color: gray;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 dd:nth-child(2)>a {
-   cursor: pointer;
+	color: #3262c5;
 }
 
-dd:nth-child(3) {
-   color: gray;
-   font-size: 14px;
-   margin-bottom: 20px;
+dd:nth-child(3), dd:nth-child(3)>a {
+	color: #3262c5;
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+
+.idul {
+	font-weight: normal;
+}
+
+dd>a {
+	cursor: pointer;
+}
+
+dd>span {
+	cursor: pointer;
 }
 
 table {
-   width: 1000px;
-   border-collapse: collapse;
-   table-layout: fixed;
+	width: 1000px;
+	border-collapse: collapse;
+	table-layout: fixed;
 }
 
 #notice td {
-   background: #f2f2f2;
+	background: #f2f2f2;
 }
 
 #imglist {
-   list-style: none;
+	list-style: none;
 }
 
 #imglist>li {
-   float: left;
+	float: left;
 }
 
 #nodata {
-   height: 100px;
-   text-align: center;
+	height: 100px;
+	text-align: center;
 }
 
 #nodatah {
-   font-size: 15px;
-   position: relative;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+	font-size: 15px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #tr1 {
-   font-weight: bold;
-   font-size: 18px;
-   border-top: 3px solid #8C8C8C;
-   border-bottom: 2px solid #8C8C8C;
+	font-weight: bold;
+	font-size: 18px;
+	border-top: 3px solid #8C8C8C;
+	border-bottom: 2px solid #8C8C8C;
 }
 
 td {
-   height: 30px;
-   border-bottom: 1px solid gray;
-   text-overflow: ellipsis;
-   overflow: hidden;
-   white-space: nowrap;
-   padding: 20px
+	height: 30px;
+	border-bottom: 1px solid gray;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 20px
 }
 
 .bno {
-   width: 10%;
-   text-align: center;
+	width: 10%;
+	text-align: center;
 }
 
 .title {
-   width: 30%;
-   text-align: center;
+	width: 30%;
+	text-align: center;
 }
 
 .title>a {
-   cursor: pointer;
+	cursor: pointer;
 }
 
 .nick {
-   width: 8%;
-   text-align: center;
+	width: 8%;
+	text-align: center;
 }
 
 .regdate {
-   width: 18%;
-   text-align: center;
+	width: 18%;
+	text-align: center;
 }
 
 .cnt {
-   width: 8%;
-   text-align: center;
+	width: 8%;
+	text-align: center;
 }
 
 .good {
-   width: 8%;
-   text-align: center;
+	width: 8%;
+	text-align: center;
 }
 
 #search {
-   text-align: center;
+	text-align: center;
 }
 
 #searchform {
-   position: relative;
-   float: right;
-   top: -1px;
+	position: relative;
+	float: right;
+	top: -1px;
 }
 
 #searchAll {
-   border: 1px solid #2BC0E4;
-   height: 44px;
-   width: 660px;
-   margin: auto;
+	border: 1px solid #2BC0E4;
+	height: 44px;
+	width: 660px;
+	margin: auto;
 }
 
 .search {
-   cursor: url(../Cursor/paper.png), auto;
-   font-size: 14px;
-   width: 130px;
-   padding: 12px;
-   outline: none;
-   border: none;
-   float: left;
+	cursor: url(../Cursor/paper.png), auto;
+	font-size: 14px;
+	width: 130px;
+	padding: 12px;
+	outline: none;
+	border: none;
+	float: left;
 }
 
 #query {
-   width: 310px;
+	width: 310px;
 }
 
 #searchbtn {
-   color: white;
-   background-color: #2BC0E4;
-   padding: 10px;
-   float: right;
-   width: 60px;
-   height: 44px;
+	color: white;
+	background-color: #2BC0E4;
+	padding: 10px;
+	float: right;
+	width: 60px;
+	height: 44px;
 }
 
 #pagingArea {
-   margin-top: 30px;
-   position: relative;
+	margin-top: 30px;
+	position: relative;
 }
 
 #pageNum {
-   padding: 10px;
-   color: #8C8C8C;
-   background: white;
-   border-radius: 4px;
+	padding: 10px;
+	color: #8C8C8C;
+	background: white;
+	border-radius: 4px;
 }
 
 #pageNum:hover {
-   background-color: #2BC0E4;
-   color: white;
+	background-color: #2BC0E4;
+	color: white;
 }
 
 #pageBtn {
-   padding: 10px;
-   padding-bottom: 12px;
-   background-color: #2BC0E4;
-   color: white;
-   border-radius: 4px;
+	padding: 10px;
+	padding-bottom: 12px;
+	background-color: #2BC0E4;
+	color: white;
+	border-radius: 4px;
 }

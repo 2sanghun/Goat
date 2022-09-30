@@ -89,9 +89,9 @@ tr {
 
 .backbtn {
 	color: gray;
-	padding: 15px 25px;
+	padding: 10px 15px;
 	margin: 5px;
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: bold;
 	border: 0.5px solid gray;
 	background-color: white;
@@ -101,7 +101,7 @@ tr {
 .backbtn:hover {
 	cursor: pointer;
 	color: #2BC0E4;
-	border: 2px solid #2BC0E4;
+	border: 1px solid #2BC0E4;
 }
 
 h4 {

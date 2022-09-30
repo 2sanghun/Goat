@@ -9,11 +9,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerWriteListCSS.css?version=1.8">
+	href="../../../resources/CSS/managerWriteListCSS.css?version=2.0">
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript"
-	src="../../../resources/JS/scrollToTop.js?version=1.3"></script>
+	src="../../../resources/JS/scrollToTop.js?version=1.5"></script>
 
 <script type="text/javascript">
 	function delchk() {
@@ -41,7 +41,7 @@
 				<c:forEach items="${WList}" var="WriteList">
 					<tr class="writelist">
 						<td>${WriteList.bno}</td>
-						<td><a href="/detail/detail?bno=${WriteList.bno}">${WriteList.title}</a></td>
+						<td><a href="/detail/detail?bno=${WriteList.bno}">${WriteList.title}<span class="cntrno">　[${WriteList.cntrno}]</span></a></td>
 						<td>${WriteList.regdate}</td>
 						<td><a href="/manager/writeremove?bno=${WriteList.bno}"><input
 								onclick="return delchk();" type="button" value="삭제"

@@ -13,6 +13,8 @@ public class AttachFileVO {
 	// 5. 게시판 번호
 	private int bno;
 	
+	private String content;
+	
 	public String getUploadPath() {
 		return uploadPath;
 	}
@@ -45,10 +47,18 @@ public class AttachFileVO {
 		this.bno = bno;
 	}
 	
+	
+	
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
 	@Override
 	public String toString() {
 		return "AttachFileVO [uploadPath=" + uploadPath + ", fileName=" + fileName + ", uuid=" + uuid + ", image="
-				+ image + ", bno=" + bno + "]";
+				+ image + ", bno=" + bno + ", content=" + content + "]";
 	}
 	
 }

@@ -6,6 +6,7 @@ $(document).ready(function(){
 	
 	var bnoValue = $("input[name='bno']").val();
 	var idValue = $("#id").val();
+	var cnthno = parseInt($(".cnthno").text());
 	var likeValue;
 	$.ajaxSetup({async : false});
 	
@@ -14,6 +15,7 @@ $(document).ready(function(){
 	$("#likeBtn").on("click", function(){
 		like({bno:bnoValue, id:idValue});
 		checkLike(bnoValue, idValue);
+		$(".cnthno").text(cnthno);
 	})
 	
 	// checkLike 함수 선언
@@ -25,9 +27,9 @@ $(document).ready(function(){
 			// alert("checkLike 함수 실행 "+likeValue)
 			// alert("좋아요 체크(1이면 좋아요상태, 0이면 좋아요가 아닌 상태)"+likeValue);
 			if(likeValue>0){
-				$("#likeImg").attr("src","/resources/image/love.png");
+				$("#likeImg").attr("src","/resources/image/star.png");
 			} else{
-				$("#likeImg").attr("src","/resources/image/nlove.png");
+				$("#likeImg").attr("src","/resources/image/nstar.png");
 			}
 		})
 	}
@@ -46,6 +48,7 @@ $(document).ready(function(){
 					success : function(result){
 						if(result == "success"){
 							alert("좋아요");
+							cnthno+=1;
 						}
 					}
 				})
@@ -58,6 +61,7 @@ $(document).ready(function(){
 					success : function(result){
 						if(result == "success"){
 							alert("좋아요 취소");
+							cnthno-=1;
 						}
 					}
 				})

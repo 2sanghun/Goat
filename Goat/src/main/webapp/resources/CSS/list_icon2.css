@@ -1,76 +1,92 @@
 @charset "UTF-8";
 
 * {
-   margin: 0;
-   padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 #content {
-   width: 1000px;
-   margin: 0 auto;
-   position: relative;
-   top: 90px;
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	top: 90px;
 }
 
 #categorylist {
-   line-height: 80px;
-   height: 80px;
-   font-size: 32px;
-   font-weight: bold;
-   margin-top: 15px;
-   margin-bottom: 15px;
-   padding: 20px;
-   text-align: center;
-   background: linear-gradient(to right, #70e1f5, #eaecc6);
+	line-height: 80px;
+	height: 80px;
+	font-size: 32px;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 20px;
+	text-align: center;
+	background: linear-gradient(to right, #70e1f5, #eaecc6);
 }
 
 .align {
-   height: 58px;
-   margin-bottom: 10px;
-   border-bottom: 3px solid gray;
+	line-height: 40px;
+	height: 58px;
+	margin-bottom: 10px;
+	border-bottom: 3px solid gray;
 }
 
 .sort {
-   position: relative;
-   float: left;
+	position: relative;
+	float: left;
 }
 
 .sort>ul {
-   list-style: none;
+	list-style: none;
 }
 
 .sort>ul>li {
-   float: left;
-   margin-left: 1px;
+	float: left;
+	margin-left: 1px;
 }
 
 .sortimg {
-   width: 40px;
-   height: 40px;
-   border: 1px solid gray;
-   opacity: 0.5;
-   border-radius: 4px;
+	width: 40px !important;
+	height: 40px !important;
+	border: 1px solid gray;
+	opacity: 0.5;
+	border-radius: 4px;
 }
 
 .sortimg_1 {
-   width: 40px;
-   height: 40px;
-   border: 1px solid gray;
-   border-radius: 4px;
+	width: 40px !important;
+	height: 40px !important;
+	border: 1px solid gray;
+	border-radius: 4px;
 }
 
 .ddimg {
-   width: 10px;
-   height: 10px;
-   border-radius: 4px;
+	width: 10px;
+	height: 10px;
+	border-radius: 4px;
+}
+
+.listcount:hover {
+	opacity: 1;
+}
+
+.orderBy {
+	opacity: 0.5;
+}
+
+.orderBy:hover {
+	opacity: 1;
+	font-weight: bold;
 }
 
 .sortimg:hover {
-   opacity: 1;
+	opacity: 1;
 }
 
 .sortby {
-	float: right;
+	position: absolute;
+	top: 118px;
+	left: 131px;
 	width: 80px;
 	text-align: center;
 }
@@ -82,7 +98,9 @@
 	padding: 0px 6px;
 	overflow: hidden;
 	font-size: 14px;
+	opacity: 0.5;
 	margin-top: 17px;
+	border-radius: 4px;
 }
 
 .sortby>a:after {
@@ -102,168 +120,179 @@
 }
 
 table {
-   width: 1000px;
-   border-collapse: collapse;
-   table-layout: fixed;
+	width: 1000px;
+	border-collapse: collapse;
+	table-layout: fixed;
 }
 
 #notice td {
-   background: #f2f2f2;
+	background: #f2f2f2;
 }
 
 #nodata {
-   height: 100px;
-   text-align: center;
+	height: 100px;
+	text-align: center;
 }
 
 #nodatah {
-   font-size: 15px;
-   position: relative;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+	font-size: 15px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #tr1 {
-   font-weight: bold;
-   font-size: 18px;
-   border-top: 3px solid #8C8C8C;
-   border-bottom: 2px solid #8C8C8C;
+	font-weight: bold;
+	font-size: 18px;
+	border-top: 3px solid #8C8C8C;
+	border-bottom: 2px solid #8C8C8C;
 }
 
-#uploadResult> a > img {
-   width: 150px;
-   height: 120px;
-   margin-bottom: 18px;
-   border-radius: 20px;
-   border: 0.5px solid lightgray;
+#uploadResult>a>img {
+	width: 150px !important;
+	height: 120px !important;
+	margin-bottom: 18px;
+	border-radius: 20px;
+	border: 0.5px solid lightgray;
 }
 
 td {
-   text-overflow: ellipsis;
-   overflow: hidden;
-   white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 td:nth-child(1) {
-   width: 160px;
+	width: 160px;
 }
 
 td:nth-child(2)>a {
-   cursor: pointer;
-   font-size: 26px;
-   font-weight: bold;
-   color: #3262c5;
+	cursor: pointer;
+	font-size: 26px;
+	font-weight: bold;
+	color: #3262c5;
 }
 
 td:nth-child(1)>a {
-   cursor: pointer;
-   font-size: 14px;
-   font-weight: bold;
-   color: #3262c5;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+	color: #3262c5;
 }
 
 .td_last {
-   padding-bottom: 30px;
-   font-size: 14px;
-   color: gray;
+	padding-bottom: 30px;
+	font-size: 14px;
+	color: gray;
+}
+
+.td_last>span {
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+	color: #3262c5;
+}
+
+.td_last>span>ul {
+	font-weight: normal;
 }
 
 .bno {
-   width: 10%;
-   text-align: center;
+	width: 10%;
+	text-align: center;
 }
 
 .title {
-   width: 30%;
-   text-align: center;
+	width: 30%;
+	text-align: center;
 }
 
 .title>a {
-   cursor: pointer;
+	cursor: pointer;
 }
 
 .nick {
-   width: 8%;
-   text-align: center;
+	width: 8%;
+	text-align: center;
 }
 
 .regdate {
-   width: 18%;
-   text-align: center;
+	width: 18%;
+	text-align: center;
 }
 
 .cnt {
-   width: 8%;
-   text-align: center;
+	width: 8%;
+	text-align: center;
 }
 
 .good {
-   width: 8%;
-   text-align: center;
+	width: 8%;
+	text-align: center;
 }
 
 #search {
-   text-align: center;
+	text-align: center;
 }
 
 #searchform {
-   position: relative;
-   float: right;
-   top: -1px;
+	position: relative;
+	float: right;
+	top: -1px;
 }
 
 #searchAll {
-   border: 1px solid #2BC0E4;
-   height: 44px;
-   width: 660px;
-   margin: auto;
+	border: 1px solid #2BC0E4;
+	height: 44px;
+	width: 660px;
+	margin: auto;
 }
 
 .search {
-   cursor: url(../Cursor/paper.png), auto;
-   font-size: 14px;
-   width: 130px;
-   padding: 12px;
-   outline: none;
-   border: none;
-   float: left;
+	cursor: url(../Cursor/paper.png), auto;
+	font-size: 14px;
+	width: 130px;
+	padding: 12px;
+	outline: none;
+	border: none;
+	float: left;
 }
 
 #query {
-   width: 310px;
+	width: 310px;
 }
 
 #searchbtn {
-   color: white;
-   background-color: #2BC0E4;
-   padding: 10px;
-   float: right;
-   width: 60px;
-   height: 44px;
+	color: white;
+	background-color: #2BC0E4;
+	padding: 10px;
+	float: right;
+	width: 60px;
+	height: 44px;
 }
 
 #pagingArea {
-   margin-top: 30px;
-   position: relative;
+	margin-top: 30px;
+	position: relative;
 }
 
 #pageNum {
-   padding: 10px;
-   color: #8C8C8C;
-   background: white;
-   border-radius: 4px;
+	padding: 10px;
+	color: #8C8C8C;
+	background: white;
+	border-radius: 4px;
 }
 
 #pageNum:hover {
-   background-color: #2BC0E4;
-   color: white;
+	background-color: #2BC0E4;
+	color: white;
 }
 
 #pageBtn {
-   padding: 10px;
-   padding-bottom: 12px;
-   background-color: #2BC0E4;
-   color: white;
-   border-radius: 4px;
+	padding: 10px;
+	padding-bottom: 12px;
+	background-color: #2BC0E4;
+	color: white;
+	border-radius: 4px;
 }

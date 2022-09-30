@@ -17,6 +17,8 @@ public interface MypageMapper {
 	
 	public void modify(MemberVO member);
 	
+	public void modify_nick(MemberVO member);
+	
 	public void remove(MemberVO member);
 	
 	public int removechk(MemberVO member);

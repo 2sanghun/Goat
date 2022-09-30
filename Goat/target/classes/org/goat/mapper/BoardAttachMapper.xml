@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+   
 <mapper namespace="org.goat.mapper.BoardAttachMapper">
 	<insert id="insert">
 		<!-- 파일경로, 파일명, uuid, image여부를 attach테이블 insert -->
@@ -13,7 +13,19 @@
 	<delete id="attachremove">
     delete from attach where uuid=#{uuid};
 	</delete>
-	<select id="attachlist" resultType="org.goat.model.AttachFileVO">
+	
+	
+<!--<select id="attachlist" resultType="org.goat.model.AttachFileVO">
 		select * from attach where bno = #{bno};
+	</select> -->
+
+	<select id="attachlist" resultType="org.goat.model.AttachFileVO">
+		select a.* , b.content
+		from attach a
+		right outer join board b
+		on a.bno=b.bno
+		where b.bno = #{bno}
 	</select>
+
+	
 </mapper>

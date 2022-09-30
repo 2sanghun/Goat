@@ -16,7 +16,7 @@
 }
 
 body {
-	font-family: 'Kakaofont';
+	font-family: 'Kakaofont_';
 	cursor: url(../Cursor/paper.png), auto;
 }
 
@@ -30,7 +30,7 @@ header {
 	height: 70px;
 	width: 99%;
 	margin: auto;
-	padding: 10px 20px 10px 10px;
+	padding: 10px 10px 10px 10px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -82,8 +82,8 @@ header ul>li>a:hover {
 }
 
 img {
-	width: 200px;
-	height: 60px;
+	width: 200px !important;
+	height: 60px !important;
 }
 
 input {
@@ -152,6 +152,26 @@ input {
 
 .headerbtn_sign:hover {
 	cursor: url(../Cursor/paper.png), auto;
+}
+
+header>nav {
+	height: 90px;
+	line-height: 90px;
+}
+
+.headerbtn_message {
+	padding: 0px 0px 3px 0px;
+	width: 35px;
+	height: 35px;
+	font-size: 20px;
+	color: white;
+	background: #96de92;
+	border: 1px solid #96de92;
+	border-radius: 50%;
+}
+
+.headerbtn_message:hover {
+	cursor: pointer;
 }
 
 #category {

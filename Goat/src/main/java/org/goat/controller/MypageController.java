@@ -58,10 +58,11 @@ public class MypageController {
 	
 	//수정
 	@RequestMapping(value = "/mypage/mypage", method = RequestMethod.POST)
-	public String modify(MemberVO member,RedirectAttributes rttr ) {
+	public String modify(MemberVO member,RedirectAttributes rttr,HttpSession session ) {
 		System.out.println("hi");
 		mm.modify(member);
 		rttr.addAttribute("id",member.getId());
+		session.setAttribute("nick", member.getNick());
 		return "mypage/Withdrawal";
 	}
 	

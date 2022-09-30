@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+#content {
+	width: 1000px;
+	height: 1000px;
+	padding: 90px;
+	position: relative;
+	margin: auto;
+}
+
+#messageMenuArea {
+	width: 700px;
+	height: 200px;
+	font-family: 'Kakaofont';
+	font-weight: bold;
+	font-size: 20px;
+	margin: auto;
+	line-height: 70px;
+	border: 1px solid black;
+}
+
+.messagename {
+	background: #2BC0E4;
+	color: white;
+	border-bottom: 1px solid black;
+	height: 100px;
+	margin: auto;
+	text-align: center;
+	line-height: 100px;
+}
+
+#messageMenuArea>ul>li {
+	float: left;
+}
+
+#newBox {
+	border-right: 1px solid gray;
+	padding: 15px 75px 15px 75px;
+}
+
+#newBox:hover a {
+	cursor: pointer;
+}
+
+#recieveBox {
+	padding: 15px 75px 15px 75px;
+	border-right: 1px solid gray;
+}
+
+#recieveBox:hover a {
+	cursor: pointer;
+}
+
+#sendBox {
+	padding: 15px 75px 15px 75px;
+}
+
+#sendBox:hover a {
+	cursor: pointer;
+}
+
+#messageArea {
+	width: 700px;
+	height: auto;
+	margin: auto;
+	position: relative;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+li {
+	padding: 5px;
+	display: block;
+}
+
+.firstli {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.lastli {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+}
+
+.lastli>input {
+	margin: 0 20px 0 0;
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	background: white;
+}
+
+.lastli>input:hover {
+	background-color: #2BC0E4;
+	color: white;
+	font-weight: bold;
+}
+
+.mcontent {
+	width: 650px;
+	height: 40px;
+	resize: none;
+	border: none;
+	color: gray;
+	border-radius: 4px;
+	background: #fff0
+}
+
+#message {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#noData {
+	height: 100px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 40%);
+}
+
+#messagePage {
+	width: 700px;
+	height: auto;
+	margin: auto;
+	padding: 15px 0 0 0;
+	position: relative;
+	text-align: center;
+}
+
+#messagePage>ul {
+	display: inline;
+}
+
+#messagePage>ul>li {
+	display: inline;
+	padding: 10px;
+	color: #8C8C8C;
+	background: white;
+	border-radius: 4px;
+}
+
+#messagePage>ul>li:hover {
+	background-color: #2BC0E4;
+	color: white;
+}
+
+.footer_1 {
+	margin-top: 1000px;
+}

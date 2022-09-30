@@ -27,7 +27,7 @@ public interface ManagerService {
 
 	// 작성 글 리스트
 	public ArrayList<BoardVO> WriteList(CriteriaVO cri);
-	
+		
 	// 작성 글 리스트에서 전체 게시물수 조회
 	public int boardtotal(CriteriaVO cri);
 

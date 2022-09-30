@@ -15,15 +15,15 @@
 	src="../../../resources/JS/writeAttach.js?version=1.6"></script>
 
 
-</head>
+</head> 
 <body>
 	<div id="container">
 		<%@ include file="../header/header.jsp"%>
 		<form action="/main/write" id="form" method="post">
 			<div id="top">
 				<h1 id="writecss">글 쓰기</h1>
-			</div>
-			<div id="mid">
+			</div>  
+			<div id="mid"> 
 				<table>
 					<tr>
 						<td>
@@ -44,12 +44,15 @@
 							</div>
 						</td>
 						<td><input type="text" name="title" id="uploadtitle"
-							placeholder="제목을 입력하세요" maxlength="20"></td>
+							placeholder="제목을 입력하세요" maxlength="40"></td>
 					</tr>
-					<tr>
-						<td colspan="2"><textarea name="content" id="uploadResult"
-								placeholder="내용을 입력하세요"></textarea></td>
-					</tr>
+				</table>
+					
+						<div id="uploadResult" contentEditable = "true" style="height:500px;">
+							<ul></ul>		
+						</div>
+					
+				<table>
 					<tr>
 						<td><label> 파일첨부 <input type="file" name="uploadFile"
 								id="uploadFile" hidden="" multiple>

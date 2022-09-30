@@ -9,7 +9,9 @@
 <title>List</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/JS/list_icon.js"></script>
-<link rel="stylesheet" href="../../../resources/CSS/list_icon2.css" type="text/css">
+<script type="text/javascript" src="/resources/JS/idClickEvent.js"></script>
+<link rel="stylesheet" href="../../../resources/CSS/list_icon2.css?version=1.0" type="text/css">
+<link rel="stylesheet" href="../../../resources/CSS/idClickEvent_icon2.css" type="text/css">
 </head>
 <body>
 	<%@ include file="../header/header.jsp"%>
@@ -65,7 +67,7 @@
 					</ul>
 				</div>
 				<div class="sortby">
-					<a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" id="pageNum" class="listcount">${paging.cri.orderby}</a>
+					<a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=10" class="listcount">${paging.cri.orderby}</a>
 					<ul>
 						<li><a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=최신순" class="orderBy" id="byReg">최신순</a></li>
 						<li><a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=1&amount=${paging.cri.amount}&orderby=추천순" class="orderBy" id="byCntHno">추천순</a></li>
@@ -74,8 +76,6 @@
 				</div>
 			</div>
 			<table>
-
-
 				<!-- 이미지 게시글 목록 for문 시작 -->
 				<c:forEach items="${list}" var="boardlist">
 					<tr>
@@ -84,12 +84,21 @@
 						<td><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 					</tr>
 					<tr>
-						<td><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a></td>
+						<td><a href="/detail/detail?bno=${boardlist.bno}">${boardlist.content}</a></td>
 					</tr>
 					<tr class="tr_last">
 						<td class="td_last">
-							${boardlist.regdate} / ${boardlist.nick} / 
-							👍 ${boardlist.cnthno}
+							${boardlist.regdate} / 
+							<span class="nick">${boardlist.nick}  
+								<ul class="idul">
+									<li><a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10">게시글 보기</a></li>
+									<c:if test="${id!=null and boardlist.id!=id}">
+                           				<li><a href="/message/send?recv_id=${boardlist.id}&recv_nick=${boardlist.nick}" onclick="window.open(this.href, '_blank', 'width=660, height=340');return false;">쪽지 보내기</a></li>
+                        			</c:if>
+								</ul>
+							</span>
+							<a href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10"></a> 
+							/ 👍 ${boardlist.cnthno} / 💬 ${boardlist.cntrno}
 						</td>
 					</tr>
 				</c:forEach>
@@ -105,24 +114,22 @@
 			<div id="pagingArea">
 				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
 				<c:if test="${paging.prev}">
-					<a
-						href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}"
-						class="pageBtn">이전</a>
+					<a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" class="pageBtn">이전</a>
 				</c:if>
 
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
 				<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 					var="num">
-					<a
-						href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}"
-						id="pageNum">${num}</a>
+					<a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" id="pageNum"
+						<c:if test="${paging.cri.pageNum==num}">
+							style="font-weight:bold"
+						</c:if>
+					>${num}</a>
 				</c:forEach>
 
 				<!-- next(다음)이 true이면 다음버튼 활성화 -->
 				<c:if test="${paging.next}">
-					<a
-						href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}"
-						class="pageBtn">다음</a>
+					<a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" class="pageBtn">다음</a>
 				</c:if>
 			</div>
 		</div>

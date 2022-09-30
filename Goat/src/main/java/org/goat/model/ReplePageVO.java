@@ -1,5 +1,5 @@
 package org.goat.model;
-
+ 
 import java.util.ArrayList;
 
 public class ReplePageVO {

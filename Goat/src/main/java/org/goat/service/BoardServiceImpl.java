@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.goat.mapper.BoardAttachMapper;
 import org.goat.mapper.BoardMapper;
-import org.goat.model.AttachFileVO;
+
 import org.goat.model.BoardVO;
 import org.goat.model.CriteriaVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +28,6 @@ public class BoardServiceImpl implements BoardService {
 				bam.insert(attach);
 			});
 		}
-	}
-
-	public ArrayList<AttachFileVO> attachlist(int bno) {
-		return bam.attachlist(bno);
 	}
 
 //	public ArrayList<BoardVO> list(){

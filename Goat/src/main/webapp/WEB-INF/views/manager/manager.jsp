@@ -9,11 +9,15 @@
 <meta charset="UTF-8">
 <title>관리자 페이지</title>
 <link rel="stylesheet"
-	href="../../../resources/CSS/managerCSS.css?version=3.1">
+	href="../../../resources/CSS/managerCSS.css?version=3.2">
+<link rel="stylesheet"
+	href="../../../resources/CSS/idClickEvent_manager.css?version=1.0">
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../../../resources/JS/managerjs.js?version=1.2"></script>
-
+<script type="text/javascript"
+	src="../../../resources/JS/managerjs.js?version=1.2"></script>
+<script type="text/javascript"
+	src="../../../resources/JS/idClickEvent.js?version=1.0"></script>
 </head>
 <body>
 
@@ -64,7 +68,19 @@
 					<tr class="memberlist">
 						<td>${boardlist.name}</td>
 						<td>${boardlist.id}</td>
-						<td>${boardlist.nick}</td>
+						<td class="nick">${boardlist.nick}
+							<ul class="idul">
+								<li><a
+									href="/list/list?period=total&type=N&keyword=${boardlist.nick}&pageNum=1&amount=10">게시글
+										보기</a></li>
+								<c:if test="${id!=null and boardlist.id!=id}">
+									<li><a
+										href="/message/send?recv_id=${boardlist.id}&recv_nick=${boardlist.nick}"
+										onclick="window.open(this.href, '_blank', 'width=600, height=400');return false;">쪽지
+											보내기</a></li>
+								</c:if>
+							</ul>
+						</td>
 						<td>${boardlist.memdate}</td>
 						<td><a href="/manager/managerWriteList?id=${boardlist.id}"><input
 								type="button" value="글" class="modifybtn"></a> <a
@@ -75,7 +91,7 @@
 					</tr>
 				</c:forEach>
 			</table>
-<a href="#" class="scrollToTop"></a>
+			<a href="#" class="scrollToTop"></a>
 
 		</div>
 		<!-- body -->
@@ -85,7 +101,7 @@
 				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
 				<c:if test="${paging.prev}">
 					<a class="pagemove"
-						href="/manager/manager?type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}"><</a>
+						href="/manager/manager?type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}"></a>
 				</c:if>
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
 				<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
@@ -113,7 +129,7 @@
 			<!-- 페이징 -->
 		</div>
 		<!-- footer -->
-				<%@ include file="../header/footer.jsp"%>
+		<%@ include file="../header/footer.jsp"%>
 	</div>
 	<!-- container -->
 

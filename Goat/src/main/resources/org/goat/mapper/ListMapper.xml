@@ -11,7 +11,7 @@
   		from(
 	  		select @rownum:=@rownum+1 rownum, boardlist.*
 			from(
-				 select b.*, (select count(*) from b_like where bno=b.bno) as cnthno
+				 select b.*, (select count(*) from b_like where bno=b.bno) as cnthno, (select count(*) from reple where bno=b.bno) as cntrno
 				 from board b, (select @rownum:=0) as tmp
 				 <choose>
 		  			<when test="category != null and !category.equals('')" >
@@ -186,10 +186,10 @@
 select *
 from(	
 	select @rownum:=@rownum+1 rownum, bno, title, content, nick, regdate, cnt, id, good, category,
-	       concat(replace(uploadpath, '\\','/'),'/s_' ,uuid,'_' ,filename) filePath, cnthno
+	       concat(replace(uploadpath, '\\','/'),'/s_' ,uuid,'_' ,filename) filePath, cnthno, cntrno
 	       
 	from(
-		 select t.*, (select count(*) from b_like where bno=t.bno) as cnthno
+		 select t.*, (select count(*) from b_like where bno=t.bno) as cnthno, (select count(*) from reple where bno=t.bno) as cntrno
 		 from(
 			  select *
 			  from(

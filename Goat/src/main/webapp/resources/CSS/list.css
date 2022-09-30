@@ -48,8 +48,8 @@
 
 .sortimg {
 	margin-top: 17px;
-	width: 40px;
-	height: 40px;
+	width: 40px !important;
+	height: 40px !important;
 	border: 1px solid gray;
 	opacity: 0.5;
 	border-radius: 4px;
@@ -57,8 +57,8 @@
 
 .sortimg_1 {
 	margin-top: 17px;
-	width: 40px;
-	height: 40px;
+	width: 40px !important;
+	height: 40px !important;
 	border: 1px solid gray;
 	border-radius: 4px;
 }
@@ -105,8 +105,20 @@ table {
 	table-layout: fixed;
 }
 
-#notice td {
+.orderBy {
+	cursor: pointer;
+}
+
+#notice>td {
 	background: #f2f2f2;
+	color: orange;
+	font-weight: bold;
+}
+
+#notice>td>a {
+	background: #f2f2f2;
+	color: orange;
+	font-weight: bold;
 }
 
 #nodata {
@@ -138,6 +150,10 @@ td {
 	padding: 10px
 }
 
+#listTr > td.nick {
+	cursor: pointer;
+} 
+
 .bno {
 	width: 6%;
 	text-align: center;
@@ -153,11 +169,16 @@ td {
 
 .title>a {
 	cursor: pointer;
+	padding: 10px 5px 10px 20px;
 }
 
 .nick {
 	width: 8%;
 	text-align: center;
+}
+
+.nick>a {
+	cursor: pointer;
 }
 
 .regdate {
@@ -166,12 +187,12 @@ td {
 }
 
 .cnt {
-	width: 5%;
+	width: 6%;
 	text-align: center;
 }
 
 .good {
-	width: 5%;
+	width: 6%;
 	text-align: center;
 }
 
@@ -244,6 +265,12 @@ td {
 .listnum:hover {
 	opacity: 1;
 	font-weight: bold;
+}
+
+#cntrno {
+	color: #aaa;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 #pagingArea {

@@ -21,4 +21,10 @@
 	<select id="pwsearch" resultType="String">
 		select password from member where id=#{id} and email=#{email};
 	</select>
+	<select id="findPwCheck" resultType="int">
+		select count(*) from member where email=#{email} and id=#{id};
+	</select>
+	<update id="findPw">
+		update member set password=#{password} where email=#{email} and id=#{id};
+	</update>
 </mapper>
