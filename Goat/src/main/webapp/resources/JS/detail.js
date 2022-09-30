@@ -92,10 +92,12 @@ function checkExtension(fileName, fileSize){
 					// 만약 image 결과가 true면
 					if(obj.image){
 						// 아래에 있는거 실행
-						var filePath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
+						var filePath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName);
+						//var filePath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
 						console.log(filePath);
 						
-						str+="<img src='/display?fileName="+filePath+"'>";
+						str+="<img src='/display?fileName="+filePath+"'style='width:600px; height:auto;'>";
+						
 						
 					}else{	// 그렇지 않으면
 						// 다운로드 할 수 있도록 실행
