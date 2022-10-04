@@ -48,7 +48,7 @@
 					</tr>
 				</table>
 					
-						<div id="uploadResult" contentEditable = "true" style="height:500px;">
+						<div id="uploadResult" contentEditable = "true" style="min-height:500px; height:auto;">
 						</div>
 					
 				<table>
