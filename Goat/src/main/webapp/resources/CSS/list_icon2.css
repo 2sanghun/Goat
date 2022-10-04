@@ -163,14 +163,16 @@ td {
 	white-space: nowrap;
 }
 
-.contentTd a * {
+.contentTd a *{
     list-style-type: none;
     display: inline-block;
+    color: #3262c5;
 } 
 
 .contentTd a li img {
     display: none;
 }
+
 td:nth-child(1) {
 	width: 160px;
 }

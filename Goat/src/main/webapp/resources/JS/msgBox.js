@@ -16,6 +16,7 @@ $(document).ready(function(){
 	var next=false;
 	
 	box = "new";
+	$("#newBox").css('color','#2BC0E4');
 	getList(idValue, pageNumValue, amountValue, box);
 	getTotal(idValue, box);
 	paging(pageNumValue, amountValue);
@@ -23,6 +24,9 @@ $(document).ready(function(){
 	// 새 쪽지함을 클릭 했을 때
 	$("#messageMenuArea").on("click","#newBox",function(){
 		box = "new";
+		$("#newBox").css('color','#2BC0E4');
+		$("#recieveBox").css('color','black');
+		$("#sendBox").css('color','black');
 		pageNumValue = 1;
 		getList(idValue, pageNumValue, amountValue, box);
 		getTotal(idValue, box);
@@ -32,6 +36,21 @@ $(document).ready(function(){
 	// 받은 쪽지함을 클릭 했을 때
 	$("#messageMenuArea").on("click","#recieveBox",function(){
 		box = "recieve";
+		$("#newBox").css('color','black');
+		$("#recieveBox").css('color','#2BC0E4');
+		$("#sendBox").css('color','black');
+		pageNumValue = 1;
+		getList(idValue, pageNumValue, amountValue, box);
+		getTotal(idValue, box);
+		paging(pageNumValue, amountValue);
+	})
+	
+	// 보낸 쪽지함을 클릭 했을 때
+	$("#messageMenuArea").on("click","#sendBox",function(){
+		box = "send";
+		$("#newBox").css('color','black');
+		$("#recieveBox").css('color','black');
+		$("#sendBox").css('color','#2BC0E4');
 		pageNumValue = 1;
 		getList(idValue, pageNumValue, amountValue, box);
 		getTotal(idValue, box);
@@ -69,15 +88,6 @@ $(document).ready(function(){
 		var mno = $(this).data("mno");
 		
 		sendRemove({mno : mno});
-		getList(idValue, pageNumValue, amountValue, box);
-		getTotal(idValue, box);
-		paging(pageNumValue, amountValue);
-	})
-	
-	// 보낸 쪽지함을 클릭 했을 때
-	$("#messageMenuArea").on("click","#sendBox",function(){
-		box = "send";
-		pageNumValue = 1;
 		getList(idValue, pageNumValue, amountValue, box);
 		getTotal(idValue, box);
 		paging(pageNumValue, amountValue);

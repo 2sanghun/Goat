@@ -84,7 +84,7 @@
 						<td><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 					</tr>
 					<tr>
-						<td class="contentTd"><a href="/detail/detail?bno=${boardlist.bno}">${boardlist.content}</a></td>
+						<td class="contentTd"><a href="/detail/detail?bno=${boardlist.bno}" class="contentA">${boardlist.content}</a></td>
 					</tr>
 					<tr class="tr_last">
 						<td class="td_last">
