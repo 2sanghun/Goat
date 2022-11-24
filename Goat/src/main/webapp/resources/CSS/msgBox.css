@@ -74,14 +74,27 @@ li {
 	display: block;
 }
 
+.firstli {
+	font-weight: bold;
+	font-size: 18px;
+}
+
 .lastli {
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 10px;
 }
 
-.firstli {
+.lastli>input {
+	margin: 0 20px 0 0;
+	padding: 10px;
+	border-radius: 4px;
+	background: white;
+}
+
+.lastli>input:hover {
+	background-color: #2BC0E4;
+	color: white;
 	font-weight: bold;
-	font-size: 18px;
 }
 
 .mcontent {
@@ -99,29 +112,28 @@ li {
 	padding-right: 10px;
 }
 
-.sendRemove {
-	border: none;
+#pagingArea {
+	width: 700px;
+	height: auto;
+	margin: auto;
+	padding: 15px 0 0 0;
+	position: relative;
+	text-align: center;
+}
+
+#pagingArea > ul {
+	display: inline;
+}
+
+#pagingArea > ul > li {
+	display: inline;
+	padding: 10px;
+	color: #8C8C8C;
 	background: white;
+	border-radius: 4px;	
 }
 
-.sendRemove:hover {
-	font-weight: bold;
-}
-
-.recieveRemove {
-	border: none;
-	background: white;
-}
-
-.recieveRemove:hover {
-	font-weight: bold;
-}
-
-.newRemove {
-	border: none;
-	background: white;
-}
-
-.newRemove:hover {
-	font-weight: bold;
+#pagingArea > ul > li:hover {
+	background-color: #2BC0E4;
+	color: white;	
 }

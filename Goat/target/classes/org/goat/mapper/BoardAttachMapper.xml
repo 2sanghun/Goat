@@ -20,7 +20,7 @@
 	</select> -->
 
 	<select id="attachlist" resultType="org.goat.model.AttachFileVO">
-		select a.* , b.content
+		select max(a.uuid), a.uploadpath, a.filename,a.image,a.bno , b.content
 		from attach a
 		right outer join board b
 		on a.bno=b.bno

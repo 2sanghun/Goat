@@ -35,11 +35,11 @@
          <%if(id.equals("manager")){ %>  <!-- 아이디가 manager(관리자)일 경우 마이페이지 대신 관리자 버튼 -->
             <a href="../manager/manager"><input type="button" value="관리자" class="headerbtn_mypage"></a>
             <a href="../header/logout"><input type="button" value="로그아웃" class="headerbtn"></a> 
-            <a href="/message/newMsgBox?recv_id=${id}&new_chk=0"><input type="button" value="✉" class="headerbtn_message"></a>
+            <a href="/message/msgBox"><input type="button" value="✉" class="headerbtn_message"></a>
          <%}else{%>
             <a href="../mypage/mypage"><input type="button" value="마이페이지" class="headerbtn_mypage"></a>
-            <a href="../header/logout"><input type="button" value="로그아웃" class="headerbtn"></a> 
-            <a href="/message/newMsgBox?recv_id=${id}&new_chk=0"><input type="button" value="✉" class="headerbtn_message"></a>
+            <a href="../header/logout"><input type="button" value="로그아웃" class="headerbtn"></a>
+            <a href="/message/msgBox"><input type="button" value="✉" class="headerbtn_message"></a>
          <%}
 
       }%>

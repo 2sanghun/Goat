@@ -14,19 +14,19 @@
 <script type="text/javascript"
 	src="../../../resources/JS/reple.js?version=1.1"></script>
 <!--  <script type="text/javascript" src="/resources/JS/attach.js"></script> -->  
-<!-- <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script> -->
+<!--  <script type="text/javascript" src="../../../resources/JS/uploadAjax.js"></script> -->
 <script type="text/javascript"
 	src="../../../resources/JS/writeAttach.js"></script>
 <link rel="stylesheet"
 	href="../../../resources/CSS/detail.css?version=1.7">
 
-<!-- <script type="text/javascript" src="../../../resources/JS/like.js?version=1.0"></script> -->
+<script type="text/javascript" src="../../../resources/JS/like.js?version=1.0"></script>
 </head>
 
 <body>
  <%@ include file="../header/header.jsp"%>
    <div id="content">
-      <form method="post" id="form">
+      <form id="form">
          <input type="hidden" id="id" value="${id}"> 
          <input type="hidden" name="bno" value="${detail.bno}">
          <table border="1">

@@ -12,7 +12,6 @@
 <script type="text/javascript" src="/resources/JS/idClickEvent.js"></script>
 <link rel="stylesheet" href="../../../resources/CSS/list.css" type="text/css">
 <link rel="stylesheet" href="../../../resources/CSS/idClickEvent.css" type="text/css">
-<link rel="stylesheet" href="../../../resources/CSS/list.css?version=1.0" type="text/css">
 
 </head>
 <body>
@@ -99,7 +98,7 @@
             </c:if>
             <!-- 게시글 목록 for문 시작 -->
             <c:forEach items="${list }" var="boardlist">
-               <tr>
+               <tr id="listTr">
                   <td class="bno"><a href="/list/list?category=${boardlist.category}">${boardlist.category}</a></td>
                   <td class="title"><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a><span id="cntrno">[${boardlist.cntrno}]</span></td>
                   <td class="nick">${boardlist.nick}
@@ -122,7 +121,7 @@
                <p id="nodatah">등록된 게시글이 없습니다.</p>
             </div>
          </c:if>                  
-      </div>
+      </div> 
       <div id="search">
          <div id="pagingArea">
             <!-- prev(이전)이 true이면 이전버튼 활성화 -->
@@ -132,7 +131,11 @@
       
             <!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
             <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-               <a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" id="pageNum">${num}</a>
+               <a href="/list/list?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" id="pageNum"
+              	 <c:if test="${paging.cri.pageNum==num}">
+               		style="font-weight:bold; color:red;"
+               	 </c:if>
+               >${num}</a>
             </c:forEach>
             
             <!-- next(다음)이 true이면 다음버튼 활성화 -->

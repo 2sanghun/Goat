@@ -21,7 +21,9 @@ body{
 	line-height: 80px;
 	margin-top: 20px;
 }
-
+li{
+	list-style:none;
+}
 table {
 	width: 1000px;
 	margin: auto;
@@ -34,7 +36,7 @@ table {
 
 #mid td input {
 	float: left;
-	width: 860px;
+	width: 870px;
 	margin-left: 0px;
 	margin-bottom: 0px;
 	padding: 12px;

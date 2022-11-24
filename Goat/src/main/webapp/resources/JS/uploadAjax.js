@@ -34,7 +34,7 @@ $(document).ready(function(){
 	// 파일 전송버튼(id="uploadBtn")을 클릭하면
 	$("#uploadBtn").on("click",function(){
 		var title = document.querySelector("#uploadtitle").value;
-		var content = document.querySelector("#uploadResult").value;
+		var content = $("#uploadResult").html();
 		if(title==""){
 			alert("제목을 입력하세요.");
 			return false;
@@ -73,30 +73,30 @@ $(document).ready(function(){
 			dataType : "json",
 			success : function(result){
 				console.log(result);
-				
-				var str = "";
+				var atlist = [];
+				var str = content;
 				var input = "";
 				$(result).each(function(i, obj){	// result가 배열이면 each(for) i가 인덱스 번호, obj[i]
-					input +="<input type='text' name='attach["+i+"].fileName' value='" + obj.fileName+"'>";
-					input +="<input type='text' name='attach["+i+"].uuid' value='" + obj.uuid+"'>";
-					input +="<input type='text' name='attach["+i+"].uploadPath' value='" + obj.uploadPath+"'>";
-					input +="<input type='text' name='attach["+i+"].image' value='" + obj.image+"'>";
+					var listdata = {"fileName":obj.fileName,"uuid":obj.uuid,"uploadPath":obj.uploadPath,"image":obj.image}
+					atlist.push(listdata);
 					// 만약 image 결과가 true면
 					if(obj.image){
 						// 아래에 있는거 실행
-						var filePath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
+						var filePath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName);
 						console.log(filePath);
 					
-						str+="<img src='display?fileName="+filePath+"'>"+obj.fileName;
+						str+="<li><img src='/display?fileName="+filePath+"'></li>";
 					}else{	// 그렇지 않으면
 						// 다운로드 할 수 있도록 실행
 						var filePath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName);
-						str += "<a href='/download?fileName="+filePath+"'>"+obj.fileName+"</a>";
+						str += "<li><a href='/download?fileName="+filePath+"'><li>"+obj.fileName+"</a>";
 					}
 				})
 				
-				$("#uploadResult ul").html(str);
-				$("#form").append(input).submit();
+				var titleVal = $("#uploadtitle").val()
+				var contentValue = str;
+				var categoryVal = $("#select select").val();
+				writePost({content:contentValue,title:titleVal,category:categoryVal,attach:atlist})
 			}
 		})
 	})
@@ -167,5 +167,19 @@ $(document).ready(function(){
 				$("#addfile").append(input).submit();
 			} 
 	    })
-	})    
+	})
 })
+
+function writePost(board){
+	console.log(board);
+	$.ajax({ 
+		type:"POST",
+		url:"/main/write",
+		data:JSON.stringify(board),
+		contentType:"application/json; charset=utf-8",
+		success: function(){
+			window.location.replace("/list/list");
+		}
+	})
+}
+

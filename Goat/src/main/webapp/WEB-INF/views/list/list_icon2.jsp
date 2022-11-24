@@ -84,7 +84,7 @@
 						<td><a href="../detail/detail?bno=${boardlist.bno}">${boardlist.title}</a></td>
 					</tr>
 					<tr>
-						<td><a href="/detail/detail?bno=${boardlist.bno}">${boardlist.content}</a></td>
+						<td class="contentTd"><a href="/detail/detail?bno=${boardlist.bno}" class="contentA">${boardlist.content}</a></td>
 					</tr>
 					<tr class="tr_last">
 						<td class="td_last">
@@ -114,24 +114,22 @@
 			<div id="pagingArea">
 				<!-- prev(이전)이 true이면 이전버튼 활성화 -->
 				<c:if test="${paging.prev}">
-					<a
-						href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}"
-						class="pageBtn">이전</a>
+					<a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.startPage-1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" class="pageBtn">이전</a>
 				</c:if>
 
 				<!-- begin(1)이 end(10) 될 동안 반복(1이 10 될 동안 반복) -->
 				<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 					var="num">
-					<a
-						href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}"
-						id="pageNum">${num}</a>
+					<a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${num}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" id="pageNum"
+						<c:if test="${paging.cri.pageNum==num}">
+							style="font-weight:bold; color:red;"
+						</c:if>
+					>${num}</a>
 				</c:forEach>
 
 				<!-- next(다음)이 true이면 다음버튼 활성화 -->
 				<c:if test="${paging.next}">
-					<a
-						href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}"
-						class="pageBtn">다음</a>
+					<a href="/list/list_icon2?category=${paging.cri.category}&period=${paging.cri.period}&type=${paging.cri.type}&keyword=${paging.cri.keyword}&pageNum=${paging.endPage+1}&amount=${paging.cri.amount}&orderby=${paging.cri.orderby}" class="pageBtn">다음</a>
 				</c:if>
 			</div>
 		</div>

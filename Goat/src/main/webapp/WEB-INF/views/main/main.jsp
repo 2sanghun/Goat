@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +12,7 @@
 <script type="text/javascript" src="../../../resources/JS/main.js"></script>
 </head>
 <body>
-	<div id="container">
+	<div id="container"> 
 		<%@ include file="../header/header.jsp"%>
 		<div id="background">
 			<div class="searchresult">

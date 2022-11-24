@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"> 
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -15,7 +15,7 @@
 	src="../../../resources/JS/writeAttach.js?version=1.6"></script>
 
 
-</head>
+</head> 
 <body>
 	<div id="container">
 		<%@ include file="../header/header.jsp"%>
@@ -46,10 +46,12 @@
 						<td><input type="text" name="title" id="uploadtitle"
 							placeholder="제목을 입력하세요" maxlength="40"></td>
 					</tr>
-					<tr>
-						<td colspan="2"><textarea name="content" id="uploadResult"
-								placeholder="내용을 입력하세요" maxlength="5000"></textarea></td>
-					</tr>
+				</table>
+					
+						<div id="uploadResult" contentEditable = "true" style="min-height:500px; height:auto;">
+						</div>
+					
+				<table>
 					<tr>
 						<td><label> 파일첨부 <input type="file" name="uploadFile"
 								id="uploadFile" hidden="" multiple>

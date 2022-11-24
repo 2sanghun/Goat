@@ -18,6 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -53,15 +54,16 @@ public class MainController {
 	}
 	
 	// 글쓰기에서 카테고리, 제목, 내용을 DB로 보내기 위한 back작업을 위한...
-	@RequestMapping(value = "/main/write", method = RequestMethod.POST)
-	public String writePost(BoardVO board,HttpServletRequest request) {
+	@RequestMapping(value = "/main/write", method = RequestMethod.POST, consumes="application/json; charset=utf-8")
+	public ResponseEntity<String> writePost(HttpServletRequest request,@RequestBody BoardVO board) {
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		String nick = (String) session.getAttribute("nick");
 		board.setId(id);
 		board.setNick(nick);
+		System.out.println("board");
 		bs.boardwrite(board);
-		return "redirect:/list/list";
+		return new ResponseEntity<> ("success", HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/header/login", method = RequestMethod.GET)

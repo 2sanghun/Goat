@@ -15,6 +15,7 @@
 
 .idul a {
 	color: gray;
+	cursor: pointer;
 }
 
 .idul a:hover {
