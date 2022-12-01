@@ -206,7 +206,7 @@ function reHeight(){
                 $(this).css({'min-height':sHei})
             });
         }
-    });-
+    });
 }
 
 
